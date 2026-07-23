@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { Droplets, CalendarDays, Sprout, TrendingUp } from 'lucide-react'
+import { Droplets, CalendarDays, Sprout, TrendingUp, Lightbulb } from 'lucide-react'
+import { composeExplanation, type RecommendationExplanation } from '../lib/explanation'
 
 export interface CropCardData {
   crop: string
@@ -14,6 +15,7 @@ export interface CropCardData {
   soil_suitability: string[]
   expected_yield: string
   highlight?: boolean
+  explanation?: RecommendationExplanation
 }
 
 export default function CropCard({ data }: { data: CropCardData }) {
@@ -27,7 +29,7 @@ export default function CropCard({ data }: { data: CropCardData }) {
       animate={{ opacity: 1, y: 0 }}
       className={`card overflow-hidden flex flex-col ${data.highlight ? 'ring-4 ring-leaf' : ''}`}
     >
-      <div className="h-40 w-full bg-gradient-to-br from-leaf/40 to-forest/60 flex items-center justify-center">
+      <div className="h-52 w-full bg-gradient-to-br from-leaf/40 to-forest/60 flex items-center justify-center">
         {!imgError ? (
           <img
             src={imageUrl}
@@ -69,6 +71,18 @@ export default function CropCard({ data }: { data: CropCardData }) {
         <p className="text-xs text-gray-500">
           {t('cropRecommendation.soilSuitability')}: {data.soil_suitability.join(', ')}
         </p>
+
+        {data.explanation && (
+          <div className="mt-1 flex flex-col gap-1.5 rounded-xl bg-leaf/10 p-3">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-forest-dark">
+              <Lightbulb size={14} className="text-forest" />
+              {t('cropRecommendation.whyTitle')}
+            </div>
+            <p className="text-xs text-earth-dark leading-relaxed">
+              {composeExplanation(t, data.display_name, data.explanation)}
+            </p>
+          </div>
+        )}
       </div>
     </motion.div>
   )

@@ -16,6 +16,55 @@ settings = get_settings()
 
 _BASE_DIR = Path(__file__).resolve().parents[2]  # backend/app/ml -> backend/
 
+# Rough agronomic "comfortable" ranges used only to describe *why* a parameter
+# looks favorable in plain language — not the model's actual per-crop decision
+# boundaries (those are learned and not reducible to simple ranges). Good enough
+# for a human-readable explanation without needing per-crop reference data at
+# inference time.
+_COMFORT_RANGES = {
+    "N": (40, 120), "P": (30, 100), "K": (30, 150),
+    "ph": (6.0, 7.5), "humidity": (40, 90), "rainfall": (50, 250), "temperature": (15, 35),
+}
+
+
+def _comfort_level(feature_key: str, value: float) -> str | None:
+    bounds = _COMFORT_RANGES.get(feature_key)
+    if bounds is None:
+        return None
+    lo, hi = bounds
+    if lo <= value <= hi:
+        return "ideal"
+    if value < lo * 0.6 or value > hi * 1.4:
+        return None  # too far off to plausibly be "why this crop was picked"
+    return "low" if value < lo else "high"
+
+
+def build_explanation(features: dict, feature_importance: dict, crop: str, ui_season: str) -> dict:
+    """
+    Returns structured data — not a hardcoded English sentence — so the frontend
+    can compose the "why this crop?" blurb in whichever of the 6 supported
+    languages is active, using its own translated phrase templates.
+    """
+    numeric_map = {
+        "N": features["nitrogen"], "P": features["phosphorus"], "K": features["potassium"],
+        "temperature": features["temperature"], "humidity": features["humidity"],
+        "ph": features["ph"], "rainfall": features["rainfall"],
+    }
+    ranked = sorted(
+        ((k, imp) for k, imp in feature_importance.items() if k in numeric_map),
+        key=lambda kv: kv[1], reverse=True,
+    )
+
+    factors = []
+    for key, _ in ranked:
+        level = _comfort_level(key, numeric_map[key])
+        if level:
+            factors.append({"feature": key, "level": level})
+        if len(factors) == 2:
+            break
+
+    return {"crop": crop, "season": ui_season, "factors": factors}
+
 
 class CropPredictor:
     def __init__(self):

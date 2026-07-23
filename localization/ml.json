@@ -34,13 +34,26 @@
   },
   "manualInput": {
     "title": "മാനുവൽ മണ്ണ് ഇൻപുട്ട്", "subtitle": "IoT സെൻസറുകൾ ഇല്ലാതെ പരിശോധനയ്ക്കായി മൂല്യങ്ങൾ നൽകുക",
-    "season": "സീസൺ", "getRecommendation": "വിള ശുപാർശ നേടുക"
+    "season": "സീസൺ", "getRecommendation": "വിള ശുപാർശ നേടുക",
+    "seasonAuto": "സ്വയമേവ കണ്ടെത്തുക", "seasonSpring": "വസന്തം", "seasonSummer": "വേനൽ",
+    "seasonAutumn": "ശരത്കാലം", "seasonWinter": "ശീതകാലം",
+    "seasonSpringRange": "മാർച്ച് – മെയ്", "seasonSummerRange": "ജൂൺ – ഓഗസ്റ്റ്",
+    "seasonAutumnRange": "സെപ്റ്റംബർ – നവംബർ", "seasonWinterRange": "ഡിസംബർ – ഫെബ്രുവരി",
+    "seasonHelper": "ഏത് സീസൺ എന്ന് ഉറപ്പില്ലേ? സ്വയമേവ കണ്ടെത്തുക എന്നതിൽ വിടുക, ഞങ്ങൾ ഇന്നത്തെ തീയതി ഉപയോഗിക്കും."
   },
   "cropRecommendation": {
     "title": "ശുപാർശ ചെയ്യുന്ന വിളകൾ", "topPick": "മികച്ച ശുപാർശ", "alternatives": "ബദൽ വിളകൾ",
     "suitableSeason": "അനുയോജ്യമായ സീസൺ", "waterRequirement": "ജല ആവശ്യകത",
     "harvestDuration": "വിളവെടുപ്പ് കാലയളവ്", "soilSuitability": "മണ്ണിന്റെ അനുയോജ്യത", "expectedYield": "പ്രതീക്ഷിക്കുന്ന വിളവ്",
-    "days": "ദിവസങ്ങൾ"
+    "days": "ദിവസങ്ങൾ", "whyTitle": "എന്തുകൊണ്ട് ഈ വിള?", "whyIntro": "ശുപാർശ ചെയ്യുന്നു കാരണം നിങ്ങളുടെ മണ്ണിൽ ഉണ്ട്",
+    "whyOutro": "ഇത് {{season}} സീസണിൽ ഇതിന്റെ വളർച്ചയ്ക്ക് അനുയോജ്യമാണ്.",
+    "whyFallback": "നിങ്ങൾ നൽകിയ മൂല്യങ്ങൾക്ക് {{season}} സീസണിൽ ഏറ്റവും അടുത്ത മൊത്തത്തിലുള്ള പൊരുത്തം ഇതായിരുന്നു.",
+    "and": "ഒപ്പം",
+    "featureN": "നൈട്രജൻ നില", "featureP": "ഫോസ്ഫറസ് നില", "featureK": "പൊട്ടാസ്യം നില",
+    "featureTemperature": "താപനില", "featureHumidity": "ആർദ്രത നില", "featurePh": "മണ്ണിന്റെ pH",
+    "featureRainfall": "മഴ നില",
+    "levelIdeal": "ഇത് ഈ വിളയ്ക്ക് അനുയോജ്യമാണ്", "levelLow": "ഇത് അല്പം കുറവാണ് എന്നാൽ പ്രവർത്തിക്കും",
+    "levelHigh": "ഇത് അല്പം കൂടുതലാണ് എന്നാൽ പ്രവർത്തിക്കും"
   },
   "pestDetection": {
     "title": "കീടങ്ങൾക്കും രോഗങ്ങൾക്കുമായി വിള സ്കാൻ ചെയ്യുക", "subtitle": "ഇല, പഴം, തണ്ട് അല്ലെങ്കിൽ മുഴുവൻ ചെടിയുടെയും ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക",

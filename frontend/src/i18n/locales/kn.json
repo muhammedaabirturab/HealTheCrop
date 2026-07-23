@@ -34,13 +34,26 @@
   },
   "manualInput": {
     "title": "ಕೈಯಾರೆ ಮಣ್ಣಿನ ನಮೂದು", "subtitle": "IoT ಸೆನ್ಸಾರ್ ಇಲ್ಲದೆ ಪರೀಕ್ಷೆಗಾಗಿ ಮೌಲ್ಯಗಳನ್ನು ನಮೂದಿಸಿ",
-    "season": "ಋತು", "getRecommendation": "ಬೆಳೆ ಶಿಫಾರಸು ಪಡೆಯಿರಿ"
+    "season": "ಋತು", "getRecommendation": "ಬೆಳೆ ಶಿಫಾರಸು ಪಡೆಯಿರಿ",
+    "seasonAuto": "ಸ್ವಯಂ ಪತ್ತೆ", "seasonSpring": "ವಸಂತ", "seasonSummer": "ಬೇಸಿಗೆ",
+    "seasonAutumn": "ಶರತ್ಕಾಲ", "seasonWinter": "ಚಳಿಗಾಲ",
+    "seasonSpringRange": "ಮಾರ್ಚ್ – ಮೇ", "seasonSummerRange": "ಜೂನ್ – ಆಗಸ್ಟ್",
+    "seasonAutumnRange": "ಸೆಪ್ಟೆಂಬರ್ – ನವೆಂಬರ್", "seasonWinterRange": "ಡಿಸೆಂಬರ್ – ಫೆಬ್ರವರಿ",
+    "seasonHelper": "ಯಾವ ಋತು ಎಂದು ಖಚಿತವಿಲ್ಲವೇ? ಸ್ವಯಂ ಪತ್ತೆಯಲ್ಲಿ ಬಿಡಿ, ನಾವು ಇಂದಿನ ದಿನಾಂಕವನ್ನು ಬಳಸುತ್ತೇವೆ."
   },
   "cropRecommendation": {
     "title": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು", "topPick": "ಅಗ್ರ ಶಿಫಾರಸು", "alternatives": "ಪರ್ಯಾಯ ಬೆಳೆಗಳು",
     "suitableSeason": "ಸೂಕ್ತ ಋತು", "waterRequirement": "ನೀರಿನ ಅವಶ್ಯಕತೆ",
     "harvestDuration": "ಕೊಯ್ಲು ಅವಧಿ", "soilSuitability": "ಮಣ್ಣಿನ ಸೂಕ್ತತೆ", "expectedYield": "ನಿರೀಕ್ಷಿತ ಇಳುವರಿ",
-    "days": "ದಿನಗಳು"
+    "days": "ದಿನಗಳು", "whyTitle": "ಈ ಬೆಳೆ ಏಕೆ?", "whyIntro": "ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ ಏಕೆಂದರೆ ನಿಮ್ಮ ಮಣ್ಣಿನಲ್ಲಿ ಇದೆ",
+    "whyOutro": "ಇದು {{season}} ಋತುವಿನಲ್ಲಿ ಇದರ ಬೆಳವಣಿಗೆಗೆ ಸೂಕ್ತವಾಗಿದೆ.",
+    "whyFallback": "ನೀವು ನಮೂದಿಸಿದ ಮೌಲ್ಯಗಳಿಗೆ {{season}} ಋತುವಿನಲ್ಲಿ ಹತ್ತಿರದ ಒಟ್ಟಾರೆ ಹೊಂದಾಣಿಕೆಯಾಗಿತ್ತು.",
+    "and": "ಮತ್ತು",
+    "featureN": "ಸಾರಜನಕ ಮಟ್ಟ", "featureP": "ರಂಜಕ ಮಟ್ಟ", "featureK": "ಪೊಟ್ಯಾಸಿಯಮ್ ಮಟ್ಟ",
+    "featureTemperature": "ತಾಪಮಾನ", "featureHumidity": "ಆರ್ದ್ರತೆ ಮಟ್ಟ", "featurePh": "ಮಣ್ಣಿನ pH",
+    "featureRainfall": "ಮಳೆ ಮಟ್ಟ",
+    "levelIdeal": "ಇದು ಈ ಬೆಳೆಗೆ ಆದರ್ಶವಾಗಿದೆ", "levelLow": "ಇದು ಸ್ವಲ್ಪ ಕಡಿಮೆ ಆದರೆ ಕೆಲಸ ಮಾಡಬಲ್ಲದು",
+    "levelHigh": "ಇದು ಸ್ವಲ್ಪ ಹೆಚ್ಚಾಗಿದೆ ಆದರೆ ಕೆಲಸ ಮಾಡಬಲ್ಲದು"
   },
   "pestDetection": {
     "title": "ಕೀಟ ಮತ್ತು ರೋಗಗಳಿಗಾಗಿ ಬೆಳೆ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ", "subtitle": "ಎಲೆ, ಹಣ್ಣು, ಕಾಂಡ ಅಥವಾ ಇಡೀ ಸಸ್ಯದ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",

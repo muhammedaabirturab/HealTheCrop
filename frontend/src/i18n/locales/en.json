@@ -34,13 +34,26 @@
   },
   "manualInput": {
     "title": "Manual Soil Input", "subtitle": "Enter values manually for testing without IoT sensors",
-    "season": "Season", "getRecommendation": "Get Crop Recommendation"
+    "season": "Season", "getRecommendation": "Get Crop Recommendation",
+    "seasonAuto": "Auto-detect", "seasonSpring": "Spring", "seasonSummer": "Summer",
+    "seasonAutumn": "Autumn", "seasonWinter": "Winter",
+    "seasonSpringRange": "March – May", "seasonSummerRange": "June – August",
+    "seasonAutumnRange": "September – November", "seasonWinterRange": "December – February",
+    "seasonHelper": "Not sure which season? Leave this on Auto-detect and we'll use today's date."
   },
   "cropRecommendation": {
     "title": "Recommended Crops", "topPick": "Top Recommendation", "alternatives": "Alternative Crops",
     "suitableSeason": "Suitable Season", "waterRequirement": "Water Requirement",
     "harvestDuration": "Harvest Duration", "soilSuitability": "Soil Suitability", "expectedYield": "Expected Yield",
-    "days": "days"
+    "days": "days", "whyTitle": "Why this crop?", "whyIntro": "is recommended because your soil has",
+    "whyOutro": "which suits its growth well during the {{season}} season.",
+    "whyFallback": "was the closest overall match for the values you entered in the {{season}} season.",
+    "and": "and",
+    "featureN": "a nitrogen level", "featureP": "a phosphorus level", "featureK": "a potassium level",
+    "featureTemperature": "a temperature", "featureHumidity": "a humidity level", "featurePh": "a soil pH",
+    "featureRainfall": "a rainfall level",
+    "levelIdeal": "that is ideal for this crop", "levelLow": "that is on the lower side but workable",
+    "levelHigh": "that is on the higher side but workable"
   },
   "pestDetection": {
     "title": "Scan Crop for Pests & Diseases", "subtitle": "Upload a photo of a leaf, fruit, stem, or whole plant",

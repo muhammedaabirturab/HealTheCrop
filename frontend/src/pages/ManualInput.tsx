@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { api } from '../lib/api'
 import { getErrorMessage } from '../lib/errors'
+import type { RecommendationExplanation } from '../lib/explanation'
 import CropCard, { type CropCardData } from '../components/CropCard'
 
 interface FormState {
@@ -28,6 +29,7 @@ interface PredictionResult {
   crop_details: Record<string, unknown>
   feature_importance: Record<string, number>
   season_used: string
+  explanation: RecommendationExplanation
 }
 
 export default function ManualInput() {
@@ -84,7 +86,16 @@ export default function ManualInput() {
     { key: 'rainfall', label: `${t('dashboard.rainfall')} (mm)` },
   ]
 
-  const buildCard = (crop: string, confidence: number, details: Record<string, unknown>, highlight: boolean): CropCardData => {
+  const seasonOptions: { value: string; emoji: string; labelKey: string; rangeKey: string }[] = [
+    { value: 'spring', emoji: '🌸', labelKey: 'manualInput.seasonSpring', rangeKey: 'manualInput.seasonSpringRange' },
+    { value: 'summer', emoji: '☀️', labelKey: 'manualInput.seasonSummer', rangeKey: 'manualInput.seasonSummerRange' },
+    { value: 'autumn', emoji: '🍂', labelKey: 'manualInput.seasonAutumn', rangeKey: 'manualInput.seasonAutumnRange' },
+    { value: 'winter', emoji: '❄️', labelKey: 'manualInput.seasonWinter', rangeKey: 'manualInput.seasonWinterRange' },
+  ]
+
+  const buildCard = (
+    crop: string, confidence: number, details: Record<string, unknown>, highlight: boolean,
+  ): CropCardData => {
     return {
       crop,
       confidence,
@@ -96,6 +107,7 @@ export default function ManualInput() {
       harvest_duration_days: (details.harvest_duration_days as number) || 100,
       soil_suitability: (details.soil_suitability as string[]) || ['Loamy'],
       expected_yield: (details.expected_yield as string) || 'N/A',
+      explanation: highlight ? result?.explanation : undefined,
     }
   }
 
@@ -123,12 +135,19 @@ export default function ManualInput() {
 
         <label className="flex flex-col gap-1 text-sm font-semibold text-earth-dark">
           {t('manualInput.season')}
-          <select value={form.season} onChange={update('season')} className="border border-forest/30 rounded-lg px-3 py-2 focus:outline-none focus:border-forest">
-            <option value="">Auto-detect</option>
-            <option value="Kharif">Kharif</option>
-            <option value="Rabi">Rabi</option>
-            <option value="Zaid">Zaid</option>
+          <select
+            value={form.season}
+            onChange={update('season')}
+            className="border border-forest/30 rounded-lg px-3 py-2 focus:outline-none focus:border-forest"
+          >
+            <option value="">{t('manualInput.seasonAuto')}</option>
+            {seasonOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.emoji} {t(opt.labelKey)} ({t(opt.rangeKey)})
+              </option>
+            ))}
           </select>
+          <span className="text-xs font-normal text-gray-500">{t('manualInput.seasonHelper')}</span>
         </label>
 
         <label className="flex flex-col gap-1 text-sm font-semibold text-earth-dark">

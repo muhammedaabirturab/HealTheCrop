@@ -148,7 +148,46 @@ the model's top prediction against domain expectations. Result: **8/8 matched**,
 96–100% confidence, confirming the model's decision boundaries are agronomically sensible
 and not just numerically accurate against its own synthetic training distribution.
 
-## 7. Known limitations / not yet covered
+## 7. Farmer-friendly seasons, real crop images, and recommendation reasoning
+
+A follow-up pass replaced the Kharif/Rabi/Zaid season dropdown with universally recognizable
+calendar seasons, added real photos for every crop, and made recommendations explain
+themselves.
+
+**Season mapping**: [`app/utils/season.py`](../backend/app/utils/season.py) now exposes a
+`resolve_season()` that accepts spring/summer/autumn/winter from the UI and maps each to the
+Kharif/Rabi/Zaid category the trained model actually expects
+(`spring→Zaid, summer→Kharif, autumn→Kharif, winter→Rabi`), returning both values so the API
+response echoes back the farmer's own season choice rather than the internal category.
+Verified: all four UI seasons produce correct, agronomically sensible predictions (e.g.
+winter + cold/high-P/K/humidity inputs → apple at 99% confidence; summer + hot/humid/high-
+rainfall inputs → rice), and an unrecognized or omitted season falls back to calendar-based
+auto-detection. 8 new backend tests cover the mapping table, case-insensitivity, and
+boundary months.
+
+**Real crop images**: all 22 crops now have an actual representative photo (previously a
+generic icon), fetched from Wikipedia/Wikimedia Commons lead images via
+[`ml/scripts/fetch_crop_images.py`](../ml/scripts/fetch_crop_images.py) — chosen over an
+arbitrary image search because Commons images carry a clear, checkable, reusable license.
+Verified in-browser: every card's `GET /crop-images/<crop>.jpg` request returns `200 OK`.
+
+**Recommendation reasoning**: `build_explanation()` in
+[`crop_predictor.py`](../backend/app/ml/crop_predictor.py) picks the top 1–2 numeric features
+by the model's global feature importance, classifies each as ideal/low/high against a rough
+comfort range, and returns *structured data* (crop, season, factor list) rather than a
+hardcoded English sentence — the frontend's
+[`lib/explanation.ts`](../frontend/src/lib/explanation.ts) composes the final sentence from
+translated phrase templates so it reads correctly in all 6 supported languages, not just
+English.
+
+**Bug found and fixed during this pass:** the first implementation of `composeExplanation`
+looked up translation keys like `featureHumidity` and `levelIdeal` without their
+`cropRecommendation.` namespace prefix, so the UI showed raw key names instead of translated
+text (e.g. "your soil has featureHumidity levelIdeal" instead of "a humidity level that is
+ideal for this crop"). Caught via live browser testing, fixed, and re-verified in both
+English and Hindi.
+
+## 8. Known limitations / not yet covered
 
 - No automated frontend test suite (Playwright/Vitest) — verification was manual/browser-driven this session.
 - The CNN pest-detection path (`cv/scripts/train_disease_model.py`) has not been exercised

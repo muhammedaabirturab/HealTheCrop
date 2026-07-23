@@ -37,6 +37,17 @@ class CropAlternative(BaseModel):
     crop_details: CropDetails | dict = {}
 
 
+class ExplanationFactor(BaseModel):
+    feature: str  # N | P | K | temperature | humidity | ph | rainfall
+    level: str  # ideal | low | high
+
+
+class RecommendationExplanation(BaseModel):
+    crop: str
+    season: str
+    factors: list[ExplanationFactor]
+
+
 class PredictionResponse(BaseModel):
     id: int | None = None
     recommended_crop: str
@@ -45,4 +56,5 @@ class PredictionResponse(BaseModel):
     feature_importance: dict[str, float]
     crop_details: CropDetails
     season_used: str
+    explanation: RecommendationExplanation
     created_at: datetime | None = None

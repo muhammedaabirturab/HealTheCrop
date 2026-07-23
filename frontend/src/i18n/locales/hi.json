@@ -34,13 +34,26 @@
   },
   "manualInput": {
     "title": "मैनुअल मिट्टी इनपुट", "subtitle": "IoT सेंसर के बिना परीक्षण के लिए मान मैन्युअल रूप से दर्ज करें",
-    "season": "मौसम", "getRecommendation": "फसल सिफारिश प्राप्त करें"
+    "season": "मौसम", "getRecommendation": "फसल सिफारिश प्राप्त करें",
+    "seasonAuto": "स्वतः पता लगाएं", "seasonSpring": "वसंत", "seasonSummer": "गर्मी",
+    "seasonAutumn": "शरद ऋतु", "seasonWinter": "सर्दी",
+    "seasonSpringRange": "मार्च – मई", "seasonSummerRange": "जून – अगस्त",
+    "seasonAutumnRange": "सितंबर – नवंबर", "seasonWinterRange": "दिसंबर – फरवरी",
+    "seasonHelper": "किस मौसम का पता नहीं? इसे स्वतः पता लगाएं पर छोड़ दें, हम आज की तारीख का उपयोग करेंगे।"
   },
   "cropRecommendation": {
     "title": "अनुशंसित फसलें", "topPick": "शीर्ष सिफारिश", "alternatives": "वैकल्पिक फसलें",
     "suitableSeason": "उपयुक्त मौसम", "waterRequirement": "पानी की आवश्यकता",
     "harvestDuration": "फसल अवधि", "soilSuitability": "मिट्टी की उपयुक्तता", "expectedYield": "अपेक्षित उपज",
-    "days": "दिन"
+    "days": "दिन", "whyTitle": "यह फसल क्यों?", "whyIntro": "की सिफारिश की जाती है क्योंकि आपकी मिट्टी में है",
+    "whyOutro": "जो {{season}} मौसम के दौरान इसकी वृद्धि के लिए उपयुक्त है।",
+    "whyFallback": "आपके द्वारा दर्ज किए गए मूल्यों के लिए {{season}} मौसम में सबसे नज़दीकी समग्र मिलान था।",
+    "and": "और",
+    "featureN": "नाइट्रोजन स्तर", "featureP": "फॉस्फोरस स्तर", "featureK": "पोटेशियम स्तर",
+    "featureTemperature": "तापमान", "featureHumidity": "आर्द्रता स्तर", "featurePh": "मिट्टी का पीएच",
+    "featureRainfall": "वर्षा स्तर",
+    "levelIdeal": "जो इस फसल के लिए आदर्श है", "levelLow": "जो थोड़ा कम है लेकिन काम चलाऊ है",
+    "levelHigh": "जो थोड़ा अधिक है लेकिन काम चलाऊ है"
   },
   "pestDetection": {
     "title": "कीट और रोगों के लिए फसल स्कैन करें", "subtitle": "पत्ती, फल, तना या पूरे पौधे की फोटो अपलोड करें",

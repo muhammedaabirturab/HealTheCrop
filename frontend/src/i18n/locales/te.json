@@ -34,13 +34,26 @@
   },
   "manualInput": {
     "title": "మాన్యువల్ నేల ఇన్‌పుట్", "subtitle": "IoT సెన్సార్లు లేకుండా పరీక్ష కోసం విలువలను నమోదు చేయండి",
-    "season": "సీజన్", "getRecommendation": "పంట సిఫార్సు పొందండి"
+    "season": "సీజన్", "getRecommendation": "పంట సిఫార్సు పొందండి",
+    "seasonAuto": "స్వయంచాలకంగా గుర్తించు", "seasonSpring": "వసంతం", "seasonSummer": "వేసవి",
+    "seasonAutumn": "శరదృతువు", "seasonWinter": "శీతాకాలం",
+    "seasonSpringRange": "మార్చి – మే", "seasonSummerRange": "జూన్ – ఆగస్టు",
+    "seasonAutumnRange": "సెప్టెంబర్ – నవంబర్", "seasonWinterRange": "డిసెంబర్ – ఫిబ్రవరి",
+    "seasonHelper": "ఏ సీజన్ అని ఖచ్చితంగా తెలియదా? దీన్ని స్వయంచాలకంగా గుర్తించు మీద ఉంచండి, మేము ఈరోజు తేదీని ఉపయోగిస్తాము."
   },
   "cropRecommendation": {
     "title": "సిఫార్సు చేసిన పంటలు", "topPick": "అగ్ర సిఫార్సు", "alternatives": "ప్రత్యామ్నాయ పంటలు",
     "suitableSeason": "అనుకూల సీజన్", "waterRequirement": "నీటి అవసరం",
     "harvestDuration": "పంట కాలం", "soilSuitability": "నేల అనుకూలత", "expectedYield": "ఊహించిన దిగుబడి",
-    "days": "రోజులు"
+    "days": "రోజులు", "whyTitle": "ఈ పంట ఎందుకు?", "whyIntro": "సిఫార్సు చేయబడింది ఎందుకంటే మీ నేలలో ఉంది",
+    "whyOutro": "ఇది {{season}} సీజన్‌లో దీని పెరుగుదలకు అనుకూలంగా ఉంటుంది.",
+    "whyFallback": "మీరు నమోదు చేసిన విలువలకు {{season}} సీజన్‌లో అత్యంత దగ్గరైన మొత్తం సరిపోలిక ఇది.",
+    "and": "మరియు",
+    "featureN": "నత్రజని స్థాయి", "featureP": "భాస్వరం స్థాయి", "featureK": "పొటాషియం స్థాయి",
+    "featureTemperature": "ఉష్ణోగ్రత", "featureHumidity": "తేమ స్థాయి", "featurePh": "నేల pH",
+    "featureRainfall": "వర్షపాత స్థాయి",
+    "levelIdeal": "ఇది ఈ పంటకు అనువైనది", "levelLow": "ఇది కొంచెం తక్కువగా ఉంది కానీ పనిచేస్తుంది",
+    "levelHigh": "ఇది కొంచెం ఎక్కువగా ఉంది కానీ పనిచేస్తుంది"
   },
   "pestDetection": {
     "title": "పురుగులు మరియు వ్యాధుల కోసం పంటను స్కాన్ చేయండి", "subtitle": "ఆకు, పండు, కాండం లేదా మొత్తం మొక్క ఫోటోను అప్‌లోడ్ చేయండి",
