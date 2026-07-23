@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { api } from '../lib/api'
+import { getErrorMessage } from '../lib/errors'
 import { useAuthStore } from '../store/authStore'
 
 export default function Register() {
@@ -26,8 +27,8 @@ export default function Register() {
       const me = await api.get('/auth/me', { headers: { Authorization: `Bearer ${data.access_token}` } })
       setSession(data.access_token, me.data)
       navigate('/dashboard')
-    } catch (err: any) {
-      setError(err?.response?.data?.detail || t('errors.generic'))
+    } catch (err) {
+      setError(getErrorMessage(err, t))
     } finally {
       setLoading(false)
     }

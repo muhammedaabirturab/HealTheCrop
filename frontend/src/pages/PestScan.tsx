@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { UploadCloud, Bug, Leaf } from 'lucide-react'
 import { api } from '../lib/api'
+import { getErrorMessage } from '../lib/errors'
 
 interface Detection {
   name: string
@@ -29,10 +30,20 @@ export default function PestScan() {
   const [result, setResult] = useState<ScanResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const previewUrlRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current)
+    }
+  }, [])
 
   const handleFile = (f: File) => {
+    if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current)
+    const url = URL.createObjectURL(f)
+    previewUrlRef.current = url
     setFile(f)
-    setPreview(URL.createObjectURL(f))
+    setPreview(url)
     setResult(null)
     setError('')
   }
@@ -48,8 +59,8 @@ export default function PestScan() {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       setResult(data)
-    } catch {
-      setError(t('errors.invalidImage'))
+    } catch (err) {
+      setError(getErrorMessage(err, t))
     } finally {
       setLoading(false)
     }

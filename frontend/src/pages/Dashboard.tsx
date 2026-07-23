@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
+import { AlertTriangle } from 'lucide-react'
 import { api } from '../lib/api'
+import { getErrorMessage } from '../lib/errors'
 import SoilIndicator, { type SoilStatus } from '../components/SoilIndicator'
 
 interface Device {
@@ -41,15 +43,23 @@ export default function Dashboard() {
   const [indicators, setIndicators] = useState<Record<string, SoilHealthIndicator>>({})
   const [fertilityScore, setFertilityScore] = useState<number | null>(null)
   const [storageStatus, setStorageStatus] = useState<string>('--')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
-    api.get('/sensors/devices').then((res) => {
-      setDevices(res.data)
-      if (res.data.length > 0) setSelectedDevice(res.data[0].device_uid)
-    })
+    setLoading(true)
+    api.get('/sensors/devices')
+      .then((res) => {
+        setDevices(res.data)
+        if (res.data.length > 0) setSelectedDevice(res.data[0].device_uid)
+      })
+      .catch((err) => setError(getErrorMessage(err, t)))
+      .finally(() => setLoading(false))
+
     api.get(import.meta.env.VITE_API_BASE_URL?.replace('/api/v1', '') + '/health' || 'http://localhost:8000/health')
       .then((res) => setStorageStatus(res.data.storage_backend))
       .catch(() => setStorageStatus('unknown'))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -62,11 +72,15 @@ export default function Dashboard() {
       })
       setIndicators(health.data.indicators)
       setFertilityScore(health.data.fertility_score)
-    }).catch(() => setLatest(null))
+    }).catch((err) => {
+      setLatest(null)
+      setError(getErrorMessage(err, t))
+    })
 
     api.get(`/sensors/devices/${selectedDevice}/history?limit=30`).then((res) => {
       setHistory([...res.data].reverse())
     }).catch(() => setHistory([]))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedDevice])
 
   const chartData = history.map((r) => ({
@@ -91,7 +105,18 @@ export default function Dashboard() {
         )}
       </div>
 
-      {devices.length === 0 && (
+      {error && (
+        <div className="card p-4 flex items-center gap-2 text-sm font-semibold text-red-700 bg-red-50 border border-red-200">
+          <AlertTriangle size={16} className="shrink-0" />
+          {error}
+        </div>
+      )}
+
+      {loading && (
+        <div className="card p-6 text-center text-earth-dark">{t('common.loading')}</div>
+      )}
+
+      {!loading && devices.length === 0 && !error && (
         <div className="card p-6 text-center text-earth-dark">
           {t('dashboard.connectedDevices')}: 0 — connect an ESP32 field node or use{' '}
           <a href="/manual-input" className="text-forest font-semibold underline">{t('nav.manualInput')}</a> instead.

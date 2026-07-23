@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AlertTriangle } from 'lucide-react'
 import { api } from '../lib/api'
+import { getErrorMessage } from '../lib/errors'
 
 interface PredictionRecord {
   id: number
@@ -22,10 +24,19 @@ export default function History() {
   const [tab, setTab] = useState<'predictions' | 'pest'>('predictions')
   const [predictions, setPredictions] = useState<PredictionRecord[]>([])
   const [pestScans, setPestScans] = useState<PestRecord[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
-    api.get('/predictions/history').then((res) => setPredictions(res.data))
-    api.get('/pest/history').then((res) => setPestScans(res.data))
+    setLoading(true)
+    Promise.all([api.get('/predictions/history'), api.get('/pest/history')])
+      .then(([predictionsRes, pestRes]) => {
+        setPredictions(predictionsRes.data)
+        setPestScans(pestRes.data)
+      })
+      .catch((err) => setError(getErrorMessage(err, t)))
+      .finally(() => setLoading(false))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -47,7 +58,16 @@ export default function History() {
         </button>
       </div>
 
-      {tab === 'predictions' && (
+      {error && (
+        <div className="card p-4 flex items-center gap-2 text-sm font-semibold text-red-700 bg-red-50 border border-red-200">
+          <AlertTriangle size={16} className="shrink-0" />
+          {error}
+        </div>
+      )}
+
+      {loading && <div className="card p-6 text-center text-earth-dark">{t('common.loading')}</div>}
+
+      {!loading && tab === 'predictions' && (
         <div className="flex flex-col gap-3">
           {predictions.length === 0 && <p className="text-earth-dark">--</p>}
           {predictions.map((p) => (
@@ -64,7 +84,7 @@ export default function History() {
         </div>
       )}
 
-      {tab === 'pest' && (
+      {!loading && tab === 'pest' && (
         <div className="flex flex-col gap-3">
           {pestScans.length === 0 && <p className="text-earth-dark">--</p>}
           {pestScans.map((p) => (

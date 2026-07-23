@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { api } from '../lib/api'
+import { getErrorMessage } from '../lib/errors'
 import CropCard, { type CropCardData } from '../components/CropCard'
 
 interface FormState {
@@ -42,23 +43,32 @@ export default function ManualInput() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+
+    const numericFields = {
+      nitrogen: Number(form.nitrogen),
+      phosphorus: Number(form.phosphorus),
+      potassium: Number(form.potassium),
+      temperature: Number(form.temperature),
+      humidity: Number(form.humidity),
+      ph: Number(form.ph),
+      rainfall: Number(form.rainfall),
+    }
+    if (Object.values(numericFields).some((v) => Number.isNaN(v))) {
+      setError(t('errors.validation'))
+      return
+    }
+
     setLoading(true)
     setResult(null)
     try {
       const { data } = await api.post('/predictions/manual', {
-        nitrogen: Number(form.nitrogen),
-        phosphorus: Number(form.phosphorus),
-        potassium: Number(form.potassium),
-        temperature: Number(form.temperature),
-        humidity: Number(form.humidity),
-        ph: Number(form.ph),
-        rainfall: Number(form.rainfall),
+        ...numericFields,
         season: form.season || undefined,
         location: form.location || undefined,
       })
       setResult(data)
-    } catch {
-      setError(t('errors.generic'))
+    } catch (err) {
+      setError(getErrorMessage(err, t))
     } finally {
       setLoading(false)
     }
@@ -71,7 +81,7 @@ export default function ManualInput() {
     { key: 'temperature', label: t('dashboard.temperature') },
     { key: 'humidity', label: t('dashboard.humidity') },
     { key: 'ph', label: t('dashboard.phLevel'), step: '0.1' },
-    { key: 'rainfall', label: 'Rainfall (mm)' },
+    { key: 'rainfall', label: `${t('dashboard.rainfall')} (mm)` },
   ]
 
   const buildCard = (crop: string, confidence: number, details: Record<string, unknown>, highlight: boolean): CropCardData => {

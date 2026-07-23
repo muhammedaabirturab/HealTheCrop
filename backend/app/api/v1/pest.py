@@ -32,7 +32,8 @@ async def scan_crop_image(
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
-    extension = "." + file.filename.split(".")[-1] if "." in file.filename else ".jpg"
+    filename = file.filename or ""
+    extension = "." + filename.rsplit(".", 1)[-1] if "." in filename else ".jpg"
     image_key = storage_service.upload_bytes("healthecrop-images", image_bytes, extension)
 
     top_confidence = result["detections"][0]["confidence"] if result["detections"] else None

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import ProtectedRoute from './components/ProtectedRoute'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
@@ -27,6 +28,7 @@ export default function App() {
           </Route>
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   )
 }

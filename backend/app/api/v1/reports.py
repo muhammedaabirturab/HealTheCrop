@@ -1,10 +1,11 @@
-from fastapi import APIRouter, Body, Depends
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_user
 from app.core.database import get_db
 from app.models.fertility_report import FertilityReport
 from app.models.user import User
+from app.schemas.report import SoilHealthRequest
 from app.services.fertility_service import compute_soil_health, generate_suggestions
 
 router = APIRouter(prefix="/reports", tags=["Soil Health & Fertility"])
@@ -12,10 +13,11 @@ router = APIRouter(prefix="/reports", tags=["Soil Health & Fertility"])
 
 @router.post("/soil-health")
 def soil_health_report(
-    reading: dict = Body(..., examples=[{"nitrogen": 35, "phosphorus": 20, "potassium": 25, "ph": 5.2, "moisture": 28}]),
+    payload: SoilHealthRequest,
     db: Session = Depends(get_db),
     user: User = Depends(get_current_user),
 ):
+    reading = payload.model_dump()
     health = compute_soil_health(reading)
     suggestions = generate_suggestions(reading) if health["fertility_score"] < 75 else []
 

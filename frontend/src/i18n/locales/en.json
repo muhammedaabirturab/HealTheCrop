@@ -24,7 +24,8 @@
     "connectedDevices": "Connected Devices", "storageStatus": "Storage Status", "lastUpdated": "Last Updated",
     "sensorHealth": "Sensor Health", "systemStatus": "System Status", "soilMoisture": "Soil Moisture",
     "temperature": "Temperature", "humidity": "Humidity", "phLevel": "pH Level", "nitrogen": "Nitrogen (N)",
-    "phosphorus": "Phosphorus (P)", "potassium": "Potassium (K)", "fertilityScore": "Fertility Score"
+    "phosphorus": "Phosphorus (P)", "potassium": "Potassium (K)", "fertilityScore": "Fertility Score",
+    "rainfall": "Rainfall"
   },
   "soilHealth": {
     "excellent": "Excellent", "good": "Good", "average": "Average", "poor": "Poor", "critical": "Critical",
@@ -51,6 +52,109 @@
   },
   "errors": {
     "generic": "Something went wrong. Please try again.", "network": "Network error. Check your connection.",
-    "invalidImage": "Please upload a valid JPEG or PNG image.", "sessionExpired": "Your session has expired. Please log in again."
+    "invalidImage": "Please upload a valid JPEG or PNG image.", "sessionExpired": "Your session has expired. Please log in again.",
+    "validation": "Please check the highlighted fields and try again."
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "AI + IoT Powered Smart Farming",
+      "title": "HealTheCrop",
+      "subtitle": "Grow smarter, not harder.",
+      "description": "HealTheCrop helps farmers make data-driven decisions using real-time soil monitoring, machine learning, and intelligent crop recommendations — built for real fields, in the language you speak.",
+      "ctaPrimary": "Get Started Free",
+      "ctaSecondary": "Log In",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "about": {
+      "eyebrow": "About the Platform",
+      "title": "What is HealTheCrop?",
+      "subtitle": "A farming companion that turns raw soil data into decisions you can act on.",
+      "point1Title": "Built for real farms",
+      "point1Text": "Designed around actual ESP32 field sensors, not just a lab demo — it works with the soil you actually have.",
+      "point2Title": "Higher crop yield",
+      "point2Text": "Matching the right crop to your soil and season reduces guesswork and improves harvest outcomes.",
+      "point3Title": "Fewer wrong crop choices",
+      "point3Text": "AI-backed recommendations replace intuition-only decisions that often lead to poor yields.",
+      "point4Title": "Healthier soil over time",
+      "point4Text": "Fertility tracking and targeted improvement suggestions help restore soil health season after season.",
+      "point5Title": "Accessible to everyone",
+      "point5Text": "A visual, multilingual interface designed for farmers of every literacy level.",
+      "point6Title": "Always improving",
+      "point6Text": "Every reading and scan builds a history you can learn from over time."
+    },
+    "howItWorks": {
+      "eyebrow": "How It Works",
+      "title": "From soil to recommendation, automatically",
+      "subtitle": "A simple, transparent pipeline connects your field to your dashboard.",
+      "step1Title": "IoT Sensors",
+      "step1Text": "FC-28 moisture, DHT11 temperature/humidity, and pH probes read your soil's condition.",
+      "step2Title": "ESP32 Node",
+      "step2Text": "A Wi-Fi microcontroller collects readings and securely sends them to the cloud.",
+      "step3Title": "Local Storage",
+      "step3Text": "Readings and images are stored safely, first locally, then synced to the backend.",
+      "step4Title": "Backend Processing",
+      "step4Text": "The FastAPI backend validates, organizes, and prepares your data for analysis.",
+      "step5Title": "Random Forest Model",
+      "step5Text": "A trained machine learning model analyzes nutrients, climate, and season together.",
+      "step6Title": "Crop Recommendation",
+      "step6Text": "You receive a ranked list of suitable crops with confidence scores.",
+      "step7Title": "Farmer Dashboard",
+      "step7Text": "Everything comes together in one visual, easy-to-read dashboard."
+    },
+    "features": {
+      "eyebrow": "Key Features",
+      "title": "Everything a modern farm needs, in one place",
+      "soilMonitoringTitle": "Real-Time Soil Monitoring",
+      "soilMonitoringText": "Live moisture, temperature, humidity, and pH from your connected sensors.",
+      "aiRecommendationTitle": "AI Crop Recommendation",
+      "aiRecommendationText": "Random Forest predictions with confidence scores and top-5 alternatives.",
+      "fertilityAnalysisTitle": "Soil Fertility Analysis",
+      "fertilityAnalysisText": "A clear 0-100 fertility score with color-coded nutrient indicators.",
+      "fertilityImprovementTitle": "Fertility Improvement Suggestions",
+      "fertilityImprovementText": "Organic and chemical fixes explained with why, how, and expected results.",
+      "pestDetectionTitle": "Pest & Disease Detection",
+      "pestDetectionText": "Photograph a leaf and get treatment options in seconds.",
+      "analyticsTitle": "Historical Analytics",
+      "analyticsText": "Trend charts and prediction history so you can track progress over time.",
+      "multilingualTitle": "Multilingual Support",
+      "multilingualText": "Full interface in English, Hindi, Kannada, Tamil, Telugu, and Malayalam.",
+      "manualModeTitle": "Manual Testing Mode",
+      "manualModeText": "Get recommendations instantly, even without any hardware connected.",
+      "storageTitle": "Local Cloud Storage",
+      "storageText": "MinIO-backed storage for images and reports, with automatic local fallback.",
+      "smartDashboardTitle": "Smart Dashboard",
+      "smartDashboardText": "One screen for devices, readings, predictions, and system health."
+    },
+    "whyUse": {
+      "eyebrow": "Why Farmers Choose HealTheCrop",
+      "title": "Real benefits, from planting to harvest",
+      "benefit1": "Higher crop yield",
+      "benefit2": "Better soil management",
+      "benefit3": "Reduced farming risk",
+      "benefit4": "Data-driven decisions",
+      "benefit5": "Easy multilingual interface",
+      "benefit6": "Faster pest identification",
+      "benefit7": "Smarter fertilizer planning"
+    },
+    "ai": {
+      "eyebrow": "AI & Machine Learning",
+      "title": "Powered by a trained Random Forest model",
+      "description": "HealTheCrop's recommendation engine is a Random Forest classifier trained on agricultural data. It weighs nine factors together to recommend crops suited to your exact conditions.",
+      "inputsLabel": "Model Inputs",
+      "outputLabel": "Model Output",
+      "outputCrop": "Recommended Crop",
+      "outputConfidence": "Confidence Score",
+      "outputAlternatives": "Top 5 Alternatives"
+    },
+    "footer": {
+      "project": "Project",
+      "projectText": "A final-year engineering project combining IoT, machine learning, and computer vision for smart agriculture.",
+      "team": "Team",
+      "technologies": "Technologies",
+      "links": "Links",
+      "github": "GitHub Repository",
+      "contact": "Contact",
+      "copyright": "All rights reserved."
+    }
   }
 }
