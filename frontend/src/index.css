@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f7f4ea;
+  --color-forest: #2e7d32;
+  --color-forest-dark: #1b5e20;
+  --color-leaf: #66bb6a;
+  --color-earth: #8d6e46;
+  --color-earth-dark: #5d4a2f;
+  --color-white: #ffffff;
+
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  --radius-card: 1.25rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: #2b2b28;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 12px rgba(46, 125, 50, 0.08);
+}
+
+.btn-primary {
+  background-color: var(--color-forest);
+  color: white;
+  border-radius: 999px;
+  padding: 0.85rem 2rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-forest-dark);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: var(--color-cream);
+  color: var(--color-forest-dark);
+  border: 2px solid var(--color-forest);
+  border-radius: 999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-leaf);
+  border-radius: 999px;
+}

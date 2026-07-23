@@ -1,0 +1,48 @@
+from datetime import datetime
+
+from pydantic import BaseModel, Field
+
+
+class ManualPredictionRequest(BaseModel):
+    nitrogen: float = Field(ge=0, le=200)
+    phosphorus: float = Field(ge=0, le=200)
+    potassium: float = Field(ge=0, le=250)
+    temperature: float = Field(ge=-10, le=55)
+    humidity: float = Field(ge=0, le=100)
+    ph: float = Field(ge=0, le=14)
+    rainfall: float = Field(ge=0, le=500)
+    season: str | None = None
+    location: str | None = None
+
+
+class DeviceBasedPredictionRequest(BaseModel):
+    device_uid: str
+    season: str | None = None
+    location: str | None = None
+
+
+class CropDetails(BaseModel):
+    display_name: str
+    image: str
+    season: list[str]
+    water_requirement: str
+    harvest_duration_days: int
+    soil_suitability: list[str]
+    expected_yield: str
+
+
+class CropAlternative(BaseModel):
+    crop: str
+    confidence: float
+    crop_details: CropDetails | dict = {}
+
+
+class PredictionResponse(BaseModel):
+    id: int | None = None
+    recommended_crop: str
+    confidence: float
+    alternatives: list[CropAlternative]
+    feature_importance: dict[str, float]
+    crop_details: CropDetails
+    season_used: str
+    created_at: datetime | None = None

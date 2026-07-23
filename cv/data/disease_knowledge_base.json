@@ -1,0 +1,156 @@
+{
+  "Tomato___Early_blight": {
+    "display_name": "Tomato Early Blight",
+    "type": "disease",
+    "causal_agent": "Alternaria solani (fungus)",
+    "description": "Dark concentric-ringed spots on older leaves, often with yellow halos, progressing upward and causing defoliation.",
+    "organic_treatment": "Spray neem oil (5ml/L) or copper-based fungicide every 7-10 days; remove and destroy infected leaves.",
+    "chemical_treatment": "Apply Mancozeb 75% WP (2.5 g/L) or Chlorothalonil at first symptom onset, repeat every 10-14 days.",
+    "recommended_pesticides": ["Mancozeb", "Chlorothalonil", "Copper oxychloride"],
+    "prevention_tips": ["Rotate with non-solanaceous crops", "Avoid overhead irrigation", "Stake plants for airflow", "Mulch to prevent soil splash"],
+    "expected_recovery_days": 14
+  },
+  "Tomato___Late_blight": {
+    "display_name": "Tomato Late Blight",
+    "type": "disease",
+    "causal_agent": "Phytophthora infestans (oomycete)",
+    "description": "Water-soaked lesions on leaves turning brown/black rapidly, white fungal growth on leaf undersides in humid conditions; can destroy a crop within days.",
+    "organic_treatment": "Copper-based bactericide/fungicide sprays; remove infected plants immediately to prevent spread.",
+    "chemical_treatment": "Apply Metalaxyl + Mancozeb combination fungicide at 2.5 g/L every 7 days during humid weather.",
+    "recommended_pesticides": ["Metalaxyl-M", "Mancozeb", "Cymoxanil"],
+    "prevention_tips": ["Use resistant varieties", "Ensure good drainage", "Avoid working in fields when wet", "Destroy volunteer potato/tomato plants"],
+    "expected_recovery_days": 10
+  },
+  "Tomato___Bacterial_spot": {
+    "display_name": "Tomato Bacterial Spot",
+    "type": "disease",
+    "causal_agent": "Xanthomonas spp. (bacteria)",
+    "description": "Small water-soaked spots on leaves and fruit that turn dark brown with yellow halos.",
+    "organic_treatment": "Copper hydroxide sprays combined with mancozeb to slow resistance development.",
+    "chemical_treatment": "Copper-based bactericides at 7-day intervals; avoid overuse to prevent copper resistance.",
+    "recommended_pesticides": ["Copper hydroxide", "Streptomycin (nursery stage only)"],
+    "prevention_tips": ["Use certified disease-free seed", "Avoid overhead watering", "Practice 2-year crop rotation"],
+    "expected_recovery_days": 21
+  },
+  "Potato___Early_blight": {
+    "display_name": "Potato Early Blight",
+    "type": "disease",
+    "causal_agent": "Alternaria solani (fungus)",
+    "description": "Target-board-like brown spots with concentric rings on lower leaves, progressing upward.",
+    "organic_treatment": "Neem oil or Bacillus subtilis based biofungicide sprays.",
+    "chemical_treatment": "Mancozeb or Azoxystrobin at first sign of infection, repeat every 10 days.",
+    "recommended_pesticides": ["Mancozeb", "Azoxystrobin"],
+    "prevention_tips": ["Ensure balanced nitrogen fertilization", "Avoid water stress", "Practice crop rotation"],
+    "expected_recovery_days": 14
+  },
+  "Potato___Late_blight": {
+    "display_name": "Potato Late Blight",
+    "type": "disease",
+    "causal_agent": "Phytophthora infestans (oomycete)",
+    "description": "Irregular water-soaked lesions turning brown/purple-black, white mold on leaf undersides.",
+    "organic_treatment": "Copper oxychloride sprays; destroy infected haulms immediately.",
+    "chemical_treatment": "Cymoxanil + Mancozeb every 7 days in high humidity periods.",
+    "recommended_pesticides": ["Cymoxanil", "Mancozeb", "Metalaxyl-M"],
+    "prevention_tips": ["Plant certified seed tubers", "Hill soil around stems", "Destroy cull piles"],
+    "expected_recovery_days": 10
+  },
+  "Corn___Common_rust": {
+    "display_name": "Corn Common Rust",
+    "type": "disease",
+    "causal_agent": "Puccinia sorghi (fungus)",
+    "description": "Small, reddish-brown circular to elongated pustules on both leaf surfaces.",
+    "organic_treatment": "Sulfur-based fungicide sprays at early pustule stage.",
+    "chemical_treatment": "Propiconazole or Azoxystrobin at tasseling stage if severe.",
+    "recommended_pesticides": ["Propiconazole", "Azoxystrobin"],
+    "prevention_tips": ["Plant resistant hybrids", "Avoid dense planting", "Monitor during cool humid weather"],
+    "expected_recovery_days": 15
+  },
+  "Corn___Gray_leaf_spot": {
+    "display_name": "Corn Gray Leaf Spot",
+    "type": "disease",
+    "causal_agent": "Cercospora zeae-maydis (fungus)",
+    "description": "Rectangular gray-tan lesions running parallel to leaf veins.",
+    "organic_treatment": "Crop residue removal and biofungicide (Trichoderma-based) seed treatment.",
+    "chemical_treatment": "Strobilurin-based fungicides at early tasseling if disease pressure is high.",
+    "recommended_pesticides": ["Pyraclostrobin", "Azoxystrobin"],
+    "prevention_tips": ["Tillage to bury residue", "Crop rotation with non-host", "Resistant hybrid selection"],
+    "expected_recovery_days": 18
+  },
+  "Apple___Apple_scab": {
+    "display_name": "Apple Scab",
+    "type": "disease",
+    "causal_agent": "Venturia inaequalis (fungus)",
+    "description": "Olive-green to black velvety spots on leaves and fruit, causing premature leaf drop and fruit cracking.",
+    "organic_treatment": "Sulfur or copper sprays starting at bud break, repeated every 7-10 days.",
+    "chemical_treatment": "Myclobutanil or Captan fungicide sprays during wet spring weather.",
+    "recommended_pesticides": ["Captan", "Myclobutanil"],
+    "prevention_tips": ["Rake and destroy fallen leaves", "Prune for airflow", "Choose scab-resistant varieties"],
+    "expected_recovery_days": 21
+  },
+  "Grape___Black_rot": {
+    "display_name": "Grape Black Rot",
+    "type": "disease",
+    "causal_agent": "Guignardia bidwellii (fungus)",
+    "description": "Circular brown lesions on leaves with black margins; berries shrivel into hard black mummies.",
+    "organic_treatment": "Sulfur-based sprays and removal of mummified berries.",
+    "chemical_treatment": "Mancozeb or Myclobutanil from bud break through veraison.",
+    "recommended_pesticides": ["Mancozeb", "Myclobutanil"],
+    "prevention_tips": ["Remove mummified fruit", "Improve canopy airflow via pruning", "Apply protective fungicide before rain"],
+    "expected_recovery_days": 20
+  },
+  "Pepper___Bacterial_spot": {
+    "display_name": "Pepper Bacterial Spot",
+    "type": "disease",
+    "causal_agent": "Xanthomonas campestris pv. vesicatoria",
+    "description": "Small water-soaked spots on leaves and fruit turning brown and scabby.",
+    "organic_treatment": "Copper-based bactericide sprays, applied preventively.",
+    "chemical_treatment": "Copper + Mancozeb tank mix every 7 days during wet weather.",
+    "recommended_pesticides": ["Copper hydroxide", "Mancozeb"],
+    "prevention_tips": ["Use disease-free transplants", "Avoid working with wet foliage", "Rotate crops for 2+ years"],
+    "expected_recovery_days": 18
+  },
+  "Pest___Aphids": {
+    "display_name": "Aphid Infestation",
+    "type": "pest",
+    "causal_agent": "Aphididae (sap-sucking insects)",
+    "description": "Small green/black soft-bodied insects clustering on new growth and leaf undersides, causing curling and sticky honeydew residue.",
+    "organic_treatment": "Neem oil spray (5 ml/L) or insecticidal soap every 5-7 days; introduce ladybird beetles as biocontrol.",
+    "chemical_treatment": "Imidacloprid or Acetamiprid systemic insecticide as per label rate.",
+    "recommended_pesticides": ["Imidacloprid", "Acetamiprid", "Neem oil"],
+    "prevention_tips": ["Encourage natural predators", "Avoid excess nitrogen fertilization", "Use reflective mulch"],
+    "expected_recovery_days": 7
+  },
+  "Pest___Whitefly": {
+    "display_name": "Whitefly Infestation",
+    "type": "pest",
+    "causal_agent": "Bemisia tabaci",
+    "description": "Tiny white flying insects on leaf undersides; causes yellowing, sooty mold, and virus transmission.",
+    "organic_treatment": "Yellow sticky traps combined with neem oil spray every 5 days.",
+    "chemical_treatment": "Spiromesifen or Pyriproxyfen as per recommended dosage.",
+    "recommended_pesticides": ["Spiromesifen", "Pyriproxyfen"],
+    "prevention_tips": ["Use yellow sticky traps for monitoring", "Remove weed hosts", "Avoid planting near infested fields"],
+    "expected_recovery_days": 10
+  },
+  "Pest___Armyworm": {
+    "display_name": "Fall Armyworm",
+    "type": "pest",
+    "causal_agent": "Spodoptera frugiperda",
+    "description": "Caterpillars feeding on leaves creating ragged holes and window-pane damage, often in whorls of corn/maize.",
+    "organic_treatment": "Bacillus thuringiensis (Bt) spray applied in the evening.",
+    "chemical_treatment": "Emamectin benzoate or Chlorantraniliprole per label instructions.",
+    "recommended_pesticides": ["Emamectin benzoate", "Chlorantraniliprole", "Bt formulations"],
+    "prevention_tips": ["Early scouting of whorls", "Intercropping with legumes", "Pheromone traps for monitoring"],
+    "expected_recovery_days": 12
+  },
+  "Healthy": {
+    "display_name": "Healthy Plant",
+    "type": "healthy",
+    "causal_agent": null,
+    "description": "No visible signs of disease or pest damage detected.",
+    "organic_treatment": "No treatment needed. Continue regular monitoring.",
+    "chemical_treatment": "No treatment needed.",
+    "recommended_pesticides": [],
+    "prevention_tips": ["Continue balanced fertilization", "Maintain proper irrigation schedule", "Scout weekly for early symptoms"],
+    "expected_recovery_days": 0
+  }
+}

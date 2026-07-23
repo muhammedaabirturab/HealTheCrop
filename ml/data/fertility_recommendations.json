@@ -1,0 +1,147 @@
+{
+  "nitrogen_low": {
+    "issue": "Low Nitrogen (N)",
+    "threshold": "N < 40 kg/ha",
+    "suggestions": [
+      {
+        "name": "Urea / Ammonium Sulfate (Chemical)",
+        "why": "Nitrogen drives vegetative growth and chlorophyll production; deficiency shows as yellowing of older leaves and stunted growth.",
+        "how_to_apply": "Apply 40-60 kg/ha in split doses: 50% at sowing, 25% at tillering, 25% at flowering.",
+        "expected_improvement": "15-25% increase in nitrogen index within one crop cycle.",
+        "estimated_time": "3-4 weeks after first application"
+      },
+      {
+        "name": "Vermicompost / Farmyard Manure (Organic)",
+        "why": "Slow-release organic nitrogen improves soil structure alongside nutrient supply.",
+        "how_to_apply": "Apply 5-10 tonnes/ha, incorporated into topsoil 2-3 weeks before sowing.",
+        "expected_improvement": "10-15% increase, plus improved microbial activity.",
+        "estimated_time": "4-6 weeks"
+      },
+      {
+        "name": "Green Manure (Dhaincha / Sunhemp)",
+        "why": "Leguminous green manure fixes atmospheric nitrogen via root nodules.",
+        "how_to_apply": "Grow for 45 days then plough back into the soil before flowering.",
+        "expected_improvement": "20-30 kg N/ha added naturally.",
+        "estimated_time": "One growing cycle (45-60 days)"
+      }
+    ]
+  },
+  "phosphorus_low": {
+    "issue": "Low Phosphorus (P)",
+    "threshold": "P < 30 kg/ha",
+    "suggestions": [
+      {
+        "name": "Single Super Phosphate (Chemical)",
+        "why": "Phosphorus supports root development and flowering; deficiency causes poor root growth and delayed maturity.",
+        "how_to_apply": "Apply 50-80 kg/ha as basal dose at sowing, placed near root zone.",
+        "expected_improvement": "20% increase in P availability.",
+        "estimated_time": "One crop cycle"
+      },
+      {
+        "name": "Bone Meal / Rock Phosphate (Organic)",
+        "why": "Slow-release phosphorus source, ideal for acidic soils.",
+        "how_to_apply": "Apply 200-300 kg/ha mixed into soil before sowing.",
+        "expected_improvement": "10-15% gradual increase over multiple seasons.",
+        "estimated_time": "2-3 months"
+      }
+    ]
+  },
+  "potassium_low": {
+    "issue": "Low Potassium (K)",
+    "threshold": "K < 30 kg/ha",
+    "suggestions": [
+      {
+        "name": "Muriate of Potash (Chemical)",
+        "why": "Potassium regulates water balance and disease resistance; deficiency causes leaf-edge scorching.",
+        "how_to_apply": "Apply 40-60 kg/ha in split doses during vegetative and flowering stages.",
+        "expected_improvement": "15-20% increase in K index.",
+        "estimated_time": "3-4 weeks"
+      },
+      {
+        "name": "Wood Ash / Compost (Organic)",
+        "why": "Natural potassium source that also raises soil pH slightly.",
+        "how_to_apply": "Apply 2-3 tonnes/ha of compost enriched with wood ash.",
+        "expected_improvement": "10% gradual increase.",
+        "estimated_time": "4-6 weeks"
+      }
+    ]
+  },
+  "ph_acidic": {
+    "issue": "Acidic Soil (pH < 5.5)",
+    "threshold": "pH < 5.5",
+    "suggestions": [
+      {
+        "name": "Agricultural Lime",
+        "why": "Acidic soils lock up nutrients like P and Ca, reducing uptake efficiency.",
+        "how_to_apply": "Apply 1-2 tonnes/ha of ground limestone, tilled into topsoil 3-4 weeks before sowing.",
+        "expected_improvement": "Raises pH by 0.5-1.0 units.",
+        "estimated_time": "4-8 weeks"
+      }
+    ]
+  },
+  "ph_alkaline": {
+    "issue": "Alkaline Soil (pH > 8.0)",
+    "threshold": "pH > 8.0",
+    "suggestions": [
+      {
+        "name": "Gypsum + Organic Matter",
+        "why": "Alkaline soils suffer from poor micronutrient (Fe, Zn, Mn) availability.",
+        "how_to_apply": "Apply 2-3 tonnes/ha gypsum along with well-decomposed compost.",
+        "expected_improvement": "Lowers pH by 0.3-0.7 units, improves micronutrient availability.",
+        "estimated_time": "6-10 weeks"
+      }
+    ]
+  },
+  "moisture_low": {
+    "issue": "Low Soil Moisture",
+    "threshold": "Moisture < 30%",
+    "suggestions": [
+      {
+        "name": "Drip Irrigation / Mulching",
+        "why": "Water stress reduces nutrient transport and photosynthesis.",
+        "how_to_apply": "Install drip lines or apply 5-7 cm straw/plastic mulch to reduce evaporation.",
+        "expected_improvement": "20-30% improvement in moisture retention.",
+        "estimated_time": "Immediate to 1 week"
+      }
+    ]
+  },
+  "moisture_high": {
+    "issue": "Waterlogging / Excess Moisture",
+    "threshold": "Moisture > 85%",
+    "suggestions": [
+      {
+        "name": "Improved Drainage / Raised Beds",
+        "why": "Waterlogging suffocates roots and promotes fungal disease.",
+        "how_to_apply": "Create drainage channels or raised beds to divert excess water.",
+        "expected_improvement": "Prevents root rot, restores aeration within days.",
+        "estimated_time": "1-2 weeks"
+      }
+    ]
+  },
+  "general_rotation": {
+    "issue": "Declining Fertility Over Seasons",
+    "threshold": "Fertility score trending down over 3+ cycles",
+    "suggestions": [
+      {
+        "name": "Crop Rotation with Legumes",
+        "why": "Continuous monoculture depletes specific nutrients; legumes replenish nitrogen naturally.",
+        "how_to_apply": "Rotate cereal crops with pulses (chickpea, lentil, mungbean) every alternate season.",
+        "expected_improvement": "Sustained 10-20% fertility improvement over 2-3 cycles.",
+        "estimated_time": "1-2 growing seasons"
+      }
+    ]
+  },
+  "micronutrient_deficiency": {
+    "issue": "Micronutrient Deficiency (Zn, Fe, B)",
+    "threshold": "Visual chlorosis or historically low yield despite adequate NPK",
+    "suggestions": [
+      {
+        "name": "Zinc Sulfate / Chelated Micronutrient Spray",
+        "why": "Micronutrients are needed in small quantities but are critical for enzyme function and chlorophyll synthesis.",
+        "how_to_apply": "Foliar spray of 0.5% ZnSO4 solution at 15-day intervals during vegetative stage.",
+        "expected_improvement": "Visible greening within 1-2 weeks, yield improvement of 8-12%.",
+        "estimated_time": "2-4 weeks"
+      }
+    ]
+  }
+}

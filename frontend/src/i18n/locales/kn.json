@@ -1,0 +1,56 @@
+{
+  "app": { "name": "ಹೀಲ್ ದ ಕ್ರಾಪ್", "tagline": "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ, ಆರೋಗ್ಯಕರ ಬೆಳೆಗಳು" },
+  "languages": {
+    "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
+  },
+  "nav": {
+    "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್", "manualInput": "ಕೈಯಾರೆ ನಮೂದು", "cropRecommendation": "ಬೆಳೆ ಶಿಫಾರಸು",
+    "scanCrop": "ಬೆಳೆ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ", "reports": "ವರದಿಗಳು", "history": "ಇತಿಹಾಸ", "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+    "login": "ಲಾಗಿನ್", "logout": "ಲಾಗ್ ಔಟ್", "register": "ನೋಂದಣಿ ಮಾಡಿ"
+  },
+  "common": {
+    "submit": "ಸಲ್ಲಿಸಿ", "cancel": "ರದ್ದುಮಾಡಿ", "save": "ಉಳಿಸಿ", "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...", "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "next": "ಮುಂದೆ", "back": "ಹಿಂದೆ", "yes": "ಹೌದು", "no": "ಇಲ್ಲ", "close": "ಮುಚ್ಚಿ", "confidence": "ವಿಶ್ವಾಸ ಮಟ್ಟ",
+    "viewDetails": "ವಿವರಗಳನ್ನು ನೋಡಿ", "uploadImage": "ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ", "takePhoto": "ಫೋಟೋ ತೆಗೆಯಿರಿ"
+  },
+  "auth": {
+    "welcomeBack": "ಮತ್ತೆ ಸ್ವಾಗತ", "createAccount": "ನಿಮ್ಮ ಖಾತೆ ರಚಿಸಿ", "name": "ಪೂರ್ಣ ಹೆಸರು",
+    "email": "ಇಮೇಲ್ ವಿಳಾಸ", "password": "ಪಾಸ್‌ವರ್ಡ್", "phone": "ಫೋನ್ ಸಂಖ್ಯೆ", "location": "ಸ್ಥಳ",
+    "loginButton": "ಲಾಗಿನ್ ಮಾಡಿ", "registerButton": "ಖಾತೆ ರಚಿಸಿ",
+    "invalidCredentials": "ಅಮಾನ್ಯ ಇಮೇಲ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್", "emailExists": "ಈ ಇಮೇಲ್ ಈಗಾಗಲೇ ನೋಂದಣಿಯಾಗಿದೆ"
+  },
+  "dashboard": {
+    "title": "ಕೃಷಿ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್", "liveSensorValues": "ಲೈವ್ ಸೆನ್ಸಾರ್ ಮೌಲ್ಯಗಳು", "historicalTrends": "ಐತಿಹಾಸಿಕ ಪ್ರವೃತ್ತಿಗಳು",
+    "connectedDevices": "ಸಂಪರ್ಕಿತ ಸಾಧನಗಳು", "storageStatus": "ಸಂಗ್ರಹಣಾ ಸ್ಥಿತಿ", "lastUpdated": "ಕೊನೆಯ ನವೀಕರಣ",
+    "sensorHealth": "ಸೆನ್ಸಾರ್ ಆರೋಗ್ಯ", "systemStatus": "ಸಿಸ್ಟಮ್ ಸ್ಥಿತಿ", "soilMoisture": "ಮಣ್ಣಿನ ತೇವಾಂಶ",
+    "temperature": "ತಾಪಮಾನ", "humidity": "ಆರ್ದ್ರತೆ", "phLevel": "pH ಮಟ್ಟ", "nitrogen": "ಸಾರಜನಕ (N)",
+    "phosphorus": "ರಂಜಕ (P)", "potassium": "ಪೊಟ್ಯಾಸಿಯಮ್ (K)", "fertilityScore": "ಫಲವತ್ತತೆ ಅಂಕ"
+  },
+  "soilHealth": {
+    "excellent": "ಅತ್ಯುತ್ತಮ", "good": "ಉತ್ತಮ", "average": "ಸರಾಸರಿ", "poor": "ಕಳಪೆ", "critical": "ಗಂಭೀರ",
+    "improveFertility": "ಫಲವತ್ತತೆ ಸುಧಾರಿಸಿ", "why": "ಇದು ಏಕೆ ಅಗತ್ಯ", "how": "ಹೇಗೆ ಅನ್ವಯಿಸುವುದು",
+    "expectedImprovement": "ನಿರೀಕ್ಷಿತ ಸುಧಾರಣೆ", "estimatedTime": "ಅಂದಾಜು ಸಮಯ"
+  },
+  "manualInput": {
+    "title": "ಕೈಯಾರೆ ಮಣ್ಣಿನ ನಮೂದು", "subtitle": "IoT ಸೆನ್ಸಾರ್ ಇಲ್ಲದೆ ಪರೀಕ್ಷೆಗಾಗಿ ಮೌಲ್ಯಗಳನ್ನು ನಮೂದಿಸಿ",
+    "season": "ಋತು", "getRecommendation": "ಬೆಳೆ ಶಿಫಾರಸು ಪಡೆಯಿರಿ"
+  },
+  "cropRecommendation": {
+    "title": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು", "topPick": "ಅಗ್ರ ಶಿಫಾರಸು", "alternatives": "ಪರ್ಯಾಯ ಬೆಳೆಗಳು",
+    "suitableSeason": "ಸೂಕ್ತ ಋತು", "waterRequirement": "ನೀರಿನ ಅವಶ್ಯಕತೆ",
+    "harvestDuration": "ಕೊಯ್ಲು ಅವಧಿ", "soilSuitability": "ಮಣ್ಣಿನ ಸೂಕ್ತತೆ", "expectedYield": "ನಿರೀಕ್ಷಿತ ಇಳುವರಿ",
+    "days": "ದಿನಗಳು"
+  },
+  "pestDetection": {
+    "title": "ಕೀಟ ಮತ್ತು ರೋಗಗಳಿಗಾಗಿ ಬೆಳೆ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ", "subtitle": "ಎಲೆ, ಹಣ್ಣು, ಕಾಂಡ ಅಥವಾ ಇಡೀ ಸಸ್ಯದ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+    "diseaseName": "ರೋಗದ ಹೆಸರು", "pestName": "ಕೀಟದ ಹೆಸರು", "description": "ವಿವರಣೆ",
+    "organicTreatment": "ಸಾವಯವ ಚಿಕಿತ್ಸೆ", "chemicalTreatment": "ರಾಸಾಯನಿಕ ಚಿಕಿತ್ಸೆ",
+    "recommendedPesticides": "ಶಿಫಾರಸು ಮಾಡಿದ ಕೀಟನಾಶಕಗಳು", "preventionTips": "ತಡೆಗಟ್ಟುವ ಸಲಹೆಗಳು",
+    "recoveryTime": "ನಿರೀಕ್ಷಿತ ಚೇತರಿಕೆ ಸಮಯ", "healthyPlant": "ಈ ಸಸ್ಯ ಆರೋಗ್ಯಕರವಾಗಿ ಕಾಣುತ್ತದೆ!",
+    "analyzing": "ಫೋಟೋ ವಿಶ್ಲೇಷಣೆ ಆಗುತ್ತಿದೆ..."
+  },
+  "errors": {
+    "generic": "ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.", "network": "ನೆಟ್‌ವರ್ಕ್ ದೋಷ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ.",
+    "invalidImage": "ದಯವಿಟ್ಟು ಮಾನ್ಯ JPEG ಅಥವಾ PNG ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.", "sessionExpired": "ನಿಮ್ಮ ಸೆಷನ್ ಮುಗಿದಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಲಾಗಿನ್ ಮಾಡಿ."
+  }
+}

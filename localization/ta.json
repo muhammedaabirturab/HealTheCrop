@@ -1,0 +1,56 @@
+{
+  "app": { "name": "ஹீல் தி க்ராப்", "tagline": "ஸ்மார்ட் வேளாண்மை, ஆரோக்கியமான பயிர்கள்" },
+  "languages": {
+    "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
+  },
+  "nav": {
+    "dashboard": "டாஷ்போர்டு", "manualInput": "கைமுறை உள்ளீடு", "cropRecommendation": "பயிர் பரிந்துரை",
+    "scanCrop": "பயிரை ஸ்கேன் செய்யவும்", "reports": "அறிக்கைகள்", "history": "வரலாறு", "settings": "அமைப்புகள்",
+    "login": "உள்நுழைய", "logout": "வெளியேறு", "register": "பதிவு செய்யவும்"
+  },
+  "common": {
+    "submit": "சமர்ப்பிக்க", "cancel": "ரத்து செய்", "save": "சேமி", "loading": "ஏற்றுகிறது...", "retry": "மீண்டும் முயற்சிக்கவும்",
+    "next": "அடுத்து", "back": "பின்", "yes": "ஆம்", "no": "இல்லை", "close": "மூடு", "confidence": "நம்பகத்தன்மை",
+    "viewDetails": "விவரங்களைக் காண்க", "uploadImage": "படத்தை பதிவேற்று", "takePhoto": "புகைப்படம் எடு"
+  },
+  "auth": {
+    "welcomeBack": "மீண்டும் வரவேற்கிறோம்", "createAccount": "உங்கள் கணக்கை உருவாக்கவும்", "name": "முழு பெயர்",
+    "email": "மின்னஞ்சல் முகவரி", "password": "கடவுச்சொல்", "phone": "தொலைபேசி எண்", "location": "இடம்",
+    "loginButton": "உள்நுழைய", "registerButton": "கணக்கை உருவாக்கு",
+    "invalidCredentials": "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்", "emailExists": "இந்த மின்னஞ்சல் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது"
+  },
+  "dashboard": {
+    "title": "பண்ணை டாஷ்போர்டு", "liveSensorValues": "நேரடி சென்சார் மதிப்புகள்", "historicalTrends": "வரலாற்று போக்குகள்",
+    "connectedDevices": "இணைக்கப்பட்ட சாதனங்கள்", "storageStatus": "சேமிப்பக நிலை", "lastUpdated": "கடைசியாக புதுப்பிக்கப்பட்டது",
+    "sensorHealth": "சென்சார் ஆரோக்கியம்", "systemStatus": "கணினி நிலை", "soilMoisture": "மண் ஈரப்பதம்",
+    "temperature": "வெப்பநிலை", "humidity": "ஈரப்பதம்", "phLevel": "pH அளவு", "nitrogen": "நைட்ரஜன் (N)",
+    "phosphorus": "பாஸ்பரஸ் (P)", "potassium": "பொட்டாசியம் (K)", "fertilityScore": "வளத்தன்மை மதிப்பெண்"
+  },
+  "soilHealth": {
+    "excellent": "மிகச் சிறந்த", "good": "நல்ல", "average": "சராசரி", "poor": "மோசமான", "critical": "ஆபத்தான",
+    "improveFertility": "வளத்தன்மையை மேம்படுத்தவும்", "why": "இது ஏன் தேவை", "how": "எவ்வாறு பயன்படுத்துவது",
+    "expectedImprovement": "எதிர்பார்க்கப்படும் முன்னேற்றம்", "estimatedTime": "மதிப்பிடப்பட்ட நேரம்"
+  },
+  "manualInput": {
+    "title": "கைமுறை மண் உள்ளீடு", "subtitle": "IoT சென்சார்கள் இல்லாமல் சோதனைக்காக மதிப்புகளை உள்ளிடவும்",
+    "season": "பருவம்", "getRecommendation": "பயிர் பரிந்துரையைப் பெறவும்"
+  },
+  "cropRecommendation": {
+    "title": "பரிந்துரைக்கப்பட்ட பயிர்கள்", "topPick": "முதன்மை பரிந்துரை", "alternatives": "மாற்று பயிர்கள்",
+    "suitableSeason": "ஏற்ற பருவம்", "waterRequirement": "நீர் தேவை",
+    "harvestDuration": "அறுவடை காலம்", "soilSuitability": "மண் பொருத்தம்", "expectedYield": "எதிர்பார்க்கும் விளைச்சல்",
+    "days": "நாட்கள்"
+  },
+  "pestDetection": {
+    "title": "பூச்சி மற்றும் நோய்களுக்கு பயிரை ஸ்கேன் செய்யவும்", "subtitle": "இலை, பழம், தண்டு அல்லது முழு செடியின் புகைப்படத்தை பதிவேற்றவும்",
+    "diseaseName": "நோயின் பெயர்", "pestName": "பூச்சியின் பெயர்", "description": "விளக்கம்",
+    "organicTreatment": "இயற்கை சிகிச்சை", "chemicalTreatment": "இரசாயன சிகிச்சை",
+    "recommendedPesticides": "பரிந்துரைக்கப்பட்ட பூச்சிக்கொல்லிகள்", "preventionTips": "தடுப்பு குறிப்புகள்",
+    "recoveryTime": "எதிர்பார்க்கப்படும் குணமடையும் நேரம்", "healthyPlant": "இந்த செடி ஆரோக்கியமாக உள்ளது!",
+    "analyzing": "படம் பகுப்பாய்வு செய்யப்படுகிறது..."
+  },
+  "errors": {
+    "generic": "ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்.", "network": "நெட்வொர்க் பிழை. உங்கள் இணைப்பை சரிபார்க்கவும்.",
+    "invalidImage": "சரியான JPEG அல்லது PNG படத்தை பதிவேற்றவும்.", "sessionExpired": "உங்கள் அமர்வு காலாவதியானது. மீண்டும் உள்நுழையவும்."
+  }
+}

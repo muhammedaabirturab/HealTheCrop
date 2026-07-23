@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+*.db
+
+# Crop recommendation model + dataset ARE committed (small, keeps the app
+# functional out of the box). Only the optional trained CNN + raw image
+# dataset are excluded, since those require a multi-GB PlantVillage-style
+# download the repo intentionally doesn't ship (see cv/scripts/train_disease_model.py).
+cv/models/*.h5
+cv/models/class_indices.json
+datasets/plantvillage/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/dev-dist/
+
+# Env files (commit only .env.example)
+.env
+.env.local
+backend/.env
+frontend/.env
+
+# Storage
+backend/storage/local/
+storage/local/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test artifacts
+.coverage
+htmlcov/
+.pytest_cache/

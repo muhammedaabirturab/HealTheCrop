@@ -1,0 +1,56 @@
+{
+  "app": { "name": "HealTheCrop", "tagline": "Smart Farming, Healthier Crops" },
+  "languages": {
+    "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
+  },
+  "nav": {
+    "dashboard": "Dashboard", "manualInput": "Manual Input", "cropRecommendation": "Crop Recommendation",
+    "scanCrop": "Scan Crop", "reports": "Reports", "history": "History", "settings": "Settings",
+    "login": "Login", "logout": "Logout", "register": "Register"
+  },
+  "common": {
+    "submit": "Submit", "cancel": "Cancel", "save": "Save", "loading": "Loading...", "retry": "Retry",
+    "next": "Next", "back": "Back", "yes": "Yes", "no": "No", "close": "Close", "confidence": "Confidence",
+    "viewDetails": "View Details", "uploadImage": "Upload Image", "takePhoto": "Take Photo"
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back", "createAccount": "Create Your Account", "name": "Full Name",
+    "email": "Email Address", "password": "Password", "phone": "Phone Number", "location": "Location",
+    "loginButton": "Log In", "registerButton": "Create Account",
+    "invalidCredentials": "Invalid email or password", "emailExists": "This email is already registered"
+  },
+  "dashboard": {
+    "title": "Farm Dashboard", "liveSensorValues": "Live Sensor Values", "historicalTrends": "Historical Trends",
+    "connectedDevices": "Connected Devices", "storageStatus": "Storage Status", "lastUpdated": "Last Updated",
+    "sensorHealth": "Sensor Health", "systemStatus": "System Status", "soilMoisture": "Soil Moisture",
+    "temperature": "Temperature", "humidity": "Humidity", "phLevel": "pH Level", "nitrogen": "Nitrogen (N)",
+    "phosphorus": "Phosphorus (P)", "potassium": "Potassium (K)", "fertilityScore": "Fertility Score"
+  },
+  "soilHealth": {
+    "excellent": "Excellent", "good": "Good", "average": "Average", "poor": "Poor", "critical": "Critical",
+    "improveFertility": "Improve Fertility", "why": "Why it is needed", "how": "How to apply",
+    "expectedImprovement": "Expected Improvement", "estimatedTime": "Estimated Time"
+  },
+  "manualInput": {
+    "title": "Manual Soil Input", "subtitle": "Enter values manually for testing without IoT sensors",
+    "season": "Season", "getRecommendation": "Get Crop Recommendation"
+  },
+  "cropRecommendation": {
+    "title": "Recommended Crops", "topPick": "Top Recommendation", "alternatives": "Alternative Crops",
+    "suitableSeason": "Suitable Season", "waterRequirement": "Water Requirement",
+    "harvestDuration": "Harvest Duration", "soilSuitability": "Soil Suitability", "expectedYield": "Expected Yield",
+    "days": "days"
+  },
+  "pestDetection": {
+    "title": "Scan Crop for Pests & Diseases", "subtitle": "Upload a photo of a leaf, fruit, stem, or whole plant",
+    "diseaseName": "Disease Name", "pestName": "Pest Name", "description": "Description",
+    "organicTreatment": "Organic Treatment", "chemicalTreatment": "Chemical Treatment",
+    "recommendedPesticides": "Recommended Pesticides", "preventionTips": "Prevention Tips",
+    "recoveryTime": "Expected Recovery Time", "healthyPlant": "This plant looks healthy!",
+    "analyzing": "Analyzing image..."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.", "network": "Network error. Check your connection.",
+    "invalidImage": "Please upload a valid JPEG or PNG image.", "sessionExpired": "Your session has expired. Please log in again."
+  }
+}

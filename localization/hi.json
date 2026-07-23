@@ -1,0 +1,56 @@
+{
+  "app": { "name": "हील द क्रॉप", "tagline": "स्मार्ट खेती, स्वस्थ फसलें" },
+  "languages": {
+    "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
+  },
+  "nav": {
+    "dashboard": "डैशबोर्ड", "manualInput": "मैनुअल इनपुट", "cropRecommendation": "फसल सिफारिश",
+    "scanCrop": "फसल स्कैन करें", "reports": "रिपोर्ट", "history": "इतिहास", "settings": "सेटिंग्स",
+    "login": "लॉगिन", "logout": "लॉगआउट", "register": "पंजीकरण करें"
+  },
+  "common": {
+    "submit": "जमा करें", "cancel": "रद्द करें", "save": "सहेजें", "loading": "लोड हो रहा है...", "retry": "पुनः प्रयास करें",
+    "next": "अगला", "back": "पीछे", "yes": "हाँ", "no": "नहीं", "close": "बंद करें", "confidence": "विश्वास स्तर",
+    "viewDetails": "विवरण देखें", "uploadImage": "फोटो अपलोड करें", "takePhoto": "फोटो खींचें"
+  },
+  "auth": {
+    "welcomeBack": "वापसी पर स्वागत है", "createAccount": "अपना खाता बनाएं", "name": "पूरा नाम",
+    "email": "ईमेल पता", "password": "पासवर्ड", "phone": "फ़ोन नंबर", "location": "स्थान",
+    "loginButton": "लॉगिन करें", "registerButton": "खाता बनाएं",
+    "invalidCredentials": "अमान्य ईमेल या पासवर्ड", "emailExists": "यह ईमेल पहले से पंजीकृत है"
+  },
+  "dashboard": {
+    "title": "खेत डैशबोर्ड", "liveSensorValues": "लाइव सेंसर मान", "historicalTrends": "ऐतिहासिक रुझान",
+    "connectedDevices": "जुड़े हुए उपकरण", "storageStatus": "स्टोरेज स्थिति", "lastUpdated": "अंतिम अद्यतन",
+    "sensorHealth": "सेंसर स्वास्थ्य", "systemStatus": "सिस्टम स्थिति", "soilMoisture": "मिट्टी की नमी",
+    "temperature": "तापमान", "humidity": "आर्द्रता", "phLevel": "पीएच स्तर", "nitrogen": "नाइट्रोजन (N)",
+    "phosphorus": "फॉस्फोरस (P)", "potassium": "पोटेशियम (K)", "fertilityScore": "उर्वरता स्कोर"
+  },
+  "soilHealth": {
+    "excellent": "उत्कृष्ट", "good": "अच्छा", "average": "औसत", "poor": "खराब", "critical": "गंभीर",
+    "improveFertility": "उर्वरता सुधारें", "why": "यह क्यों आवश्यक है", "how": "कैसे लगाएं",
+    "expectedImprovement": "अपेक्षित सुधार", "estimatedTime": "अनुमानित समय"
+  },
+  "manualInput": {
+    "title": "मैनुअल मिट्टी इनपुट", "subtitle": "IoT सेंसर के बिना परीक्षण के लिए मान मैन्युअल रूप से दर्ज करें",
+    "season": "मौसम", "getRecommendation": "फसल सिफारिश प्राप्त करें"
+  },
+  "cropRecommendation": {
+    "title": "अनुशंसित फसलें", "topPick": "शीर्ष सिफारिश", "alternatives": "वैकल्पिक फसलें",
+    "suitableSeason": "उपयुक्त मौसम", "waterRequirement": "पानी की आवश्यकता",
+    "harvestDuration": "फसल अवधि", "soilSuitability": "मिट्टी की उपयुक्तता", "expectedYield": "अपेक्षित उपज",
+    "days": "दिन"
+  },
+  "pestDetection": {
+    "title": "कीट और रोगों के लिए फसल स्कैन करें", "subtitle": "पत्ती, फल, तना या पूरे पौधे की फोटो अपलोड करें",
+    "diseaseName": "रोग का नाम", "pestName": "कीट का नाम", "description": "विवरण",
+    "organicTreatment": "जैविक उपचार", "chemicalTreatment": "रासायनिक उपचार",
+    "recommendedPesticides": "अनुशंसित कीटनाशक", "preventionTips": "बचाव के उपाय",
+    "recoveryTime": "अपेक्षित रिकवरी समय", "healthyPlant": "यह पौधा स्वस्थ दिखता है!",
+    "analyzing": "फोटो का विश्लेषण हो रहा है..."
+  },
+  "errors": {
+    "generic": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।", "network": "नेटवर्क त्रुटि। अपना कनेक्शन जांचें।",
+    "invalidImage": "कृपया एक मान्य JPEG या PNG फोटो अपलोड करें।", "sessionExpired": "आपका सत्र समाप्त हो गया है। कृपया फिर से लॉगिन करें।"
+  }
+}

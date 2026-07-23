@@ -1,0 +1,54 @@
+#ifndef HEALTHECROP_CONFIG_H
+#define HEALTHECROP_CONFIG_H
+
+// ---------------------------------------------------------------------------
+// Wi-Fi credentials — replace with your network's SSID/password before flashing.
+// ---------------------------------------------------------------------------
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+
+// ---------------------------------------------------------------------------
+// Backend API — point this at your HealTheCrop FastAPI server.
+// Use your machine's LAN IP (not localhost) when testing with real hardware,
+// e.g. "http://192.168.1.42:8000/api/v1/sensors/ingest"
+// ---------------------------------------------------------------------------
+#define API_BASE_URL "http://192.168.1.100:8000/api/v1/sensors/ingest"
+
+// Unique identifier for this field node. Change per-device if deploying more than one.
+#define DEVICE_UID "ESP32-FIELD-001"
+
+// ---------------------------------------------------------------------------
+// Pin assignments
+// ---------------------------------------------------------------------------
+#define PIN_DHT11 4          // DHT11 temperature/humidity sensor data pin
+#define PIN_SOIL_MOISTURE 34 // FC-28 soil moisture sensor analog output (ADC1 channel)
+#define PIN_PH_SENSOR 35     // Analog pH Sensor Module V1.1 analog output (ADC1 channel)
+#define PIN_NPK_RX 16        // NPK sensor RS485/UART RX (if fitted)
+#define PIN_NPK_TX 17        // NPK sensor RS485/UART TX (if fitted)
+#define PIN_STATUS_LED 2     // Onboard LED used for connection status
+
+// Set to true only if an RS485 NPK sensor (e.g. JXCT 7-in-1) is physically connected.
+#define NPK_SENSOR_ATTACHED false
+
+// ---------------------------------------------------------------------------
+// Timing
+// ---------------------------------------------------------------------------
+#define SENSOR_READ_INTERVAL_MS 30000UL     // Read + upload every 30 seconds
+#define WIFI_RECONNECT_INTERVAL_MS 5000UL   // Retry Wi-Fi every 5 seconds while disconnected
+#define WIFI_CONNECT_TIMEOUT_MS 15000UL     // Give up on a connection attempt after 15 seconds
+#define HTTP_TIMEOUT_MS 8000UL
+
+// ---------------------------------------------------------------------------
+// Calibration — FC-28 raw ADC readings at fully dry / fully saturated soil.
+// Calibrate these against your specific sensor + soil for accurate % readings.
+// ---------------------------------------------------------------------------
+#define SOIL_ADC_DRY 3000
+#define SOIL_ADC_WET 1200
+
+// pH sensor calibration: two-point calibration voltage readings at known buffer solutions.
+#define PH_VOLTAGE_4 3.10   // Voltage measured in pH 4.0 buffer
+#define PH_VOLTAGE_7 2.55   // Voltage measured in pH 7.0 buffer
+#define ADC_VREF 3.3
+#define ADC_RESOLUTION 4095.0
+
+#endif // HEALTHECROP_CONFIG_H

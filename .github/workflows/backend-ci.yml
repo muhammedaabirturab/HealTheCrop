@@ -1,0 +1,43 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main]
+    paths: ["backend/**", "ml/**", "cv/data/**", "localization/**", ".github/workflows/backend-ci.yml"]
+  pull_request:
+    branches: [main]
+    paths: ["backend/**", "ml/**", "cv/data/**", "localization/**", ".github/workflows/backend-ci.yml"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: |
+            backend/requirements.txt
+            ml/requirements.txt
+
+      - name: Install ML + backend dependencies
+        run: |
+          pip install -r ml/requirements.txt
+          pip install -r backend/requirements-dev.txt
+
+      - name: Generate dataset and train crop model
+        run: |
+          python ml/scripts/generate_dataset.py
+          python ml/scripts/train_model.py
+
+      - name: Run backend test suite
+        working-directory: backend
+        run: pytest tests/ -v --cov=app --cov-report=term-missing
+
+      - name: Lint with ruff
+        working-directory: backend
+        run: |
+          pip install ruff==0.5.6
+          ruff check app --line-length=120

@@ -1,0 +1,56 @@
+{
+  "app": { "name": "హీల్ ది క్రాప్", "tagline": "స్మార్ట్ వ్యవసాయం, ఆరోగ్యకరమైన పంటలు" },
+  "languages": {
+    "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
+  },
+  "nav": {
+    "dashboard": "డాష్‌బోర్డ్", "manualInput": "మాన్యువల్ ఇన్‌పుట్", "cropRecommendation": "పంట సిఫార్సు",
+    "scanCrop": "పంటను స్కాన్ చేయండి", "reports": "నివేదికలు", "history": "చరిత్ర", "settings": "సెట్టింగ్‌లు",
+    "login": "లాగిన్", "logout": "లాగ్ అవుట్", "register": "నమోదు చేయండి"
+  },
+  "common": {
+    "submit": "సమర్పించండి", "cancel": "రద్దు చేయండి", "save": "సేవ్ చేయండి", "loading": "లోడ్ అవుతోంది...", "retry": "మళ్లీ ప్రయత్నించండి",
+    "next": "తదుపరి", "back": "వెనుకకు", "yes": "అవును", "no": "కాదు", "close": "మూసివేయండి", "confidence": "విశ్వాస స్థాయి",
+    "viewDetails": "వివరాలు చూడండి", "uploadImage": "ఫోటో అప్‌లోడ్ చేయండి", "takePhoto": "ఫోటో తీయండి"
+  },
+  "auth": {
+    "welcomeBack": "తిరిగి స్వాగతం", "createAccount": "మీ ఖాతాను సృష్టించండి", "name": "పూర్తి పేరు",
+    "email": "ఇమెయిల్ చిరునామా", "password": "పాస్‌వర్డ్", "phone": "ఫోన్ నంబర్", "location": "ప్రాంతం",
+    "loginButton": "లాగిన్ చేయండి", "registerButton": "ఖాతా సృష్టించండి",
+    "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్‌వర్డ్", "emailExists": "ఈ ఇమెయిల్ ఇప్పటికే నమోదైంది"
+  },
+  "dashboard": {
+    "title": "వ్యవసాయ డాష్‌బోర్డ్", "liveSensorValues": "ప్రత్యక్ష సెన్సార్ విలువలు", "historicalTrends": "చారిత్రక ధోరణులు",
+    "connectedDevices": "అనుసంధానిత పరికరాలు", "storageStatus": "నిల్వ స్థితి", "lastUpdated": "చివరిగా నవీకరించబడింది",
+    "sensorHealth": "సెన్సార్ ఆరోగ్యం", "systemStatus": "సిస్టమ్ స్థితి", "soilMoisture": "నేల తేమ",
+    "temperature": "ఉష్ణోగ్రత", "humidity": "తేమ", "phLevel": "pH స్థాయి", "nitrogen": "నత్రజని (N)",
+    "phosphorus": "భాస్వరం (P)", "potassium": "పొటాషియం (K)", "fertilityScore": "సారవంత స్కోరు"
+  },
+  "soilHealth": {
+    "excellent": "అద్భుతం", "good": "మంచిది", "average": "సగటు", "poor": "పేలవం", "critical": "ప్రమాదకరం",
+    "improveFertility": "సారవంతం మెరుగుపరచండి", "why": "ఇది ఎందుకు అవసరం", "how": "ఎలా వేయాలి",
+    "expectedImprovement": "ఊహించిన మెరుగుదల", "estimatedTime": "అంచనా సమయం"
+  },
+  "manualInput": {
+    "title": "మాన్యువల్ నేల ఇన్‌పుట్", "subtitle": "IoT సెన్సార్లు లేకుండా పరీక్ష కోసం విలువలను నమోదు చేయండి",
+    "season": "సీజన్", "getRecommendation": "పంట సిఫార్సు పొందండి"
+  },
+  "cropRecommendation": {
+    "title": "సిఫార్సు చేసిన పంటలు", "topPick": "అగ్ర సిఫార్సు", "alternatives": "ప్రత్యామ్నాయ పంటలు",
+    "suitableSeason": "అనుకూల సీజన్", "waterRequirement": "నీటి అవసరం",
+    "harvestDuration": "పంట కాలం", "soilSuitability": "నేల అనుకూలత", "expectedYield": "ఊహించిన దిగుబడి",
+    "days": "రోజులు"
+  },
+  "pestDetection": {
+    "title": "పురుగులు మరియు వ్యాధుల కోసం పంటను స్కాన్ చేయండి", "subtitle": "ఆకు, పండు, కాండం లేదా మొత్తం మొక్క ఫోటోను అప్‌లోడ్ చేయండి",
+    "diseaseName": "వ్యాధి పేరు", "pestName": "పురుగు పేరు", "description": "వివరణ",
+    "organicTreatment": "సేంద్రీయ చికిత్స", "chemicalTreatment": "రసాయన చికిత్స",
+    "recommendedPesticides": "సిఫార్సు చేసిన పురుగుమందులు", "preventionTips": "నివారణ చిట్కాలు",
+    "recoveryTime": "ఊహించిన కోలుకునే సమయం", "healthyPlant": "ఈ మొక్క ఆరోగ్యంగా కనిపిస్తోంది!",
+    "analyzing": "ఫోటో విశ్లేషించబడుతోంది..."
+  },
+  "errors": {
+    "generic": "ఏదో తప్పు జరిగింది. దయచేసి మళ్లీ ప్రయత్నించండి.", "network": "నెట్‌వర్క్ లోపం. మీ కనెక్షన్‌ని తనిఖీ చేయండి.",
+    "invalidImage": "దయచేసి చెల్లుబాటు అయ్యే JPEG లేదా PNG ఫోటోను అప్‌లోడ్ చేయండి.", "sessionExpired": "మీ సెషన్ ముగిసింది. దయచేసి మళ్లీ లాగిన్ చేయండి."
+  }
+}
