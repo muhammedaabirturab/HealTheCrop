@@ -27,7 +27,10 @@ import pandas as pd
 from pathlib import Path
 
 SEED = 42
-SAMPLES_PER_CROP = 150
+# Applies only to the 30 crops without real public data (see REAL_DATA_CROPS
+# below) — the 22 real-data crops keep their true row count (100 each) rather
+# than being padded with fabricated rows to match.
+SAMPLES_PER_CROP = 200
 REAL_DATASET_PATH = Path(__file__).resolve().parents[2] / "datasets" / "real_sources" / "crop_recommendation_public_22crops.csv"
 
 

@@ -33,7 +33,7 @@ const DEFAULT_FORM: FormState = {
 interface PredictionResult {
   recommended_crop: string
   confidence: number
-  alternatives: { crop: string; confidence: number; crop_details: Record<string, unknown> }[]
+  alternatives: { crop: string; confidence: number; suitability_tier: string; crop_details: Record<string, unknown> }[]
   crop_details: Record<string, unknown>
   feature_importance: Record<string, number>
   season_used: string
@@ -109,11 +109,12 @@ export default function ManualInput() {
   ]
 
   const buildCard = (
-    crop: string, confidence: number, details: Record<string, unknown>, highlight: boolean,
+    crop: string, confidence: number, suitabilityTier: string, details: Record<string, unknown>, highlight: boolean,
   ): CropCardData => {
     return {
       crop,
       confidence,
+      suitabilityTier,
       highlight,
       display_name: (details.display_name as string) || crop,
       image: (details.image as string) || 'placeholder.jpg',
@@ -208,7 +209,7 @@ export default function ManualInput() {
                 badge is that crop's own independent suitability score, not the
                 classifier's comparative pick confidence shown in the summary card above. */}
             {result.alternatives.map((alt, index) => (
-              <CropCard key={alt.crop} data={buildCard(alt.crop, alt.confidence, alt.crop_details, index === 0)} />
+              <CropCard key={alt.crop} data={buildCard(alt.crop, alt.confidence, alt.suitability_tier, alt.crop_details, index === 0)} />
             ))}
           </div>
         </div>

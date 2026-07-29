@@ -106,6 +106,7 @@ Open http://localhost:5173. API docs (Swagger UI) are at http://localhost:8000/d
 - [UML Diagrams](docs/uml_diagrams.md)
 - [Hardware Wiring](docs/hardware_wiring.md)
 - [Testing Report](docs/testing_report.md)
+- [ML Model Evaluation Report](docs/ml_evaluation_report.md)
 - [Future Scope](docs/future_scope.md)
 
 ## License

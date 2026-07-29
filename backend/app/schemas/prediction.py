@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class ManualPredictionRequest(BaseModel):
@@ -35,6 +35,7 @@ class CropDetails(BaseModel):
 class CropAlternative(BaseModel):
     crop: str
     confidence: float
+    suitability_tier: str = "moderate"  # excellent | very_suitable | suitable | moderate | poor
     crop_details: CropDetails | dict = {}
 
 
@@ -62,8 +63,11 @@ class PredictionResponse(BaseModel):
 
 
 class ModelInfoResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
+
     accuracy: float | None
     cv_mean_accuracy: float | None
     weighted_f1: float | None
     n_classes: int
     classes: list[str]
+    model_selected: str | None = None
