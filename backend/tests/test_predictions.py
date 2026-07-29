@@ -11,10 +11,11 @@ def test_manual_prediction_returns_valid_crop(client, auth_token):
     body = resp.json()
     assert body["recommended_crop"]
     assert 0 <= body["confidence"] <= 1
-    assert 1 <= len(body["alternatives"]) <= 6
-    # Every alternative should independently clear 50% confidence, except the
-    # single-item fallback used when nothing clears the bar for these inputs.
-    assert len(body["alternatives"]) == 1 or all(alt["confidence"] >= 0.5 for alt in body["alternatives"])
+    assert len(body["alternatives"]) == 6
+    # Independent confidences should actually be ranked, not identical placeholders.
+    confidences = [alt["confidence"] for alt in body["alternatives"]]
+    assert confidences == sorted(confidences, reverse=True)
+    assert len(set(confidences)) > 1
     assert "crop_details" in body
     assert body["season_used"] == "summer"
     assert body["explanation"]

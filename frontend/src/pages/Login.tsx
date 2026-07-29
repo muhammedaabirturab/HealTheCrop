@@ -37,7 +37,7 @@ export default function Login() {
 
   return (
     <div className="flex-1 flex items-center justify-center px-4 py-10">
-      <form onSubmit={handleSubmit} className="card w-full max-w-md p-8 flex flex-col gap-4">
+      <form onSubmit={handleSubmit} autoComplete="off" className="card w-full max-w-md p-8 flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-forest-dark text-center">{t('auth.welcomeBack')}</h1>
 
         <label className="flex flex-col gap-1 text-sm font-semibold text-earth-dark">
@@ -45,6 +45,7 @@ export default function Login() {
           <input
             type="email"
             required
+            autoComplete="off"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="border border-forest/30 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-forest"
@@ -56,6 +57,7 @@ export default function Login() {
           <input
             type="password"
             required
+            autoComplete="off"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="border border-forest/30 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-forest"

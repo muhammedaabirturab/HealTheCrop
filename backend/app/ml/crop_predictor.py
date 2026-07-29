@@ -142,19 +142,18 @@ class CropPredictor:
         independent = self._independent_confidences(X)
         ranked_independent = sorted(independent.items(), key=lambda kv: kv[1], reverse=True)
 
-        MIN_CONFIDENCE = 0.50
+        # Always the top 6 by independent confidence — a confident, unambiguous
+        # prediction (very common: many crops have near-zero independent score
+        # once one clearly dominates) is not a reason to show fewer than 6;
+        # the farmer still benefits from seeing the next-best alternatives.
         MAX_RESULTS = 6
-        qualifying = [(crop, score) for crop, score in ranked_independent if score >= MIN_CONFIDENCE][:MAX_RESULTS]
-        if not qualifying:
-            # Nothing clears the bar independently — still surface the single
-            # best guess rather than leaving the farmer with an empty screen.
-            qualifying = ranked_independent[:1]
+        top6 = ranked_independent[:MAX_RESULTS]
 
         alternatives = [
             {"crop": crop, "confidence": round(float(score), 4), "crop_details": self.crop_metadata.get(crop, {})}
-            for crop, score in qualifying
+            for crop, score in top6
         ]
-        best_crop = qualifying[0][0]
+        best_crop = top6[0][0]
         # "Prediction Confidence" reflects how sure the classifier is that
         # best_crop specifically is the single right answer among all 52
         # crops (a comparative, classification-style measure) — distinct from
