@@ -47,6 +47,20 @@
     "autoDetected": "ಸ್ವಯಂ ಪತ್ತೆಯಾಗಿದೆ", "change": "ಬದಲಾಯಿಸಿ", "selectState": "ನಿಮ್ಮ ರಾಜ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
     "searchPlaceholder": "ರಾಜ್ಯಗಳನ್ನು ಹುಡುಕಿ...", "noResults": "ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ"
   },
+  "states": {
+    "Andhra Pradesh": "ಆಂಧ್ರ ಪ್ರದೇಶ", "Arunachal Pradesh": "ಅರುಣಾಚಲ ಪ್ರದೇಶ", "Assam": "ಅಸ್ಸಾಂ",
+    "Bihar": "ಬಿಹಾರ", "Chhattisgarh": "ಛತ್ತೀಸ್‌ಗಢ", "Goa": "ಗೋವಾ",
+    "Gujarat": "ಗುಜರಾತ್", "Haryana": "ಹರಿಯಾಣ", "Himachal Pradesh": "ಹಿಮಾಚಲ ಪ್ರದೇಶ",
+    "Jharkhand": "ಜಾರ್ಖಂಡ್", "Karnataka": "ಕರ್ನಾಟಕ", "Kerala": "ಕೇರಳ",
+    "Madhya Pradesh": "ಮಧ್ಯ ಪ್ರದೇಶ", "Maharashtra": "ಮಹಾರಾಷ್ಟ್ರ", "Manipur": "ಮಣಿಪುರ",
+    "Meghalaya": "ಮೇಘಾಲಯ", "Mizoram": "ಮಿಜೋರಾಂ", "Nagaland": "ನಾಗಾಲ್ಯಾಂಡ್",
+    "Odisha": "ಒಡಿಶಾ", "Punjab": "ಪಂಜಾಬ್", "Rajasthan": "ರಾಜಸ್ಥಾನ",
+    "Sikkim": "ಸಿಕ್ಕಿಂ", "Tamil Nadu": "ತಮಿಳುನಾಡು", "Telangana": "ತೆಲಂಗಾಣ",
+    "Tripura": "ತ್ರಿಪುರಾ", "Uttar Pradesh": "ಉತ್ತರ ಪ್ರದೇಶ", "Uttarakhand": "ಉತ್ತರಾಖಂಡ",
+    "West Bengal": "ಪಶ್ಚಿಮ ಬಂಗಾಳ", "Andaman and Nicobar Islands": "ಅಂಡಮಾನ್ ಮತ್ತು ನಿಕೋಬಾರ್ ದ್ವೀಪಗಳು", "Chandigarh": "ಚಂಡೀಗಢ",
+    "Dadra and Nagar Haveli and Daman and Diu": "ದಾದ್ರಾ ಮತ್ತು ನಗರ್ ಹವೇಲಿ ಮತ್ತು ದಮನ್ ಮತ್ತು ದಿಯು", "Delhi (NCT)": "ದೆಹಲಿ (ಎನ್‌ಸಿಟಿ)", "Jammu and Kashmir": "ಜಮ್ಮು ಮತ್ತು ಕಾಶ್ಮೀರ",
+    "Ladakh": "ಲಡಾಖ್", "Lakshadweep": "ಲಕ್ಷದ್ವೀಪ", "Puducherry": "ಪುದುಚೇರಿ"
+  },
   "dashboard": {
     "title": "ಕೃಷಿ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್", "liveSensorValues": "ಲೈವ್ ಸೆನ್ಸಾರ್ ಮೌಲ್ಯಗಳು", "historicalTrends": "ಐತಿಹಾಸಿಕ ಪ್ರವೃತ್ತಿಗಳು",
     "connectedDevices": "ಸಂಪರ್ಕಿತ ಸಾಧನಗಳು", "storageStatus": "ಸಂಗ್ರಹಣಾ ಸ್ಥಿತಿ", "lastUpdated": "ಕೊನೆಯ ನವೀಕರಣ",

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { MapPin, ChevronDown, Loader2 } from 'lucide-react'
-import { ALL_INDIAN_REGIONS } from '../lib/indianStates'
+import { ALL_INDIAN_REGIONS, translateRegion } from '../lib/indianStates'
 
 type Mode = 'prompt' | 'detecting' | 'detected' | 'manual' | 'unsupported'
 
@@ -43,8 +43,13 @@ export default function LocationPicker({ value, onChange }: Props) {
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase()
     if (!q) return ALL_INDIAN_REGIONS
-    return ALL_INDIAN_REGIONS.filter((region) => region.toLowerCase().includes(q))
-  }, [search])
+    // Match against both the canonical English name and the translated
+    // name in the active language, so search works regardless of whether
+    // the farmer types in English or their own language.
+    return ALL_INDIAN_REGIONS.filter((region) =>
+      region.toLowerCase().includes(q) || translateRegion(t, region).toLowerCase().includes(q),
+    )
+  }, [search, t])
 
   const handleAllow = () => {
     setMode('detecting')
@@ -52,8 +57,13 @@ export default function LocationPicker({ value, onChange }: Props) {
       async (position) => {
         try {
           const { latitude, longitude } = position.coords
+          // accept-language=en forces the canonical English state name
+          // regardless of the browser's own locale settings — onChange()
+          // must always receive the same English identifier the backend/ML
+          // model expects, independent of which language HealTheCrop's UI
+          // is currently displaying.
           const res = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=5&addressdetails=1`,
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=5&addressdetails=1&accept-language=en`,
             { headers: { Accept: 'application/json' } },
           )
           const data = await res.json()
@@ -102,9 +112,9 @@ export default function LocationPicker({ value, onChange }: Props) {
   if (mode === 'detected') {
     return (
       <div className="flex items-center justify-between border border-forest/30 rounded-lg px-3 py-3">
-        <span className="flex items-center gap-2 text-sm font-semibold text-forest-dark">
-          <MapPin size={16} className="text-forest" />
-          {t('location.autoDetected')}: {value}
+        <span className="flex items-center gap-2 text-sm font-semibold text-forest-dark break-words">
+          <MapPin size={16} className="text-forest shrink-0" />
+          {t('location.autoDetected')}: {translateRegion(t, value)}
         </span>
         <button type="button" onClick={() => setMode('manual')} className="text-xs font-semibold text-forest underline">
           {t('location.change')}
@@ -121,10 +131,10 @@ export default function LocationPicker({ value, onChange }: Props) {
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between border border-forest/30 rounded-lg px-3 py-3 text-sm text-left"
       >
-        <span className={value ? 'text-forest-dark font-semibold' : 'text-gray-400'}>
-          {value || t('location.selectState')}
+        <span className={`break-words ${value ? 'text-forest-dark font-semibold' : 'text-gray-400'}`}>
+          {value ? translateRegion(t, value) : t('location.selectState')}
         </span>
-        <ChevronDown size={16} className={`text-forest transition-transform ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown size={16} className={`text-forest transition-transform shrink-0 ${open ? 'rotate-180' : ''}`} />
       </button>
 
       {open && (
@@ -150,11 +160,11 @@ export default function LocationPicker({ value, onChange }: Props) {
                   setSearch('')
                   setOpen(false)
                 }}
-                className={`w-full text-left px-3 py-2 text-sm hover:bg-forest/5 ${
+                className={`w-full text-left break-words px-3 py-2 text-sm hover:bg-forest/5 ${
                   region === value ? 'bg-forest/10 font-semibold text-forest-dark' : 'text-earth-dark'
                 }`}
               >
-                {region}
+                {translateRegion(t, region)}
               </button>
             ))}
           </div>

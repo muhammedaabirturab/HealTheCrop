@@ -47,6 +47,20 @@
     "autoDetected": "స్వయంచాలకంగా గుర్తించబడింది", "change": "మార్చు", "selectState": "మీ రాష్ట్రాన్ని ఎంచుకోండి",
     "searchPlaceholder": "రాష్ట్రాలను శోధించండి...", "noResults": "ఫలితాలు కనుగొనబడలేదు"
   },
+  "states": {
+    "Andhra Pradesh": "ఆంధ్ర ప్రదేశ్", "Arunachal Pradesh": "అరుణాచల్ ప్రదేశ్", "Assam": "అస్సాం",
+    "Bihar": "బీహార్", "Chhattisgarh": "ఛత్తీస్‌గఢ్", "Goa": "గోవా",
+    "Gujarat": "గుజరాత్", "Haryana": "హర్యానా", "Himachal Pradesh": "హిమాచల్ ప్రదేశ్",
+    "Jharkhand": "జార్ఖండ్", "Karnataka": "కర్ణాటక", "Kerala": "కేరళ",
+    "Madhya Pradesh": "మధ్య ప్రదేశ్", "Maharashtra": "మహారాష్ట్ర", "Manipur": "మణిపూర్",
+    "Meghalaya": "మేఘాలయ", "Mizoram": "మిజోరాం", "Nagaland": "నాగాలాండ్",
+    "Odisha": "ఒడిశా", "Punjab": "పంజాబ్", "Rajasthan": "రాజస్థాన్",
+    "Sikkim": "సిక్కిం", "Tamil Nadu": "తమిళనాడు", "Telangana": "తెలంగాణ",
+    "Tripura": "త్రిపుర", "Uttar Pradesh": "ఉత్తర ప్రదేశ్", "Uttarakhand": "ఉత్తరాఖండ్",
+    "West Bengal": "పశ్చిమ బెంగాల్", "Andaman and Nicobar Islands": "అండమాన్ నికోబార్ దీవులు", "Chandigarh": "చండీగఢ్",
+    "Dadra and Nagar Haveli and Daman and Diu": "దాద్రా నగర్ హవేలీ మరియు డామన్ డయ్యూ", "Delhi (NCT)": "ఢిల్లీ (ఎన్‌సిటి)", "Jammu and Kashmir": "జమ్మూ కాశ్మీర్",
+    "Ladakh": "లడఖ్", "Lakshadweep": "లక్షద్వీప్", "Puducherry": "పుదుచ్చేరి"
+  },
   "dashboard": {
     "title": "వ్యవసాయ డాష్‌బోర్డ్", "liveSensorValues": "ప్రత్యక్ష సెన్సార్ విలువలు", "historicalTrends": "చారిత్రక ధోరణులు",
     "connectedDevices": "అనుసంధానిత పరికరాలు", "storageStatus": "నిల్వ స్థితి", "lastUpdated": "చివరిగా నవీకరించబడింది",

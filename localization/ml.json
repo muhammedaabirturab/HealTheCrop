@@ -47,6 +47,20 @@
     "autoDetected": "സ്വയമേവ കണ്ടെത്തി", "change": "മാറ്റുക", "selectState": "നിങ്ങളുടെ സംസ്ഥാനം തിരഞ്ഞെടുക്കുക",
     "searchPlaceholder": "സംസ്ഥാനങ്ങൾ തിരയുക...", "noResults": "ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല"
   },
+  "states": {
+    "Andhra Pradesh": "ആന്ധ്രാപ്രദേശ്", "Arunachal Pradesh": "അരുണാചൽ പ്രദേശ്", "Assam": "ആസാം",
+    "Bihar": "ബീഹാർ", "Chhattisgarh": "ഛത്തീസ്ഗഢ്", "Goa": "ഗോവ",
+    "Gujarat": "ഗുജറാത്ത്", "Haryana": "ഹരിയാന", "Himachal Pradesh": "ഹിമാചൽ പ്രദേശ്",
+    "Jharkhand": "ജാർഖണ്ഡ്", "Karnataka": "കർണാടക", "Kerala": "കേരളം",
+    "Madhya Pradesh": "മധ്യപ്രദേശ്", "Maharashtra": "മഹാരാഷ്ട്ര", "Manipur": "മണിപ്പൂർ",
+    "Meghalaya": "മേഘാലയ", "Mizoram": "മിസോറാം", "Nagaland": "നാഗാലാൻഡ്",
+    "Odisha": "ഒഡീഷ", "Punjab": "പഞ്ചാബ്", "Rajasthan": "രാജസ്ഥാൻ",
+    "Sikkim": "സിക്കിം", "Tamil Nadu": "തമിഴ്നാട്", "Telangana": "തെലങ്കാന",
+    "Tripura": "ത്രിപുര", "Uttar Pradesh": "ഉത്തർപ്രദേശ്", "Uttarakhand": "ഉത്തരാഖണ്ഡ്",
+    "West Bengal": "പശ്ചിമ ബംഗാൾ", "Andaman and Nicobar Islands": "ആൻഡമാൻ നിക്കോബാർ ദ്വീപുകൾ", "Chandigarh": "ചണ്ഡീഗഢ്",
+    "Dadra and Nagar Haveli and Daman and Diu": "ദാദ്ര നഗർ ഹവേലി ദമൻ ദിയു", "Delhi (NCT)": "ഡൽഹി (എൻസിടി)", "Jammu and Kashmir": "ജമ്മു കശ്മീർ",
+    "Ladakh": "ലഡാക്ക്", "Lakshadweep": "ലക്ഷദ്വീപ്", "Puducherry": "പുതുച്ചേരി"
+  },
   "dashboard": {
     "title": "കൃഷി ഡാഷ്ബോർഡ്", "liveSensorValues": "തത്സമയ സെൻസർ മൂല്യങ്ങൾ", "historicalTrends": "ചരിത്രപരമായ പ്രവണതകൾ",
     "connectedDevices": "ബന്ധിപ്പിച്ച ഉപകരണങ്ങൾ", "storageStatus": "സ്റ്റോറേജ് നില", "lastUpdated": "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്",

@@ -47,6 +47,20 @@
     "autoDetected": "தானாகக் கண்டறியப்பட்டது", "change": "மாற்று", "selectState": "உங்கள் மாநிலத்தைத் தேர்ந்தெடுக்கவும்",
     "searchPlaceholder": "மாநிலங்களைத் தேடு...", "noResults": "பொருத்தங்கள் இல்லை"
   },
+  "states": {
+    "Andhra Pradesh": "ஆந்திரப் பிரதேசம்", "Arunachal Pradesh": "அருணாசலப் பிரதேசம்", "Assam": "அசாம்",
+    "Bihar": "பீகார்", "Chhattisgarh": "சத்தீஸ்கர்", "Goa": "கோவா",
+    "Gujarat": "குஜராத்", "Haryana": "ஹரியானா", "Himachal Pradesh": "இமாசலப் பிரதேசம்",
+    "Jharkhand": "ஜார்க்கண்ட்", "Karnataka": "கர்நாடகா", "Kerala": "கேரளா",
+    "Madhya Pradesh": "மத்தியப் பிரதேசம்", "Maharashtra": "மகாராஷ்டிரா", "Manipur": "மணிப்பூர்",
+    "Meghalaya": "மேகாலயா", "Mizoram": "மிசோரம்", "Nagaland": "நாகாலாந்து",
+    "Odisha": "ஒடிசா", "Punjab": "பஞ்சாப்", "Rajasthan": "ராஜஸ்தான்",
+    "Sikkim": "சிக்கிம்", "Tamil Nadu": "தமிழ்நாடு", "Telangana": "தெலங்காணா",
+    "Tripura": "திரிபுரா", "Uttar Pradesh": "உத்தரப் பிரதேசம்", "Uttarakhand": "உத்தராகண்ட்",
+    "West Bengal": "மேற்கு வங்காளம்", "Andaman and Nicobar Islands": "அந்தமான் நிக்கோபார் தீவுகள்", "Chandigarh": "சண்டிகர்",
+    "Dadra and Nagar Haveli and Daman and Diu": "தாத்ரா நகர் அவேலி மற்றும் தாமன் தியூ", "Delhi (NCT)": "டெல்லி (என்சிடி)", "Jammu and Kashmir": "ஜம்மு காஷ்மீர்",
+    "Ladakh": "லடாக்", "Lakshadweep": "லட்சத்தீவுகள்", "Puducherry": "புதுச்சேரி"
+  },
   "dashboard": {
     "title": "பண்ணை டாஷ்போர்டு", "liveSensorValues": "நேரடி சென்சார் மதிப்புகள்", "historicalTrends": "வரலாற்று போக்குகள்",
     "connectedDevices": "இணைக்கப்பட்ட சாதனங்கள்", "storageStatus": "சேமிப்பக நிலை", "lastUpdated": "கடைசியாக புதுப்பிக்கப்பட்டது",
