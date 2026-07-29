@@ -53,10 +53,12 @@
     "sensorHealth": "Sensor Health", "systemStatus": "System Status", "soilMoisture": "Soil Moisture",
     "temperature": "Temperature", "humidity": "Humidity", "phLevel": "pH Level", "nitrogen": "Nitrogen (N)",
     "phosphorus": "Phosphorus (P)", "potassium": "Potassium (K)", "fertilityScore": "Fertility Score",
-    "rainfall": "Rainfall"
+    "rainfall": "Rainfall",
+    "noDevicesPrefix": "No devices connected yet. Connect an ESP32 field node or use",
+    "noDevicesSuffix": "instead."
   },
   "soilHealth": {
-    "excellent": "Excellent", "good": "Good", "average": "Average", "poor": "Poor", "critical": "Critical",
+    "excellent": "Excellent", "good": "Good", "average": "Average", "poor": "Poor", "critical": "Critical", "unknown": "Unknown",
     "improveFertility": "Improve Fertility", "why": "Why it is needed", "how": "How to apply",
     "expectedImprovement": "Expected Improvement", "estimatedTime": "Estimated Time"
   },

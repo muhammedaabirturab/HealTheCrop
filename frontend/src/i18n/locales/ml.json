@@ -53,10 +53,12 @@
     "sensorHealth": "സെൻസർ ആരോഗ്യം", "systemStatus": "സിസ്റ്റം നില", "soilMoisture": "മണ്ണിലെ ഈർപ്പം",
     "temperature": "താപനില", "humidity": "ആർദ്രത", "phLevel": "pH നില", "nitrogen": "നൈട്രജൻ (N)",
     "phosphorus": "ഫോസ്ഫറസ് (P)", "potassium": "പൊട്ടാസ്യം (K)", "fertilityScore": "ഫലഭൂയിഷ്ഠത സ്കോർ",
-    "rainfall": "മഴ"
+    "rainfall": "മഴ",
+    "noDevicesPrefix": "ഇതുവരെ ഉപകരണങ്ങളൊന്നും ബന്ധിപ്പിച്ചിട്ടില്ല. ESP32 ഫീൽഡ് നോഡ് ബന്ധിപ്പിക്കുക അല്ലെങ്കിൽ",
+    "noDevicesSuffix": "ഉപയോഗിക്കുക."
   },
   "soilHealth": {
-    "excellent": "മികച്ചത്", "good": "നല്ലത്", "average": "ശരാശരി", "poor": "മോശം", "critical": "ഗുരുതരം",
+    "excellent": "മികച്ചത്", "good": "നല്ലത്", "average": "ശരാശരി", "poor": "മോശം", "critical": "ഗുരുതരം", "unknown": "അജ്ഞാതം",
     "improveFertility": "ഫലഭൂയിഷ്ഠത മെച്ചപ്പെടുത്തുക", "why": "എന്തുകൊണ്ട് ഇത് ആവശ്യമാണ്", "how": "എങ്ങനെ പ്രയോഗിക്കാം",
     "expectedImprovement": "പ്രതീക്ഷിക്കുന്ന പുരോഗതി", "estimatedTime": "കണക്കാക്കിയ സമയം"
   },

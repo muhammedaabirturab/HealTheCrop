@@ -53,12 +53,14 @@
     "sensorHealth": "सेंसर स्वास्थ्य", "systemStatus": "सिस्टम स्थिति", "soilMoisture": "मिट्टी की नमी",
     "temperature": "तापमान", "humidity": "आर्द्रता", "phLevel": "पीएच स्तर", "nitrogen": "नाइट्रोजन (N)",
     "phosphorus": "फॉस्फोरस (P)", "potassium": "पोटेशियम (K)", "fertilityScore": "उर्वरता स्कोर",
-    "rainfall": "वर्षा"
+    "rainfall": "वर्षा",
+    "noDevicesPrefix": "अभी तक कोई उपकरण कनेक्ट नहीं है। ESP32 फील्ड नोड कनेक्ट करें या",
+    "noDevicesSuffix": "का उपयोग करें।"
   },
   "soilHealth": {
     "excellent": "उत्कृष्ट", "good": "अच्छा", "average": "औसत", "poor": "खराब", "critical": "गंभीर",
     "improveFertility": "उर्वरता सुधारें", "why": "यह क्यों आवश्यक है", "how": "कैसे लगाएं",
-    "expectedImprovement": "अपेक्षित सुधार", "estimatedTime": "अनुमानित समय"
+    "expectedImprovement": "अपेक्षित सुधार", "estimatedTime": "अनुमानित समय", "unknown": "अज्ञात"
   },
   "manualInput": {
     "title": "मैनुअल मिट्टी इनपुट", "subtitle": "IoT सेंसर के बिना परीक्षण के लिए मान मैन्युअल रूप से दर्ज करें",

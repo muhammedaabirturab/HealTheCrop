@@ -118,8 +118,9 @@ export default function Dashboard() {
 
       {!loading && devices.length === 0 && !error && (
         <div className="card p-6 text-center text-earth-dark">
-          {t('dashboard.connectedDevices')}: 0 — connect an ESP32 field node or use{' '}
-          <a href="/manual-input" className="text-forest font-semibold underline">{t('nav.manualInput')}</a> instead.
+          {t('dashboard.noDevicesPrefix')}{' '}
+          <a href="/manual-input" className="text-forest font-semibold underline">{t('nav.manualInput')}</a>{' '}
+          {t('dashboard.noDevicesSuffix')}
         </div>
       )}
 

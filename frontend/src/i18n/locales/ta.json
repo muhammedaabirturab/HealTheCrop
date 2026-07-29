@@ -53,10 +53,12 @@
     "sensorHealth": "சென்சார் ஆரோக்கியம்", "systemStatus": "கணினி நிலை", "soilMoisture": "மண் ஈரப்பதம்",
     "temperature": "வெப்பநிலை", "humidity": "ஈரப்பதம்", "phLevel": "pH அளவு", "nitrogen": "நைட்ரஜன் (N)",
     "phosphorus": "பாஸ்பரஸ் (P)", "potassium": "பொட்டாசியம் (K)", "fertilityScore": "வளத்தன்மை மதிப்பெண்",
-    "rainfall": "மழைப்பொழிவு"
+    "rainfall": "மழைப்பொழிவு",
+    "noDevicesPrefix": "இதுவரை சாதனங்கள் இணைக்கப்படவில்லை. ESP32 ஃபீல்டு நோடை இணைக்கவும் அல்லது",
+    "noDevicesSuffix": "ஐப் பயன்படுத்தவும்."
   },
   "soilHealth": {
-    "excellent": "மிகச் சிறந்த", "good": "நல்ல", "average": "சராசரி", "poor": "மோசமான", "critical": "ஆபத்தான",
+    "excellent": "மிகச் சிறந்த", "good": "நல்ல", "average": "சராசரி", "poor": "மோசமான", "critical": "ஆபத்தான", "unknown": "தெரியவில்லை",
     "improveFertility": "வளத்தன்மையை மேம்படுத்தவும்", "why": "இது ஏன் தேவை", "how": "எவ்வாறு பயன்படுத்துவது",
     "expectedImprovement": "எதிர்பார்க்கப்படும் முன்னேற்றம்", "estimatedTime": "மதிப்பிடப்பட்ட நேரம்"
   },

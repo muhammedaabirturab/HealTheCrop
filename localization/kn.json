@@ -53,10 +53,12 @@
     "sensorHealth": "ಸೆನ್ಸಾರ್ ಆರೋಗ್ಯ", "systemStatus": "ಸಿಸ್ಟಮ್ ಸ್ಥಿತಿ", "soilMoisture": "ಮಣ್ಣಿನ ತೇವಾಂಶ",
     "temperature": "ತಾಪಮಾನ", "humidity": "ಆರ್ದ್ರತೆ", "phLevel": "pH ಮಟ್ಟ", "nitrogen": "ಸಾರಜನಕ (N)",
     "phosphorus": "ರಂಜಕ (P)", "potassium": "ಪೊಟ್ಯಾಸಿಯಮ್ (K)", "fertilityScore": "ಫಲವತ್ತತೆ ಅಂಕ",
-    "rainfall": "ಮಳೆ"
+    "rainfall": "ಮಳೆ",
+    "noDevicesPrefix": "ಇನ್ನೂ ಯಾವುದೇ ಸಾಧನಗಳು ಸಂಪರ್ಕಗೊಂಡಿಲ್ಲ. ESP32 ಫೀಲ್ಡ್ ನೋಡ್ ಸಂಪರ್ಕಿಸಿ ಅಥವಾ",
+    "noDevicesSuffix": "ಬಳಸಿ."
   },
   "soilHealth": {
-    "excellent": "ಅತ್ಯುತ್ತಮ", "good": "ಉತ್ತಮ", "average": "ಸರಾಸರಿ", "poor": "ಕಳಪೆ", "critical": "ಗಂಭೀರ",
+    "excellent": "ಅತ್ಯುತ್ತಮ", "good": "ಉತ್ತಮ", "average": "ಸರಾಸರಿ", "poor": "ಕಳಪೆ", "critical": "ಗಂಭೀರ", "unknown": "ಅಜ್ಞಾತ",
     "improveFertility": "ಫಲವತ್ತತೆ ಸುಧಾರಿಸಿ", "why": "ಇದು ಏಕೆ ಅಗತ್ಯ", "how": "ಹೇಗೆ ಅನ್ವಯಿಸುವುದು",
     "expectedImprovement": "ನಿರೀಕ್ಷಿತ ಸುಧಾರಣೆ", "estimatedTime": "ಅಂದಾಜು ಸಮಯ"
   },
