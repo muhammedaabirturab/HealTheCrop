@@ -201,12 +201,12 @@ export default function ManualInput() {
 
           <h2 className="text-xl font-bold text-forest-dark">{t('cropRecommendation.title')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <CropCard data={buildCard(result.recommended_crop, result.confidence, result.crop_details, true)} />
-            {result.alternatives
-              .filter((a) => a.crop !== result.recommended_crop)
-              .map((alt) => (
-                <CropCard key={alt.crop} data={buildCard(alt.crop, alt.confidence, alt.crop_details, false)} />
-              ))}
+            {/* alternatives[0] is always the recommended crop itself — each card's
+                badge is that crop's own independent suitability score, not the
+                classifier's comparative pick confidence shown in the summary card above. */}
+            {result.alternatives.map((alt, index) => (
+              <CropCard key={alt.crop} data={buildCard(alt.crop, alt.confidence, alt.crop_details, index === 0)} />
+            ))}
           </div>
         </div>
       )}

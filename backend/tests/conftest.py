@@ -3,6 +3,11 @@ import sys
 from pathlib import Path
 
 os.environ["DATABASE_URL"] = "sqlite:///./test_healthecrop.db"
+# Config no longer ships hardcoded admin defaults (see app/core/config.py) —
+# tests need their own admin credentials so seed_admin_account() has something
+# to seed and test_admin.py has something to log in with.
+os.environ.setdefault("ADMIN_EMAIL", "test-admin@healthecrop-test.com")
+os.environ.setdefault("ADMIN_PASSWORD", "TestAdminPass123!")
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 

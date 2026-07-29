@@ -118,8 +118,11 @@ export default function PestScan() {
               <div className="flex items-center gap-3 flex-wrap">
                 {d.type === 'healthy' ? <Leaf className="text-forest" /> : <Bug className="text-orange-600" />}
                 <h3 className="text-lg font-bold text-forest-dark">{d.display_name}</h3>
-                <span className="text-sm font-bold bg-forest/10 text-forest-dark px-2 py-1 rounded-full">
-                  {Math.round(d.confidence * 100)}%
+                <span
+                  className="text-sm font-bold bg-forest/10 text-forest-dark px-2 py-1 rounded-full"
+                  title={t('pestDetection.detectionConfidence')}
+                >
+                  {t('pestDetection.detectionConfidence')}: {Math.round(d.confidence * 100)}%
                 </span>
                 {d.type !== 'healthy' && (
                   <span className={`flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-full ${SEVERITY_BADGE[d.severity_level] || SEVERITY_BADGE.Moderate}`}>

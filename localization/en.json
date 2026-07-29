@@ -94,7 +94,7 @@
     "recoveryTime": "Expected Recovery Time", "healthyPlant": "This plant looks healthy!",
     "analyzing": "Analyzing image...", "severityLevel": "Severity Level",
     "recommendedFungicide": "Recommended Fungicide", "dosageGuidance": "Dosage Guidance",
-    "modelUsed": "Model", "overallSeverity": "Overall Severity"
+    "modelUsed": "Model", "overallSeverity": "Overall Severity", "detectionConfidence": "Detection Confidence"
   },
   "errors": {
     "generic": "Something went wrong. Please try again.", "network": "Network error. Check your connection.",
@@ -153,7 +153,7 @@
       "soilMonitoringTitle": "Real-Time Soil Monitoring",
       "soilMonitoringText": "Live moisture, temperature, humidity, and pH from your connected sensors.",
       "aiRecommendationTitle": "AI Crop Recommendation",
-      "aiRecommendationText": "Random Forest predictions with confidence scores and top-9 alternatives.",
+      "aiRecommendationText": "Random Forest predictions with confidence scores and top-6 alternatives.",
       "fertilityAnalysisTitle": "Soil Fertility Analysis",
       "fertilityAnalysisText": "A clear 0-100 fertility score with color-coded nutrient indicators.",
       "fertilityImprovementTitle": "Fertility Improvement Suggestions",
@@ -190,16 +190,7 @@
       "outputLabel": "Model Output",
       "outputCrop": "Recommended Crop",
       "outputConfidence": "Confidence Score",
-      "outputAlternatives": "Top 9 Alternatives"
-    },
-    "footer": {
-      "project": "Project",
-      "projectText": "A final-year engineering project combining IoT, machine learning, and computer vision for smart agriculture.",
-      "team": "Team",
-      "technologies": "Technologies",
-      "links": "Links",
-      "github": "GitHub Repository",
-      "copyright": "All rights reserved."
+      "outputAlternatives": "Top 6 Alternatives"
     }
   },
   "admin": {

@@ -7,6 +7,7 @@ import logging
 from pathlib import Path
 
 import joblib
+import numpy as np
 import pandas as pd
 
 from app.core.config import get_settings
@@ -79,6 +80,15 @@ class CropPredictor:
 
         bundle = joblib.load(model_path)
         self.model = bundle["model"]
+        self.ovr_model = bundle.get("ovr_model")
+        if self.ovr_model is not None:
+            # Each of the 52 one-vs-rest estimators was trained with n_jobs=-1;
+            # left as-is, a single prediction request spins up a fresh joblib
+            # worker pool 52 times in a row (very slow, especially on Windows).
+            # A single row of inference doesn't benefit from parallelism anyway,
+            # so force it off post-training rather than retraining.
+            for estimator in self.ovr_model.estimators_:
+                estimator.n_jobs = 1
         self.label_encoder = bundle["label_encoder"]
         self.season_encoder = bundle["season_encoder"]
         self.location_encoder = bundle["location_encoder"]
@@ -97,6 +107,20 @@ class CropPredictor:
             return int(encoder.transform([value])[0])
         return int(encoder.transform([classes[0]])[0])  # fall back to a known category
 
+    def _independent_confidences(self, X: pd.DataFrame) -> dict:
+        """
+        Per-crop suitability score from the one-vs-rest ensemble, each computed
+        by its own binary classifier (this crop vs. everything else) with no
+        forced normalization across crops — unlike the multiclass model's
+        predict_proba, these do NOT sum to 100% across crops, so a strong
+        second choice isn't penalized just because the top choice is stronger.
+        Bypasses OneVsRestClassifier.predict_proba() itself, which re-normalizes
+        rows to sum to 1 and would otherwise undo exactly this property.
+        """
+        raw = np.array([estimator.predict_proba(X)[0, 1] for estimator in self.ovr_model.estimators_])
+        class_names = self.label_encoder.inverse_transform(self.ovr_model.classes_)
+        return dict(zip(class_names, raw.tolist()))
+
     def predict(self, features: dict, season: str, location: str = "Karnataka") -> dict:
         row = {
             "N": features["nitrogen"],
@@ -113,18 +137,34 @@ class CropPredictor:
 
         probabilities = self.model.predict_proba(X)[0]
         classes = self.label_encoder.classes_
-        ranked = sorted(zip(classes, probabilities), key=lambda x: x[1], reverse=True)
+        classifier_confidence = dict(zip(classes, probabilities.tolist()))
 
-        top9 = [
-            {"crop": crop, "confidence": round(float(p), 4), "crop_details": self.crop_metadata.get(crop, {})}
-            for crop, p in ranked[:9]
+        independent = self._independent_confidences(X)
+        ranked_independent = sorted(independent.items(), key=lambda kv: kv[1], reverse=True)
+
+        MIN_CONFIDENCE = 0.50
+        MAX_RESULTS = 6
+        qualifying = [(crop, score) for crop, score in ranked_independent if score >= MIN_CONFIDENCE][:MAX_RESULTS]
+        if not qualifying:
+            # Nothing clears the bar independently — still surface the single
+            # best guess rather than leaving the farmer with an empty screen.
+            qualifying = ranked_independent[:1]
+
+        alternatives = [
+            {"crop": crop, "confidence": round(float(score), 4), "crop_details": self.crop_metadata.get(crop, {})}
+            for crop, score in qualifying
         ]
-        best_crop, best_conf = ranked[0]
+        best_crop = qualifying[0][0]
+        # "Prediction Confidence" reflects how sure the classifier is that
+        # best_crop specifically is the single right answer among all 52
+        # crops (a comparative, classification-style measure) — distinct from
+        # best_crop's own independent suitability score shown on its card.
+        best_conf = classifier_confidence.get(best_crop, 0.0)
 
         return {
             "recommended_crop": best_crop,
             "confidence": round(float(best_conf), 4),
-            "alternatives": top9,
+            "alternatives": alternatives,
             "feature_importance": self.feature_importances,
             "crop_details": self.crop_metadata.get(best_crop, {}),
         }

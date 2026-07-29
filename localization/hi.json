@@ -94,7 +94,7 @@
     "recoveryTime": "अपेक्षित रिकवरी समय", "healthyPlant": "यह पौधा स्वस्थ दिखता है!",
     "analyzing": "फोटो का विश्लेषण हो रहा है...", "severityLevel": "गंभीरता स्तर",
     "recommendedFungicide": "अनुशंसित कवकनाशी", "dosageGuidance": "मात्रा मार्गदर्शन",
-    "modelUsed": "मॉडल", "overallSeverity": "समग्र गंभीरता"
+    "modelUsed": "मॉडल", "overallSeverity": "समग्र गंभीरता", "detectionConfidence": "पहचान विश्वास स्तर"
   },
   "errors": {
     "generic": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।", "network": "नेटवर्क त्रुटि। अपना कनेक्शन जांचें।",
@@ -153,7 +153,7 @@
       "soilMonitoringTitle": "रीयल-टाइम मिट्टी निगरानी",
       "soilMonitoringText": "आपके जुड़े सेंसर से लाइव नमी, तापमान, आर्द्रता और pH।",
       "aiRecommendationTitle": "AI फसल सिफारिश",
-      "aiRecommendationText": "विश्वास स्कोर और शीर्ष-9 विकल्पों के साथ रैंडम फॉरेस्ट भविष्यवाणियां।",
+      "aiRecommendationText": "विश्वास स्कोर और शीर्ष-6 विकल्पों के साथ रैंडम फॉरेस्ट भविष्यवाणियां।",
       "fertilityAnalysisTitle": "मिट्टी उर्वरता विश्लेषण",
       "fertilityAnalysisText": "रंग-कोडित पोषक संकेतकों के साथ स्पष्ट 0-100 उर्वरता स्कोर।",
       "fertilityImprovementTitle": "उर्वरता सुधार सुझाव",
@@ -190,16 +190,7 @@
       "outputLabel": "मॉडल आउटपुट",
       "outputCrop": "अनुशंसित फसल",
       "outputConfidence": "विश्वास स्कोर",
-      "outputAlternatives": "शीर्ष 9 विकल्प"
-    },
-    "footer": {
-      "project": "परियोजना",
-      "projectText": "स्मार्ट कृषि के लिए IoT, मशीन लर्निंग और कंप्यूटर विज़न को जोड़ने वाली एक अंतिम वर्ष की इंजीनियरिंग परियोजना।",
-      "team": "टीम",
-      "technologies": "प्रौद्योगिकियां",
-      "links": "लिंक",
-      "github": "GitHub रिपॉज़िटरी",
-      "copyright": "सर्वाधिकार सुरक्षित।"
+      "outputAlternatives": "शीर्ष 6 विकल्प"
     }
   },
   "admin": {

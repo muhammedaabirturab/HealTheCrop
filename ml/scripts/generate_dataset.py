@@ -96,6 +96,81 @@ LOCATIONS = [
     "Maharashtra", "Punjab", "Uttar Pradesh", "Madhya Pradesh", "West Bengal",
 ]
 
+# States where each crop is a genuinely common regional match (broad, well-known
+# agricultural geography — e.g. coconut/pepper on the Kerala/coastal Karnataka
+# belt, wheat/mustard in the Punjab-UP belt, rice in West Bengal/Andhra Pradesh).
+# Without this, `location` was assigned uniformly at random and carried zero
+# correlation with the label, so the trained model learned to ignore it — the
+# state dropdown had no real effect on predictions. Rows are still sampled
+# outside this list some of the time (AFFINITY_WEIGHT below) so the model
+# doesn't overfit to only these states and still handles the others sensibly.
+CROP_REGIONAL_AFFINITY = {
+    "rice": ["West Bengal", "Andhra Pradesh", "Tamil Nadu", "Punjab"],
+    "maize": ["Karnataka", "Andhra Pradesh", "Madhya Pradesh"],
+    "chickpea": ["Madhya Pradesh", "Maharashtra", "Uttar Pradesh"],
+    "kidneybeans": ["Uttar Pradesh", "Madhya Pradesh"],
+    "pigeonpeas": ["Maharashtra", "Karnataka", "Madhya Pradesh", "Uttar Pradesh"],
+    "mothbeans": ["Maharashtra", "Karnataka"],
+    "mungbean": ["Maharashtra", "Andhra Pradesh", "Madhya Pradesh"],
+    "blackgram": ["Andhra Pradesh", "Tamil Nadu", "Maharashtra"],
+    "lentil": ["Uttar Pradesh", "Madhya Pradesh", "West Bengal"],
+    "pomegranate": ["Maharashtra", "Karnataka"],
+    "banana": ["Tamil Nadu", "Maharashtra", "Andhra Pradesh", "Karnataka"],
+    "mango": ["Andhra Pradesh", "Uttar Pradesh", "Karnataka", "Maharashtra"],
+    "grapes": ["Maharashtra", "Karnataka"],
+    "watermelon": ["Andhra Pradesh", "Karnataka", "Uttar Pradesh"],
+    "muskmelon": ["Uttar Pradesh", "Andhra Pradesh", "Punjab"],
+    "apple": [],  # no strong match among these 10 states (grown in HP/J&K/Uttarakhand)
+    "orange": ["Maharashtra", "Madhya Pradesh"],
+    "papaya": ["Andhra Pradesh", "Karnataka", "Tamil Nadu"],
+    "coconut": ["Kerala", "Tamil Nadu", "Karnataka", "Andhra Pradesh"],
+    "cotton": ["Maharashtra", "Telangana", "Punjab"],
+    "jute": ["West Bengal"],
+    "coffee": ["Karnataka", "Kerala", "Tamil Nadu"],
+    "wheat": ["Punjab", "Uttar Pradesh", "Madhya Pradesh"],
+    "sugarcane": ["Uttar Pradesh", "Maharashtra"],
+    "tea": ["West Bengal", "Kerala"],
+    "groundnut": ["Andhra Pradesh", "Tamil Nadu", "Karnataka"],
+    "soybean": ["Madhya Pradesh", "Maharashtra"],
+    "mustard": ["Uttar Pradesh", "Madhya Pradesh", "West Bengal", "Punjab"],
+    "sunflower": ["Karnataka", "Andhra Pradesh", "Maharashtra"],
+    "tomato": ["Andhra Pradesh", "Karnataka", "Maharashtra"],
+    "onion": ["Maharashtra", "Karnataka", "Madhya Pradesh"],
+    "potato": ["Uttar Pradesh", "West Bengal", "Punjab"],
+    "garlic": ["Madhya Pradesh", "Uttar Pradesh"],
+    "brinjal": ["West Bengal", "Andhra Pradesh", "Karnataka"],
+    "cabbage": ["West Bengal", "Uttar Pradesh"],
+    "cauliflower": ["West Bengal", "Uttar Pradesh"],
+    "okra": ["Uttar Pradesh", "West Bengal", "Andhra Pradesh"],
+    "spinach": ["Uttar Pradesh", "West Bengal"],
+    "cucumber": ["Karnataka", "Maharashtra"],
+    "guava": ["Uttar Pradesh", "Madhya Pradesh"],
+    "turmeric": ["Telangana", "Andhra Pradesh", "Tamil Nadu", "Karnataka"],
+    "ginger": ["Kerala", "Karnataka"],
+    "blackpepper": ["Kerala", "Karnataka"],
+    "cardamom": ["Kerala", "Karnataka", "Tamil Nadu"],
+    "coriander": ["Madhya Pradesh", "Andhra Pradesh", "Karnataka"],
+    "fenugreek": ["Madhya Pradesh", "Uttar Pradesh"],
+    "sorghum": ["Maharashtra", "Karnataka", "Madhya Pradesh"],
+    "pearlmillet": ["Maharashtra", "Uttar Pradesh"],
+    "fingermillet": ["Karnataka", "Tamil Nadu", "Andhra Pradesh"],
+    "carrot": ["Punjab", "Uttar Pradesh", "Karnataka"],
+    "peas": ["Uttar Pradesh", "Madhya Pradesh", "Punjab"],
+    "sesame": ["Madhya Pradesh", "Andhra Pradesh", "Karnataka", "Tamil Nadu"],
+}
+
+# Fraction of rows drawn from the crop's affinity states rather than uniformly
+# from all ten — high enough to give the model real location signal, not so
+# high that unlisted states become impossible outcomes.
+AFFINITY_WEIGHT = 0.7
+
+
+def _sample_location(rng: np.random.Generator, crop: str) -> str:
+    affinity = CROP_REGIONAL_AFFINITY.get(crop) or []
+    if affinity and rng.random() < AFFINITY_WEIGHT:
+        return rng.choice(affinity)
+    return rng.choice(LOCATIONS)
+
 
 def generate(seed: int = SEED, samples_per_crop: int = SAMPLES_PER_CROP) -> pd.DataFrame:
     rng = np.random.default_rng(seed)
@@ -108,7 +183,7 @@ def generate(seed: int = SEED, samples_per_crop: int = SAMPLES_PER_CROP) -> pd.D
                 value = rng.normal(mean, std)
                 lo, hi = BOUNDS[feat]
                 row[feat] = float(np.clip(value, lo, hi))
-            row["location"] = rng.choice(LOCATIONS)
+            row["location"] = _sample_location(rng, crop)
             rows.append(row)
     df = pd.DataFrame(rows)
     df = df.sample(frac=1, random_state=seed).reset_index(drop=True)

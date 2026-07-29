@@ -25,6 +25,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, f1_score
 from sklearn.model_selection import RandomizedSearchCV, StratifiedKFold, train_test_split
+from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import LabelEncoder
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -101,9 +102,25 @@ def train():
     importances = dict(zip(feature_names, model.feature_importances_.round(4).tolist()))
     print("Feature importances:", json.dumps(importances, indent=2))
 
+    # The multiclass model above answers "which single crop fits best?" — its
+    # probabilities are relative (they sum to 100% across all crops), which is
+    # correct for picking a winner but wrong for per-crop "confidence" cards:
+    # a second crop can only look bad because the top one looks good, not
+    # because it's actually unsuitable. A one-vs-rest ensemble of independent
+    # binary classifiers (this crop vs. everything else) gives each crop its
+    # own 0-100% suitability score with no such coupling, reusing the same
+    # tuned hyperparameters found above.
+    print("Training one-vs-rest classifiers for independent per-crop confidence...")
+    ovr_model = OneVsRestClassifier(
+        RandomForestClassifier(random_state=42, class_weight="balanced", n_jobs=-1, **search.best_params_)
+    )
+    ovr_model.fit(X_train, y_train)
+    print(f"Trained {len(ovr_model.estimators_)} independent one-vs-rest classifiers.")
+
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
     bundle = {
         "model": model,
+        "ovr_model": ovr_model,
         "label_encoder": label_encoder,
         "season_encoder": season_encoder,
         "location_encoder": location_encoder,

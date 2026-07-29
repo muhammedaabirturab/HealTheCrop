@@ -75,16 +75,23 @@ class DiseaseDetectionService:
         if result.dominant_symptom == "healthy_green" or not result.lesions:
             return [{**self._kb_entry("Healthy"), "confidence": round(result.healthy_fraction, 4), "region": None}], result.severity
 
+        # One symptom pattern maps to several plausible diagnoses, not several
+        # lesions each independently re-picking the same top candidate — return
+        # the top 3 distinct candidates for the dominant symptom (ranked, with
+        # decreasing confidence) so the farmer sees 3 different possible
+        # cures instead of the same one repeated for every detected lesion.
         candidates = heuristic.SYMPTOM_TO_CANDIDATES.get(result.dominant_symptom, ["Healthy"])
+        primary_lesion = result.lesions[0]
+        base_confidence = min(0.5 + primary_lesion.area_fraction * 3, 0.92)
+        rank_decay = [1.0, 0.7, 0.5]
+
         detections = []
-        for lesion in result.lesions:
-            symptom_candidates = heuristic.SYMPTOM_TO_CANDIDATES.get(lesion.symptom, candidates)
-            best_key = symptom_candidates[0]
-            entry = self._kb_entry(best_key)
+        for rank, candidate_key in enumerate(candidates[:3]):
+            entry = self._kb_entry(candidate_key)
             detections.append({
                 **entry,
-                "confidence": round(min(0.5 + lesion.area_fraction * 3, 0.92), 4),
-                "region": list(lesion.bounding_box),
+                "confidence": round(base_confidence * rank_decay[rank], 4),
+                "region": list(primary_lesion.bounding_box) if rank == 0 else None,
             })
         severity = "mild" if result.severity == "healthy" else result.severity
         return detections, severity

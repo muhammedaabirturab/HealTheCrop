@@ -19,11 +19,12 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
 
     # Seeded once at startup if no user with this email exists yet (see
-    # app/core/admin_seed.py). Override both via environment variables /.env in
-    # any real deployment — these defaults exist only so the app is usable
-    # out of the box in local development.
-    ADMIN_EMAIL: str = "adproject@gmail.com"
-    ADMIN_PASSWORD: str = "Pv9TwoNqt^SJNR^y"
+    # app/core/admin_seed.py). No default credentials ship in source — set
+    # both via environment variables / .env to enable seeding a new admin
+    # account. Leaving either unset simply skips seeding (logged), it does
+    # not touch any admin account already present in the database.
+    ADMIN_EMAIL: str | None = None
+    ADMIN_PASSWORD: str | None = None
 
     CORS_ORIGINS: List[str] = [
         "http://localhost:5173", "http://localhost:4173",

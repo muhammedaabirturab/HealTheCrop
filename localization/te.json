@@ -94,7 +94,7 @@
     "recoveryTime": "ఊహించిన కోలుకునే సమయం", "healthyPlant": "ఈ మొక్క ఆరోగ్యంగా కనిపిస్తోంది!",
     "analyzing": "ఫోటో విశ్లేషించబడుతోంది...", "severityLevel": "తీవ్రత స్థాయి",
     "recommendedFungicide": "సిఫార్సు చేసిన శిలీంధ్రనాశకం", "dosageGuidance": "మోతాదు మార్గదర్శకం",
-    "modelUsed": "మోడల్", "overallSeverity": "మొత్తం తీవ్రత"
+    "modelUsed": "మోడల్", "overallSeverity": "మొత్తం తీవ్రత", "detectionConfidence": "గుర్తింపు విశ్వాస స్థాయి"
   },
   "errors": {
     "generic": "ఏదో తప్పు జరిగింది. దయచేసి మళ్లీ ప్రయత్నించండి.", "network": "నెట్‌వర్క్ లోపం. మీ కనెక్షన్‌ని తనిఖీ చేయండి.",
@@ -153,7 +153,7 @@
       "soilMonitoringTitle": "రియల్-టైమ్ నేల పర్యవేక్షణ",
       "soilMonitoringText": "మీ కనెక్ట్ చేయబడిన సెన్సార్ల నుండి ప్రత్యక్ష తేమ, ఉష్ణోగ్రత, తేమ మరియు pH.",
       "aiRecommendationTitle": "AI పంట సిఫార్సు",
-      "aiRecommendationText": "విశ్వాస స్కోర్‌లు మరియు టాప్-9 ప్రత్యామ్నాయాలతో రాండమ్ ఫారెస్ట్ అంచనాలు.",
+      "aiRecommendationText": "విశ్వాస స్కోర్‌లు మరియు టాప్-6 ప్రత్యామ్నాయాలతో రాండమ్ ఫారెస్ట్ అంచనాలు.",
       "fertilityAnalysisTitle": "నేల సారవంత విశ్లేషణ",
       "fertilityAnalysisText": "రంగు-కోడెడ్ పోషక సూచికలతో స్పష్టమైన 0-100 సారవంత స్కోరు.",
       "fertilityImprovementTitle": "సారవంత మెరుగుదల సూచనలు",
@@ -190,16 +190,7 @@
       "outputLabel": "మోడల్ అవుట్‌పుట్",
       "outputCrop": "సిఫార్సు చేసిన పంట",
       "outputConfidence": "విశ్వాస స్కోరు",
-      "outputAlternatives": "టాప్ 9 ప్రత్యామ్నాయాలు"
-    },
-    "footer": {
-      "project": "ప్రాజెక్ట్",
-      "projectText": "స్మార్ట్ వ్యవసాయం కోసం IoT, మెషిన్ లెర్నింగ్ మరియు కంప్యూటర్ విజన్‌ను మిళితం చేసే చివరి సంవత్సరం ఇంజనీరింగ్ ప్రాజెక్ట్.",
-      "team": "బృందం",
-      "technologies": "సాంకేతికతలు",
-      "links": "లింకులు",
-      "github": "GitHub రిపోజిటరీ",
-      "copyright": "అన్ని హక్కులు ప్రత్యేకించబడ్డాయి."
+      "outputAlternatives": "టాప్ 6 ప్రత్యామ్నాయాలు"
     }
   },
   "admin": {
