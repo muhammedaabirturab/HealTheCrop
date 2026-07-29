@@ -1,7 +1,7 @@
 import enum
 from datetime import datetime, timezone
 
-from sqlalchemy import DateTime, Enum, String
+from sqlalchemy import Boolean, DateTime, Enum, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
@@ -23,6 +23,7 @@ class User(Base):
     location: Mapped[str] = mapped_column(String(120), nullable=True)
     preferred_language: Mapped[str] = mapped_column(String(10), default="en")
     role: Mapped[UserRole] = mapped_column(Enum(UserRole), default=UserRole.FARMER)
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     devices = relationship("Device", back_populates="owner")

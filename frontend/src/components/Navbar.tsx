@@ -8,6 +8,7 @@ export default function Navbar() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { user, logout } = useAuthStore()
+  const isAdmin = user?.role === 'admin'
 
   return (
     <header className="sticky top-0 z-40 bg-cream/95 backdrop-blur border-b border-forest/10">
@@ -19,10 +20,15 @@ export default function Navbar() {
 
         {user && (
           <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-forest-dark">
-            <Link to="/dashboard" className="hover:text-forest">{t('nav.dashboard')}</Link>
-            <Link to="/manual-input" className="hover:text-forest">{t('nav.manualInput')}</Link>
-            <Link to="/pest-scan" className="hover:text-forest">{t('nav.scanCrop')}</Link>
-            <Link to="/history" className="hover:text-forest">{t('nav.history')}</Link>
+            {isAdmin ? (
+              <Link to="/admin" className="hover:text-forest">{t('admin.title')}</Link>
+            ) : (
+              <>
+                <Link to="/dashboard" className="hover:text-forest">{t('nav.dashboard')}</Link>
+                <Link to="/manual-input" className="hover:text-forest">{t('nav.manualInput')}</Link>
+                <Link to="/pest-scan" className="hover:text-forest">{t('nav.scanCrop')}</Link>
+              </>
+            )}
           </div>
         )}
 

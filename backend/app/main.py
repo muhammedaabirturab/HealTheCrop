@@ -6,8 +6,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.v1.router import api_router
+from app.core.admin_seed import seed_admin_account
 from app.core.config import get_settings
-from app.core.database import init_db
+from app.core.database import SessionLocal, init_db
 from app.core.storage import storage_service
 
 logger = logging.getLogger(__name__)
@@ -19,6 +20,11 @@ settings = get_settings()
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     init_db()
+    db = SessionLocal()
+    try:
+        seed_admin_account(db)
+    finally:
+        db.close()
     yield
 
 

@@ -12,6 +12,7 @@ export default function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [rememberMe, setRememberMe] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -20,10 +21,9 @@ export default function Login() {
     setError('')
     setLoading(true)
     try {
-      const { data } = await api.post('/auth/login', { email, password })
-      const me = await api.get('/auth/me', { headers: { Authorization: `Bearer ${data.access_token}` } })
-      setSession(data.access_token, me.data)
-      navigate('/dashboard')
+      const { data } = await api.post('/auth/login', { email, password, remember_me: rememberMe })
+      setSession(data.access_token, data.user, data.refresh_token)
+      navigate(data.user.role === 'admin' ? '/admin' : '/dashboard')
     } catch (err) {
       if (isAxiosError(err) && !err.response) {
         setError(t('errors.network'))
@@ -60,6 +60,16 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             className="border border-forest/30 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-forest"
           />
+        </label>
+
+        <label className="flex items-center gap-2 text-sm font-semibold text-earth-dark select-none">
+          <input
+            type="checkbox"
+            checked={rememberMe}
+            onChange={(e) => setRememberMe(e.target.checked)}
+            className="h-4 w-4 rounded border-forest/30 text-forest focus:ring-forest"
+          />
+          {t('auth.rememberMe')}
         </label>
 
         {error && <p className="text-red-600 text-sm font-semibold">{error}</p>}

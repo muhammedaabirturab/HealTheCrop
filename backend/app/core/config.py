@@ -18,6 +18,13 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 12
     REFRESH_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
 
+    # Seeded once at startup if no user with this email exists yet (see
+    # app/core/admin_seed.py). Override both via environment variables /.env in
+    # any real deployment — these defaults exist only so the app is usable
+    # out of the box in local development.
+    ADMIN_EMAIL: str = "adproject@gmail.com"
+    ADMIN_PASSWORD: str = "Pv9TwoNqt^SJNR^y"
+
     CORS_ORIGINS: List[str] = [
         "http://localhost:5173", "http://localhost:4173",
         "http://127.0.0.1:5173", "http://127.0.0.1:4173",

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { UploadCloud, Bug, Leaf } from 'lucide-react'
+import { UploadCloud, Bug, Leaf, AlertTriangle } from 'lucide-react'
 import { api } from '../lib/api'
 import { getErrorMessage } from '../lib/errors'
 
@@ -8,12 +8,17 @@ interface Detection {
   name: string
   display_name: string
   type: string
+  category: string
   confidence: number
   description: string
+  severity_level: string
   organic_treatment: string
   chemical_treatment: string
   recommended_pesticides: string[]
+  recommended_fungicide: string | null
+  dosage_guidance: string
   prevention_tips: string[]
+  recovery_recommendations: string
   expected_recovery_days: number
 }
 
@@ -21,6 +26,14 @@ interface ScanResult {
   model_used: string
   severity: string
   detections: Detection[]
+}
+
+const SEVERITY_BADGE: Record<string, string> = {
+  Low: 'bg-forest/10 text-forest-dark',
+  Moderate: 'bg-yellow-100 text-yellow-800',
+  High: 'bg-orange-100 text-orange-800',
+  Critical: 'bg-red-100 text-red-700',
+  None: 'bg-forest/10 text-forest-dark',
 }
 
 export default function PestScan() {
@@ -98,16 +111,21 @@ export default function PestScan() {
       {result && (
         <div className="flex flex-col gap-4">
           <p className="text-sm font-semibold text-earth-dark text-center">
-            Model: {result.model_used} · Severity: {result.severity}
+            {t('pestDetection.modelUsed')}: {result.model_used} · {t('pestDetection.overallSeverity')}: {result.severity}
           </p>
           {result.detections.map((d, i) => (
             <div key={i} className="card p-5 flex flex-col gap-3">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 flex-wrap">
                 {d.type === 'healthy' ? <Leaf className="text-forest" /> : <Bug className="text-orange-600" />}
                 <h3 className="text-lg font-bold text-forest-dark">{d.display_name}</h3>
-                <span className="ml-auto text-sm font-bold bg-forest/10 text-forest-dark px-2 py-1 rounded-full">
+                <span className="text-sm font-bold bg-forest/10 text-forest-dark px-2 py-1 rounded-full">
                   {Math.round(d.confidence * 100)}%
                 </span>
+                {d.type !== 'healthy' && (
+                  <span className={`flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-full ${SEVERITY_BADGE[d.severity_level] || SEVERITY_BADGE.Moderate}`}>
+                    <AlertTriangle size={12} /> {t('pestDetection.severityLevel')}: {d.severity_level}
+                  </span>
+                )}
               </div>
               <p className="text-sm text-earth-dark">{d.description}</p>
               {d.type !== 'healthy' && (
@@ -122,7 +140,17 @@ export default function PestScan() {
                   </div>
                   <div>
                     <p className="font-semibold text-forest-dark">{t('pestDetection.recommendedPesticides')}</p>
-                    <p className="text-earth-dark">{d.recommended_pesticides.join(', ')}</p>
+                    <p className="text-earth-dark">{d.recommended_pesticides.join(', ') || '—'}</p>
+                  </div>
+                  {d.recommended_fungicide && (
+                    <div>
+                      <p className="font-semibold text-forest-dark">{t('pestDetection.recommendedFungicide')}</p>
+                      <p className="text-earth-dark">{d.recommended_fungicide}</p>
+                    </div>
+                  )}
+                  <div className="sm:col-span-2">
+                    <p className="font-semibold text-forest-dark">{t('pestDetection.dosageGuidance')}</p>
+                    <p className="text-earth-dark">{d.dosage_guidance}</p>
                   </div>
                   <div>
                     <p className="font-semibold text-forest-dark">{t('pestDetection.preventionTips')}</p>
@@ -133,6 +161,9 @@ export default function PestScan() {
                   <div>
                     <p className="font-semibold text-forest-dark">{t('pestDetection.recoveryTime')}</p>
                     <p className="text-earth-dark">{d.expected_recovery_days} {t('cropRecommendation.days')}</p>
+                    {d.recovery_recommendations && (
+                      <p className="text-earth-dark mt-1">{d.recovery_recommendations}</p>
+                    )}
                   </div>
                 </div>
               )}

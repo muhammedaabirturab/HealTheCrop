@@ -58,3 +58,11 @@ class PredictionResponse(BaseModel):
     season_used: str
     explanation: RecommendationExplanation
     created_at: datetime | None = None
+
+
+class ModelInfoResponse(BaseModel):
+    accuracy: float | None
+    cv_mean_accuracy: float | None
+    weighted_f1: float | None
+    n_classes: int
+    classes: list[str]

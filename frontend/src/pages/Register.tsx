@@ -24,8 +24,7 @@ export default function Register() {
     try {
       await api.post('/auth/register', { ...form, preferred_language: i18n.language })
       const { data } = await api.post('/auth/login', { email: form.email, password: form.password })
-      const me = await api.get('/auth/me', { headers: { Authorization: `Bearer ${data.access_token}` } })
-      setSession(data.access_token, me.data)
+      setSession(data.access_token, data.user)
       navigate('/dashboard')
     } catch (err) {
       setError(getErrorMessage(err, t))

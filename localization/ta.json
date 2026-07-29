@@ -1,11 +1,32 @@
 {
   "app": { "name": "ஹீல் தி க்ராப்", "tagline": "ஸ்மார்ட் வேளாண்மை, ஆரோக்கியமான பயிர்கள்" },
+  "crops": {
+    "rice": "அரிசி", "maize": "மக்காச்சோளம்", "chickpea": "கொண்டைக்கடலை", "kidneybeans": "ராஜ்மா", "pigeonpeas": "துவரம் பருப்பு",
+    "mothbeans": "மோத் பீன்ஸ்", "mungbean": "பாசிப்பயறு", "blackgram": "உளுந்து", "lentil": "மசூர் பருப்பு", "pomegranate": "மாதுளை",
+    "banana": "வாழைப்பழம்", "mango": "மாம்பழம்", "grapes": "திராட்சை", "watermelon": "தர்பூசணி", "muskmelon": "முலாம்பழம்",
+    "apple": "ஆப்பிள்", "orange": "ஆரஞ்சு", "papaya": "பப்பாளி", "coconut": "தேங்காய்", "cotton": "பருத்தி", "jute": "சணல்", "coffee": "காபி",
+    "wheat": "கோதுமை", "sugarcane": "கரும்பு", "tea": "தேயிலை", "groundnut": "நிலக்கடலை", "soybean": "சோயாபீன்", "mustard": "கடுகு",
+    "sunflower": "சூரியகாந்தி", "tomato": "தக்காளி", "onion": "வெங்காயம்", "potato": "உருளைக்கிழங்கு", "garlic": "பூண்டு", "brinjal": "கத்தரிக்காய்",
+    "cabbage": "முட்டைக்கோஸ்", "cauliflower": "காலிஃபிளவர்", "okra": "வெண்டைக்காய்", "spinach": "கீரை", "cucumber": "வெள்ளரிக்காய்", "guava": "கொய்யா",
+    "turmeric": "மஞ்சள்", "ginger": "இஞ்சி", "blackpepper": "மிளகு", "cardamom": "ஏலக்காய்", "coriander": "கொத்தமல்லி",
+    "fenugreek": "வெந்தயம்", "sorghum": "சோளம்", "pearlmillet": "கம்பு", "fingermillet": "கேழ்வரகு",
+    "carrot": "கேரட்", "peas": "பட்டாணி", "sesame": "எள்"
+  },
+  "cropAttributes": {
+    "water": { "low": "குறைவு", "medium": "நடுத்தரம்", "high": "அதிகம்" },
+    "soil": {
+      "alluvial": "வண்டல்", "blackCottonSoil": "கருப்பு பருத்தி மண்", "clayey": "களிமண்",
+      "coastalAlluvial": "கடலோர வண்டல்", "loamy": "வண்டல் கலப்பு மண்", "redLaterite": "சிவப்பு லேட்டரைட்",
+      "sandy": "மணல்", "sandyLoam": "மணல் கலப்பு மண்", "wellDrained": "நல்ல வடிகால்"
+    },
+    "season": { "annual": "வருடாந்திரம்", "kharif": "காரீஃப்", "rabi": "ரபி", "zaid": "ஜாயித்" }
+  },
   "languages": {
     "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
   },
   "nav": {
     "dashboard": "டாஷ்போர்டு", "manualInput": "கைமுறை உள்ளீடு", "cropRecommendation": "பயிர் பரிந்துரை",
-    "scanCrop": "பயிரை ஸ்கேன் செய்யவும்", "reports": "அறிக்கைகள்", "history": "வரலாறு", "settings": "அமைப்புகள்",
+    "scanCrop": "பயிரை ஸ்கேன் செய்யவும்", "reports": "அறிக்கைகள்", "settings": "அமைப்புகள்",
     "login": "உள்நுழைய", "logout": "வெளியேறு", "register": "பதிவு செய்யவும்"
   },
   "common": {
@@ -17,7 +38,14 @@
     "welcomeBack": "மீண்டும் வரவேற்கிறோம்", "createAccount": "உங்கள் கணக்கை உருவாக்கவும்", "name": "முழு பெயர்",
     "email": "மின்னஞ்சல் முகவரி", "password": "கடவுச்சொல்", "phone": "தொலைபேசி எண்", "location": "இடம்",
     "loginButton": "உள்நுழைய", "registerButton": "கணக்கை உருவாக்கு",
-    "invalidCredentials": "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்", "emailExists": "இந்த மின்னஞ்சல் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது"
+    "invalidCredentials": "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்", "emailExists": "இந்த மின்னஞ்சல் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது",
+    "rememberMe": "என்னை நினைவில் கொள்"
+  },
+  "location": {
+    "permissionPrompt": "உங்கள் இருப்பிடத்தை அணுக HealTheCrop ஐ அனுமதிக்கவா?",
+    "allow": "அனுமதி", "deny": "மறு", "detecting": "உங்கள் இருப்பிடத்தைக் கண்டறிகிறது...",
+    "autoDetected": "தானாகக் கண்டறியப்பட்டது", "change": "மாற்று", "selectState": "உங்கள் மாநிலத்தைத் தேர்ந்தெடுக்கவும்",
+    "searchPlaceholder": "மாநிலங்களைத் தேடு...", "noResults": "பொருத்தங்கள் இல்லை"
   },
   "dashboard": {
     "title": "பண்ணை டாஷ்போர்டு", "liveSensorValues": "நேரடி சென்சார் மதிப்புகள்", "historicalTrends": "வரலாற்று போக்குகள்",
@@ -45,7 +73,8 @@
     "title": "பரிந்துரைக்கப்பட்ட பயிர்கள்", "topPick": "முதன்மை பரிந்துரை", "alternatives": "மாற்று பயிர்கள்",
     "suitableSeason": "ஏற்ற பருவம்", "waterRequirement": "நீர் தேவை",
     "harvestDuration": "அறுவடை காலம்", "soilSuitability": "மண் பொருத்தம்", "expectedYield": "எதிர்பார்க்கும் விளைச்சல்",
-    "days": "நாட்கள்", "whyTitle": "ஏன் இந்த பயிர்?", "whyIntro": "பரிந்துரைக்கப்படுகிறது ஏனெனில் உங்கள் மண்ணில் உள்ளது",
+    "days": "நாட்கள்", "predictionConfidence": "கணிப்பு நம்பகத்தன்மை", "modelAccuracy": "மாடல் துல்லியம்",
+    "whyTitle": "ஏன் இந்த பயிர்?", "whyIntro": "பரிந்துரைக்கப்படுகிறது ஏனெனில் உங்கள் மண்ணில் உள்ளது",
     "whyOutro": "இது {{season}} பருவத்தில் இதன் வளர்ச்சிக்கு ஏற்றது.",
     "whyFallback": "நீங்கள் உள்ளிட்ட மதிப்புகளுக்கு {{season}} பருவத்தில் மிக நெருக்கமான ஒட்டுமொத்த பொருத்தமாக இருந்தது.",
     "and": "மற்றும்",
@@ -61,7 +90,9 @@
     "organicTreatment": "இயற்கை சிகிச்சை", "chemicalTreatment": "இரசாயன சிகிச்சை",
     "recommendedPesticides": "பரிந்துரைக்கப்பட்ட பூச்சிக்கொல்லிகள்", "preventionTips": "தடுப்பு குறிப்புகள்",
     "recoveryTime": "எதிர்பார்க்கப்படும் குணமடையும் நேரம்", "healthyPlant": "இந்த செடி ஆரோக்கியமாக உள்ளது!",
-    "analyzing": "படம் பகுப்பாய்வு செய்யப்படுகிறது..."
+    "analyzing": "படம் பகுப்பாய்வு செய்யப்படுகிறது...", "severityLevel": "தீவிரத்தன்மை நிலை",
+    "recommendedFungicide": "பரிந்துரைக்கப்பட்ட பூஞ்சைக் கொல்லி", "dosageGuidance": "அளவு வழிகாட்டுதல்",
+    "modelUsed": "மாடல்", "overallSeverity": "ஒட்டுமொத்த தீவிரத்தன்மை"
   },
   "errors": {
     "generic": "ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்.", "network": "நெட்வொர்க் பிழை. உங்கள் இணைப்பை சரிபார்க்கவும்.",
@@ -120,7 +151,7 @@
       "soilMonitoringTitle": "நேரடி மண் கண்காணிப்பு",
       "soilMonitoringText": "உங்கள் இணைக்கப்பட்ட சென்சார்களிலிருந்து நேரடி ஈரப்பதம், வெப்பநிலை, ஈரப்பதம் மற்றும் pH.",
       "aiRecommendationTitle": "AI பயிர் பரிந்துரை",
-      "aiRecommendationText": "நம்பகத்தன்மை மதிப்பெண்கள் மற்றும் முதல்-5 மாற்று வழிகளுடன் ரேண்டம் ஃபாரெஸ்ட் கணிப்புகள்.",
+      "aiRecommendationText": "நம்பகத்தன்மை மதிப்பெண்கள் மற்றும் முதல்-9 மாற்று வழிகளுடன் ரேண்டம் ஃபாரெஸ்ட் கணிப்புகள்.",
       "fertilityAnalysisTitle": "மண் வளத்தன்மை பகுப்பாய்வு",
       "fertilityAnalysisText": "வண்ண-குறியிடப்பட்ட ஊட்டச்சத்து குறிகாட்டிகளுடன் தெளிவான 0-100 வளத்தன்மை மதிப்பெண்.",
       "fertilityImprovementTitle": "வளத்தன்மை மேம்பாட்டு பரிந்துரைகள்",
@@ -157,7 +188,7 @@
       "outputLabel": "மாடல் வெளியீடு",
       "outputCrop": "பரிந்துரைக்கப்பட்ட பயிர்",
       "outputConfidence": "நம்பகத்தன்மை மதிப்பெண்",
-      "outputAlternatives": "முதல் 5 மாற்று வழிகள்"
+      "outputAlternatives": "முதல் 9 மாற்று வழிகள்"
     },
     "footer": {
       "project": "திட்டம்",
@@ -166,8 +197,22 @@
       "technologies": "தொழில்நுட்பங்கள்",
       "links": "இணைப்புகள்",
       "github": "GitHub களஞ்சியம்",
-      "contact": "தொடர்பு கொள்ள",
       "copyright": "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
     }
+  },
+  "admin": {
+    "title": "நிர்வாக டாஷ்போர்டு",
+    "subtitle": "விவசாயிகளை நிர்வகிக்கவும், செயல்பாட்டை கண்காணிக்கவும், தளத் தரவை ஏற்றுமதி செய்யவும்.",
+    "statTotalUsers": "மொத்த பயனர்கள்", "statActiveUsers": "செயலில் உள்ள பயனர்கள்", "statDeactivated": "செயலிழக்கப்பட்டது",
+    "statAdmins": "நிர்வாகிகள்", "statPredictions": "கணிப்புகள்", "statPestScans": "பூச்சி ஸ்கேன்கள்",
+    "statDevices": "சாதனங்கள்", "statSensorReadings": "சென்சார் அளவீடுகள்",
+    "tabUsers": "பயனர்கள்", "tabLogins": "உள்நுழைவு வரலாறு", "tabPredictions": "கணிப்புகள்",
+    "tabPestScans": "பூச்சி ஸ்கேன்கள்", "tabSensors": "சென்சார் அளவீடுகள்",
+    "colName": "பெயர்", "colEmail": "மின்னஞ்சல்", "colLocation": "இடம்", "colRole": "பங்கு",
+    "colStatus": "நிலை", "colJoined": "சேர்ந்த தேதி", "colActions": "செயல்கள்",
+    "colResult": "முடிவு", "colSource": "மூலம்", "colTime": "நேரம்",
+    "active": "செயலில்", "deactivated": "செயலிழக்கப்பட்டது", "deactivate": "செயலிழக்கச் செய்", "activate": "செயல்படுத்து",
+    "delete": "நீக்கு", "success": "வெற்றி", "failed": "தோல்வி", "exportCsv": "CSV ஏற்றுமதி செய்",
+    "confirmDelete": "{{name}} இன் கணக்கை நிரந்தரமாக நீக்க விரும்புகிறீர்களா? இதை மீட்டெடுக்க முடியாது."
   }
 }

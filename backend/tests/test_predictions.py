@@ -11,7 +11,7 @@ def test_manual_prediction_returns_valid_crop(client, auth_token):
     body = resp.json()
     assert body["recommended_crop"]
     assert 0 <= body["confidence"] <= 1
-    assert len(body["alternatives"]) == 5
+    assert len(body["alternatives"]) == 9
     assert "crop_details" in body
     assert body["season_used"] == "summer"
     assert body["explanation"]
@@ -66,15 +66,13 @@ def test_manual_prediction_validates_ranges(client, auth_token):
     assert resp.status_code == 422
 
 
-def test_prediction_history(client, auth_token):
-    client.post(
-        "/api/v1/predictions/manual",
-        headers={"Authorization": f"Bearer {auth_token}"},
-        json={
-            "nitrogen": 90, "phosphorus": 45, "potassium": 40, "temperature": 25,
-            "humidity": 82, "ph": 6.2, "rainfall": 230,
-        },
-    )
-    resp = client.get("/api/v1/predictions/history", headers={"Authorization": f"Bearer {auth_token}"})
+def test_model_info_reports_real_evaluation_metrics(client, auth_token):
+    resp = client.get("/api/v1/predictions/model-info", headers={"Authorization": f"Bearer {auth_token}"})
     assert resp.status_code == 200
-    assert len(resp.json()) >= 1
+    body = resp.json()
+    assert 0 <= body["accuracy"] <= 1
+    assert 0 <= body["cv_mean_accuracy"] <= 1
+    assert body["n_classes"] >= 50
+    assert len(body["classes"]) == body["n_classes"]
+
+

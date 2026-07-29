@@ -24,3 +24,33 @@ All images sourced from Wikipedia article lead images (Wikimedia Commons).
 - **cotton.jpg** — [Cotton](https://en.wikipedia.org/wiki/Cotton), via Wikipedia/Wikimedia Commons
 - **jute.jpg** — [Jute](https://en.wikipedia.org/wiki/Jute), via Wikipedia/Wikimedia Commons
 - **coffee.jpg** — [Coffee](https://en.wikipedia.org/wiki/Coffee), via Wikipedia/Wikimedia Commons
+- **wheat.jpg** — [Wheat](https://en.wikipedia.org/wiki/Wheat), via Wikipedia/Wikimedia Commons
+- **sugarcane.jpg** — [Sugarcane](https://en.wikipedia.org/wiki/Sugarcane), via Wikipedia/Wikimedia Commons
+- **tea.jpg** — [Camellia sinensis](https://en.wikipedia.org/wiki/Camellia_sinensis), via Wikipedia/Wikimedia Commons
+- **groundnut.jpg** — [Peanut](https://en.wikipedia.org/wiki/Peanut), via Wikipedia/Wikimedia Commons
+- **soybean.jpg** — [Soybean](https://en.wikipedia.org/wiki/Soybean), via Wikipedia/Wikimedia Commons
+- **mustard.jpg** — [Mustard plant](https://en.wikipedia.org/wiki/Mustard_plant), via Wikipedia/Wikimedia Commons
+- **sunflower.jpg** — [Common sunflower](https://en.wikipedia.org/wiki/Common_sunflower), via Wikipedia/Wikimedia Commons
+- **tomato.jpg** — [Tomato](https://en.wikipedia.org/wiki/Tomato), via Wikipedia/Wikimedia Commons
+- **onion.jpg** — [Onion](https://en.wikipedia.org/wiki/Onion), via Wikipedia/Wikimedia Commons
+- **potato.jpg** — [Potato](https://en.wikipedia.org/wiki/Potato), via Wikipedia/Wikimedia Commons
+- **garlic.jpg** — [Garlic](https://en.wikipedia.org/wiki/Garlic), via Wikipedia/Wikimedia Commons
+- **brinjal.jpg** — [Eggplant](https://en.wikipedia.org/wiki/Eggplant), via Wikipedia/Wikimedia Commons
+- **cabbage.jpg** — [Cabbage](https://en.wikipedia.org/wiki/Cabbage), via Wikipedia/Wikimedia Commons
+- **cauliflower.jpg** — [Cauliflower](https://en.wikipedia.org/wiki/Cauliflower), via Wikipedia/Wikimedia Commons
+- **okra.jpg** — [Okra](https://en.wikipedia.org/wiki/Okra), via Wikipedia/Wikimedia Commons
+- **spinach.jpg** — [Spinach](https://en.wikipedia.org/wiki/Spinach), via Wikipedia/Wikimedia Commons
+- **cucumber.jpg** — [Cucumber](https://en.wikipedia.org/wiki/Cucumber), via Wikipedia/Wikimedia Commons
+- **guava.jpg** — [Guava](https://en.wikipedia.org/wiki/Guava), via Wikipedia/Wikimedia Commons
+- **turmeric.jpg** — [Turmeric](https://en.wikipedia.org/wiki/Turmeric), via Wikipedia/Wikimedia Commons
+- **ginger.jpg** — [Ginger](https://en.wikipedia.org/wiki/Ginger), via Wikipedia/Wikimedia Commons
+- **blackpepper.jpg** — [Black pepper](https://en.wikipedia.org/wiki/Black_pepper), via Wikipedia/Wikimedia Commons
+- **cardamom.jpg** — [Cardamom](https://en.wikipedia.org/wiki/Cardamom), via Wikipedia/Wikimedia Commons
+- **coriander.jpg** — [Coriander](https://en.wikipedia.org/wiki/Coriander), via Wikipedia/Wikimedia Commons
+- **fenugreek.jpg** — [Fenugreek](https://en.wikipedia.org/wiki/Fenugreek), via Wikipedia/Wikimedia Commons
+- **sorghum.jpg** — [Sorghum](https://en.wikipedia.org/wiki/Sorghum), via Wikipedia/Wikimedia Commons
+- **pearlmillet.jpg** — [Pearl millet](https://en.wikipedia.org/wiki/Pearl_millet), via Wikipedia/Wikimedia Commons
+- **fingermillet.jpg** — [Finger millet](https://en.wikipedia.org/wiki/Finger_millet), via Wikipedia/Wikimedia Commons
+- **carrot.jpg** — [Carrot](https://en.wikipedia.org/wiki/Carrot), via Wikipedia/Wikimedia Commons
+- **peas.jpg** — [Pea](https://en.wikipedia.org/wiki/Pea), via Wikipedia/Wikimedia Commons
+- **sesame.jpg** — [Sesame](https://en.wikipedia.org/wiki/Sesame), via Wikipedia/Wikimedia Commons

@@ -9,13 +9,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import pytest
 from fastapi.testclient import TestClient
 
-from app.core.database import Base, engine
+from app.core.admin_seed import seed_admin_account
+from app.core.database import Base, SessionLocal, engine
 from app.main import app
 
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_database():
     Base.metadata.create_all(bind=engine)
+    db = SessionLocal()
+    try:
+        seed_admin_account(db)
+    finally:
+        db.close()
     yield
     Base.metadata.drop_all(bind=engine)
     engine.dispose()

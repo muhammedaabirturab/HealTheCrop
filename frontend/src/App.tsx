@@ -2,13 +2,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ProtectedRoute from './components/ProtectedRoute'
+import AdminRoute from './components/AdminRoute'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import ManualInput from './pages/ManualInput'
 import PestScan from './pages/PestScan'
-import History from './pages/History'
+import AdminDashboard from './pages/AdminDashboard'
 
 export default function App() {
   return (
@@ -24,7 +25,10 @@ export default function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/manual-input" element={<ManualInput />} />
             <Route path="/pest-scan" element={<PestScan />} />
-            <Route path="/history" element={<History />} />
+          </Route>
+
+          <Route element={<AdminRoute />}>
+            <Route path="/admin" element={<AdminDashboard />} />
           </Route>
         </Routes>
       </main>

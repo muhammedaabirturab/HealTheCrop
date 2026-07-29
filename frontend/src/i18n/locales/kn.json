@@ -1,11 +1,32 @@
 {
   "app": { "name": "ಹೀಲ್ ದ ಕ್ರಾಪ್", "tagline": "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ, ಆರೋಗ್ಯಕರ ಬೆಳೆಗಳು" },
+  "crops": {
+    "rice": "ಅಕ್ಕಿ", "maize": "ಮೆಕ್ಕೆಜೋಳ", "chickpea": "ಕಡಲೆ", "kidneybeans": "ರಾಜ್ಮಾ", "pigeonpeas": "ತೊಗರಿ",
+    "mothbeans": "ಮೋಠ್ ಬೀನ್ಸ್", "mungbean": "ಹೆಸರು", "blackgram": "ಉದ್ದು", "lentil": "ಮಸೂರ್", "pomegranate": "ದಾಳಿಂಬೆ",
+    "banana": "ಬಾಳೆಹಣ್ಣು", "mango": "ಮಾವು", "grapes": "ದ್ರಾಕ್ಷಿ", "watermelon": "ಕಲ್ಲಂಗಡಿ", "muskmelon": "ಖರ್ಬೂಜ",
+    "apple": "ಸೇಬು", "orange": "ಕಿತ್ತಳೆ", "papaya": "ಪಪ್ಪಾಯಿ", "coconut": "ತೆಂಗಿನಕಾಯಿ", "cotton": "ಹತ್ತಿ", "jute": "ಸೆಣಬು", "coffee": "ಕಾಫಿ",
+    "wheat": "ಗೋಧಿ", "sugarcane": "ಕಬ್ಬು", "tea": "ಚಹಾ", "groundnut": "ಕಡಲೆಕಾಯಿ", "soybean": "ಸೋಯಾಬೀನ್", "mustard": "ಸಾಸಿವೆ",
+    "sunflower": "ಸೂರ್ಯಕಾಂತಿ", "tomato": "ಟೊಮ್ಯಾಟೊ", "onion": "ಈರುಳ್ಳಿ", "potato": "ಆಲೂಗಡ್ಡೆ", "garlic": "ಬೆಳ್ಳುಳ್ಳಿ", "brinjal": "ಬದನೆಕಾಯಿ",
+    "cabbage": "ಎಲೆಕೋಸು", "cauliflower": "ಹೂಕೋಸು", "okra": "ಬೆಂಡೆಕಾಯಿ", "spinach": "ಪಾಲಕ್", "cucumber": "ಸೌತೆಕಾಯಿ", "guava": "ಸೀಬೆ",
+    "turmeric": "ಅರಿಶಿನ", "ginger": "ಶುಂಠಿ", "blackpepper": "ಕರಿಮೆಣಸು", "cardamom": "ಏಲಕ್ಕಿ", "coriander": "ಕೊತ್ತಂಬರಿ",
+    "fenugreek": "ಮೆಂತ್ಯ", "sorghum": "ಜೋಳ", "pearlmillet": "ಸಜ್ಜೆ", "fingermillet": "ರಾಗಿ",
+    "carrot": "ಕ್ಯಾರೆಟ್", "peas": "ಬಟಾಣಿ", "sesame": "ಎಳ್ಳು"
+  },
+  "cropAttributes": {
+    "water": { "low": "ಕಡಿಮೆ", "medium": "ಮಧ್ಯಮ", "high": "ಹೆಚ್ಚು" },
+    "soil": {
+      "alluvial": "ಮೆಕ್ಕಲು", "blackCottonSoil": "ಕಪ್ಪು ಹತ್ತಿ ಮಣ್ಣು", "clayey": "ಜೇಡಿ ಮಣ್ಣು",
+      "coastalAlluvial": "ಕರಾವಳಿ ಮೆಕ್ಕಲು", "loamy": "ಗೋಡು ಮಣ್ಣು", "redLaterite": "ಕೆಂಪು ಲ್ಯಾಟರೈಟ್",
+      "sandy": "ಮರಳು", "sandyLoam": "ಮರಳು ಗೋಡು", "wellDrained": "ಉತ್ತಮ ಬಸಿಗಾಲುವೆ"
+    },
+    "season": { "annual": "ವಾರ್ಷಿಕ", "kharif": "ಖಾರಿಫ್", "rabi": "ರಬಿ", "zaid": "ಜಾಯಿದ್" }
+  },
   "languages": {
     "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
   },
   "nav": {
     "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್", "manualInput": "ಕೈಯಾರೆ ನಮೂದು", "cropRecommendation": "ಬೆಳೆ ಶಿಫಾರಸು",
-    "scanCrop": "ಬೆಳೆ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ", "reports": "ವರದಿಗಳು", "history": "ಇತಿಹಾಸ", "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+    "scanCrop": "ಬೆಳೆ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ", "reports": "ವರದಿಗಳು", "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
     "login": "ಲಾಗಿನ್", "logout": "ಲಾಗ್ ಔಟ್", "register": "ನೋಂದಣಿ ಮಾಡಿ"
   },
   "common": {
@@ -17,7 +38,14 @@
     "welcomeBack": "ಮತ್ತೆ ಸ್ವಾಗತ", "createAccount": "ನಿಮ್ಮ ಖಾತೆ ರಚಿಸಿ", "name": "ಪೂರ್ಣ ಹೆಸರು",
     "email": "ಇಮೇಲ್ ವಿಳಾಸ", "password": "ಪಾಸ್‌ವರ್ಡ್", "phone": "ಫೋನ್ ಸಂಖ್ಯೆ", "location": "ಸ್ಥಳ",
     "loginButton": "ಲಾಗಿನ್ ಮಾಡಿ", "registerButton": "ಖಾತೆ ರಚಿಸಿ",
-    "invalidCredentials": "ಅಮಾನ್ಯ ಇಮೇಲ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್", "emailExists": "ಈ ಇಮೇಲ್ ಈಗಾಗಲೇ ನೋಂದಣಿಯಾಗಿದೆ"
+    "invalidCredentials": "ಅಮಾನ್ಯ ಇಮೇಲ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್", "emailExists": "ಈ ಇಮೇಲ್ ಈಗಾಗಲೇ ನೋಂದಣಿಯಾಗಿದೆ",
+    "rememberMe": "ನನ್ನನ್ನು ನೆನಪಿಡಿ"
+  },
+  "location": {
+    "permissionPrompt": "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಪ್ರವೇಶಿಸಲು HealTheCrop ಗೆ ಅನುಮತಿಸುವುದೇ?",
+    "allow": "ಅನುಮತಿಸಿ", "deny": "ನಿರಾಕರಿಸಿ", "detecting": "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಪತ್ತೆ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+    "autoDetected": "ಸ್ವಯಂ ಪತ್ತೆಯಾಗಿದೆ", "change": "ಬದಲಾಯಿಸಿ", "selectState": "ನಿಮ್ಮ ರಾಜ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+    "searchPlaceholder": "ರಾಜ್ಯಗಳನ್ನು ಹುಡುಕಿ...", "noResults": "ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ"
   },
   "dashboard": {
     "title": "ಕೃಷಿ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್", "liveSensorValues": "ಲೈವ್ ಸೆನ್ಸಾರ್ ಮೌಲ್ಯಗಳು", "historicalTrends": "ಐತಿಹಾಸಿಕ ಪ್ರವೃತ್ತಿಗಳು",
@@ -45,7 +73,8 @@
     "title": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು", "topPick": "ಅಗ್ರ ಶಿಫಾರಸು", "alternatives": "ಪರ್ಯಾಯ ಬೆಳೆಗಳು",
     "suitableSeason": "ಸೂಕ್ತ ಋತು", "waterRequirement": "ನೀರಿನ ಅವಶ್ಯಕತೆ",
     "harvestDuration": "ಕೊಯ್ಲು ಅವಧಿ", "soilSuitability": "ಮಣ್ಣಿನ ಸೂಕ್ತತೆ", "expectedYield": "ನಿರೀಕ್ಷಿತ ಇಳುವರಿ",
-    "days": "ದಿನಗಳು", "whyTitle": "ಈ ಬೆಳೆ ಏಕೆ?", "whyIntro": "ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ ಏಕೆಂದರೆ ನಿಮ್ಮ ಮಣ್ಣಿನಲ್ಲಿ ಇದೆ",
+    "days": "ದಿನಗಳು", "predictionConfidence": "ಭವಿಷ್ಯವಾಣಿ ವಿಶ್ವಾಸ ಮಟ್ಟ", "modelAccuracy": "ಮಾಡೆಲ್ ನಿಖರತೆ",
+    "whyTitle": "ಈ ಬೆಳೆ ಏಕೆ?", "whyIntro": "ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ ಏಕೆಂದರೆ ನಿಮ್ಮ ಮಣ್ಣಿನಲ್ಲಿ ಇದೆ",
     "whyOutro": "ಇದು {{season}} ಋತುವಿನಲ್ಲಿ ಇದರ ಬೆಳವಣಿಗೆಗೆ ಸೂಕ್ತವಾಗಿದೆ.",
     "whyFallback": "ನೀವು ನಮೂದಿಸಿದ ಮೌಲ್ಯಗಳಿಗೆ {{season}} ಋತುವಿನಲ್ಲಿ ಹತ್ತಿರದ ಒಟ್ಟಾರೆ ಹೊಂದಾಣಿಕೆಯಾಗಿತ್ತು.",
     "and": "ಮತ್ತು",
@@ -61,7 +90,9 @@
     "organicTreatment": "ಸಾವಯವ ಚಿಕಿತ್ಸೆ", "chemicalTreatment": "ರಾಸಾಯನಿಕ ಚಿಕಿತ್ಸೆ",
     "recommendedPesticides": "ಶಿಫಾರಸು ಮಾಡಿದ ಕೀಟನಾಶಕಗಳು", "preventionTips": "ತಡೆಗಟ್ಟುವ ಸಲಹೆಗಳು",
     "recoveryTime": "ನಿರೀಕ್ಷಿತ ಚೇತರಿಕೆ ಸಮಯ", "healthyPlant": "ಈ ಸಸ್ಯ ಆರೋಗ್ಯಕರವಾಗಿ ಕಾಣುತ್ತದೆ!",
-    "analyzing": "ಫೋಟೋ ವಿಶ್ಲೇಷಣೆ ಆಗುತ್ತಿದೆ..."
+    "analyzing": "ಫೋಟೋ ವಿಶ್ಲೇಷಣೆ ಆಗುತ್ತಿದೆ...", "severityLevel": "ತೀವ್ರತೆ ಮಟ್ಟ",
+    "recommendedFungicide": "ಶಿಫಾರಸು ಮಾಡಿದ ಶಿಲೀಂಧ್ರನಾಶಕ", "dosageGuidance": "ಡೋಸೇಜ್ ಮಾರ್ಗದರ್ಶನ",
+    "modelUsed": "ಮಾಡೆಲ್", "overallSeverity": "ಒಟ್ಟಾರೆ ತೀವ್ರತೆ"
   },
   "errors": {
     "generic": "ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.", "network": "ನೆಟ್‌ವರ್ಕ್ ದೋಷ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ.",
@@ -120,7 +151,7 @@
       "soilMonitoringTitle": "ರೀಯಲ್-ಟೈಮ್ ಮಣ್ಣಿನ ಮೇಲ್ವಿಚಾರಣೆ",
       "soilMonitoringText": "ನಿಮ್ಮ ಸಂಪರ್ಕಿತ ಸೆನ್ಸಾರ್‌ಗಳಿಂದ ಲೈವ್ ತೇವಾಂಶ, ತಾಪಮಾನ, ಆರ್ದ್ರತೆ ಮತ್ತು pH.",
       "aiRecommendationTitle": "AI ಬೆಳೆ ಶಿಫಾರಸು",
-      "aiRecommendationText": "ವಿಶ್ವಾಸ ಅಂಕಗಳು ಮತ್ತು ಅಗ್ರ-5 ಪರ್ಯಾಯಗಳೊಂದಿಗೆ ರಾಂಡಮ್ ಫಾರೆಸ್ಟ್ ಭವಿಷ್ಯವಾಣಿಗಳು.",
+      "aiRecommendationText": "ವಿಶ್ವಾಸ ಅಂಕಗಳು ಮತ್ತು ಅಗ್ರ-9 ಪರ್ಯಾಯಗಳೊಂದಿಗೆ ರಾಂಡಮ್ ಫಾರೆಸ್ಟ್ ಭವಿಷ್ಯವಾಣಿಗಳು.",
       "fertilityAnalysisTitle": "ಮಣ್ಣಿನ ಫಲವತ್ತತೆ ವಿಶ್ಲೇಷಣೆ",
       "fertilityAnalysisText": "ಬಣ್ಣ-ಕೋಡೆಡ್ ಪೋಷಕಾಂಶ ಸೂಚಕಗಳೊಂದಿಗೆ ಸ್ಪಷ್ಟ 0-100 ಫಲವತ್ತತೆ ಅಂಕ.",
       "fertilityImprovementTitle": "ಫಲವತ್ತತೆ ಸುಧಾರಣಾ ಸಲಹೆಗಳು",
@@ -157,7 +188,7 @@
       "outputLabel": "ಮಾಡೆಲ್ ಔಟ್‌ಪುಟ್",
       "outputCrop": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆ",
       "outputConfidence": "ವಿಶ್ವಾಸ ಅಂಕ",
-      "outputAlternatives": "ಅಗ್ರ 5 ಪರ್ಯಾಯಗಳು"
+      "outputAlternatives": "ಅಗ್ರ 9 ಪರ್ಯಾಯಗಳು"
     },
     "footer": {
       "project": "ಯೋಜನೆ",
@@ -166,8 +197,22 @@
       "technologies": "ತಂತ್ರಜ್ಞಾನಗಳು",
       "links": "ಲಿಂಕ್‌ಗಳು",
       "github": "GitHub ರೆಪೊಸಿಟರಿ",
-      "contact": "ಸಂಪರ್ಕಿಸಿ",
       "copyright": "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ."
     }
+  },
+  "admin": {
+    "title": "ಆಡ್ಮಿನ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "subtitle": "ರೈತರನ್ನು ನಿರ್ವಹಿಸಿ, ಚಟುವಟಿಕೆಯನ್ನು ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡಿ ಮತ್ತು ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಡೇಟಾವನ್ನು ರಫ್ತು ಮಾಡಿ.",
+    "statTotalUsers": "ಒಟ್ಟು ಬಳಕೆದಾರರು", "statActiveUsers": "ಸಕ್ರಿಯ ಬಳಕೆದಾರರು", "statDeactivated": "ನಿಷ್ಕ್ರಿಯಗೊಂಡ",
+    "statAdmins": "ನಿರ್ವಾಹಕರು", "statPredictions": "ಭವಿಷ್ಯವಾಣಿಗಳು", "statPestScans": "ಕೀಟ ಸ್ಕ್ಯಾನ್‌ಗಳು",
+    "statDevices": "ಸಾಧನಗಳು", "statSensorReadings": "ಸೆನ್ಸಾರ್ ರೀಡಿಂಗ್‌ಗಳು",
+    "tabUsers": "ಬಳಕೆದಾರರು", "tabLogins": "ಲಾಗಿನ್ ಇತಿಹಾಸ", "tabPredictions": "ಭವಿಷ್ಯವಾಣಿಗಳು",
+    "tabPestScans": "ಕೀಟ ಸ್ಕ್ಯಾನ್‌ಗಳು", "tabSensors": "ಸೆನ್ಸಾರ್ ರೀಡಿಂಗ್‌ಗಳು",
+    "colName": "ಹೆಸರು", "colEmail": "ಇಮೇಲ್", "colLocation": "ಸ್ಥಳ", "colRole": "ಪಾತ್ರ",
+    "colStatus": "ಸ್ಥಿತಿ", "colJoined": "ಸೇರಿದ ದಿನಾಂಕ", "colActions": "ಕ್ರಿಯೆಗಳು",
+    "colResult": "ಫಲಿತಾಂಶ", "colSource": "ಮೂಲ", "colTime": "ಸಮಯ",
+    "active": "ಸಕ್ರಿಯ", "deactivated": "ನಿಷ್ಕ್ರಿಯಗೊಂಡ", "deactivate": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ", "activate": "ಸಕ್ರಿಯಗೊಳಿಸಿ",
+    "delete": "ಅಳಿಸಿ", "success": "ಯಶಸ್ವಿ", "failed": "ವಿಫಲ", "exportCsv": "CSV ರಫ್ತು ಮಾಡಿ",
+    "confirmDelete": "{{name}} ಅವರ ಖಾತೆಯನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ? ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ."
   }
 }

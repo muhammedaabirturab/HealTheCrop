@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { Droplets, CalendarDays, Sprout, TrendingUp, Lightbulb } from 'lucide-react'
 import { composeExplanation, type RecommendationExplanation } from '../lib/explanation'
+import { cropDisplayName, translateSeasons, translateSoilSuitability, translateWaterRequirement } from '../lib/cropLabels'
 
 export interface CropCardData {
   crop: string
@@ -22,6 +23,7 @@ export default function CropCard({ data }: { data: CropCardData }) {
   const { t } = useTranslation()
   const [imgError, setImgError] = useState(false)
   const imageUrl = `/crop-images/${data.image}`
+  const displayName = cropDisplayName(t, data.crop, data.display_name)
 
   return (
     <motion.div
@@ -33,7 +35,7 @@ export default function CropCard({ data }: { data: CropCardData }) {
         {!imgError ? (
           <img
             src={imageUrl}
-            alt={data.display_name}
+            alt={displayName}
             className="w-full h-full object-cover"
             onError={() => setImgError(true)}
           />
@@ -43,7 +45,7 @@ export default function CropCard({ data }: { data: CropCardData }) {
       </div>
       <div className="p-4 flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold text-forest-dark">{data.display_name}</h3>
+          <h3 className="text-lg font-bold text-forest-dark">{displayName}</h3>
           <span className="text-sm font-bold bg-forest/10 text-forest-dark px-2 py-1 rounded-full">
             {Math.round(data.confidence * 100)}%
           </span>
@@ -52,11 +54,11 @@ export default function CropCard({ data }: { data: CropCardData }) {
         <div className="grid grid-cols-2 gap-2 text-xs text-earth-dark">
           <div className="flex items-center gap-1.5">
             <CalendarDays size={14} />
-            {data.season.join(', ')}
+            {translateSeasons(t, data.season)}
           </div>
           <div className="flex items-center gap-1.5">
             <Droplets size={14} />
-            {t(`cropRecommendation.waterRequirement`)}: {data.water_requirement}
+            {t(`cropRecommendation.waterRequirement`)}: {translateWaterRequirement(t, data.water_requirement)}
           </div>
           <div className="flex items-center gap-1.5">
             <Sprout size={14} />
@@ -69,7 +71,7 @@ export default function CropCard({ data }: { data: CropCardData }) {
         </div>
 
         <p className="text-xs text-gray-500">
-          {t('cropRecommendation.soilSuitability')}: {data.soil_suitability.join(', ')}
+          {t('cropRecommendation.soilSuitability')}: {translateSoilSuitability(t, data.soil_suitability)}
         </p>
 
         {data.explanation && (
@@ -79,7 +81,7 @@ export default function CropCard({ data }: { data: CropCardData }) {
               {t('cropRecommendation.whyTitle')}
             </div>
             <p className="text-xs text-earth-dark leading-relaxed">
-              {composeExplanation(t, data.display_name, data.explanation)}
+              {composeExplanation(t, displayName, data.explanation)}
             </p>
           </div>
         )}

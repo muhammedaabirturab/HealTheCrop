@@ -1,11 +1,32 @@
 {
   "app": { "name": "HealTheCrop", "tagline": "Smart Farming, Healthier Crops" },
+  "crops": {
+    "rice": "Rice", "maize": "Maize", "chickpea": "Chickpea", "kidneybeans": "Kidney Beans", "pigeonpeas": "Pigeon Peas",
+    "mothbeans": "Moth Beans", "mungbean": "Mung Bean", "blackgram": "Black Gram", "lentil": "Lentil", "pomegranate": "Pomegranate",
+    "banana": "Banana", "mango": "Mango", "grapes": "Grapes", "watermelon": "Watermelon", "muskmelon": "Muskmelon",
+    "apple": "Apple", "orange": "Orange", "papaya": "Papaya", "coconut": "Coconut", "cotton": "Cotton", "jute": "Jute", "coffee": "Coffee",
+    "wheat": "Wheat", "sugarcane": "Sugarcane", "tea": "Tea", "groundnut": "Groundnut", "soybean": "Soybean", "mustard": "Mustard",
+    "sunflower": "Sunflower", "tomato": "Tomato", "onion": "Onion", "potato": "Potato", "garlic": "Garlic", "brinjal": "Brinjal",
+    "cabbage": "Cabbage", "cauliflower": "Cauliflower", "okra": "Okra", "spinach": "Spinach", "cucumber": "Cucumber", "guava": "Guava",
+    "turmeric": "Turmeric", "ginger": "Ginger", "blackpepper": "Black Pepper", "cardamom": "Cardamom", "coriander": "Coriander",
+    "fenugreek": "Fenugreek", "sorghum": "Sorghum", "pearlmillet": "Pearl Millet", "fingermillet": "Finger Millet",
+    "carrot": "Carrot", "peas": "Green Peas", "sesame": "Sesame"
+  },
+  "cropAttributes": {
+    "water": { "low": "Low", "medium": "Medium", "high": "High" },
+    "soil": {
+      "alluvial": "Alluvial", "blackCottonSoil": "Black Cotton Soil", "clayey": "Clayey",
+      "coastalAlluvial": "Coastal Alluvial", "loamy": "Loamy", "redLaterite": "Red Laterite",
+      "sandy": "Sandy", "sandyLoam": "Sandy Loam", "wellDrained": "Well-drained"
+    },
+    "season": { "annual": "Annual", "kharif": "Kharif", "rabi": "Rabi", "zaid": "Zaid" }
+  },
   "languages": {
     "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
   },
   "nav": {
     "dashboard": "Dashboard", "manualInput": "Manual Input", "cropRecommendation": "Crop Recommendation",
-    "scanCrop": "Scan Crop", "reports": "Reports", "history": "History", "settings": "Settings",
+    "scanCrop": "Scan Crop", "reports": "Reports", "settings": "Settings",
     "login": "Login", "logout": "Logout", "register": "Register"
   },
   "common": {
@@ -17,7 +38,14 @@
     "welcomeBack": "Welcome Back", "createAccount": "Create Your Account", "name": "Full Name",
     "email": "Email Address", "password": "Password", "phone": "Phone Number", "location": "Location",
     "loginButton": "Log In", "registerButton": "Create Account",
-    "invalidCredentials": "Invalid email or password", "emailExists": "This email is already registered"
+    "invalidCredentials": "Invalid email or password", "emailExists": "This email is already registered",
+    "rememberMe": "Remember me"
+  },
+  "location": {
+    "permissionPrompt": "Allow HealTheCrop to access your location?",
+    "allow": "Allow", "deny": "Deny", "detecting": "Detecting your location...",
+    "autoDetected": "Auto Detected", "change": "Change", "selectState": "Select your state",
+    "searchPlaceholder": "Search states...", "noResults": "No matches found"
   },
   "dashboard": {
     "title": "Farm Dashboard", "liveSensorValues": "Live Sensor Values", "historicalTrends": "Historical Trends",
@@ -45,7 +73,8 @@
     "title": "Recommended Crops", "topPick": "Top Recommendation", "alternatives": "Alternative Crops",
     "suitableSeason": "Suitable Season", "waterRequirement": "Water Requirement",
     "harvestDuration": "Harvest Duration", "soilSuitability": "Soil Suitability", "expectedYield": "Expected Yield",
-    "days": "days", "whyTitle": "Why this crop?", "whyIntro": "is recommended because your soil has",
+    "days": "days", "predictionConfidence": "Prediction Confidence", "modelAccuracy": "Model Accuracy",
+    "whyTitle": "Why this crop?", "whyIntro": "is recommended because your soil has",
     "whyOutro": "which suits its growth well during the {{season}} season.",
     "whyFallback": "was the closest overall match for the values you entered in the {{season}} season.",
     "and": "and",
@@ -61,7 +90,9 @@
     "organicTreatment": "Organic Treatment", "chemicalTreatment": "Chemical Treatment",
     "recommendedPesticides": "Recommended Pesticides", "preventionTips": "Prevention Tips",
     "recoveryTime": "Expected Recovery Time", "healthyPlant": "This plant looks healthy!",
-    "analyzing": "Analyzing image..."
+    "analyzing": "Analyzing image...", "severityLevel": "Severity Level",
+    "recommendedFungicide": "Recommended Fungicide", "dosageGuidance": "Dosage Guidance",
+    "modelUsed": "Model", "overallSeverity": "Overall Severity"
   },
   "errors": {
     "generic": "Something went wrong. Please try again.", "network": "Network error. Check your connection.",
@@ -120,7 +151,7 @@
       "soilMonitoringTitle": "Real-Time Soil Monitoring",
       "soilMonitoringText": "Live moisture, temperature, humidity, and pH from your connected sensors.",
       "aiRecommendationTitle": "AI Crop Recommendation",
-      "aiRecommendationText": "Random Forest predictions with confidence scores and top-5 alternatives.",
+      "aiRecommendationText": "Random Forest predictions with confidence scores and top-9 alternatives.",
       "fertilityAnalysisTitle": "Soil Fertility Analysis",
       "fertilityAnalysisText": "A clear 0-100 fertility score with color-coded nutrient indicators.",
       "fertilityImprovementTitle": "Fertility Improvement Suggestions",
@@ -157,7 +188,7 @@
       "outputLabel": "Model Output",
       "outputCrop": "Recommended Crop",
       "outputConfidence": "Confidence Score",
-      "outputAlternatives": "Top 5 Alternatives"
+      "outputAlternatives": "Top 9 Alternatives"
     },
     "footer": {
       "project": "Project",
@@ -166,8 +197,22 @@
       "technologies": "Technologies",
       "links": "Links",
       "github": "GitHub Repository",
-      "contact": "Contact",
       "copyright": "All rights reserved."
     }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage farmers, monitor activity, and export platform data.",
+    "statTotalUsers": "Total Users", "statActiveUsers": "Active Users", "statDeactivated": "Deactivated",
+    "statAdmins": "Administrators", "statPredictions": "Predictions", "statPestScans": "Pest Scans",
+    "statDevices": "Devices", "statSensorReadings": "Sensor Readings",
+    "tabUsers": "Users", "tabLogins": "Login History", "tabPredictions": "Predictions",
+    "tabPestScans": "Pest Scans", "tabSensors": "Sensor Readings",
+    "colName": "Name", "colEmail": "Email", "colLocation": "Location", "colRole": "Role",
+    "colStatus": "Status", "colJoined": "Joined", "colActions": "Actions",
+    "colResult": "Result", "colSource": "Source", "colTime": "Time",
+    "active": "Active", "deactivated": "Deactivated", "deactivate": "Deactivate", "activate": "Activate",
+    "delete": "Delete", "success": "Success", "failed": "Failed", "exportCsv": "Export CSV",
+    "confirmDelete": "Are you sure you want to permanently delete {{name}}'s account? This cannot be undone."
   }
 }

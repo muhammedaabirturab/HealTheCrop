@@ -4,6 +4,7 @@ from app.models.sensor_reading import SensorReading
 from app.models.prediction import Prediction
 from app.models.pest_detection import PestDetection
 from app.models.fertility_report import FertilityReport
+from app.models.login_history import LoginHistory
 
 __all__ = [
     "User",
@@ -12,4 +13,5 @@ __all__ = [
     "Prediction",
     "PestDetection",
     "FertilityReport",
+    "LoginHistory",
 ]

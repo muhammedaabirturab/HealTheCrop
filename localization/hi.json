@@ -1,11 +1,32 @@
 {
   "app": { "name": "हील द क्रॉप", "tagline": "स्मार्ट खेती, स्वस्थ फसलें" },
+  "crops": {
+    "rice": "चावल", "maize": "मक्का", "chickpea": "चना", "kidneybeans": "राजमा", "pigeonpeas": "अरहर",
+    "mothbeans": "मोठ", "mungbean": "मूंग", "blackgram": "उड़द", "lentil": "मसूर", "pomegranate": "अनार",
+    "banana": "केला", "mango": "आम", "grapes": "अंगूर", "watermelon": "तरबूज", "muskmelon": "खरबूजा",
+    "apple": "सेब", "orange": "संतरा", "papaya": "पपीता", "coconut": "नारियल", "cotton": "कपास", "jute": "जूट", "coffee": "कॉफी",
+    "wheat": "गेहूं", "sugarcane": "गन्ना", "tea": "चाय", "groundnut": "मूंगफली", "soybean": "सोयाबीन", "mustard": "सरसों",
+    "sunflower": "सूरजमुखी", "tomato": "टमाटर", "onion": "प्याज", "potato": "आलू", "garlic": "लहसुन", "brinjal": "बैंगन",
+    "cabbage": "पत्तागोभी", "cauliflower": "फूलगोभी", "okra": "भिंडी", "spinach": "पालक", "cucumber": "खीरा", "guava": "अमरूद",
+    "turmeric": "हल्दी", "ginger": "अदरक", "blackpepper": "काली मिर्च", "cardamom": "इलायची", "coriander": "धनिया",
+    "fenugreek": "मेथी", "sorghum": "ज्वार", "pearlmillet": "बाजरा", "fingermillet": "रागी",
+    "carrot": "गाजर", "peas": "मटर", "sesame": "तिल"
+  },
+  "cropAttributes": {
+    "water": { "low": "कम", "medium": "मध्यम", "high": "अधिक" },
+    "soil": {
+      "alluvial": "जलोढ़", "blackCottonSoil": "काली कपास मिट्टी", "clayey": "चिकनी मिट्टी",
+      "coastalAlluvial": "तटीय जलोढ़", "loamy": "दोमट", "redLaterite": "लाल लेटराइट",
+      "sandy": "रेतीली", "sandyLoam": "रेतीली दोमट", "wellDrained": "अच्छी जल निकासी वाली"
+    },
+    "season": { "annual": "वार्षिक", "kharif": "खरीफ", "rabi": "रबी", "zaid": "जायद" }
+  },
   "languages": {
     "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
   },
   "nav": {
     "dashboard": "डैशबोर्ड", "manualInput": "मैनुअल इनपुट", "cropRecommendation": "फसल सिफारिश",
-    "scanCrop": "फसल स्कैन करें", "reports": "रिपोर्ट", "history": "इतिहास", "settings": "सेटिंग्स",
+    "scanCrop": "फसल स्कैन करें", "reports": "रिपोर्ट", "settings": "सेटिंग्स",
     "login": "लॉगिन", "logout": "लॉगआउट", "register": "पंजीकरण करें"
   },
   "common": {
@@ -17,7 +38,14 @@
     "welcomeBack": "वापसी पर स्वागत है", "createAccount": "अपना खाता बनाएं", "name": "पूरा नाम",
     "email": "ईमेल पता", "password": "पासवर्ड", "phone": "फ़ोन नंबर", "location": "स्थान",
     "loginButton": "लॉगिन करें", "registerButton": "खाता बनाएं",
-    "invalidCredentials": "अमान्य ईमेल या पासवर्ड", "emailExists": "यह ईमेल पहले से पंजीकृत है"
+    "invalidCredentials": "अमान्य ईमेल या पासवर्ड", "emailExists": "यह ईमेल पहले से पंजीकृत है",
+    "rememberMe": "मुझे याद रखें"
+  },
+  "location": {
+    "permissionPrompt": "HealTheCrop को आपका स्थान एक्सेस करने की अनुमति दें?",
+    "allow": "अनुमति दें", "deny": "अस्वीकार करें", "detecting": "आपका स्थान पता लगाया जा रहा है...",
+    "autoDetected": "स्वतः पता लगाया गया", "change": "बदलें", "selectState": "अपना राज्य चुनें",
+    "searchPlaceholder": "राज्य खोजें...", "noResults": "कोई परिणाम नहीं मिला"
   },
   "dashboard": {
     "title": "खेत डैशबोर्ड", "liveSensorValues": "लाइव सेंसर मान", "historicalTrends": "ऐतिहासिक रुझान",
@@ -45,7 +73,8 @@
     "title": "अनुशंसित फसलें", "topPick": "शीर्ष सिफारिश", "alternatives": "वैकल्पिक फसलें",
     "suitableSeason": "उपयुक्त मौसम", "waterRequirement": "पानी की आवश्यकता",
     "harvestDuration": "फसल अवधि", "soilSuitability": "मिट्टी की उपयुक्तता", "expectedYield": "अपेक्षित उपज",
-    "days": "दिन", "whyTitle": "यह फसल क्यों?", "whyIntro": "की सिफारिश की जाती है क्योंकि आपकी मिट्टी में है",
+    "days": "दिन", "predictionConfidence": "पूर्वानुमान विश्वास स्तर", "modelAccuracy": "मॉडल सटीकता",
+    "whyTitle": "यह फसल क्यों?", "whyIntro": "की सिफारिश की जाती है क्योंकि आपकी मिट्टी में है",
     "whyOutro": "जो {{season}} मौसम के दौरान इसकी वृद्धि के लिए उपयुक्त है।",
     "whyFallback": "आपके द्वारा दर्ज किए गए मूल्यों के लिए {{season}} मौसम में सबसे नज़दीकी समग्र मिलान था।",
     "and": "और",
@@ -61,7 +90,9 @@
     "organicTreatment": "जैविक उपचार", "chemicalTreatment": "रासायनिक उपचार",
     "recommendedPesticides": "अनुशंसित कीटनाशक", "preventionTips": "बचाव के उपाय",
     "recoveryTime": "अपेक्षित रिकवरी समय", "healthyPlant": "यह पौधा स्वस्थ दिखता है!",
-    "analyzing": "फोटो का विश्लेषण हो रहा है..."
+    "analyzing": "फोटो का विश्लेषण हो रहा है...", "severityLevel": "गंभीरता स्तर",
+    "recommendedFungicide": "अनुशंसित कवकनाशी", "dosageGuidance": "मात्रा मार्गदर्शन",
+    "modelUsed": "मॉडल", "overallSeverity": "समग्र गंभीरता"
   },
   "errors": {
     "generic": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।", "network": "नेटवर्क त्रुटि। अपना कनेक्शन जांचें।",
@@ -120,7 +151,7 @@
       "soilMonitoringTitle": "रीयल-टाइम मिट्टी निगरानी",
       "soilMonitoringText": "आपके जुड़े सेंसर से लाइव नमी, तापमान, आर्द्रता और pH।",
       "aiRecommendationTitle": "AI फसल सिफारिश",
-      "aiRecommendationText": "विश्वास स्कोर और शीर्ष-5 विकल्पों के साथ रैंडम फॉरेस्ट भविष्यवाणियां।",
+      "aiRecommendationText": "विश्वास स्कोर और शीर्ष-9 विकल्पों के साथ रैंडम फॉरेस्ट भविष्यवाणियां।",
       "fertilityAnalysisTitle": "मिट्टी उर्वरता विश्लेषण",
       "fertilityAnalysisText": "रंग-कोडित पोषक संकेतकों के साथ स्पष्ट 0-100 उर्वरता स्कोर।",
       "fertilityImprovementTitle": "उर्वरता सुधार सुझाव",
@@ -157,7 +188,7 @@
       "outputLabel": "मॉडल आउटपुट",
       "outputCrop": "अनुशंसित फसल",
       "outputConfidence": "विश्वास स्कोर",
-      "outputAlternatives": "शीर्ष 5 विकल्प"
+      "outputAlternatives": "शीर्ष 9 विकल्प"
     },
     "footer": {
       "project": "परियोजना",
@@ -166,8 +197,22 @@
       "technologies": "प्रौद्योगिकियां",
       "links": "लिंक",
       "github": "GitHub रिपॉज़िटरी",
-      "contact": "संपर्क करें",
       "copyright": "सर्वाधिकार सुरक्षित।"
     }
+  },
+  "admin": {
+    "title": "एडमिन डैशबोर्ड",
+    "subtitle": "किसानों का प्रबंधन करें, गतिविधि की निगरानी करें, और प्लेटफ़ॉर्म डेटा निर्यात करें।",
+    "statTotalUsers": "कुल उपयोगकर्ता", "statActiveUsers": "सक्रिय उपयोगकर्ता", "statDeactivated": "निष्क्रिय",
+    "statAdmins": "प्रशासक", "statPredictions": "भविष्यवाणियां", "statPestScans": "कीट स्कैन",
+    "statDevices": "उपकरण", "statSensorReadings": "सेंसर रीडिंग",
+    "tabUsers": "उपयोगकर्ता", "tabLogins": "लॉगिन इतिहास", "tabPredictions": "भविष्यवाणियां",
+    "tabPestScans": "कीट स्कैन", "tabSensors": "सेंसर रीडिंग",
+    "colName": "नाम", "colEmail": "ईमेल", "colLocation": "स्थान", "colRole": "भूमिका",
+    "colStatus": "स्थिति", "colJoined": "शामिल हुए", "colActions": "कार्य",
+    "colResult": "परिणाम", "colSource": "स्रोत", "colTime": "समय",
+    "active": "सक्रिय", "deactivated": "निष्क्रिय", "deactivate": "निष्क्रिय करें", "activate": "सक्रिय करें",
+    "delete": "हटाएं", "success": "सफल", "failed": "विफल", "exportCsv": "CSV निर्यात करें",
+    "confirmDelete": "क्या आप वाकई {{name}} का खाता स्थायी रूप से हटाना चाहते हैं? इसे पूर्ववत नहीं किया जा सकता।"
   }
 }

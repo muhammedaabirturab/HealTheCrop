@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Leaf, GitFork, Mail } from 'lucide-react'
+import { Leaf, GitFork } from 'lucide-react'
 
 const TECHNOLOGIES = [
   'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'FastAPI',
@@ -45,12 +45,6 @@ export default function Footer() {
             className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
           >
             <GitFork size={16} /> {t('landing.footer.github')}
-          </a>
-          <a
-            href="mailto:contact@healthecrop.dev"
-            className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
-          >
-            <Mail size={16} /> {t('landing.footer.contact')}
           </a>
         </div>
       </div>

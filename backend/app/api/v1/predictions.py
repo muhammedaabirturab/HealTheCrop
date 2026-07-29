@@ -8,10 +8,19 @@ from app.models.device import Device
 from app.models.prediction import Prediction
 from app.models.sensor_reading import SensorReading
 from app.models.user import User
-from app.schemas.prediction import DeviceBasedPredictionRequest, ManualPredictionRequest, PredictionResponse
+from app.schemas.prediction import (
+    DeviceBasedPredictionRequest, ManualPredictionRequest, ModelInfoResponse, PredictionResponse,
+)
 from app.utils.season import resolve_season
 
 router = APIRouter(prefix="/predictions", tags=["Crop Recommendation"])
+
+
+@router.get("/model-info", response_model=ModelInfoResponse)
+def model_info():
+    """Real evaluation metrics from the last training run (ml/scripts/train_model.py) —
+    never a hardcoded or inflated number."""
+    return get_crop_predictor().get_model_info()
 
 
 def _to_response(record: Prediction, result: dict, ui_season: str, features: dict) -> PredictionResponse:
@@ -86,29 +95,3 @@ def predict_from_device(
     db.commit()
     db.refresh(record)
     return _to_response(record, result, ui_season, features)
-
-
-@router.get("/history", response_model=list[PredictionResponse])
-def prediction_history(limit: int = 50, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
-    predictor = get_crop_predictor()
-    records = (
-        db.query(Prediction).filter(Prediction.user_id == user.id)
-        .order_by(Prediction.created_at.desc()).limit(limit).all()
-    )
-    responses = []
-    for record in records:
-        details = predictor.get_crop_details(record.recommended_crop) or {
-            "display_name": record.recommended_crop.title(), "image": "placeholder.jpg",
-            "season": [record.season], "water_requirement": "Medium", "harvest_duration_days": 100,
-            "soil_suitability": ["Loamy"], "expected_yield": "N/A",
-        }
-        responses.append(PredictionResponse(
-            id=record.id, recommended_crop=record.recommended_crop, confidence=record.confidence,
-            alternatives=record.alternatives, feature_importance=predictor.feature_importances,
-            crop_details=details, season_used=record.season,
-            explanation=build_explanation(
-                record.input_features, predictor.feature_importances, record.recommended_crop, record.season
-            ),
-            created_at=record.created_at,
-        ))
-    return responses

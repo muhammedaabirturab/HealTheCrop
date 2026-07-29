@@ -63,6 +63,31 @@ CASES = [
         {"N": 23, "P": 132, "K": 200, "temperature": 24, "humidity": 81, "ph": 6.0, "rainfall": 70, "season": "Annual", "location": "Maharashtra"},
         "grapes",
     ),
+    (
+        "Punjab Rabi wheat belt - high N, cool, moderate rainfall",
+        {"N": 120, "P": 60, "K": 40, "temperature": 18, "humidity": 55, "ph": 6.5, "rainfall": 75, "season": "Rabi", "location": "Punjab"},
+        "wheat",
+    ),
+    (
+        "Uttar Pradesh sugarcane belt - very high N/K, warm, heavy irrigation",
+        {"N": 150, "P": 60, "K": 120, "temperature": 28, "humidity": 75, "ph": 6.5, "rainfall": 150, "season": "Annual", "location": "Uttar Pradesh"},
+        "sugarcane",
+    ),
+    (
+        "Rabi potato field - very high N/K, cool, acidic soil",
+        {"N": 120, "P": 80, "K": 120, "temperature": 18, "humidity": 70, "ph": 5.5, "rainfall": 60, "season": "Rabi", "location": "Uttar Pradesh"},
+        "potato",
+    ),
+    (
+        "Kharif groundnut - sandy loam, low N, warm",
+        {"N": 25, "P": 50, "K": 50, "temperature": 27, "humidity": 65, "ph": 6.3, "rainfall": 70, "season": "Kharif", "location": "Andhra Pradesh"},
+        "groundnut",
+    ),
+    (
+        "Kerala cardamom hills - high rainfall, high humidity, acidic",
+        {"N": 30, "P": 30, "K": 60, "temperature": 22, "humidity": 85, "ph": 5.8, "rainfall": 250, "season": "Annual", "location": "Kerala"},
+        "cardamom",
+    ),
 ]
 
 

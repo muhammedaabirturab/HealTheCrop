@@ -112,8 +112,17 @@ def analyze(image_bgr: np.ndarray) -> HeuristicResult:
 
 
 SYMPTOM_TO_CANDIDATES = {
-    "chlorotic_yellow": ["Pest___Aphids", "Pest___Whitefly", "Tomato___Bacterial_spot"],
-    "necrotic_brown": ["Tomato___Early_blight", "Potato___Early_blight", "Corn___Gray_leaf_spot"],
-    "black_spot": ["Apple___Apple_scab", "Grape___Black_rot", "Tomato___Late_blight"],
+    "chlorotic_yellow": [
+        "Pest___Aphids", "Pest___Whitefly", "Deficiency___Nitrogen",
+        "Deficiency___Iron", "Tomato___Leaf_curl_virus", "Pest___Jassid",
+    ],
+    "necrotic_brown": [
+        "Tomato___Early_blight", "Potato___Early_blight", "Corn___Gray_leaf_spot",
+        "Rice___Brown_spot", "Groundnut___Tikka_leaf_spot", "Deficiency___Potassium",
+    ],
+    "black_spot": [
+        "Apple___Apple_scab", "Grape___Black_rot", "Tomato___Late_blight",
+        "Rice___Blast", "Citrus___Canker", "Chilli___Anthracnose_fruit_rot",
+    ],
     "healthy_green": ["Healthy"],
 }

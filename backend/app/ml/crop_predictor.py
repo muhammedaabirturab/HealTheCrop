@@ -84,8 +84,12 @@ class CropPredictor:
         self.location_encoder = bundle["location_encoder"]
         self.feature_names = bundle["feature_names"]
         self.feature_importances = bundle["feature_importances"]
+        self.metrics = bundle.get("metrics", {})
         self.crop_metadata = json.loads(metadata_path.read_text())
-        logger.info("Loaded crop model with %d classes", len(self.label_encoder.classes_))
+        logger.info(
+            "Loaded crop model with %d classes (held-out accuracy %.4f)",
+            len(self.label_encoder.classes_), self.metrics.get("accuracy", 0.0),
+        )
 
     def _safe_encode(self, encoder, value: str) -> int:
         classes = list(encoder.classes_)
@@ -111,22 +115,31 @@ class CropPredictor:
         classes = self.label_encoder.classes_
         ranked = sorted(zip(classes, probabilities), key=lambda x: x[1], reverse=True)
 
-        top5 = [
+        top9 = [
             {"crop": crop, "confidence": round(float(p), 4), "crop_details": self.crop_metadata.get(crop, {})}
-            for crop, p in ranked[:5]
+            for crop, p in ranked[:9]
         ]
         best_crop, best_conf = ranked[0]
 
         return {
             "recommended_crop": best_crop,
             "confidence": round(float(best_conf), 4),
-            "alternatives": top5,
+            "alternatives": top9,
             "feature_importance": self.feature_importances,
             "crop_details": self.crop_metadata.get(best_crop, {}),
         }
 
     def get_crop_details(self, crop_name: str) -> dict:
         return self.crop_metadata.get(crop_name, {})
+
+    def get_model_info(self) -> dict:
+        return {
+            "accuracy": self.metrics.get("accuracy"),
+            "cv_mean_accuracy": self.metrics.get("cv_mean_accuracy"),
+            "weighted_f1": self.metrics.get("weighted_f1"),
+            "n_classes": len(self.label_encoder.classes_),
+            "classes": self.label_encoder.classes_.tolist(),
+        }
 
 
 _predictor: CropPredictor | None = None

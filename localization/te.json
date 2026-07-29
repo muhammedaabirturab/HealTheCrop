@@ -1,11 +1,32 @@
 {
   "app": { "name": "హీల్ ది క్రాప్", "tagline": "స్మార్ట్ వ్యవసాయం, ఆరోగ్యకరమైన పంటలు" },
+  "crops": {
+    "rice": "బియ్యం", "maize": "మొక్కజొన్న", "chickpea": "శనగలు", "kidneybeans": "రాజ్మా", "pigeonpeas": "కంది పప్పు",
+    "mothbeans": "మోత్ బీన్స్", "mungbean": "పెసలు", "blackgram": "మినుములు", "lentil": "మసూర్ పప్పు", "pomegranate": "దానిమ్మ",
+    "banana": "అరటిపండు", "mango": "మామిడి", "grapes": "ద్రాక్ష", "watermelon": "పుచ్చకాయ", "muskmelon": "ఖర్బూజా",
+    "apple": "ఆపిల్", "orange": "నారింజ", "papaya": "బొప్పాయి", "coconut": "కొబ్బరికాయ", "cotton": "పత్తి", "jute": "జనపనార", "coffee": "కాఫీ",
+    "wheat": "గోధుమ", "sugarcane": "చెరకు", "tea": "తేయాకు", "groundnut": "వేరుశనగ", "soybean": "సోయాబీన్", "mustard": "ఆవాలు",
+    "sunflower": "పొద్దుతిరుగుడు", "tomato": "టమాటా", "onion": "ఉల్లిపాయ", "potato": "బంగాళదుంప", "garlic": "వెల్లుల్లి", "brinjal": "వంకాయ",
+    "cabbage": "క్యాబేజీ", "cauliflower": "కాలీఫ్లవర్", "okra": "బెండకాయ", "spinach": "పాలకూర", "cucumber": "దోసకాయ", "guava": "జామపండు",
+    "turmeric": "పసుపు", "ginger": "అల్లం", "blackpepper": "మిరియాలు", "cardamom": "యాలకులు", "coriander": "కొత్తిమీర",
+    "fenugreek": "మెంతులు", "sorghum": "జొన్న", "pearlmillet": "సజ్జలు", "fingermillet": "రాగులు",
+    "carrot": "క్యారెట్", "peas": "బఠానీలు", "sesame": "నువ్వులు"
+  },
+  "cropAttributes": {
+    "water": { "low": "తక్కువ", "medium": "మధ్యస్థం", "high": "ఎక్కువ" },
+    "soil": {
+      "alluvial": "ఒండ్రు", "blackCottonSoil": "నల్ల పత్తి నేల", "clayey": "బంకమట్టి",
+      "coastalAlluvial": "తీర ఒండ్రు", "loamy": "గోడు నేల", "redLaterite": "ఎర్ర లేటరైట్",
+      "sandy": "ఇసుక", "sandyLoam": "ఇసుక గోడు", "wellDrained": "మంచి నీటి నిష్కాసన"
+    },
+    "season": { "annual": "వార్షిక", "kharif": "ఖరీఫ్", "rabi": "రబీ", "zaid": "జైద్" }
+  },
   "languages": {
     "en": "English", "hi": "हिन्दी", "kn": "ಕನ್ನಡ", "ta": "தமிழ்", "te": "తెలుగు", "ml": "മലയാളം"
   },
   "nav": {
     "dashboard": "డాష్‌బోర్డ్", "manualInput": "మాన్యువల్ ఇన్‌పుట్", "cropRecommendation": "పంట సిఫార్సు",
-    "scanCrop": "పంటను స్కాన్ చేయండి", "reports": "నివేదికలు", "history": "చరిత్ర", "settings": "సెట్టింగ్‌లు",
+    "scanCrop": "పంటను స్కాన్ చేయండి", "reports": "నివేదికలు", "settings": "సెట్టింగ్‌లు",
     "login": "లాగిన్", "logout": "లాగ్ అవుట్", "register": "నమోదు చేయండి"
   },
   "common": {
@@ -17,7 +38,14 @@
     "welcomeBack": "తిరిగి స్వాగతం", "createAccount": "మీ ఖాతాను సృష్టించండి", "name": "పూర్తి పేరు",
     "email": "ఇమెయిల్ చిరునామా", "password": "పాస్‌వర్డ్", "phone": "ఫోన్ నంబర్", "location": "ప్రాంతం",
     "loginButton": "లాగిన్ చేయండి", "registerButton": "ఖాతా సృష్టించండి",
-    "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్‌వర్డ్", "emailExists": "ఈ ఇమెయిల్ ఇప్పటికే నమోదైంది"
+    "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్‌వర్డ్", "emailExists": "ఈ ఇమెయిల్ ఇప్పటికే నమోదైంది",
+    "rememberMe": "నన్ను గుర్తుంచుకో"
+  },
+  "location": {
+    "permissionPrompt": "మీ లొకేషన్‌ను యాక్సెస్ చేయడానికి HealTheCrop ను అనుమతించాలా?",
+    "allow": "అనుమతించు", "deny": "తిరస్కరించు", "detecting": "మీ లొకేషన్‌ను గుర్తిస్తోంది...",
+    "autoDetected": "స్వయంచాలకంగా గుర్తించబడింది", "change": "మార్చు", "selectState": "మీ రాష్ట్రాన్ని ఎంచుకోండి",
+    "searchPlaceholder": "రాష్ట్రాలను శోధించండి...", "noResults": "ఫలితాలు కనుగొనబడలేదు"
   },
   "dashboard": {
     "title": "వ్యవసాయ డాష్‌బోర్డ్", "liveSensorValues": "ప్రత్యక్ష సెన్సార్ విలువలు", "historicalTrends": "చారిత్రక ధోరణులు",
@@ -45,7 +73,8 @@
     "title": "సిఫార్సు చేసిన పంటలు", "topPick": "అగ్ర సిఫార్సు", "alternatives": "ప్రత్యామ్నాయ పంటలు",
     "suitableSeason": "అనుకూల సీజన్", "waterRequirement": "నీటి అవసరం",
     "harvestDuration": "పంట కాలం", "soilSuitability": "నేల అనుకూలత", "expectedYield": "ఊహించిన దిగుబడి",
-    "days": "రోజులు", "whyTitle": "ఈ పంట ఎందుకు?", "whyIntro": "సిఫార్సు చేయబడింది ఎందుకంటే మీ నేలలో ఉంది",
+    "days": "రోజులు", "predictionConfidence": "అంచనా విశ్వసనీయత", "modelAccuracy": "మోడల్ ఖచ్చితత్వం",
+    "whyTitle": "ఈ పంట ఎందుకు?", "whyIntro": "సిఫార్సు చేయబడింది ఎందుకంటే మీ నేలలో ఉంది",
     "whyOutro": "ఇది {{season}} సీజన్‌లో దీని పెరుగుదలకు అనుకూలంగా ఉంటుంది.",
     "whyFallback": "మీరు నమోదు చేసిన విలువలకు {{season}} సీజన్‌లో అత్యంత దగ్గరైన మొత్తం సరిపోలిక ఇది.",
     "and": "మరియు",
@@ -61,7 +90,9 @@
     "organicTreatment": "సేంద్రీయ చికిత్స", "chemicalTreatment": "రసాయన చికిత్స",
     "recommendedPesticides": "సిఫార్సు చేసిన పురుగుమందులు", "preventionTips": "నివారణ చిట్కాలు",
     "recoveryTime": "ఊహించిన కోలుకునే సమయం", "healthyPlant": "ఈ మొక్క ఆరోగ్యంగా కనిపిస్తోంది!",
-    "analyzing": "ఫోటో విశ్లేషించబడుతోంది..."
+    "analyzing": "ఫోటో విశ్లేషించబడుతోంది...", "severityLevel": "తీవ్రత స్థాయి",
+    "recommendedFungicide": "సిఫార్సు చేసిన శిలీంధ్రనాశకం", "dosageGuidance": "మోతాదు మార్గదర్శకం",
+    "modelUsed": "మోడల్", "overallSeverity": "మొత్తం తీవ్రత"
   },
   "errors": {
     "generic": "ఏదో తప్పు జరిగింది. దయచేసి మళ్లీ ప్రయత్నించండి.", "network": "నెట్‌వర్క్ లోపం. మీ కనెక్షన్‌ని తనిఖీ చేయండి.",
@@ -120,7 +151,7 @@
       "soilMonitoringTitle": "రియల్-టైమ్ నేల పర్యవేక్షణ",
       "soilMonitoringText": "మీ కనెక్ట్ చేయబడిన సెన్సార్ల నుండి ప్రత్యక్ష తేమ, ఉష్ణోగ్రత, తేమ మరియు pH.",
       "aiRecommendationTitle": "AI పంట సిఫార్సు",
-      "aiRecommendationText": "విశ్వాస స్కోర్‌లు మరియు టాప్-5 ప్రత్యామ్నాయాలతో రాండమ్ ఫారెస్ట్ అంచనాలు.",
+      "aiRecommendationText": "విశ్వాస స్కోర్‌లు మరియు టాప్-9 ప్రత్యామ్నాయాలతో రాండమ్ ఫారెస్ట్ అంచనాలు.",
       "fertilityAnalysisTitle": "నేల సారవంత విశ్లేషణ",
       "fertilityAnalysisText": "రంగు-కోడెడ్ పోషక సూచికలతో స్పష్టమైన 0-100 సారవంత స్కోరు.",
       "fertilityImprovementTitle": "సారవంత మెరుగుదల సూచనలు",
@@ -157,7 +188,7 @@
       "outputLabel": "మోడల్ అవుట్‌పుట్",
       "outputCrop": "సిఫార్సు చేసిన పంట",
       "outputConfidence": "విశ్వాస స్కోరు",
-      "outputAlternatives": "టాప్ 5 ప్రత్యామ్నాయాలు"
+      "outputAlternatives": "టాప్ 9 ప్రత్యామ్నాయాలు"
     },
     "footer": {
       "project": "ప్రాజెక్ట్",
@@ -166,8 +197,22 @@
       "technologies": "సాంకేతికతలు",
       "links": "లింకులు",
       "github": "GitHub రిపోజిటరీ",
-      "contact": "సంప్రదించండి",
       "copyright": "అన్ని హక్కులు ప్రత్యేకించబడ్డాయి."
     }
+  },
+  "admin": {
+    "title": "అడ్మిన్ డాష్‌బోర్డ్",
+    "subtitle": "రైతులను నిర్వహించండి, కార్యకలాపాలను పర్యవేక్షించండి మరియు ప్లాట్‌ఫారమ్ డేటాను ఎగుమతి చేయండి.",
+    "statTotalUsers": "మొత్తం వినియోగదారులు", "statActiveUsers": "సక్రియ వినియోగదారులు", "statDeactivated": "నిష్క్రియం చేయబడింది",
+    "statAdmins": "నిర్వాహకులు", "statPredictions": "అంచనాలు", "statPestScans": "పురుగు స్కాన్‌లు",
+    "statDevices": "పరికరాలు", "statSensorReadings": "సెన్సార్ రీడింగులు",
+    "tabUsers": "వినియోగదారులు", "tabLogins": "లాగిన్ చరిత్ర", "tabPredictions": "అంచనాలు",
+    "tabPestScans": "పురుగు స్కాన్‌లు", "tabSensors": "సెన్సార్ రీడింగులు",
+    "colName": "పేరు", "colEmail": "ఇమెయిల్", "colLocation": "ప్రాంతం", "colRole": "పాత్ర",
+    "colStatus": "స్థితి", "colJoined": "చేరిన తేదీ", "colActions": "చర్యలు",
+    "colResult": "ఫలితం", "colSource": "మూలం", "colTime": "సమయం",
+    "active": "సక్రియం", "deactivated": "నిష్క్రియం", "deactivate": "నిష్క్రియం చేయండి", "activate": "సక్రియం చేయండి",
+    "delete": "తొలగించండి", "success": "విజయవంతం", "failed": "విఫలమైంది", "exportCsv": "CSV ఎగుమతి చేయండి",
+    "confirmDelete": "{{name}} ఖాతాను శాశ్వతంగా తొలగించాలనుకుంటున్నారా? దీన్ని రద్దు చేయలేరు."
   }
 }

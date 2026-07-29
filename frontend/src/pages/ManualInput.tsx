@@ -1,9 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { api } from '../lib/api'
 import { getErrorMessage } from '../lib/errors'
 import type { RecommendationExplanation } from '../lib/explanation'
 import CropCard, { type CropCardData } from '../components/CropCard'
+import LocationPicker from '../components/LocationPicker'
+
+interface ModelInfo {
+  accuracy: number | null
+  cv_mean_accuracy: number | null
+  n_classes: number
+}
 
 interface FormState {
   nitrogen: string
@@ -38,6 +45,11 @@ export default function ManualInput() {
   const [result, setResult] = useState<PredictionResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [modelInfo, setModelInfo] = useState<ModelInfo | null>(null)
+
+  useEffect(() => {
+    api.get('/predictions/model-info').then((res) => setModelInfo(res.data)).catch(() => setModelInfo(null))
+  }, [])
 
   const update = (key: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [key]: e.target.value }))
@@ -150,10 +162,10 @@ export default function ManualInput() {
           <span className="text-xs font-normal text-gray-500">{t('manualInput.seasonHelper')}</span>
         </label>
 
-        <label className="flex flex-col gap-1 text-sm font-semibold text-earth-dark">
+        <div className="flex flex-col gap-1 text-sm font-semibold text-earth-dark">
           {t('auth.location')}
-          <input value={form.location} onChange={update('location')} placeholder="Karnataka" className="border border-forest/30 rounded-lg px-3 py-2 focus:outline-none focus:border-forest" />
-        </label>
+          <LocationPicker value={form.location} onChange={(value) => setForm((f) => ({ ...f, location: value }))} />
+        </div>
 
         <div className="col-span-full flex justify-end">
           <button type="submit" disabled={loading} className="btn-primary disabled:opacity-60">
@@ -166,6 +178,27 @@ export default function ManualInput() {
 
       {result && (
         <div className="flex flex-col gap-4">
+          <div className="flex flex-wrap gap-4">
+            <div className="card px-5 py-4 flex flex-col gap-1 min-w-[10rem]">
+              <span className="text-xs font-semibold text-earth-dark uppercase tracking-wide">
+                {t('cropRecommendation.predictionConfidence')}
+              </span>
+              <span className="text-2xl font-extrabold text-forest-dark">
+                {(result.confidence * 100).toFixed(1)}%
+              </span>
+            </div>
+            {modelInfo?.accuracy != null && (
+              <div className="card px-5 py-4 flex flex-col gap-1 min-w-[10rem]">
+                <span className="text-xs font-semibold text-earth-dark uppercase tracking-wide">
+                  {t('cropRecommendation.modelAccuracy')}
+                </span>
+                <span className="text-2xl font-extrabold text-forest-dark">
+                  {(modelInfo.accuracy * 100).toFixed(1)}%
+                </span>
+              </div>
+            )}
+          </div>
+
           <h2 className="text-xl font-bold text-forest-dark">{t('cropRecommendation.title')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <CropCard data={buildCard(result.recommended_crop, result.confidence, result.crop_details, true)} />

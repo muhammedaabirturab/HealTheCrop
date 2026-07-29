@@ -55,18 +55,3 @@ async def scan_crop_image(
         severity=result["severity"],
         created_at=record.created_at,
     )
-
-
-@router.get("/history", response_model=list[PestDetectionResponse])
-def scan_history(limit: int = 50, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
-    records = (
-        db.query(PestDetection).filter(PestDetection.user_id == user.id)
-        .order_by(PestDetection.created_at.desc()).limit(limit).all()
-    )
-    return [
-        PestDetectionResponse(
-            id=r.id, model_used=r.model_used, detections=r.detections,
-            severity="n/a", created_at=r.created_at,
-        )
-        for r in records
-    ]
