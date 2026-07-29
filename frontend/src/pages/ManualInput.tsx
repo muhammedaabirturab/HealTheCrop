@@ -20,13 +20,14 @@ interface FormState {
   humidity: string
   ph: string
   rainfall: string
+  moisture: string
   season: string
   location: string
 }
 
 const DEFAULT_FORM: FormState = {
   nitrogen: '80', phosphorus: '45', potassium: '40', temperature: '26',
-  humidity: '70', ph: '6.5', rainfall: '150', season: '', location: '',
+  humidity: '70', ph: '6.5', rainfall: '150', moisture: '50', season: '', location: '',
 }
 
 interface PredictionResult {
@@ -66,6 +67,7 @@ export default function ManualInput() {
       humidity: Number(form.humidity),
       ph: Number(form.ph),
       rainfall: Number(form.rainfall),
+      moisture: Number(form.moisture),
     }
     if (Object.values(numericFields).some((v) => Number.isNaN(v))) {
       setError(t('errors.validation'))
@@ -96,6 +98,7 @@ export default function ManualInput() {
     { key: 'humidity', label: t('dashboard.humidity') },
     { key: 'ph', label: t('dashboard.phLevel'), step: '0.1' },
     { key: 'rainfall', label: `${t('dashboard.rainfall')} (mm)` },
+    { key: 'moisture', label: `${t('dashboard.soilMoisture')} (%)` },
   ]
 
   const seasonOptions: { value: string; emoji: string; labelKey: string; rangeKey: string }[] = [

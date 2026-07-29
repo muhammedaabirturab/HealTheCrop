@@ -73,7 +73,7 @@
   },
   "cropRecommendation": {
     "title": "సిఫార్సు చేసిన పంటలు", "topPick": "అగ్ర సిఫార్సు", "alternatives": "ప్రత్యామ్నాయ పంటలు",
-    "suitableSeason": "అనుకూల సీజన్", "waterRequirement": "నీటి అవసరం",
+    "suitableSeason": "అనుకూల సీజన్", "waterRequirement": "నీటి అవసరం", "suitabilityScore": "అనుకూలత స్కోరు",
     "harvestDuration": "పంట కాలం", "soilSuitability": "నేల అనుకూలత", "expectedYield": "ఊహించిన దిగుబడి",
     "days": "రోజులు", "predictionConfidence": "అంచనా విశ్వసనీయత", "modelAccuracy": "మోడల్ ఖచ్చితత్వం",
     "whyTitle": "ఈ పంట ఎందుకు?", "whyIntro": "సిఫార్సు చేయబడింది ఎందుకంటే మీ నేలలో ఉంది",
@@ -82,7 +82,7 @@
     "and": "మరియు",
     "featureN": "నత్రజని స్థాయి", "featureP": "భాస్వరం స్థాయి", "featureK": "పొటాషియం స్థాయి",
     "featureTemperature": "ఉష్ణోగ్రత", "featureHumidity": "తేమ స్థాయి", "featurePh": "నేల pH",
-    "featureRainfall": "వర్షపాత స్థాయి",
+    "featureRainfall": "వర్షపాత స్థాయి", "featureMoisture": "నేల తేమ స్థాయి",
     "levelIdeal": "ఇది ఈ పంటకు అనువైనది", "levelLow": "ఇది కొంచెం తక్కువగా ఉంది కానీ పనిచేస్తుంది",
     "levelHigh": "ఇది కొంచెం ఎక్కువగా ఉంది కానీ పనిచేస్తుంది"
   },

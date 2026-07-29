@@ -25,67 +25,67 @@ MODEL_PATH = ROOT / "ml" / "models" / "crop_model.joblib"
 CASES = [
     (
         "West Bengal Kharif rice paddy - high N, high humidity, heavy monsoon rainfall",
-        {"N": 95, "P": 45, "K": 42, "temperature": 26, "humidity": 85, "ph": 6.0, "rainfall": 250, "season": "Kharif", "location": "West Bengal"},
+        {"N": 95, "P": 45, "K": 42, "temperature": 26, "humidity": 85, "ph": 6.0, "rainfall": 250, "moisture": 85, "season": "Kharif", "location": "West Bengal"},
         "rice",
     ),
     (
         "Rabi chickpea - low N, high P/K, cool dry winter conditions",
-        {"N": 35, "P": 68, "K": 78, "temperature": 19, "humidity": 16, "ph": 7.4, "rainfall": 70, "season": "Rabi", "location": "Madhya Pradesh"},
+        {"N": 35, "P": 68, "K": 78, "temperature": 19, "humidity": 16, "ph": 7.4, "rainfall": 70, "moisture": 20, "season": "Rabi", "location": "Madhya Pradesh"},
         "chickpea",
     ),
     (
         "Himalayan apple orchard - very high P/K, cold, high humidity",
-        {"N": 18, "P": 130, "K": 195, "temperature": 21, "humidity": 90, "ph": 5.8, "rainfall": 110, "season": "Rabi", "location": "Uttar Pradesh"},
+        {"N": 18, "P": 130, "K": 195, "temperature": 21, "humidity": 90, "ph": 5.8, "rainfall": 110, "moisture": 65, "season": "Rabi", "location": "Uttar Pradesh"},
         "apple",
     ),
     (
         "Coffee plantation - high N, moderate humidity, warm",
-        {"N": 100, "P": 27, "K": 32, "temperature": 24, "humidity": 58, "ph": 6.9, "rainfall": 150, "season": "Annual", "location": "Karnataka"},
+        {"N": 100, "P": 27, "K": 32, "temperature": 24, "humidity": 58, "ph": 6.9, "rainfall": 150, "moisture": 55, "season": "Annual", "location": "Karnataka"},
         "coffee",
     ),
     (
         "Black-cotton-soil Kharif cotton - high N, low K, moderate rainfall",
-        {"N": 115, "P": 45, "K": 20, "temperature": 25, "humidity": 78, "ph": 6.8, "rainfall": 82, "season": "Kharif", "location": "Maharashtra"},
+        {"N": 115, "P": 45, "K": 20, "temperature": 25, "humidity": 78, "ph": 6.8, "rainfall": 82, "moisture": 45, "season": "Kharif", "location": "Maharashtra"},
         "cotton",
     ),
     (
         "Zaid summer watermelon - sandy loam, low rainfall, high humidity",
-        {"N": 100, "P": 18, "K": 48, "temperature": 26, "humidity": 84, "ph": 6.6, "rainfall": 48, "season": "Zaid", "location": "Andhra Pradesh"},
+        {"N": 100, "P": 18, "K": 48, "temperature": 26, "humidity": 84, "ph": 6.6, "rainfall": 48, "moisture": 40, "season": "Zaid", "location": "Andhra Pradesh"},
         "watermelon",
     ),
     (
         "Coastal coconut grove - high humidity, high rainfall, sandy soil",
-        {"N": 20, "P": 17, "K": 32, "temperature": 27, "humidity": 95, "ph": 5.8, "rainfall": 175, "season": "Annual", "location": "Kerala"},
+        {"N": 20, "P": 17, "K": 32, "temperature": 27, "humidity": 95, "ph": 5.8, "rainfall": 175, "moisture": 80, "season": "Annual", "location": "Kerala"},
         "coconut",
     ),
     (
         "Grape vineyard - very high P/K, moderate everything else",
-        {"N": 23, "P": 132, "K": 200, "temperature": 24, "humidity": 81, "ph": 6.0, "rainfall": 70, "season": "Annual", "location": "Maharashtra"},
+        {"N": 23, "P": 132, "K": 200, "temperature": 24, "humidity": 81, "ph": 6.0, "rainfall": 70, "moisture": 50, "season": "Annual", "location": "Maharashtra"},
         "grapes",
     ),
     (
         "Punjab Rabi wheat belt - high N, cool, moderate rainfall",
-        {"N": 120, "P": 60, "K": 40, "temperature": 18, "humidity": 55, "ph": 6.5, "rainfall": 75, "season": "Rabi", "location": "Punjab"},
+        {"N": 120, "P": 60, "K": 40, "temperature": 18, "humidity": 55, "ph": 6.5, "rainfall": 75, "moisture": 45, "season": "Rabi", "location": "Punjab"},
         "wheat",
     ),
     (
         "Uttar Pradesh sugarcane belt - very high N/K, warm, heavy irrigation",
-        {"N": 150, "P": 60, "K": 120, "temperature": 28, "humidity": 75, "ph": 6.5, "rainfall": 150, "season": "Annual", "location": "Uttar Pradesh"},
+        {"N": 150, "P": 60, "K": 120, "temperature": 28, "humidity": 75, "ph": 6.5, "rainfall": 150, "moisture": 70, "season": "Annual", "location": "Uttar Pradesh"},
         "sugarcane",
     ),
     (
         "Rabi potato field - very high N/K, cool, acidic soil",
-        {"N": 120, "P": 80, "K": 120, "temperature": 18, "humidity": 70, "ph": 5.5, "rainfall": 60, "season": "Rabi", "location": "Uttar Pradesh"},
+        {"N": 120, "P": 80, "K": 120, "temperature": 18, "humidity": 70, "ph": 5.5, "rainfall": 60, "moisture": 55, "season": "Rabi", "location": "Uttar Pradesh"},
         "potato",
     ),
     (
         "Kharif groundnut - sandy loam, low N, warm",
-        {"N": 25, "P": 50, "K": 50, "temperature": 27, "humidity": 65, "ph": 6.3, "rainfall": 70, "season": "Kharif", "location": "Andhra Pradesh"},
+        {"N": 25, "P": 50, "K": 50, "temperature": 27, "humidity": 65, "ph": 6.3, "rainfall": 70, "moisture": 40, "season": "Kharif", "location": "Andhra Pradesh"},
         "groundnut",
     ),
     (
         "Kerala cardamom hills - high rainfall, high humidity, acidic",
-        {"N": 30, "P": 30, "K": 60, "temperature": 22, "humidity": 85, "ph": 5.8, "rainfall": 250, "season": "Annual", "location": "Kerala"},
+        {"N": 30, "P": 30, "K": 60, "temperature": 22, "humidity": 85, "ph": 5.8, "rainfall": 250, "moisture": 85, "season": "Annual", "location": "Kerala"},
         "cardamom",
     ),
 ]
@@ -108,7 +108,7 @@ def run():
         row = {
             "N": features["N"], "P": features["P"], "K": features["K"],
             "temperature": features["temperature"], "humidity": features["humidity"],
-            "ph": features["ph"], "rainfall": features["rainfall"],
+            "ph": features["ph"], "rainfall": features["rainfall"], "moisture": features["moisture"],
             "season": int(season_encoder.transform([features["season"]])[0]),
             "location": int(location_encoder.transform([features["location"]])[0]),
         }

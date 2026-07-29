@@ -48,6 +48,7 @@ def predict_manual(
     features = {
         "nitrogen": payload.nitrogen, "phosphorus": payload.phosphorus, "potassium": payload.potassium,
         "temperature": payload.temperature, "humidity": payload.humidity, "ph": payload.ph, "rainfall": payload.rainfall,
+        "moisture": payload.moisture if payload.moisture is not None else 50.0,
     }
     model_season, ui_season = resolve_season(payload.season)
     predictor = get_crop_predictor()
@@ -82,6 +83,7 @@ def predict_from_device(
         "nitrogen": reading.nitrogen or 0, "phosphorus": reading.phosphorus or 0, "potassium": reading.potassium or 0,
         "temperature": reading.temperature or 25, "humidity": reading.humidity or 60,
         "ph": reading.ph or 6.5, "rainfall": reading.rainfall or 100,
+        "moisture": reading.moisture if reading.moisture is not None else 50.0,
     }
     model_season, ui_season = resolve_season(payload.season)
     predictor = get_crop_predictor()

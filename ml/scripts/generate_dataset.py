@@ -1,22 +1,26 @@
 """
 Generates datasets/crop_recommendation.csv
 
-HealTheCrop ships with a synthetically generated crop-recommendation dataset
-built from published agronomic reference ranges (N-P-K requirements, temperature,
-humidity, pH and rainfall tolerance per crop) rather than a scraped third-party
-file, so the exact provenance and license of every row is known.
+For the 22 crops covered by the well-known public "Crop Recommendation
+Dataset" (2200 rows of real N/P/K/temperature/humidity/ph/rainfall
+measurements; see datasets/real_sources/CREDITS.md for provenance), those
+real rows are used directly as ground truth. For the remaining 30 crops not
+covered by that dataset, rows are synthetically generated from published
+agronomic reference ranges (FAO / ICAR advisories), each crop modeled as a
+multivariate Gaussian over its reference range and clipped to physically
+valid bounds — documented as synthetic-but-realistic, not scraped or
+measured data, so the exact provenance of every row is known.
 
-Each crop is modeled as a multivariate Gaussian over its agronomic reference
-range, sampled `SAMPLES_PER_CROP` times, then clipped to physically valid
-bounds. This keeps the class-conditional structure realistic enough for a
-Random Forest to learn meaningful decision boundaries and feature importances,
-while remaining fully reproducible (fixed seed) and free of external
-dependencies at build time.
-
-To use a real-world dataset instead (e.g. the public Kaggle
-"Crop Recommendation Dataset"), simply drop a CSV with the same columns
-(N, P, K, temperature, humidity, ph, rainfall, season, label) into
-datasets/crop_recommendation.csv and skip this script.
+Neither source includes `season`, `location`, or `moisture` columns (all
+three are real predictive features in HealTheCrop's model), so all three are
+added on top of both the real and synthetic rows:
+  - `season`: each crop's known cultivation season — a fixed agronomic fact.
+  - `location`: sampled via CROP_REGIONAL_AFFINITY-weighted choice so the
+    state a farmer selects carries genuine signal (see comment below).
+  - `moisture`: derived from each crop's own humidity/rainfall requirements
+    (see `_derive_moisture_profile`) plus per-row noise — a standard
+    agronomic proxy used because no public dataset here includes directly
+    measured soil moisture.
 """
 import numpy as np
 import pandas as pd
@@ -24,6 +28,24 @@ from pathlib import Path
 
 SEED = 42
 SAMPLES_PER_CROP = 150
+REAL_DATASET_PATH = Path(__file__).resolve().parents[2] / "datasets" / "real_sources" / "crop_recommendation_public_22crops.csv"
+
+
+def _derive_moisture_profile(humidity: tuple, rainfall: tuple) -> tuple:
+    """
+    No dataset used here includes directly measured soil moisture, so it's
+    approximated from each crop's own humidity + rainfall requirements —
+    crops needing more atmospheric humidity and rainfall are grown in wetter
+    soil. This is a standard agronomic proxy, computed the same documented
+    way for every crop rather than invented by hand per crop.
+    """
+    humidity_mean, humidity_std = humidity
+    rainfall_mean, _ = rainfall
+    rainfall_norm = min(rainfall_mean / 250 * 100, 100)
+    mean = round(0.6 * humidity_mean + 0.4 * rainfall_norm, 1)
+    std = round(max(4.0, 0.5 * humidity_std), 1)
+    return mean, std
+
 
 # (N, P, K, temperature C, humidity %, ph, rainfall mm) -> (mean, std) per crop
 # Ranges are informed by FAO / ICAR agronomic advisories for these crops.
@@ -85,10 +107,27 @@ CROP_PROFILES = {
     "sesame":       dict(N=(30, 8),   P=(30, 8),  K=(20, 8),   temperature=(28, 3), humidity=(50, 8), ph=(6.5, 0.4), rainfall=(50, 12),  season="Kharif"),
 }
 
+# Crops covered by the real public dataset (datasets/real_sources/) — their
+# N/P/K/temperature/humidity/ph/rainfall come from real measurements, not
+# the Gaussian profiles above. The profiles above are still used for these
+# crops' `moisture` derivation (see _derive_moisture_profile) since even the
+# real dataset doesn't include soil moisture.
+REAL_DATA_CROPS = {
+    "rice", "maize", "chickpea", "kidneybeans", "pigeonpeas", "mothbeans",
+    "mungbean", "blackgram", "lentil", "pomegranate", "banana", "mango",
+    "grapes", "watermelon", "muskmelon", "apple", "orange", "papaya",
+    "coconut", "cotton", "jute", "coffee",
+}
+
+MOISTURE_PROFILES = {
+    crop: _derive_moisture_profile(profile["humidity"], profile["rainfall"])
+    for crop, profile in CROP_PROFILES.items()
+}
+
 BOUNDS = dict(
     N=(0, 150), P=(0, 150), K=(0, 210),
     temperature=(5, 45), humidity=(10, 100),
-    ph=(3.5, 9.5), rainfall=(15, 300),
+    ph=(3.5, 9.5), rainfall=(15, 300), moisture=(5, 100),
 )
 
 LOCATIONS = [
@@ -172,24 +211,66 @@ def _sample_location(rng: np.random.Generator, crop: str) -> str:
     return rng.choice(LOCATIONS)
 
 
-def generate(seed: int = SEED, samples_per_crop: int = SAMPLES_PER_CROP) -> pd.DataFrame:
-    rng = np.random.default_rng(seed)
+def _sample_moisture(rng: np.random.Generator, crop: str) -> float:
+    mean, std = MOISTURE_PROFILES[crop]
+    lo, hi = BOUNDS["moisture"]
+    return float(np.clip(rng.normal(mean, std), lo, hi))
+
+
+def _load_real_rows(rng: np.random.Generator) -> pd.DataFrame:
+    if not REAL_DATASET_PATH.exists():
+        raise FileNotFoundError(
+            f"Real dataset not found at {REAL_DATASET_PATH}. See "
+            "datasets/real_sources/CREDITS.md for how to obtain it."
+        )
+    real = pd.read_csv(REAL_DATASET_PATH)
+    real = real.dropna()  # the source is already clean, but never trust blindly
+    rows = []
+    for _, r in real.iterrows():
+        crop = r["label"]
+        if crop not in CROP_PROFILES:
+            continue  # keep only crops HealTheCrop knows metadata for
+        rows.append({
+            "N": float(r["N"]), "P": float(r["P"]), "K": float(r["K"]),
+            "temperature": float(r["temperature"]), "humidity": float(r["humidity"]),
+            "ph": float(r["ph"]), "rainfall": float(r["rainfall"]),
+            "moisture": _sample_moisture(rng, crop),
+            "season": CROP_PROFILES[crop]["season"],
+            "location": _sample_location(rng, crop),
+            "label": crop,
+            "data_source": "real",
+        })
+    return pd.DataFrame(rows)
+
+
+def _generate_synthetic_rows(rng: np.random.Generator, samples_per_crop: int) -> pd.DataFrame:
     rows = []
     for crop, profile in CROP_PROFILES.items():
+        if crop in REAL_DATA_CROPS:
+            continue  # covered by the real dataset instead
         for _ in range(samples_per_crop):
-            row = {"label": crop, "season": profile["season"]}
+            row = {"label": crop, "season": profile["season"], "data_source": "synthetic"}
             for feat in ["N", "P", "K", "temperature", "humidity", "ph", "rainfall"]:
                 mean, std = profile[feat]
                 value = rng.normal(mean, std)
                 lo, hi = BOUNDS[feat]
                 row[feat] = float(np.clip(value, lo, hi))
+            row["moisture"] = _sample_moisture(rng, crop)
             row["location"] = _sample_location(rng, crop)
             rows.append(row)
-    df = pd.DataFrame(rows)
+    return pd.DataFrame(rows)
+
+
+def generate(seed: int = SEED, samples_per_crop: int = SAMPLES_PER_CROP) -> pd.DataFrame:
+    rng = np.random.default_rng(seed)
+    real_df = _load_real_rows(rng)
+    synthetic_df = _generate_synthetic_rows(rng, samples_per_crop)
+    df = pd.concat([real_df, synthetic_df], ignore_index=True)
+
     df = df.sample(frac=1, random_state=seed).reset_index(drop=True)
-    for col in ["N", "P", "K", "temperature", "humidity", "ph", "rainfall"]:
+    for col in ["N", "P", "K", "temperature", "humidity", "ph", "rainfall", "moisture"]:
         df[col] = df[col].round(2)
-    return df[["N", "P", "K", "temperature", "humidity", "ph", "rainfall", "season", "location", "label"]]
+    return df[["N", "P", "K", "temperature", "humidity", "ph", "rainfall", "moisture", "season", "location", "label", "data_source"]]
 
 
 if __name__ == "__main__":
@@ -197,4 +278,8 @@ if __name__ == "__main__":
     out_path.parent.mkdir(parents=True, exist_ok=True)
     df = generate()
     df.to_csv(out_path, index=False)
+    n_real = (df["data_source"] == "real").sum()
+    n_synthetic = (df["data_source"] == "synthetic").sum()
     print(f"Wrote {len(df)} rows across {df['label'].nunique()} crops to {out_path}")
+    print(f"  {n_real} rows from the real public dataset ({len(REAL_DATA_CROPS)} crops)")
+    print(f"  {n_synthetic} rows synthetically generated ({df['label'].nunique() - len(REAL_DATA_CROPS)} crops)")

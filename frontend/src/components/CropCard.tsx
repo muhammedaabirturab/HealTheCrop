@@ -46,8 +46,11 @@ export default function CropCard({ data }: { data: CropCardData }) {
       <div className="p-4 flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-bold text-forest-dark">{displayName}</h3>
-          <span className="text-sm font-bold bg-forest/10 text-forest-dark px-2 py-1 rounded-full">
-            {Math.round(data.confidence * 100)}%
+          <span
+            className="text-sm font-bold bg-forest/10 text-forest-dark px-2 py-1 rounded-full"
+            title={t('cropRecommendation.suitabilityScore')}
+          >
+            {t('cropRecommendation.suitabilityScore')}: {Math.round(data.confidence * 100)}%
           </span>
         </div>
 

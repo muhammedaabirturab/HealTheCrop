@@ -25,6 +25,7 @@ _BASE_DIR = Path(__file__).resolve().parents[2]  # backend/app/ml -> backend/
 _COMFORT_RANGES = {
     "N": (40, 120), "P": (30, 100), "K": (30, 150),
     "ph": (6.0, 7.5), "humidity": (40, 90), "rainfall": (50, 250), "temperature": (15, 35),
+    "moisture": (35, 80),
 }
 
 
@@ -50,6 +51,7 @@ def build_explanation(features: dict, feature_importance: dict, crop: str, ui_se
         "N": features["nitrogen"], "P": features["phosphorus"], "K": features["potassium"],
         "temperature": features["temperature"], "humidity": features["humidity"],
         "ph": features["ph"], "rainfall": features["rainfall"],
+        "moisture": features.get("moisture", 50.0),
     }
     ranked = sorted(
         ((k, imp) for k, imp in feature_importance.items() if k in numeric_map),
@@ -130,6 +132,7 @@ class CropPredictor:
             "humidity": features["humidity"],
             "ph": features["ph"],
             "rainfall": features["rainfall"],
+            "moisture": features.get("moisture", 50.0),
             "season": self._safe_encode(self.season_encoder, season),
             "location": self._safe_encode(self.location_encoder, location or "Karnataka"),
         }

@@ -73,7 +73,7 @@
   },
   "cropRecommendation": {
     "title": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು", "topPick": "ಅಗ್ರ ಶಿಫಾರಸು", "alternatives": "ಪರ್ಯಾಯ ಬೆಳೆಗಳು",
-    "suitableSeason": "ಸೂಕ್ತ ಋತು", "waterRequirement": "ನೀರಿನ ಅವಶ್ಯಕತೆ",
+    "suitableSeason": "ಸೂಕ್ತ ಋತು", "waterRequirement": "ನೀರಿನ ಅವಶ್ಯಕತೆ", "suitabilityScore": "ಸೂಕ್ತತೆ ಅಂಕ",
     "harvestDuration": "ಕೊಯ್ಲು ಅವಧಿ", "soilSuitability": "ಮಣ್ಣಿನ ಸೂಕ್ತತೆ", "expectedYield": "ನಿರೀಕ್ಷಿತ ಇಳುವರಿ",
     "days": "ದಿನಗಳು", "predictionConfidence": "ಭವಿಷ್ಯವಾಣಿ ವಿಶ್ವಾಸ ಮಟ್ಟ", "modelAccuracy": "ಮಾಡೆಲ್ ನಿಖರತೆ",
     "whyTitle": "ಈ ಬೆಳೆ ಏಕೆ?", "whyIntro": "ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ ಏಕೆಂದರೆ ನಿಮ್ಮ ಮಣ್ಣಿನಲ್ಲಿ ಇದೆ",
@@ -82,7 +82,7 @@
     "and": "ಮತ್ತು",
     "featureN": "ಸಾರಜನಕ ಮಟ್ಟ", "featureP": "ರಂಜಕ ಮಟ್ಟ", "featureK": "ಪೊಟ್ಯಾಸಿಯಮ್ ಮಟ್ಟ",
     "featureTemperature": "ತಾಪಮಾನ", "featureHumidity": "ಆರ್ದ್ರತೆ ಮಟ್ಟ", "featurePh": "ಮಣ್ಣಿನ pH",
-    "featureRainfall": "ಮಳೆ ಮಟ್ಟ",
+    "featureRainfall": "ಮಳೆ ಮಟ್ಟ", "featureMoisture": "ಮಣ್ಣಿನ ತೇವಾಂಶ ಮಟ್ಟ",
     "levelIdeal": "ಇದು ಈ ಬೆಳೆಗೆ ಆದರ್ಶವಾಗಿದೆ", "levelLow": "ಇದು ಸ್ವಲ್ಪ ಕಡಿಮೆ ಆದರೆ ಕೆಲಸ ಮಾಡಬಲ್ಲದು",
     "levelHigh": "ಇದು ಸ್ವಲ್ಪ ಹೆಚ್ಚಾಗಿದೆ ಆದರೆ ಕೆಲಸ ಮಾಡಬಲ್ಲದು"
   },

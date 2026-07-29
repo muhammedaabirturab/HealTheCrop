@@ -73,7 +73,7 @@
   },
   "cropRecommendation": {
     "title": "ശുപാർശ ചെയ്യുന്ന വിളകൾ", "topPick": "മികച്ച ശുപാർശ", "alternatives": "ബദൽ വിളകൾ",
-    "suitableSeason": "അനുയോജ്യമായ സീസൺ", "waterRequirement": "ജല ആവശ്യകത",
+    "suitableSeason": "അനുയോജ്യമായ സീസൺ", "waterRequirement": "ജല ആവശ്യകത", "suitabilityScore": "അനുയോജ്യതാ സ്കോർ",
     "harvestDuration": "വിളവെടുപ്പ് കാലയളവ്", "soilSuitability": "മണ്ണിന്റെ അനുയോജ്യത", "expectedYield": "പ്രതീക്ഷിക്കുന്ന വിളവ്",
     "days": "ദിവസങ്ങൾ", "predictionConfidence": "പ്രവചന വിശ്വാസ്യത", "modelAccuracy": "മോഡൽ കൃത്യത",
     "whyTitle": "എന്തുകൊണ്ട് ഈ വിള?", "whyIntro": "ശുപാർശ ചെയ്യുന്നു കാരണം നിങ്ങളുടെ മണ്ണിൽ ഉണ്ട്",
@@ -82,7 +82,7 @@
     "and": "ഒപ്പം",
     "featureN": "നൈട്രജൻ നില", "featureP": "ഫോസ്ഫറസ് നില", "featureK": "പൊട്ടാസ്യം നില",
     "featureTemperature": "താപനില", "featureHumidity": "ആർദ്രത നില", "featurePh": "മണ്ണിന്റെ pH",
-    "featureRainfall": "മഴ നില",
+    "featureRainfall": "മഴ നില", "featureMoisture": "മണ്ണിലെ ഈർപ്പ നില",
     "levelIdeal": "ഇത് ഈ വിളയ്ക്ക് അനുയോജ്യമാണ്", "levelLow": "ഇത് അല്പം കുറവാണ് എന്നാൽ പ്രവർത്തിക്കും",
     "levelHigh": "ഇത് അല്പം കൂടുതലാണ് എന്നാൽ പ്രവർത്തിക്കും"
   },

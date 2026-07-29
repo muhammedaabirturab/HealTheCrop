@@ -11,6 +11,7 @@ class ManualPredictionRequest(BaseModel):
     humidity: float = Field(ge=0, le=100)
     ph: float = Field(ge=0, le=14)
     rainfall: float = Field(ge=0, le=500)
+    moisture: float | None = Field(default=None, ge=0, le=100)
     season: str | None = None
     location: str | None = None
 

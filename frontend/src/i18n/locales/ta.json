@@ -73,7 +73,7 @@
   },
   "cropRecommendation": {
     "title": "பரிந்துரைக்கப்பட்ட பயிர்கள்", "topPick": "முதன்மை பரிந்துரை", "alternatives": "மாற்று பயிர்கள்",
-    "suitableSeason": "ஏற்ற பருவம்", "waterRequirement": "நீர் தேவை",
+    "suitableSeason": "ஏற்ற பருவம்", "waterRequirement": "நீர் தேவை", "suitabilityScore": "பொருத்தத் தன்மை மதிப்பெண்",
     "harvestDuration": "அறுவடை காலம்", "soilSuitability": "மண் பொருத்தம்", "expectedYield": "எதிர்பார்க்கும் விளைச்சல்",
     "days": "நாட்கள்", "predictionConfidence": "கணிப்பு நம்பகத்தன்மை", "modelAccuracy": "மாடல் துல்லியம்",
     "whyTitle": "ஏன் இந்த பயிர்?", "whyIntro": "பரிந்துரைக்கப்படுகிறது ஏனெனில் உங்கள் மண்ணில் உள்ளது",
@@ -82,7 +82,7 @@
     "and": "மற்றும்",
     "featureN": "நைட்ரஜன் அளவு", "featureP": "பாஸ்பரஸ் அளவு", "featureK": "பொட்டாசியம் அளவு",
     "featureTemperature": "வெப்பநிலை", "featureHumidity": "ஈரப்பத அளவு", "featurePh": "மண் pH",
-    "featureRainfall": "மழை அளவு",
+    "featureRainfall": "மழை அளவு", "featureMoisture": "மண் ஈரப்பத நிலை",
     "levelIdeal": "இது இந்த பயிருக்கு ஏற்றது", "levelLow": "இது சற்று குறைவாக உள்ளது ஆனால் பயன்படக்கூடியது",
     "levelHigh": "இது சற்று அதிகமாக உள்ளது ஆனால் பயன்படக்கூடியது"
   },

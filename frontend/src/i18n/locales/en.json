@@ -73,7 +73,7 @@
   },
   "cropRecommendation": {
     "title": "Recommended Crops", "topPick": "Top Recommendation", "alternatives": "Alternative Crops",
-    "suitableSeason": "Suitable Season", "waterRequirement": "Water Requirement",
+    "suitableSeason": "Suitable Season", "waterRequirement": "Water Requirement", "suitabilityScore": "Suitability Score",
     "harvestDuration": "Harvest Duration", "soilSuitability": "Soil Suitability", "expectedYield": "Expected Yield",
     "days": "days", "predictionConfidence": "Prediction Confidence", "modelAccuracy": "Model Accuracy",
     "whyTitle": "Why this crop?", "whyIntro": "is recommended because your soil has",
@@ -82,7 +82,7 @@
     "and": "and",
     "featureN": "a nitrogen level", "featureP": "a phosphorus level", "featureK": "a potassium level",
     "featureTemperature": "a temperature", "featureHumidity": "a humidity level", "featurePh": "a soil pH",
-    "featureRainfall": "a rainfall level",
+    "featureRainfall": "a rainfall level", "featureMoisture": "a soil moisture level",
     "levelIdeal": "that is ideal for this crop", "levelLow": "that is on the lower side but workable",
     "levelHigh": "that is on the higher side but workable"
   },

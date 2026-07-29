@@ -15,6 +15,7 @@ const FEATURE_KEYS: Record<string, string> = {
   N: 'cropRecommendation.featureN', P: 'cropRecommendation.featureP', K: 'cropRecommendation.featureK',
   temperature: 'cropRecommendation.featureTemperature', humidity: 'cropRecommendation.featureHumidity',
   ph: 'cropRecommendation.featurePh', rainfall: 'cropRecommendation.featureRainfall',
+  moisture: 'cropRecommendation.featureMoisture',
 }
 const LEVEL_KEYS: Record<string, string> = {
   ideal: 'cropRecommendation.levelIdeal', low: 'cropRecommendation.levelLow', high: 'cropRecommendation.levelHigh',
