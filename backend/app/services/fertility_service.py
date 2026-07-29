@@ -22,7 +22,7 @@ IDEAL_RANGES = {
 
 def _load_rules() -> dict:
     path = (_BASE_DIR / settings.FERTILITY_RULES_PATH).resolve()
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def _status_for(value: float, lo: float, hi: float) -> str:

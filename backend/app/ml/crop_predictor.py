@@ -85,7 +85,7 @@ class CropPredictor:
         self.feature_names = bundle["feature_names"]
         self.feature_importances = bundle["feature_importances"]
         self.metrics = bundle.get("metrics", {})
-        self.crop_metadata = json.loads(metadata_path.read_text())
+        self.crop_metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
         logger.info(
             "Loaded crop model with %d classes (held-out accuracy %.4f)",
             len(self.label_encoder.classes_), self.metrics.get("accuracy", 0.0),

@@ -25,7 +25,7 @@ _BASE_DIR = Path(__file__).resolve().parents[2]  # backend/app/cv -> backend/
 class DiseaseDetectionService:
     def __init__(self):
         self.knowledge_base = json.loads(
-            (_BASE_DIR / settings.DISEASE_KB_PATH).resolve().read_text()
+            (_BASE_DIR / settings.DISEASE_KB_PATH).resolve().read_text(encoding="utf-8")
         )
         self.cnn_model = None
         self.class_indices = None
@@ -40,7 +40,7 @@ class DiseaseDetectionService:
         try:
             import tensorflow as tf
             self.cnn_model = tf.keras.models.load_model(model_path)
-            self.class_indices = json.loads(class_index_path.read_text())
+            self.class_indices = json.loads(class_index_path.read_text(encoding="utf-8"))
             logger.info("Loaded trained plant disease CNN from %s", model_path)
         except Exception as exc:  # noqa: BLE001
             logger.warning("Failed to load CNN (%s); using heuristic detector", exc)
