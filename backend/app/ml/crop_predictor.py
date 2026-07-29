@@ -32,13 +32,14 @@ _COMFORT_RANGES = {
 SUITABILITY_NUMERIC_FEATURES = ["N", "P", "K", "temperature", "humidity", "ph", "rainfall", "moisture"]
 
 # Suitability score tiers — thresholds are inclusive lower bounds, checked
-# highest-first.
+# highest-first. "Moderate" is the catch-all floor (no separate "poor" tier):
+# a low-scoring alternative is still shown so the farmer sees the full top 6,
+# but nothing here should read as a discouraging dead end.
 SUITABILITY_TIERS = [
     (0.95, "excellent"),
     (0.85, "very_suitable"),
     (0.70, "suitable"),
-    (0.50, "moderate"),
-    (0.0, "poor"),
+    (0.0, "moderate"),
 ]
 
 
@@ -46,7 +47,7 @@ def _suitability_tier(score: float) -> str:
     for threshold, tier in SUITABILITY_TIERS:
         if score >= threshold:
             return tier
-    return "poor"
+    return "moderate"
 
 
 def _comfort_level(feature_key: str, value: float) -> str | None:

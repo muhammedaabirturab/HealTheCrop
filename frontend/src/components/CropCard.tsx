@@ -25,7 +25,6 @@ const TIER_KEYS: Record<string, string> = {
   very_suitable: 'cropRecommendation.tierVerySuitable',
   suitable: 'cropRecommendation.tierSuitable',
   moderate: 'cropRecommendation.tierModerate',
-  poor: 'cropRecommendation.tierPoor',
 }
 
 const TIER_STYLES: Record<string, string> = {
@@ -33,7 +32,6 @@ const TIER_STYLES: Record<string, string> = {
   very_suitable: 'bg-leaf/20 text-forest-dark',
   suitable: 'bg-forest/10 text-forest-dark',
   moderate: 'bg-amber-100 text-amber-800',
-  poor: 'bg-red-100 text-red-700',
 }
 
 export default function CropCard({ data }: { data: CropCardData }) {

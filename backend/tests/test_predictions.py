@@ -95,7 +95,7 @@ def test_manual_prediction_suitability_tiers_match_thresholds(client, auth_token
     )
     assert resp.status_code == 200
     body = resp.json()
-    thresholds = [(0.95, "excellent"), (0.85, "very_suitable"), (0.70, "suitable"), (0.50, "moderate"), (0.0, "poor")]
+    thresholds = [(0.95, "excellent"), (0.85, "very_suitable"), (0.70, "suitable"), (0.0, "moderate")]
     for alt in body["alternatives"]:
         expected_tier = next(tier for threshold, tier in thresholds if alt["confidence"] >= threshold)
         assert alt["suitability_tier"] == expected_tier, alt

@@ -74,7 +74,7 @@
   "cropRecommendation": {
     "title": "Recommended Crops", "topPick": "Top Recommendation", "alternatives": "Alternative Crops",
     "suitableSeason": "Suitable Season", "waterRequirement": "Water Requirement", "suitabilityScore": "Suitability Score",
-    "tierExcellent": "Excellent Match", "tierVerySuitable": "Very Suitable", "tierSuitable": "Suitable", "tierModerate": "Moderate Suitability", "tierPoor": "Poor Suitability",
+    "tierExcellent": "Excellent Match", "tierVerySuitable": "Very Suitable", "tierSuitable": "Suitable", "tierModerate": "Moderate Suitability",
     "harvestDuration": "Harvest Duration", "soilSuitability": "Soil Suitability", "expectedYield": "Expected Yield",
     "days": "days", "predictionConfidence": "Prediction Confidence", "modelAccuracy": "Model Accuracy",
     "whyTitle": "Why this crop?", "whyIntro": "is recommended because your soil has",

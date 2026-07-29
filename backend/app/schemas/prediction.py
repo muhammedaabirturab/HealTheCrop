@@ -35,7 +35,7 @@ class CropDetails(BaseModel):
 class CropAlternative(BaseModel):
     crop: str
     confidence: float
-    suitability_tier: str = "moderate"  # excellent | very_suitable | suitable | moderate | poor
+    suitability_tier: str = "moderate"  # excellent | very_suitable | suitable | moderate
     crop_details: CropDetails | dict = {}
 
 

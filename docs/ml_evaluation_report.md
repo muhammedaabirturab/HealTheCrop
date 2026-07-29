@@ -133,8 +133,7 @@ probability alone. It's an equal-weight blend of two independent signals:
 | 95–100% | Excellent Match |
 | 85–94% | Very Suitable |
 | 70–84% | Suitable |
-| 50–69% | Moderate Suitability |
-| Below 50% | Poor Suitability |
+| Below 70% | Moderate Suitability |
 
 The "Prediction Confidence" summary card is a separate, distinct number: the
 multiclass model's own probability that the top-recommended crop specifically
