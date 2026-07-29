@@ -8,7 +8,6 @@ import { cropDisplayName, translateSeasons, translateSoilSuitability, translateW
 export interface CropCardData {
   crop: string
   confidence: number
-  suitabilityTier?: string
   display_name: string
   image: string
   season: string[]
@@ -20,27 +19,11 @@ export interface CropCardData {
   explanation?: RecommendationExplanation
 }
 
-const TIER_KEYS: Record<string, string> = {
-  excellent: 'cropRecommendation.tierExcellent',
-  very_suitable: 'cropRecommendation.tierVerySuitable',
-  suitable: 'cropRecommendation.tierSuitable',
-  moderate: 'cropRecommendation.tierModerate',
-}
-
-const TIER_STYLES: Record<string, string> = {
-  excellent: 'bg-emerald-100 text-emerald-800',
-  very_suitable: 'bg-leaf/20 text-forest-dark',
-  suitable: 'bg-forest/10 text-forest-dark',
-  moderate: 'bg-amber-100 text-amber-800',
-}
-
 export default function CropCard({ data }: { data: CropCardData }) {
   const { t } = useTranslation()
   const [imgError, setImgError] = useState(false)
   const imageUrl = `/crop-images/${data.image}`
   const displayName = cropDisplayName(t, data.crop, data.display_name)
-  const tierKey = data.suitabilityTier ? TIER_KEYS[data.suitabilityTier] : undefined
-  const tierStyle = data.suitabilityTier ? TIER_STYLES[data.suitabilityTier] : undefined
 
   return (
     <motion.div
@@ -70,11 +53,6 @@ export default function CropCard({ data }: { data: CropCardData }) {
             {t('cropRecommendation.suitabilityScore')}: {Math.round(data.confidence * 100)}%
           </span>
         </div>
-        {tierKey && (
-          <span className={`self-start text-xs font-bold px-2 py-1 rounded-full ${tierStyle}`}>
-            {t(tierKey)}
-          </span>
-        )}
 
         <div className="grid grid-cols-2 gap-2 text-xs text-earth-dark">
           <div className="flex items-center gap-1.5">

@@ -74,7 +74,6 @@
   "cropRecommendation": {
     "title": "பரிந்துரைக்கப்பட்ட பயிர்கள்", "topPick": "முதன்மை பரிந்துரை", "alternatives": "மாற்று பயிர்கள்",
     "suitableSeason": "ஏற்ற பருவம்", "waterRequirement": "நீர் தேவை", "suitabilityScore": "பொருத்தத் தன்மை மதிப்பெண்",
-    "tierExcellent": "சிறந்த பொருத்தம்", "tierVerySuitable": "மிகவும் ஏற்றது", "tierSuitable": "ஏற்றது", "tierModerate": "மிதமான பொருத்தம்",
     "harvestDuration": "அறுவடை காலம்", "soilSuitability": "மண் பொருத்தம்", "expectedYield": "எதிர்பார்க்கும் விளைச்சல்",
     "days": "நாட்கள்", "predictionConfidence": "கணிப்பு நம்பகத்தன்மை", "modelAccuracy": "மாடல் துல்லியம்",
     "whyTitle": "ஏன் இந்த பயிர்?", "whyIntro": "பரிந்துரைக்கப்படுகிறது ஏனெனில் உங்கள் மண்ணில் உள்ளது",

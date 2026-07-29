@@ -74,7 +74,6 @@
   "cropRecommendation": {
     "title": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು", "topPick": "ಅಗ್ರ ಶಿಫಾರಸು", "alternatives": "ಪರ್ಯಾಯ ಬೆಳೆಗಳು",
     "suitableSeason": "ಸೂಕ್ತ ಋತು", "waterRequirement": "ನೀರಿನ ಅವಶ್ಯಕತೆ", "suitabilityScore": "ಸೂಕ್ತತೆ ಅಂಕ",
-    "tierExcellent": "ಅತ್ಯುತ್ತಮ ಹೊಂದಾಣಿಕೆ", "tierVerySuitable": "ಅತ್ಯಂತ ಸೂಕ್ತ", "tierSuitable": "ಸೂಕ್ತ", "tierModerate": "ಮಧ್ಯಮ ಸೂಕ್ತತೆ",
     "harvestDuration": "ಕೊಯ್ಲು ಅವಧಿ", "soilSuitability": "ಮಣ್ಣಿನ ಸೂಕ್ತತೆ", "expectedYield": "ನಿರೀಕ್ಷಿತ ಇಳುವರಿ",
     "days": "ದಿನಗಳು", "predictionConfidence": "ಭವಿಷ್ಯವಾಣಿ ವಿಶ್ವಾಸ ಮಟ್ಟ", "modelAccuracy": "ಮಾಡೆಲ್ ನಿಖರತೆ",
     "whyTitle": "ಈ ಬೆಳೆ ಏಕೆ?", "whyIntro": "ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ ಏಕೆಂದರೆ ನಿಮ್ಮ ಮಣ್ಣಿನಲ್ಲಿ ಇದೆ",
