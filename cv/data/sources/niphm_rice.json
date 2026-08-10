@@ -1,0 +1,112 @@
+{
+  "Rice": {
+    "source_url": "https://niphm.gov.in/IPMPackages/Rice.pdf",
+    "source_title": "Integrated Pest Management Package for Rice (2014) - National Centre for Integrated Pest Management / DPPQS / NIPHM, Government of India",
+    "pests": [
+      {
+        "name": "Yellow stem borer",
+        "scientific_name": "Scirpophaga incertulas Walker",
+        "category": "insect pest",
+        "symptoms": "Larvae bore into the stem; causes 'dead heart' (dead central shoot) in the vegetative stage and 'whitehead' (empty, unfilled panicle) at the reproductive stage. National-significance pest — among the dozen insects of major economic importance on Indian rice.",
+        "cultural_control": "Clip seedling tips before transplanting to remove carried-over egg masses; use short-duration/short-stature resistant varieties (Ratna, Sasyasree, Vikas, HKR 46 and others); community-wide tillage and flooding of stubble after harvest to destroy diapausing larvae; adjust planting time to avoid peak moth emergence.",
+        "biological_control": "Release Trichogramma japonicum and T. chilonis egg parasitoids @ 1 lakh/ha on appearance of egg masses/moths; conserve natural predators (spiders, mirid bugs, carabid beetles, dragonflies); collect egg masses into bamboo cage-cum-perchers to allow parasitoid escape while trapping hatching larvae; pheromone traps @ 20 traps/ha (10-15 mg lure) for mass trapping of male moths from 20 days after transplanting.",
+        "chemical_control": "Nursery stage: Cartap hydrochloride 4% granules or Cartap hydrochloride 50% SP. Vegetative/panicle-initiation stage: Carbofuran 3% CG, Cartap hydrochloride 4% granules or 50% SP, or Monocrotophos 36% SL (as per NIPHM's crop-stage generic IPM module).",
+        "dosage": "Nursery: Cartap hydrochloride 4% granules @ 18750 g/ha or Cartap hydrochloride 50% SP @ 1000 g/ha. Vegetative & panicle-initiation-to-booting: Carbofuran 3% CG @ 25000-66600 g/ha, or Cartap hydrochloride 4% granules @ 18750-25000 g/ha, or Cartap hydrochloride 50% SP @ 1000 g/ha, or Monocrotophos 36% SL @ 625-1250 ml/ha."
+      },
+      {
+        "name": "Brown planthopper / White-backed planthopper",
+        "scientific_name": "Nilaparvata lugens Stal / Sogatella furcifera Horvath",
+        "category": "insect pest",
+        "symptoms": "Sap-sucking insects clustering at the tiller base; causes 'hopper burn' — sudden yellowing and drying of patches in the field. National-significance pest; economic threshold 10-20 hoppers/hill depending on crop stage.",
+        "cultural_control": "Avoid excess nitrogen (promotes dense, susceptible canopy); alternate wetting and drying irrigation; drain fields 3-4 days during heavy infestation; grow no more than two crops per year with early-maturing varieties; use resistant varieties (Vijetha, Chaitanya, Krishnaveni and others).",
+        "biological_control": "Conserve natural predators — spiders (wolf spider Pardosa pseudoannulata, lynx spider Oxyopes javanus), mirid bugs, and other generalist predators; maintain a 2:1 pest-to-defender ratio threshold before spraying to avoid killing beneficials unnecessarily.",
+        "chemical_control": "Imidacloprid 70% WG, Imidacloprid 30.5% m/m SC, Ethofenprox 10% EC, Acephate 75% SP, or Buprofezin 25% SC, directed at the base of tillers where hoppers cluster.",
+        "dosage": "Imidacloprid 70% WG @ 30-35 g/ha, or Imidacloprid 30.5% m/m SC @ 60-75 ml/ha, or Ethofenprox 10% EC @ 500-750 ml/ha, or Acephate 75% SP @ 300-1000 g/ha (666-1000 g/ha vegetative, 300-500 g/ha at flowering), or Buprofezin 25% SC @ 800 ml/ha."
+      },
+      {
+        "name": "Rice leaf folder",
+        "scientific_name": "Cnaphalocrocis medinalis Guenee",
+        "category": "insect pest",
+        "symptoms": "Larvae fold leaves longitudinally and feed on the green tissue within, leaving characteristic 'fully damaged leaves' (FDL) with a scraped, whitish, papery appearance. National-significance pest.",
+        "cultural_control": "Early planting to avoid greater leaf damage; wider spacing (22.5x20 cm or 30x20 cm) and moderate nitrogen use decreases damage; avoid over-fertilization (attracts females for egg-laying); remove shading within the field.",
+        "biological_control": "Conserve egg predators (crickets) from surrounding grass habitats; larval parasitoid Stenobracon nicevillei; egg parasitoid Trichogramma chilonis; pupal parasitoid Copidosomopsis nacoleiae.",
+        "chemical_control": "Cartap hydrochloride 4% granules or 50% SP, Monocrotophos 36% SL, or Chlorpyrifos 1.5% DP, at vegetative through panicle-initiation stages.",
+        "dosage": "Cartap hydrochloride 4% granules @ 18750-25000 g/ha, or Cartap hydrochloride 50% SP @ 1000 g/ha, or Monocrotophos 36% SL @ 625-1250 ml/ha, or Chlorpyrifos 1.5% DP @ 25000 g/ha."
+      },
+      {
+        "name": "Gall midge",
+        "scientific_name": "Orseolia oryzae Wood-Mason",
+        "category": "insect pest",
+        "symptoms": "Larval feeding at the growing point produces a hollow, tubular 'silver shoot' gall in place of a normal leaf, and the affected tiller does not produce a panicle. Economic threshold: 1 gall/m2 or 10% silver shoot.",
+        "cultural_control": "Plough under ratoons of the previous crop; control grassy weeds/wild rice (alternate hosts) around the field; drain fields for 5-7 days; use early-maturing varieties and avoid staggered planting across a locality; use resistant varieties (Bhadrakali, Pavitra, Panchami and others).",
+        "biological_control": "Conserve general natural enemies of rice pests (spiders, carabids, coccinellids); maintain non-rice habitat refuges at field margins.",
+        "chemical_control": "Carbofuran 3% CG, Carbosulfan 6% G or 25% EC, or Fipronil 0.3% GR, applied in the nursery or at 20 days after transplanting.",
+        "dosage": "Nursery: Carbofuran 3% CG @ 25000-66600 g/ha, or Carbosulfan 6% G @ 16700 g/ha, or Carbosulfan 25% EC @ 800-1000 ml/ha. Vegetative (20 days after transplanting): Carbofuran 3% CG @ 25000-66600 g/ha or Fipronil 0.3% GR @ 16670-25000 g/ha."
+      },
+      {
+        "name": "Rice hispa",
+        "scientific_name": "Dicladispa armigera Oliver",
+        "category": "insect pest",
+        "symptoms": "Adults scrape the upper leaf surface leaving parallel whitish streaks; grubs mine within the leaf tissue producing blotch-like mines. Regional-significance pest (Bihar, West Bengal, Assam, Odisha, several other states).",
+        "cultural_control": "Clip and destroy the top three-fourths of heavily egg/grub-infested leaves at the early vegetative stage; sustained hand/sweep-net collection of adults; remove ratoons and volunteer rice in the crop-free season; skip nitrogen top-dressing during high hispa incidence.",
+        "biological_control": "Larval parasitoid Bracon sp.; conserve generalist predators active in the crop canopy.",
+        "chemical_control": "Quinalphos 25% gel or Chlorpyrifos 20% EC, sprayed at the vegetative stage.",
+        "dosage": "Quinalphos 25% gel @ 1000 ml/ha, or Chlorpyrifos 20% EC @ 1250 ml/ha."
+      },
+      {
+        "name": "Rice caseworm",
+        "scientific_name": "Nymphula depunctalis Guenee",
+        "category": "insect pest",
+        "symptoms": "Larvae cut leaf pieces to build a floating case and feed on leaf tips, giving a ragged, cut appearance; more damaging in low-lying, water-logged fields in eastern India.",
+        "cultural_control": "Wider hill spacing (30x20 cm) reduces damage; early planting to escape peak moth activity; draining fields for 5-7 days kills larvae; older seedlings and optimal, split nitrogen dosing reduce abundance.",
+        "biological_control": "Conserve generalist aquatic and terrestrial predators in the paddy ecosystem (spiders, water bugs).",
+        "chemical_control": "Carbaryl 10% DP dust, applied at the vegetative stage.",
+        "dosage": "Carbaryl 10% DP @ 25000 g/ha."
+      },
+      {
+        "name": "Termite",
+        "scientific_name": "Odontotermes obesus Rambur",
+        "category": "insect pest",
+        "symptoms": "Attacks roots and stem base, mainly under moisture-stressed conditions; regionally significant in rainfed upland areas and irrigated rice-wheat systems, causing wilting and plant death in patches.",
+        "cultural_control": "Avoid moisture stress through timely irrigation; remove and destroy crop residue/stumps that harbour termite colonies.",
+        "biological_control": "Not specifically detailed in the source document for rice; general soil-borne-pest biocontrol practice is to conserve entomopathogenic fungi in undisturbed field margins.",
+        "chemical_control": "Seed treatment with chlorpyrifos 20% EC in termite-endemic areas.",
+        "dosage": "Chlorpyrifos 20% EC @ 10000 ml/ha as a seed treatment along with a 10% gum arabica solution, applied just before sowing; alternatively imidacloprid 200 SL (20%) @ 0.25 litre/100 kg seed with 10% gum arabica solution in 3.75 litre water."
+      }
+    ],
+    "diseases": [
+      {
+        "name": "Rice blast",
+        "scientific_name": "Pyricularia oryzae Cavara (Magnaporthe oryzae)",
+        "category": "fungal disease",
+        "symptoms": "Diamond/spindle-shaped lesions with gray centers and brown borders on leaves; can also infect the panicle neck (neck blast), causing empty or partially filled grains. National-significance disease; economic threshold 3-5 lesions/leaf (early) or 2-5 neck-infected plants/m2 (panicle stage).",
+        "cultural_control": "Use blast-resistant/moderately-resistant varieties (Rasi, Vikas, Krishna Hamsa, Tulasi, IR 64 and others); avoid excess nitrogen; seed treatment before sowing; balanced water management.",
+        "biological_control": "Not detailed with a specific biocontrol agent in the source document for blast; general seed-treatment biocontrol (Trichoderma/Pseudomonas @ 5-10 g/kg seed) is recommended for soil/seed-borne fungal diseases generally.",
+        "chemical_control": "Carbendazim 50% WP, Isoprothiolane 40% EC, Tricyclazole 75% WP or 70% WG, or Ediphenphos 50% EC at flowering.",
+        "dosage": "Carbendazim 50% WP @ 250-500 g/ha, or Isoprothiolane 40% EC @ 750 ml/ha, or Tricyclazole 75% WP @ 300-400 g/ha or 70% WG @ 300 g/ha (nursery through panicle-initiation stages); at flowering, Ediphenphos 50% EC @ 500-600 ml/ha or Isoprothiolane 40% EC @ 750 ml/ha or Tricyclazole 75% WP @ 300-400 g/ha, with nitrogen kept to a small dose if needed."
+      },
+      {
+        "name": "Bacterial leaf blight",
+        "scientific_name": "Xanthomonas campestris pv. oryzae (Ishiyama Swings et al.)",
+        "category": "bacterial disease",
+        "symptoms": "Water-soaked lesions starting at leaf tips/margins, turning yellow-white and drying out; a 'kresek' phase can wilt entire young seedlings. National-significance disease; ETL 2-3 infected leaves/m2 (or 2-3 plants/m2 in kresek phase at nursery).",
+        "cultural_control": "Use resistant varieties (Ajaya, IR 36, IR 64, Swarna, Rajendra Basmati and others); avoid excess nitrogen and apply in more, smaller split doses; avoid clipping seedling leaf tips during transplanting; improve field drainage.",
+        "biological_control": "Not detailed with a specific biocontrol agent in the source document; primary non-chemical management is resistant varieties and field/water sanitation.",
+        "chemical_control": "Streptomycin sulphate 9% + Tetracycline hydrochloride 1% SP (nursery/vegetative stage); Streptocycline spray at early root stage, with a second spray before grain set if necessary.",
+        "dosage": "Streptomycin sulphate 9% + Tetracycline hydrochloride 1% SP @ 100-150 ppm; Streptocycline 100-150 ppm solution, first spray at early root stage and second (if needed) before grain set, alongside reduced/split nitrogen application."
+      },
+      {
+        "name": "Sheath blight",
+        "scientific_name": "Rhizoctonia solani J.G. Kuhn",
+        "category": "fungal disease",
+        "symptoms": "Oval, water-soaked lesions on the leaf sheath near the waterline that enlarge and merge, causing sheath and leaf drying; ETL is lesions of 5-6 mm length with 2-3 infected plants/m2.",
+        "cultural_control": "30 cm alley formations at every 2.5-3 m in sheath-blight-endemic areas to improve airflow; avoid excess nitrogen and dense planting; use tolerant varieties (PR 108, Bhudeb Dinesh, Jogan and others).",
+        "biological_control": "Not detailed with a specific biocontrol agent in the source document for sheath blight.",
+        "chemical_control": "Validamycin 3% L, Hexaconazole 5% EC, Propiconazole 25% EC, or Propiconazole 10.7% + Tricyclazole 34.2% SE.",
+        "dosage": "Validamycin 3% L @ 2000 g/ha (or 200 g/ha at flowering, per the document's flowering-stage table) or 2000 ml/ha (panicle-initiation stage), or Hexaconazole 5% EC @ 1000 ml/ha, or Propiconazole 25% EC @ 750 ml/ha, or Propiconazole 10.7% + Tricyclazole 34.2% SE @ 500 ml/ha."
+      }
+    ],
+    "general_safety_precautions": "The source document's Section 4 ('Safety Parameters in Pesticide Usage') directs extension functionaries to Annexure VIII (toxicity classification per the Insecticides Rules 1971 and WHO hazard classification, with the colour-coded toxicity triangle) and Annexure IX (basic precautions by toxicity/hazard class) before recommending any product, and stresses that farmers should be taught to read the colour-coded triangle on the product label, that first-aid measures for pesticide poisoning should be known to extension staff, and that product leaflets should be shared with local doctors ahead of spraying operations. Always use category-appropriate spray equipment (e.g. lever-operated knapsack sprayer with a hollow-cone nozzle at 35-40 psi for stationary/crawling pests; motorized knapsack/mist blower for airborne pests) per the document's application-technique protocol.",
+    "waiting_period_notes": "The document does not tabulate a numeric pre-harvest interval (waiting period) per product for rice; it instead directs users to the WHO/Insecticides-Rules toxicity classification in Annexures VIII-IX and to the product's own label for safe-use timing. Always follow the specific pre-harvest interval printed on the purchased product's CIBRC-approved label."
+  }
+}

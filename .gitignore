@@ -24,6 +24,9 @@ frontend/dev-dist/
 backend/.env
 frontend/.env
 
+# ESP32 firmware config holds real Wi-Fi credentials (commit only config.h.example)
+esp32/HealTheCrop_Firmware/config.h
+
 # Storage
 backend/storage/local/
 storage/local/

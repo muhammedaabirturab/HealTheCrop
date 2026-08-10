@@ -165,6 +165,14 @@ void sendReading() {
 
   String payload;
   serializeJson(doc, payload);
+
+  // Unconditional, unambiguous tag so anything reading the raw USB serial
+  // stream (e.g. the website's Web Serial "Connect via USB" feature) can
+  // reliably find the JSON reading on its own line, regardless of Wi-Fi
+  // status or any other debug text this firmware prints around it.
+  Serial.print("<<SENSOR>>");
+  Serial.println(payload);
+
   Serial.print("[Upload] Payload: ");
   Serial.println(payload);
 

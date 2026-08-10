@@ -1,54 +1,710 @@
 {
-  "rice": {"display_name": "Rice", "image": "rice.jpg", "season": ["Kharif"], "water_requirement": "High", "harvest_duration_days": 120, "soil_suitability": ["Clayey", "Loamy"], "expected_yield": "3.5-6 t/ha"},
-  "maize": {"display_name": "Maize", "image": "maize.jpg", "season": ["Kharif", "Rabi"], "water_requirement": "Medium", "harvest_duration_days": 100, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "2.5-6 t/ha"},
-  "chickpea": {"display_name": "Chickpea", "image": "chickpea.jpg", "season": ["Rabi"], "water_requirement": "Low", "harvest_duration_days": 100, "soil_suitability": ["Loamy", "Clayey"], "expected_yield": "1-2 t/ha"},
-  "kidneybeans": {"display_name": "Kidney Beans", "image": "kidneybeans.jpg", "season": ["Kharif"], "water_requirement": "Medium", "harvest_duration_days": 90, "soil_suitability": ["Loamy"], "expected_yield": "1.5-2.5 t/ha"},
-  "pigeonpeas": {"display_name": "Pigeon Peas", "image": "pigeonpeas.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 150, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "0.8-1.5 t/ha"},
-  "mothbeans": {"display_name": "Moth Beans", "image": "mothbeans.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 75, "soil_suitability": ["Sandy", "Loamy"], "expected_yield": "0.5-1 t/ha"},
-  "mungbean": {"display_name": "Mung Bean", "image": "mungbean.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 65, "soil_suitability": ["Loamy"], "expected_yield": "0.6-1.2 t/ha"},
-  "blackgram": {"display_name": "Black Gram", "image": "blackgram.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 80, "soil_suitability": ["Loamy", "Clayey"], "expected_yield": "0.6-1 t/ha"},
-  "lentil": {"display_name": "Lentil", "image": "lentil.jpg", "season": ["Rabi"], "water_requirement": "Low", "harvest_duration_days": 110, "soil_suitability": ["Loamy"], "expected_yield": "0.8-1.5 t/ha"},
-  "pomegranate": {"display_name": "Pomegranate", "image": "pomegranate.jpg", "season": ["Annual"], "water_requirement": "Medium", "harvest_duration_days": 180, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "10-15 t/ha"},
-  "banana": {"display_name": "Banana", "image": "banana.jpg", "season": ["Annual"], "water_requirement": "High", "harvest_duration_days": 300, "soil_suitability": ["Loamy", "Alluvial"], "expected_yield": "35-60 t/ha"},
-  "mango": {"display_name": "Mango", "image": "mango.jpg", "season": ["Annual"], "water_requirement": "Medium", "harvest_duration_days": 365, "soil_suitability": ["Loamy", "Alluvial"], "expected_yield": "8-12 t/ha"},
-  "grapes": {"display_name": "Grapes", "image": "grapes.jpg", "season": ["Annual"], "water_requirement": "Medium", "harvest_duration_days": 150, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "15-25 t/ha"},
-  "watermelon": {"display_name": "Watermelon", "image": "watermelon.jpg", "season": ["Zaid"], "water_requirement": "Medium", "harvest_duration_days": 90, "soil_suitability": ["Sandy Loam"], "expected_yield": "20-30 t/ha"},
-  "muskmelon": {"display_name": "Muskmelon", "image": "muskmelon.jpg", "season": ["Zaid"], "water_requirement": "Medium", "harvest_duration_days": 85, "soil_suitability": ["Sandy Loam"], "expected_yield": "15-20 t/ha"},
-  "apple": {"display_name": "Apple", "image": "apple.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 150, "soil_suitability": ["Loamy"], "expected_yield": "10-20 t/ha"},
-  "orange": {"display_name": "Orange", "image": "orange.jpg", "season": ["Annual"], "water_requirement": "Medium", "harvest_duration_days": 240, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "10-18 t/ha"},
-  "papaya": {"display_name": "Papaya", "image": "papaya.jpg", "season": ["Annual"], "water_requirement": "High", "harvest_duration_days": 270, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "35-50 t/ha"},
-  "coconut": {"display_name": "Coconut", "image": "coconut.jpg", "season": ["Annual"], "water_requirement": "High", "harvest_duration_days": 365, "soil_suitability": ["Sandy Loam", "Coastal Alluvial"], "expected_yield": "8000-12000 nuts/ha/yr"},
-  "cotton": {"display_name": "Cotton", "image": "cotton.jpg", "season": ["Kharif"], "water_requirement": "Medium", "harvest_duration_days": 160, "soil_suitability": ["Black Cotton Soil", "Loamy"], "expected_yield": "1.5-2.5 t/ha"},
-  "jute": {"display_name": "Jute", "image": "jute.jpg", "season": ["Kharif"], "water_requirement": "High", "harvest_duration_days": 120, "soil_suitability": ["Alluvial"], "expected_yield": "2-2.5 t/ha"},
-  "coffee": {"display_name": "Coffee", "image": "coffee.jpg", "season": ["Annual"], "water_requirement": "Medium", "harvest_duration_days": 270, "soil_suitability": ["Loamy", "Well-drained"], "expected_yield": "0.8-1.5 t/ha"},
-  "wheat": {"display_name": "Wheat", "image": "wheat.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 120, "soil_suitability": ["Loamy", "Clayey"], "expected_yield": "3-5 t/ha"},
-  "sugarcane": {"display_name": "Sugarcane", "image": "sugarcane.jpg", "season": ["Annual"], "water_requirement": "High", "harvest_duration_days": 365, "soil_suitability": ["Loamy", "Alluvial"], "expected_yield": "70-100 t/ha"},
-  "tea": {"display_name": "Tea", "image": "tea.jpg", "season": ["Annual"], "water_requirement": "High", "harvest_duration_days": 365, "soil_suitability": ["Loamy", "Well-drained"], "expected_yield": "1.5-2.5 t/ha (made tea)"},
-  "groundnut": {"display_name": "Groundnut", "image": "groundnut.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 110, "soil_suitability": ["Sandy Loam", "Loamy"], "expected_yield": "1.5-2.5 t/ha"},
-  "soybean": {"display_name": "Soybean", "image": "soybean.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 100, "soil_suitability": ["Loamy", "Clayey"], "expected_yield": "2-3 t/ha"},
-  "mustard": {"display_name": "Mustard", "image": "mustard.jpg", "season": ["Rabi"], "water_requirement": "Low", "harvest_duration_days": 120, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "1-1.5 t/ha"},
-  "sunflower": {"display_name": "Sunflower", "image": "sunflower.jpg", "season": ["Zaid"], "water_requirement": "Medium", "harvest_duration_days": 90, "soil_suitability": ["Loamy", "Black Cotton Soil"], "expected_yield": "1.5-2 t/ha"},
-  "tomato": {"display_name": "Tomato", "image": "tomato.jpg", "season": ["Kharif", "Rabi"], "water_requirement": "Medium", "harvest_duration_days": 90, "soil_suitability": ["Loamy"], "expected_yield": "20-35 t/ha"},
-  "onion": {"display_name": "Onion", "image": "onion.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 130, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "15-25 t/ha"},
-  "potato": {"display_name": "Potato", "image": "potato.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 100, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "20-30 t/ha"},
-  "garlic": {"display_name": "Garlic", "image": "garlic.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 150, "soil_suitability": ["Loamy"], "expected_yield": "5-8 t/ha"},
-  "brinjal": {"display_name": "Brinjal", "image": "brinjal.jpg", "season": ["Kharif"], "water_requirement": "Medium", "harvest_duration_days": 130, "soil_suitability": ["Loamy"], "expected_yield": "20-30 t/ha"},
-  "cabbage": {"display_name": "Cabbage", "image": "cabbage.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 90, "soil_suitability": ["Loamy"], "expected_yield": "25-40 t/ha"},
-  "cauliflower": {"display_name": "Cauliflower", "image": "cauliflower.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 100, "soil_suitability": ["Loamy"], "expected_yield": "15-25 t/ha"},
-  "okra": {"display_name": "Okra", "image": "okra.jpg", "season": ["Kharif"], "water_requirement": "Medium", "harvest_duration_days": 60, "soil_suitability": ["Loamy"], "expected_yield": "8-12 t/ha"},
-  "spinach": {"display_name": "Spinach", "image": "spinach.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 45, "soil_suitability": ["Loamy"], "expected_yield": "8-12 t/ha"},
-  "cucumber": {"display_name": "Cucumber", "image": "cucumber.jpg", "season": ["Zaid"], "water_requirement": "Medium", "harvest_duration_days": 60, "soil_suitability": ["Sandy Loam"], "expected_yield": "10-15 t/ha"},
-  "guava": {"display_name": "Guava", "image": "guava.jpg", "season": ["Annual"], "water_requirement": "Medium", "harvest_duration_days": 240, "soil_suitability": ["Loamy"], "expected_yield": "15-20 t/ha"},
-  "turmeric": {"display_name": "Turmeric", "image": "turmeric.jpg", "season": ["Kharif"], "water_requirement": "High", "harvest_duration_days": 270, "soil_suitability": ["Loamy", "Clayey"], "expected_yield": "5-7 t/ha"},
-  "ginger": {"display_name": "Ginger", "image": "ginger.jpg", "season": ["Kharif"], "water_requirement": "High", "harvest_duration_days": 240, "soil_suitability": ["Loamy"], "expected_yield": "15-20 t/ha"},
-  "blackpepper": {"display_name": "Black Pepper", "image": "blackpepper.jpg", "season": ["Annual"], "water_requirement": "High", "harvest_duration_days": 365, "soil_suitability": ["Loamy", "Well-drained"], "expected_yield": "0.3-0.5 t/ha"},
-  "cardamom": {"display_name": "Cardamom", "image": "cardamom.jpg", "season": ["Annual"], "water_requirement": "High", "harvest_duration_days": 365, "soil_suitability": ["Loamy", "Well-drained"], "expected_yield": "0.1-0.2 t/ha"},
-  "coriander": {"display_name": "Coriander", "image": "coriander.jpg", "season": ["Rabi"], "water_requirement": "Low", "harvest_duration_days": 90, "soil_suitability": ["Loamy"], "expected_yield": "0.8-1.2 t/ha"},
-  "fenugreek": {"display_name": "Fenugreek", "image": "fenugreek.jpg", "season": ["Rabi"], "water_requirement": "Low", "harvest_duration_days": 100, "soil_suitability": ["Loamy"], "expected_yield": "1-1.5 t/ha"},
-  "sorghum": {"display_name": "Sorghum", "image": "sorghum.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 110, "soil_suitability": ["Loamy", "Sandy Loam"], "expected_yield": "1.5-2.5 t/ha"},
-  "pearlmillet": {"display_name": "Pearl Millet", "image": "pearlmillet.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 85, "soil_suitability": ["Sandy", "Sandy Loam"], "expected_yield": "1-2 t/ha"},
-  "fingermillet": {"display_name": "Finger Millet", "image": "fingermillet.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 120, "soil_suitability": ["Loamy", "Red Laterite"], "expected_yield": "1.5-2.5 t/ha"},
-  "carrot": {"display_name": "Carrot", "image": "carrot.jpg", "season": ["Rabi"], "water_requirement": "Medium", "harvest_duration_days": 100, "soil_suitability": ["Sandy Loam"], "expected_yield": "15-20 t/ha"},
-  "peas": {"display_name": "Green Peas", "image": "peas.jpg", "season": ["Rabi"], "water_requirement": "Low", "harvest_duration_days": 90, "soil_suitability": ["Loamy"], "expected_yield": "1.5-2.5 t/ha"},
-  "sesame": {"display_name": "Sesame", "image": "sesame.jpg", "season": ["Kharif"], "water_requirement": "Low", "harvest_duration_days": 90, "soil_suitability": ["Sandy Loam"], "expected_yield": "0.4-0.6 t/ha"}
+  "rice": {
+    "display_name": "Rice",
+    "image": "rice.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 120,
+    "soil_suitability": [
+      "Clayey",
+      "Loamy"
+    ],
+    "expected_yield": "3.5-6 t/ha"
+  },
+  "maize": {
+    "display_name": "Maize",
+    "image": "maize.jpg",
+    "season": [
+      "Kharif",
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 100,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "2.5-6 t/ha"
+  },
+  "chickpea": {
+    "display_name": "Chickpea",
+    "image": "chickpea.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 100,
+    "soil_suitability": [
+      "Loamy",
+      "Clayey"
+    ],
+    "expected_yield": "1-2 t/ha"
+  },
+  "kidneybeans": {
+    "display_name": "Kidney Beans",
+    "image": "kidneybeans.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "1.5-2.5 t/ha"
+  },
+  "pigeonpeas": {
+    "display_name": "Pigeon Peas",
+    "image": "pigeonpeas.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 150,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "0.8-1.5 t/ha"
+  },
+  "mothbeans": {
+    "display_name": "Moth Beans",
+    "image": "mothbeans.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 75,
+    "soil_suitability": [
+      "Sandy",
+      "Loamy"
+    ],
+    "expected_yield": "0.5-1 t/ha"
+  },
+  "mungbean": {
+    "display_name": "Mung Bean",
+    "image": "mungbean.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 65,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "0.6-1.2 t/ha"
+  },
+  "blackgram": {
+    "display_name": "Black Gram",
+    "image": "blackgram.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 80,
+    "soil_suitability": [
+      "Loamy",
+      "Clayey"
+    ],
+    "expected_yield": "0.6-1 t/ha"
+  },
+  "lentil": {
+    "display_name": "Lentil",
+    "image": "lentil.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 110,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "0.8-1.5 t/ha"
+  },
+  "pomegranate": {
+    "display_name": "Pomegranate",
+    "image": "pomegranate.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 180,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "10-15 t/ha"
+  },
+  "banana": {
+    "display_name": "Banana",
+    "image": "banana.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 300,
+    "soil_suitability": [
+      "Loamy",
+      "Alluvial"
+    ],
+    "expected_yield": "35-60 t/ha"
+  },
+  "mango": {
+    "display_name": "Mango",
+    "image": "mango.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 365,
+    "soil_suitability": [
+      "Loamy",
+      "Alluvial"
+    ],
+    "expected_yield": "8-12 t/ha"
+  },
+  "grapes": {
+    "display_name": "Grapes",
+    "image": "grapes.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 150,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "15-25 t/ha"
+  },
+  "watermelon": {
+    "display_name": "Watermelon",
+    "image": "watermelon.jpg",
+    "season": [
+      "Zaid"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Sandy Loam"
+    ],
+    "expected_yield": "20-30 t/ha"
+  },
+  "muskmelon": {
+    "display_name": "Muskmelon",
+    "image": "muskmelon.jpg",
+    "season": [
+      "Zaid"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 85,
+    "soil_suitability": [
+      "Sandy Loam"
+    ],
+    "expected_yield": "15-20 t/ha"
+  },
+  "apple": {
+    "display_name": "Apple",
+    "image": "apple.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 150,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "10-20 t/ha"
+  },
+  "orange": {
+    "display_name": "Orange",
+    "image": "orange.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 240,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "10-18 t/ha"
+  },
+  "papaya": {
+    "display_name": "Papaya",
+    "image": "papaya.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 270,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "35-50 t/ha"
+  },
+  "coconut": {
+    "display_name": "Coconut",
+    "image": "coconut.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 365,
+    "soil_suitability": [
+      "Sandy Loam",
+      "Coastal Alluvial"
+    ],
+    "expected_yield": "8000-12000 nuts/ha/yr"
+  },
+  "cotton": {
+    "display_name": "Cotton",
+    "image": "cotton.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 160,
+    "soil_suitability": [
+      "Black Cotton Soil",
+      "Loamy"
+    ],
+    "expected_yield": "1.5-2.5 t/ha"
+  },
+  "jute": {
+    "display_name": "Jute",
+    "image": "jute.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 120,
+    "soil_suitability": [
+      "Alluvial"
+    ],
+    "expected_yield": "2-2.5 t/ha"
+  },
+  "coffee": {
+    "display_name": "Coffee",
+    "image": "coffee.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 270,
+    "soil_suitability": [
+      "Loamy",
+      "Well-drained"
+    ],
+    "expected_yield": "0.8-1.5 t/ha"
+  },
+  "wheat": {
+    "display_name": "Wheat",
+    "image": "wheat.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 120,
+    "soil_suitability": [
+      "Loamy",
+      "Clayey"
+    ],
+    "expected_yield": "3-5 t/ha"
+  },
+  "sugarcane": {
+    "display_name": "Sugarcane",
+    "image": "sugarcane.jpg",
+    "season": [
+      "Zaid"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 365,
+    "soil_suitability": [
+      "Loamy",
+      "Alluvial"
+    ],
+    "expected_yield": "70-100 t/ha"
+  },
+  "tea": {
+    "display_name": "Tea",
+    "image": "tea.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 365,
+    "soil_suitability": [
+      "Loamy",
+      "Well-drained"
+    ],
+    "expected_yield": "1.5-2.5 t/ha (made tea)"
+  },
+  "groundnut": {
+    "display_name": "Groundnut",
+    "image": "groundnut.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 110,
+    "soil_suitability": [
+      "Sandy Loam",
+      "Loamy"
+    ],
+    "expected_yield": "1.5-2.5 t/ha"
+  },
+  "soybean": {
+    "display_name": "Soybean",
+    "image": "soybean.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 100,
+    "soil_suitability": [
+      "Loamy",
+      "Clayey"
+    ],
+    "expected_yield": "2-3 t/ha"
+  },
+  "mustard": {
+    "display_name": "Mustard",
+    "image": "mustard.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 120,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "1-1.5 t/ha"
+  },
+  "sunflower": {
+    "display_name": "Sunflower",
+    "image": "sunflower.jpg",
+    "season": [
+      "Zaid"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Loamy",
+      "Black Cotton Soil"
+    ],
+    "expected_yield": "1.5-2 t/ha"
+  },
+  "tomato": {
+    "display_name": "Tomato",
+    "image": "tomato.jpg",
+    "season": [
+      "Kharif",
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "20-35 t/ha"
+  },
+  "onion": {
+    "display_name": "Onion",
+    "image": "onion.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 130,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "15-25 t/ha"
+  },
+  "potato": {
+    "display_name": "Potato",
+    "image": "potato.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 100,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "20-30 t/ha"
+  },
+  "garlic": {
+    "display_name": "Garlic",
+    "image": "garlic.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 150,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "5-8 t/ha"
+  },
+  "brinjal": {
+    "display_name": "Brinjal",
+    "image": "brinjal.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 130,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "20-30 t/ha"
+  },
+  "cabbage": {
+    "display_name": "Cabbage",
+    "image": "cabbage.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "25-40 t/ha"
+  },
+  "cauliflower": {
+    "display_name": "Cauliflower",
+    "image": "cauliflower.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 100,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "15-25 t/ha"
+  },
+  "okra": {
+    "display_name": "Okra",
+    "image": "okra.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 60,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "8-12 t/ha"
+  },
+  "spinach": {
+    "display_name": "Spinach",
+    "image": "spinach.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 45,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "8-12 t/ha"
+  },
+  "cucumber": {
+    "display_name": "Cucumber",
+    "image": "cucumber.jpg",
+    "season": [
+      "Zaid"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 60,
+    "soil_suitability": [
+      "Sandy Loam"
+    ],
+    "expected_yield": "10-15 t/ha"
+  },
+  "guava": {
+    "display_name": "Guava",
+    "image": "guava.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 240,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "15-20 t/ha"
+  },
+  "turmeric": {
+    "display_name": "Turmeric",
+    "image": "turmeric.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 270,
+    "soil_suitability": [
+      "Loamy",
+      "Clayey"
+    ],
+    "expected_yield": "5-7 t/ha"
+  },
+  "ginger": {
+    "display_name": "Ginger",
+    "image": "ginger.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 240,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "15-20 t/ha"
+  },
+  "blackpepper": {
+    "display_name": "Black Pepper",
+    "image": "blackpepper.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 365,
+    "soil_suitability": [
+      "Loamy",
+      "Well-drained"
+    ],
+    "expected_yield": "0.3-0.5 t/ha"
+  },
+  "cardamom": {
+    "display_name": "Cardamom",
+    "image": "cardamom.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "High",
+    "harvest_duration_days": 365,
+    "soil_suitability": [
+      "Loamy",
+      "Well-drained"
+    ],
+    "expected_yield": "0.1-0.2 t/ha"
+  },
+  "coriander": {
+    "display_name": "Coriander",
+    "image": "coriander.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "0.8-1.2 t/ha"
+  },
+  "fenugreek": {
+    "display_name": "Fenugreek",
+    "image": "fenugreek.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 100,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "1-1.5 t/ha"
+  },
+  "sorghum": {
+    "display_name": "Sorghum",
+    "image": "sorghum.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 110,
+    "soil_suitability": [
+      "Loamy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "1.5-2.5 t/ha"
+  },
+  "pearlmillet": {
+    "display_name": "Pearl Millet",
+    "image": "pearlmillet.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 85,
+    "soil_suitability": [
+      "Sandy",
+      "Sandy Loam"
+    ],
+    "expected_yield": "1-2 t/ha"
+  },
+  "fingermillet": {
+    "display_name": "Finger Millet",
+    "image": "fingermillet.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 120,
+    "soil_suitability": [
+      "Loamy",
+      "Red Laterite"
+    ],
+    "expected_yield": "1.5-2.5 t/ha"
+  },
+  "carrot": {
+    "display_name": "Carrot",
+    "image": "carrot.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Medium",
+    "harvest_duration_days": 100,
+    "soil_suitability": [
+      "Sandy Loam"
+    ],
+    "expected_yield": "15-20 t/ha"
+  },
+  "peas": {
+    "display_name": "Green Peas",
+    "image": "peas.jpg",
+    "season": [
+      "Rabi"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Loamy"
+    ],
+    "expected_yield": "1.5-2.5 t/ha"
+  },
+  "sesame": {
+    "display_name": "Sesame",
+    "image": "sesame.jpg",
+    "season": [
+      "Kharif"
+    ],
+    "water_requirement": "Low",
+    "harvest_duration_days": 90,
+    "soil_suitability": [
+      "Sandy Loam"
+    ],
+    "expected_yield": "0.4-0.6 t/ha"
+  }
 }

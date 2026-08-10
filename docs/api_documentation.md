@@ -53,12 +53,42 @@ harvest duration, soil suitability, expected yield).
 
 | Method | Path | Auth | Description |
 |---|---|---|---|
-| POST | `/pest/scan` | ✅ | Multipart image upload → detections |
+| POST | `/pest/scan?lang=hi` | ✅ | Multipart image upload → detections |
 | GET | `/pest/history?limit=50` | ✅ | Past scans |
 
-Each detection includes `display_name`, `type` (disease/pest/healthy), `confidence`,
-`description`, `organic_treatment`, `chemical_treatment`, `recommended_pesticides`,
-`prevention_tips`, `expected_recovery_days`, and a bounding-box `region` when available.
+`lang` (query param, default `en`) selects which language the diagnosis text
+comes back in — one of `en`, `hi`, `kn`, `ta`, `te`, `ml`. Each detection's
+`content_language` field reports which language its text is actually in: if
+the requested language has no translation for that specific entry yet, the
+API honestly falls back to `en` rather than mixing languages or fabricating
+a translation — see `cv/data/translations/README.md` for the full
+localization architecture (what's translated, what deliberately isn't —
+e.g. chemical/product names always stay in Roman script — and how to add
+more languages).
+
+Before running detection, the uploaded image is checked for blur, poor exposure,
+low resolution, and whether it plausibly contains a plant at all (see
+`backend/app/cv/image_quality.py`). If a check fails, the response carries
+`detections: []` and `image_quality: {is_acceptable: false, issues: [...], messages: [...]}`
+instead of a guess — `issues` are stable codes (`blurry`, `too_dark`, `overexposed`,
+`low_resolution`, `no_plant_detected`) for the frontend to translate/display.
+
+When quality checks pass, each detection includes `display_name`, `type`
+(disease/pest/deficiency/healthy), `category`, `scientific_name`, `applicable_crops`,
+`confidence`, `description`, `severity_level`, `organic_treatment`,
+`biological_control`, `chemical_treatment`, `recommended_pesticides`,
+`recommended_insecticide`, `recommended_fungicide`, `dosage_guidance`,
+`safety_precautions`, `waiting_period_before_harvest`, `prevention_tips`,
+`recovery_recommendations`, `expected_recovery_days`, `sources` (citations —
+see `cv/data/sources/README.md` for how the knowledge base is sourced), and a
+bounding-box `region` when available.
+
+The top-level response also carries `is_uncertain` and `uncertainty_note`:
+when the top candidate's confidence is below a threshold
+(`CONFIDENCE_UNCERTAIN_THRESHOLD` in `disease_service.py`), the API says so
+explicitly rather than presenting a low-confidence guess as definitive, and
+recommends consulting a local agricultural extension officer or plant
+pathologist.
 
 ## Soil Health & Fertility
 

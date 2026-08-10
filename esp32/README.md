@@ -44,7 +44,8 @@ See [`docs/hardware_wiring.md`](../docs/hardware_wiring.md) for the full circuit
    - `ArduinoJson` (v6+)
    - `ModbusMaster` (only if `NPK_SENSOR_ATTACHED` is `true` in `config.h`)
 4. Open `HealTheCrop_Firmware/HealTheCrop_Firmware.ino`.
-5. Edit `config.h`:
+5. Copy `config.h.example` to `config.h` (this filename is gitignored since it holds your
+   real Wi-Fi password — never commit it) and edit `config.h`:
    - `WIFI_SSID` / `WIFI_PASSWORD` — your network credentials.
    - `API_BASE_URL` — your backend's LAN IP, e.g. `http://192.168.1.42:8000/api/v1/sensors/ingest`.
    - `DEVICE_UID` — a unique name if running multiple nodes.

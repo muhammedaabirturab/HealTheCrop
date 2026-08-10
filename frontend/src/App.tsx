@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import ManualInput from './pages/ManualInput'
+import LiveSensor from './pages/LiveSensor'
 import PestScan from './pages/PestScan'
 import AdminDashboard from './pages/AdminDashboard'
 
@@ -24,6 +25,7 @@ export default function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/manual-input" element={<ManualInput />} />
+            <Route path="/live-sensor" element={<LiveSensor />} />
             <Route path="/pest-scan" element={<PestScan />} />
           </Route>
 

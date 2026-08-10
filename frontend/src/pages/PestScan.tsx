@@ -1,31 +1,62 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { UploadCloud, Bug, Leaf, AlertTriangle } from 'lucide-react'
+import { UploadCloud, Bug, Leaf, AlertTriangle, ShieldAlert, Sprout, BookOpen } from 'lucide-react'
 import { api } from '../lib/api'
 import { getErrorMessage } from '../lib/errors'
+
+interface SourceCitation {
+  title: string
+  publisher: string
+  url: string | null
+}
 
 interface Detection {
   name: string
   display_name: string
   type: string
   category: string
+  scientific_name: string | null
+  applicable_crops: string[]
   confidence: number
   description: string
   severity_level: string
   organic_treatment: string
+  biological_control: string | null
   chemical_treatment: string
   recommended_pesticides: string[]
+  recommended_insecticide: string | null
   recommended_fungicide: string | null
   dosage_guidance: string
+  safety_precautions: string | null
+  waiting_period_before_harvest: string | null
   prevention_tips: string[]
   recovery_recommendations: string
   expected_recovery_days: number
+  sources: SourceCitation[]
+  content_language: string
+}
+
+interface ImageQuality {
+  is_acceptable: boolean
+  issues: string[]
+  messages: string[]
 }
 
 interface ScanResult {
   model_used: string
   severity: string
   detections: Detection[]
+  image_quality: ImageQuality
+  is_uncertain: boolean
+  uncertainty_note: string | null
+}
+
+const ISSUE_KEY: Record<string, string> = {
+  blurry: 'pestDetection.issueBlurry',
+  too_dark: 'pestDetection.issueTooDark',
+  overexposed: 'pestDetection.issueOverexposed',
+  low_resolution: 'pestDetection.issueLowResolution',
+  no_plant_detected: 'pestDetection.issueNoPlantDetected',
 }
 
 const SEVERITY_BADGE: Record<string, string> = {
@@ -36,8 +67,29 @@ const SEVERITY_BADGE: Record<string, string> = {
   None: 'bg-forest/10 text-forest-dark',
 }
 
+const SEVERITY_LEVEL_KEY: Record<string, string> = {
+  Low: 'pestDetection.severityLow',
+  Moderate: 'pestDetection.severityModerate',
+  High: 'pestDetection.severityHigh',
+  Critical: 'pestDetection.severityCritical',
+  None: 'pestDetection.severityNone',
+}
+
+const OVERALL_SEVERITY_KEY: Record<string, string> = {
+  healthy: 'pestDetection.overallHealthy',
+  mild: 'pestDetection.overallMild',
+  moderate: 'pestDetection.overallModerateLevel',
+  severe: 'pestDetection.overallSevere',
+  unknown: 'pestDetection.overallUnknown',
+}
+
+const MODEL_USED_KEY: Record<string, string> = {
+  heuristic: 'pestDetection.modelHeuristic',
+  cnn: 'pestDetection.modelCnn',
+}
+
 export default function PestScan() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [preview, setPreview] = useState<string | null>(null)
   const [file, setFile] = useState<File | null>(null)
   const [result, setResult] = useState<ScanResult | null>(null)
@@ -70,6 +122,7 @@ export default function PestScan() {
       formData.append('file', file)
       const { data } = await api.post('/pest/scan', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
+        params: { lang: i18n.language },
       })
       setResult(data)
     } catch (err) {
@@ -108,11 +161,38 @@ export default function PestScan() {
 
       {error && <p className="text-red-600 font-semibold text-center">{error}</p>}
 
-      {result && (
+      {result && !result.image_quality.is_acceptable && (
+        <div className="card p-6 flex flex-col items-center gap-3 border-2 border-red-200 bg-red-50 text-center">
+          <ShieldAlert className="text-red-600" size={32} />
+          <h3 className="text-lg font-bold text-red-700">{t('pestDetection.imageQualityTitle')}</h3>
+          <ul className="text-sm text-red-700 flex flex-col gap-1">
+            {result.image_quality.issues.map((issue) => (
+              <li key={issue}>{t(ISSUE_KEY[issue] || issue)}</li>
+            ))}
+          </ul>
+          <label className="btn-primary cursor-pointer">
+            {t('pestDetection.retakePhoto')}
+            <input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              className="hidden"
+              onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+            />
+          </label>
+        </div>
+      )}
+
+      {result && result.image_quality.is_acceptable && (
         <div className="flex flex-col gap-4">
           <p className="text-sm font-semibold text-earth-dark text-center">
-            {t('pestDetection.modelUsed')}: {result.model_used} · {t('pestDetection.overallSeverity')}: {result.severity}
+            {t('pestDetection.modelUsed')}: {t(MODEL_USED_KEY[result.model_used] || result.model_used)} · {t('pestDetection.overallSeverity')}: {t(OVERALL_SEVERITY_KEY[result.severity] || result.severity)}
           </p>
+          {result.is_uncertain && (
+            <div className="card p-4 flex items-start gap-3 border-2 border-yellow-200 bg-yellow-50">
+              <ShieldAlert className="text-yellow-700 shrink-0" size={20} />
+              <p className="text-sm text-yellow-800 font-medium">{t('pestDetection.uncertainDiagnosis')}</p>
+            </div>
+          )}
           {result.detections.map((d, i) => (
             <div key={i} className="card p-5 flex flex-col gap-3">
               <div className="flex items-center gap-3 flex-wrap">
@@ -126,10 +206,20 @@ export default function PestScan() {
                 </span>
                 {d.type !== 'healthy' && (
                   <span className={`flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-full ${SEVERITY_BADGE[d.severity_level] || SEVERITY_BADGE.Moderate}`}>
-                    <AlertTriangle size={12} /> {t('pestDetection.severityLevel')}: {d.severity_level}
+                    <AlertTriangle size={12} /> {t('pestDetection.severityLevel')}: {t(SEVERITY_LEVEL_KEY[d.severity_level] || d.severity_level)}
                   </span>
                 )}
               </div>
+              {d.scientific_name && (
+                <p className="text-xs italic text-earth-dark/70 -mt-2">
+                  {t('pestDetection.scientificName')}: {d.scientific_name}
+                </p>
+              )}
+              {d.content_language !== i18n.language && (
+                <p className="text-xs font-semibold text-orange-700 bg-orange-50 border border-orange-100 rounded-md px-2 py-1 -mt-1 w-fit">
+                  {t('pestDetection.contentUnavailableInLanguage')}
+                </p>
+              )}
               <p className="text-sm text-earth-dark">{d.description}</p>
               {d.type !== 'healthy' && (
                 <div className="grid sm:grid-cols-2 gap-3 text-sm">
@@ -137,6 +227,12 @@ export default function PestScan() {
                     <p className="font-semibold text-forest-dark">{t('pestDetection.organicTreatment')}</p>
                     <p className="text-earth-dark">{d.organic_treatment}</p>
                   </div>
+                  {d.biological_control && (
+                    <div>
+                      <p className="font-semibold text-forest-dark">{t('pestDetection.biologicalControl')}</p>
+                      <p className="text-earth-dark">{d.biological_control}</p>
+                    </div>
+                  )}
                   <div>
                     <p className="font-semibold text-forest-dark">{t('pestDetection.chemicalTreatment')}</p>
                     <p className="text-earth-dark">{d.chemical_treatment}</p>
@@ -145,6 +241,12 @@ export default function PestScan() {
                     <p className="font-semibold text-forest-dark">{t('pestDetection.recommendedPesticides')}</p>
                     <p className="text-earth-dark">{d.recommended_pesticides.join(', ') || '—'}</p>
                   </div>
+                  {d.recommended_insecticide && (
+                    <div>
+                      <p className="font-semibold text-forest-dark">{t('pestDetection.recommendedInsecticide')}</p>
+                      <p className="text-earth-dark">{d.recommended_insecticide}</p>
+                    </div>
+                  )}
                   {d.recommended_fungicide && (
                     <div>
                       <p className="font-semibold text-forest-dark">{t('pestDetection.recommendedFungicide')}</p>
@@ -155,6 +257,23 @@ export default function PestScan() {
                     <p className="font-semibold text-forest-dark">{t('pestDetection.dosageGuidance')}</p>
                     <p className="text-earth-dark">{d.dosage_guidance}</p>
                   </div>
+                  {d.safety_precautions && (
+                    <div className="sm:col-span-2 flex gap-2 bg-red-50 border border-red-100 rounded-lg p-3">
+                      <ShieldAlert className="text-red-500 shrink-0" size={16} />
+                      <div>
+                        <p className="font-semibold text-red-700">{t('pestDetection.safetyPrecautions')}</p>
+                        <p className="text-red-700/90">{d.safety_precautions}</p>
+                      </div>
+                    </div>
+                  )}
+                  {d.waiting_period_before_harvest && (
+                    <div>
+                      <p className="font-semibold text-forest-dark flex items-center gap-1">
+                        <Sprout size={14} /> {t('pestDetection.waitingPeriod')}
+                      </p>
+                      <p className="text-earth-dark">{d.waiting_period_before_harvest}</p>
+                    </div>
+                  )}
                   <div>
                     <p className="font-semibold text-forest-dark">{t('pestDetection.preventionTips')}</p>
                     <ul className="list-disc list-inside text-earth-dark">
@@ -168,6 +287,24 @@ export default function PestScan() {
                       <p className="text-earth-dark mt-1">{d.recovery_recommendations}</p>
                     )}
                   </div>
+                  {d.sources.length > 0 && (
+                    <div className="sm:col-span-2 pt-2 border-t border-forest/10">
+                      <p className="font-semibold text-forest-dark flex items-center gap-1">
+                        <BookOpen size={14} /> {t('pestDetection.sources')}
+                      </p>
+                      <ul className="text-xs text-earth-dark/80 flex flex-col gap-0.5 mt-1">
+                        {d.sources.map((src, si) => (
+                          <li key={si}>
+                            {src.url ? (
+                              <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-forest-dark">
+                                {src.title}
+                              </a>
+                            ) : src.title} — {src.publisher}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

@@ -1,0 +1,1062 @@
+{
+  "Cotton": {
+    "source_url": "https://niphm.gov.in/IPMPackages/Cotton.pdf",
+    "source_title": "Integrated Pest Management Package for Cotton (2014) - National Centre for Integrated Pest Management / DPPQS / NIPHM, Government of India",
+    "pests": [
+      {
+        "name": "Leaf hopper / Jassid",
+        "scientific_name": "Amrasca devastans (Distant)",
+        "category": "insect pest",
+        "symptoms": "Nymphs and adults suck sap mainly from the leaf underside and inject salivary toxins; affected leaves curl downward, turn yellow then brown ('hopper burn'), and severe attacks stunt or kill young plants and reduce yield.",
+        "cultural_control": "Summer deep ploughing; proper crop rotation, avoiding cotton after cotton; seed treatment with imidacloprid 70% WS @ 5-7 g/kg seed or thiamethoxam 30% FS @ 10 g/kg seed; balanced (avoid excess) nitrogen; weed-free field for first 8-9 weeks.",
+        "biological_control": "Conservation of predators (Chrysoperla carnea, coccinellids, spiders, Geocoris, Anthocorid and Nabid bugs) via maize/sorghum/cowpea border rows; egg parasitoids Gonatocerus spp., Lymaenon empoascae, Anagrus flaveolus, Stethynium triclavatum.",
+        "chemical_control": "Acetamiprid 20% SP; Imidacloprid 17.8% SL; Buprofezin 25% SC; Monocrotophos 36% SL (CIBRC-approved list, Annexure IX)",
+        "dosage": "Acetamiprid 20% SP @ 10 g a.i./ha (50 g formulation) in 500-600 L water/ha; Imidacloprid 17.8% SL @ 20-25 ml a.i./ha (100-125 ml formulation) in 500-700 L water/ha; Buprofezin 25% SC @ 250 g a.i./ha (1000 g formulation) in 500-750 L water/ha; Monocrotophos 36% SL @ 175 g a.i./ha (437 ml formulation) in 500-1000 L water/ha"
+      },
+      {
+        "name": "Whitefly",
+        "scientific_name": "Bemisia tabaci Genn.",
+        "category": "insect pest",
+        "symptoms": "Direct sap feeding reduces photosynthesis and vigour; honeydew excretion causes sooty mould and lint contamination; leaves curl upward and the insect is the vector of Cotton Leaf Curl Virus.",
+        "cultural_control": "Avoid growing cotton near citrus orchards; discourage okra near fields; destroy weed hosts (Sida, Abutilon, Ageratum, Convolvulus etc.); avoid excess nitrogen; use yellow sticky traps for mass trapping.",
+        "biological_control": "Conserve parasitoids Encarsia formosa, Encarsia shafeei, Eretmocerus mundus; predators Dicyphus hesperus, coccinellids, lacewings, Geocoris; entomopathogens Verticillium lecanii and Aspergillus sp.; Verticillium lecanii 1.15% WP formulated.",
+        "chemical_control": "Acetamiprid 20% SP; Diafenthiuron 50% WP; Spiromesifen 22.9% SC; Triazophos 40% EC; Verticillium lecanii 1.15% WP",
+        "dosage": "Acetamiprid 20% SP @ 200 g formulation in 500-600 L water/ha; Diafenthiuron 50% WP @ 300 g a.i. (600 g formulation) in 500-1000 L water/ha; Spiromesifen 22.9% SC @ 144 g a.i. (600 ml) in 500 L water/ha; Triazophos 40% EC @ 600-800 g a.i. (1500-2000 ml) in 500-1000 L water/ha; Verticillium lecanii 1.15% WP @ 2.5 kg formulation in 500 L water/ha"
+      },
+      {
+        "name": "Thrips",
+        "scientific_name": "Thrips tabaci Lindeman",
+        "category": "insect pest",
+        "symptoms": "Nymphs and adults lacerate leaf tissue and suck cell contents causing silvery/brown necrotic spots, wrinkled and curled leaves, and a rusty field appearance; heavy early infestation delays bud formation.",
+        "cultural_control": "Same common cultural practices (deep summer ploughing, weed-free field, balanced fertilization); avoid pyrethroid overuse which favours resurgence.",
+        "biological_control": "Conserve predatory mite Amblyseius swirskii, predatory thrips (Aeolothrips sp.), insidious flower bug (Orius insidiosus); attractant plant French bean.",
+        "chemical_control": "Buprofezin 25% SC; Fipronil 5% SC; Imidacloprid 17.8% SL; Flonicamid 50% WG",
+        "dosage": "Buprofezin 25% SC @ 250 g a.i. (1000 g) in 500-750 L water/ha; Fipronil 5% SC @ 75-100 g a.i. (1500-2000 ml) in 500 L water/ha; Imidacloprid 17.8% SL @ 20-25 ml a.i. (100-125 ml) in 500-700 L water/ha; Flonicamid 50% WG @ 75 g a.i. (100 g) in 500 L water/ha"
+      },
+      {
+        "name": "Aphids",
+        "scientific_name": "Aphis gossypii Glover",
+        "category": "insect pest",
+        "symptoms": "Phloem feeders causing leaf crumpling and downward curling; honeydew deposits promote sooty mould and stain open bolls (sticky cotton), lowering fibre quality; younger plants suffer more.",
+        "cultural_control": "Same common cultural practices; conserve natural vegetation/border crops to harbour natural enemies.",
+        "biological_control": "Parasitoids Aphelinus sp.; predators Chrysoperla carnea, Coccinella septempunctata, Menochilus sexmaculatus, Syrphus spp.",
+        "chemical_control": "Azadirachtin 0.03% Neem Oil WSP; Acetamiprid 20% SP; Flonicamid 50% WG; Dimethoate 30% EC",
+        "dosage": "Azadirachtin 0.03% (300 ppm) Neem Oil WSP @ 2500-5000 ml/ha in 500-1000 L water; Acetamiprid 20% SP @ 10 g a.i. (50 g) in 500-600 L water/ha; Flonicamid 50% WG @ 75 g a.i. (100 g) in 500 L water/ha; Dimethoate 30% EC @ 200-300 g a.i. (660 ml) in 500-1000 L water/ha"
+      },
+      {
+        "name": "Mirids",
+        "scientific_name": "Creontiades biseratense Distant (South Zone); Campylomma livida Reuter (Central & North Zone)",
+        "category": "insect pest",
+        "symptoms": "Feeding on pre-fruiting terminals causes abortion and excessive branching; feeding on squares causes 'blasting' (drying and shedding); feeding on bolls produces sunken black spots and 'parrot beaking' with shrunken, stained seeds.",
+        "cultural_control": "Common cultural practices; intercropping with maize/sorghum/cowpea to conserve natural enemies; avoid broad-spectrum insecticide use that disrupts predators.",
+        "biological_control": "Conserve predators such as Geocoris sp., spiders, Chrysoperla carnea and other generalist predators.",
+        "chemical_control": "General sucking-pest insecticides such as Chlorpyrifos 20% EC or Profenofos 50% EC as per Annexure IX sucking-pest schedule",
+        "dosage": "Chlorpyrifos 20% EC @ 250 g a.i. (1250 ml) in 500-1000 L water/ha; Profenofos 50% EC @ 500 g a.i. (1000 ml) in 500-1000 L water/ha (used under general sucking-pest recommendations, no separate CIBRC line specific to mirids in the document)"
+      },
+      {
+        "name": "Mealybug",
+        "scientific_name": "Phenacoccus solenopsis Tinsley",
+        "category": "insect pest",
+        "symptoms": "Sap feeding with toxic saliva causes distorted, bushy shoots, crinkled/twisted leaves and stunting; attacks stems, branches and bolls, reducing boll size and opening; honeydew leads to sooty mould and severe cases dry the whole plant.",
+        "cultural_control": "Flooding/ploughing of orchard soil in October-November to expose eggs; raking soil around base; alkathene sheet/grease banding of stem in December; destruction of infested fallen plant parts; avoid moving infested planting material.",
+        "biological_control": "Parasitoid Aenasius bambawalei, Promuscidea unfasciativentris; predator Cryptolaemus montrouzieri (mealybug destroyer); general zone-specific cultural practices in Annexure VIII.",
+        "chemical_control": "Verticillium lecanii 1.15% WP; general systemic insecticides (Dimethoate 30% EC, Monocrotophos 36% SL) applied to sucking pests",
+        "dosage": "Verticillium lecanii 1.15% WP @ 2.5 kg formulation in 500 L water/ha; Dimethoate 30% EC @ 200-300 g a.i. in 500-1000 L water/ha (general sucking pest dose; document emphasizes cultural/biological control as primary strategy for mealybug, per Annexure VIII)"
+      },
+      {
+        "name": "Tobacco caterpillar",
+        "scientific_name": "Spodoptera litura Fabricius",
+        "category": "insect pest",
+        "symptoms": "Gregarious larvae skeletonize the leaf undersurface leaving only midrib and veins (papery appearance); also attack flowers, buds and squares causing shedding and feeding holes.",
+        "cultural_control": "Hand-picking and destruction of egg masses and gregarious larvae; bird perches to encourage predatory birds; light traps and pheromone traps.",
+        "biological_control": "HaNPV-type NPV, Bacillus thuringiensis var. kurstaki; parasitoids Trichogramma chilonis, Telenomus remus, Chelonus blackburni; predators Chrysoperla carnea, coccinellids, Eocanthecona furcellata.",
+        "chemical_control": "Chlorantraniliprole 18.5% SC; Novaluron 8.8% SC; Bacillus thuringiensis var. kurstaki",
+        "dosage": "Chlorantraniliprole 18.5% SC @ 30 g a.i. (150 ml) in 500 L water/ha; Novaluron 8.8% SC @ 100 g a.i. (1000 ml) in 500-1000 L water/ha; Bacillus thuringiensis var. kurstaki, Strain Z-52 @ 750-1000 ml formulation in 500-750 L water/ha"
+      },
+      {
+        "name": "Pink bollworm",
+        "scientific_name": "Pectinophora gossypiella Saund.",
+        "category": "insect pest",
+        "symptoms": "Larvae web flower buds preventing opening ('rosetted bloom'); attack 10-20 day old bolls, feeding on developing seeds; small exit holes on green bolls and stained lint with damaged seeds in open bolls.",
+        "cultural_control": "Avoid ratooning and extended crop period; destroy crop residues/stalks after harvest; grazing of animals after last picking to reduce carryover; avoid staking stalks near field.",
+        "biological_control": "Parasitoids Trichogramma achaeae, T. brasiliensis, T. chilotraeae, Apanteles angaleti, Bracon spp.; predatory mite Pyemotes ventricosus.",
+        "chemical_control": "Carbaryl 50% WP; Cypermethrin 10% EC; Phosalone 35% EC; Fenpropathrin 10%/30% EC",
+        "dosage": "Carbaryl 50% WP @ 1000 g a.i. (2000 g) in 500-1000 L water/ha; Cypermethrin 10% EC @ 50-70 g a.i. (550-760 ml) in 150-1000 L water/ha; Phosalone 35% EC @ 700 g a.i. (2000 ml) in 500-1000 L water/ha; Fenpropathrin 30% EC @ 75-100 g a.i. (250-340 ml) in 750-1000 L water/ha"
+      },
+      {
+        "name": "Spotted and spiny bollworm",
+        "scientific_name": "Earias vittella Fab. and Earias insulana Boisd.",
+        "category": "insect pest",
+        "symptoms": "Neonate larvae bore into terminal shoots causing collapse of the apex or 'twining' of the main stem; later, larvae bore into flower buds and bolls with tunnel openings blocked by excrement, causing shedding and premature boll opening.",
+        "cultural_control": "Common cultural practices; destruction of okra/bhindi crop that carries the pest over between seasons.",
+        "biological_control": "Parasitoids Bracon greeni, Rogas aligarhensis, Chelonus blackburni; Bacillus thuringiensis var. kurstaki; NPV.",
+        "chemical_control": "Bacillus thuringiensis Serovar kurstaki 5% WP; Carbaryl 85% WP; Chlorantraniliprole 18.5% SC",
+        "dosage": "Bacillus thuringiensis Serovar kurstaki (3a,3b,3c) 5% WP @ 37.5-50 g a.i. (750-1000 g) in 500-1000 L water/ha; Carbaryl 85% WP @ 1200 g a.i. (1411 g) in 500-1000 L water/ha; Chlorantraniliprole 18.5% SC @ 30 g a.i. (150 ml) in 500 L water/ha"
+      },
+      {
+        "name": "Helicoverpa bollworm",
+        "scientific_name": "Helicoverpa armigera Hub.",
+        "category": "insect pest",
+        "symptoms": "Larvae feed on leaves initially then bore into squares/bolls/seeds with the head thrust inside; single larva can damage 30-40 fruiting forms; large circular entry holes at boll base and boll rot from secondary infection.",
+        "cultural_control": "Trap/border crops (marigold, maize, sorghum); handpicking of grown larvae; target younger larval instars with treatments; rotation of chemical groups to manage resistance.",
+        "biological_control": "HaNPV 0.43% AS @ 2700 ml/ha during early infestation; parasitoids Trichogramma chilonis, Campoletis chlorideae; predators Chrysoperla carnea, Coccinellids, Geocoris sp.",
+        "chemical_control": "HaNPV 0.43% AS; Chlorantraniliprole 18.5% SC; Flubendiamide 39.35% SC; Spinosad 45% SC",
+        "dosage": "HaNPV 0.43% AS @ 2700 ml/ha; Chlorantraniliprole 18.5% SC @ 30 g a.i. (150 ml) in 500 L water/ha; Flubendiamide 39.35% M/M SC @ 48-60 g a.i. (100-125 ml) in 375-500 L water/ha; Spinosad 45% SC @ 75-100 g a.i. (165-220 ml) in 500 L water/ha"
+      },
+      {
+        "name": "Semi-looper",
+        "scientific_name": "Anomis flava Fabricius",
+        "category": "insect pest",
+        "symptoms": "Young larvae congregate and feed on leaf lamina causing small punctures; grown larvae feed voraciously leaving only midrib and veins, with black faeces visible on leaves; occasional feeding on tender shoots, buds and bolls.",
+        "cultural_control": "Common cultural practices; field sanitation and border crops.",
+        "biological_control": "Fungal pathogen Nomuraea rileyi; predators Chrysoperla carnea, coccinellids.",
+        "chemical_control": "General lepidopteran-larvae insecticides (Carbaryl 50% WP, Quinalphos) as per bollworm complex schedule",
+        "dosage": "Carbaryl 50% WP @ 1000 g a.i. (2000 g) in 500-1000 L water/ha; Quinalphos 20% AF @ 350-500 g a.i. (1750-2500 ml) in 750-1000 L water/ha"
+      },
+      {
+        "name": "Leaf roller",
+        "scientific_name": "Sylepta derogata Fabricius",
+        "category": "insect pest",
+        "symptoms": "Larvae roll leaf edges inward to the midrib into a trumpet shape fastened with silk and feed inside; severe infestation causes complete defoliation, more pronounced on bottom canopy and field-edge plants.",
+        "cultural_control": "Common cultural practices; removal and destruction of rolled/folded leaves.",
+        "biological_control": "General parasitoids and predators of lepidopteran larvae (Chrysoperla carnea, Bracon spp.).",
+        "chemical_control": "Carbaryl 50% WP (general leaf-feeder schedule, Annexure IX)",
+        "dosage": "Carbaryl 50% WP @ 1000 g a.i. (2000 g) in 500-1000 L water/ha"
+      },
+      {
+        "name": "Red cotton bug",
+        "scientific_name": "Dysdercus cingulatus Fab.",
+        "category": "insect pest",
+        "symptoms": "Adults and nymphs suck sap from leaves, green bolls and seeds of partially opened bolls, lowering plant vitality; affected bolls open badly with lint stained by excreta, and boll rot follows from secondary bacterial infection.",
+        "cultural_control": "Common cultural practices; timely destruction of crop residues and volunteer plants that harbour overwintering bugs.",
+        "biological_control": "Predators Ectomocoris tibialis, Rhynocoris fuscipes, R. kumarii, R. longifrons.",
+        "chemical_control": "Fluvalinate 25% EC",
+        "dosage": "Fluvalinate 25% EC @ 50-100 g a.i. (200-400 ml) in 500-1000 L water/ha"
+      },
+      {
+        "name": "Dusky cotton bug",
+        "scientific_name": "Oxycarenus hyalipennis Costa.",
+        "category": "insect pest",
+        "symptoms": "Nymphs and adults suck sap gregariously from immature seeds which fail to ripen and remain lightweight; discoloration of lint occurs from large numbers of bugs, and crushed bugs during ginning stain and taint the lint.",
+        "cultural_control": "Common cultural practices; timely picking and removal of crop residues to reduce late-season buildup.",
+        "biological_control": "Not specifically listed in the document beyond general predator conservation.",
+        "chemical_control": "General sucking-pest insecticide schedule (as for aphids/jassids) applied late season",
+        "dosage": "Not separately tabulated in Annexure IX; managed under general sucking-pest chemical recommendations"
+      },
+      {
+        "name": "Stem weevil",
+        "scientific_name": "Pempherulus affinis Fst. (Tamil Nadu)",
+        "category": "insect pest",
+        "symptoms": "Adult weevil oviposits in a small hole excavated on the stem; grubs tunnel into stems, branches and roots of young seedlings, causing gall-like stem swelling just above ground and wilting of seedlings.",
+        "cultural_control": "Common cultural practices; destruction of crop residues harbouring grubs/adults.",
+        "biological_control": "Not specifically listed in the document.",
+        "chemical_control": "Carbofuran 3% CG; Carbaryl 10% DP",
+        "dosage": "Carbofuran 3% CG @ 1000 g a.i./ha (33300 g formulation) as soil application; Carbaryl 10% DP @ 25000 g formulation/ha"
+      }
+    ],
+    "diseases": [
+      {
+        "name": "Bacterial blight / Blackarm / Angular leaf spot",
+        "scientific_name": "Xanthomonas axonopodis pv. malvacearum (Smith) Dye",
+        "category": "bacterial disease",
+        "symptoms": "Seed-borne; produces water-soaked spots on cotyledons (seedling blight), angular leaf spot on foliage, vein blight along leaf veins spreading to stem causing sooty black 'black-arm' lesions that can girdle and break the stem; boll lesions also occur. Irrigated crops can lose 5-20% yield.",
+        "cultural_control": "Avoid dense cropping; use acid-delinted, disease-free seed.",
+        "biological_control": "Not specified for this disease in the document.",
+        "chemical_control": "Seed treatment with Carboxin + Thiram; foliar streptocyclin (Streptomycin Sulphate + Tetracycline Hydrochloride)",
+        "dosage": "Soak seed in 40-50 ppm streptomycin solution before sowing; seed treatment with Carboxin 37.5% + Thiram 37.5% DS @ 3.5 g/kg seed; on first field symptoms spray streptocyclin (Streptomycin Sulphate 90% + Tetracycline Hydrochloride 10% SP) at 25-40 ppm, repeated at 10-15 day intervals (thrice: before flowering, after flowering, 20 days after second spray)"
+      },
+      {
+        "name": "Alternaria leaf spot",
+        "scientific_name": "Alternaria macrospora Zimm. / A. alternata (Fr.) Keissler",
+        "category": "fungal disease",
+        "symptoms": "Spots first appear on seedling cotyledons and enlarge up to 10 mm, coalescing and causing shedding; on green leaves a purple margin surrounds spots, and in humid weather necrotic tissue turns sooty black from sporulation, leading to premature defoliation.",
+        "cultural_control": "Avoid dense cropping; remove and deep-plough crop residues; destroy alternate weed hosts; use acid-delinted seed; early sowing; wider spacing to reduce humidity build-up.",
+        "biological_control": "Not specified for this disease in the document.",
+        "chemical_control": "Carbendazim 50% WP",
+        "dosage": "On first appearance of disease, spray Carbendazim 50% WP @ 125 g a.i. (250 g formulation) in 750 L water/ha"
+      },
+      {
+        "name": "Myrothecium leaf spot",
+        "scientific_name": "Myrothecium roridum Tode",
+        "category": "fungal disease",
+        "symptoms": "Circular tan-coloured leaf spots with violet-brown margins surrounded by translucent, concentrically zoned areas bearing black pinhead sporodochia; can also cause pre- and post-emergence damping-off of seedlings, stem lesions, dieback and boll lesions that discolour and embrittle lint.",
+        "cultural_control": "Same general leaf-spot cultural measures: field sanitation, deep ploughing of residues, acid-delinted seed, avoid dense cropping.",
+        "biological_control": "Not specified for this disease in the document.",
+        "chemical_control": "Carbendazim 50% WP (general leaf-spot fungicide schedule, Annexure X)",
+        "dosage": "Carbendazim 50% WP @ 125 g a.i. (250 g) in 750 L water/ha on first appearance of leaf spot symptoms"
+      },
+      {
+        "name": "Root rot",
+        "scientific_name": "Rhizoctonia solani Kuhn & R. bataticola (Taub.) Butler",
+        "category": "fungal disease",
+        "symptoms": "Circular patches of affected plants at seedling or later stages; a yellow patch on the lower stem blackens leading to drying; roots discolour, become sticky and secondary roots rot so plants pull out easily; black sclerotia may form beneath the bark.",
+        "cultural_control": "Avoid fields with a long disease history; deep plough and solarize soil; remove/bury plant debris after harvest; early sowing (April or June rather than May); crop rotation, intercropping with Vigna aconitifolia; green manuring with Sesbania.",
+        "biological_control": "Not specified beyond cultural/rotation practices in the document.",
+        "chemical_control": "Carboxin 37.5% + Thiram 37.5% DS (seed treatment)",
+        "dosage": "Seed treatment with Carboxin 37.5% + Thiram 37.5% DS @ 3.5 g/kg seed"
+      },
+      {
+        "name": "Fusarium wilt",
+        "scientific_name": "Fusarium oxysporum f.sp. vasinfectum (Atk.) Snyder & Hansen",
+        "category": "fungal disease",
+        "symptoms": "Vascular wilt; cotyledons darken along veins with peripheral chlorosis and shed; in older plants, marginal yellowing of lower leaves progresses to chlorotic patches between veins, and under optimal disease conditions all leaves wilt and shed before the stem dries.",
+        "cultural_control": "Avoid fields with disease history; crop rotation with G. hirsutum or non-host crops; deep ploughing and solarization; use calcium ammonium nitrate instead of ammonium-based N fertilizers; grow resistant varieties (Jayadhar, Vijalpa, Digvijay, Sujaya, G Cot DH7/DH9, Girnar, Daulat, G-22, G-46, Y-1, Sanjay).",
+        "biological_control": "Not specified for this disease in the document.",
+        "chemical_control": "No specific fungicide listed; management relies on resistant varieties and cultural/rotation practices",
+        "dosage": "Not applicable - cultural and host-resistance management only per the document"
+      },
+      {
+        "name": "Cotton Leaf Curl Virus Disease (CLCuD)",
+        "scientific_name": "Cotton Leaf Curl Gemini Virus, transmitted by whitefly (Bemisia tabaci)",
+        "category": "viral disease",
+        "symptoms": "Small vein thickening on young upper leaves progressing to upward/downward leaf curling and cup-shaped laminar outgrowths on the leaf underside; severe cases show reduced internodal length, stunting and reduced flowering/fruiting; appears ~45-55 days after sowing, peaking in July.",
+        "cultural_control": "Grow resistant hybrids/varieties (H-1117, H-1226, WH-1236, etc. in North India); quarantine measures restricting movement of diseased material; remove alternate weed hosts (Sida, Abutilon, Ageratum, Convolvulus arvensis, etc.); avoid growing near citrus orchards; discourage okra near cotton; destroy volunteer/ratoon plants; avoid excess nitrogen; use yellow sticky traps for whitefly; sow in first fortnight of May to escape peak vector activity.",
+        "biological_control": "Not specified beyond vector (whitefly) natural enemy conservation.",
+        "chemical_control": "Neem-based formulations, Triazophos 40% EC, Ethion 50% EC (for whitefly vector control)",
+        "dosage": "Azadirachtin 0.03% (300 ppm) Neem Oil WSP or Azadirachtin 0.15% W/W Neem Seed Kernel EC @ 2.5-5.0 L/ha; or Triazophos 40% EC @ 1.5 L/ha; or Ethion 50% EC @ 2.0 L/ha, targeting the whitefly vector"
+      },
+      {
+        "name": "Grey mildew",
+        "scientific_name": "Ramularia areola (Atk.) (perfect stage Mycosphaerella areola)",
+        "category": "fungal disease",
+        "symptoms": "Irregular angular pale translucent leaf spots (1-10 mm, called 'areolae') on lower/older canopy after first boll-set; profuse white sporulation on leaf underside with yellow-green upper leaf discoloration turning necrotic and dark brown; severe cases cause defoliation and premature boll opening with immature lint.",
+        "cultural_control": "Remove and deep-plough crop residues; rotate with cereals; grow tolerant varieties (Sujata, Suvin, ERB 4492, SB 289E, Laxmi, Sangam, Varalaxmi) in endemic areas.",
+        "biological_control": "Not specified for this disease in the document.",
+        "chemical_control": "No fungicide specifically listed for grey mildew in the document",
+        "dosage": "Not applicable - cultural/varietal management only per the document"
+      },
+      {
+        "name": "Verticillium wilt",
+        "scientific_name": "Verticillium dahliae Khleb",
+        "category": "fungal disease",
+        "symptoms": "Appears on young plants below 20-24 degC, causing yellowing and drooping of shoots; fruiting-stage plants develop a mosaic pattern on leaves starting at the base, with marginal/interveinal yellowing progressing to red then white necrotic 'tiger stripe' patterning.",
+        "cultural_control": "Avoid fields with long disease history and ensure good drainage; avoid over-irrigation; use acid-delinted seed.",
+        "biological_control": "Not specified for this disease in the document.",
+        "chemical_control": "No specific fungicide listed; managed through field selection and cultural practices",
+        "dosage": "Not applicable - cultural management only per the document"
+      },
+      {
+        "name": "Leaf rust",
+        "scientific_name": "Phakopsora gossypii (Arth) Hirat F.",
+        "category": "fungal disease",
+        "symptoms": "Reddish-brown pustules scattered over the leaf surface, more pronounced on older leaves; uredia form small purplish-brown spots that coalesce into large patches; appears in the dry season (December-March) in Karnataka, Andhra Pradesh and Gujarat.",
+        "cultural_control": "General field sanitation and crop rotation practices as applied to other foliar diseases.",
+        "biological_control": "Not specified for this disease in the document.",
+        "chemical_control": "No specific fungicide listed for leaf rust in the document",
+        "dosage": "Not applicable"
+      }
+    ],
+    "general_safety_precautions": "Basic precautions (Annexure XII) cover: purchase only the required quantity from sealed, labelled containers; store pesticides away from house premises, food/feed, children, livestock, sunlight and rain, and never mix weedicides with other pesticides in storage; never transport pesticides with food; wear hand gloves, face mask and head covering when preparing spray solution using clean water; use correct, non-leaking spray equipment matched to crop stage; avoid tank-mixing multiple insecticides and avoid over-reliance on pyrethroids (max once or twice per season) to prevent sucking-pest resurgence and resistance. Annexure XIII additionally classifies major pesticide groups (organophosphates, carbamates, herbicides) by Insecticides Rules 1971 toxicity class and WHO hazard class, with poisoning symptoms and first-aid/treatment guidance (e.g., atropine and 2-PAM for organophosphate poisoning).",
+    "waiting_period_notes": "The document does not give an explicit numeric pre-harvest interval (PHI)/waiting-period table for cotton pesticides. It instead provides a toxicity/hazard classification and poisoning first-aid annexure (Annexure XIII) and general precaution guidance (Annexure XII), and stresses avoiding repeated/tank-mixed pyrethroid or insecticide applications."
+  },
+  "Wheat": {
+    "source_url": "https://niphm.gov.in/IPMPackages/Wheat.pdf",
+    "source_title": "AESA Based IPM Package for Wheat - Directorate of Plant Protection Quarantine and Storage / National Institute of Plant Health Management (NIPHM), Government of India",
+    "pests": [
+      {
+        "name": "Termites",
+        "scientific_name": "Odontotermis obesus Rambur, Microtermes obesi Holmgren",
+        "category": "insect pest",
+        "symptoms": "Feed on roots and stems of growing plants and dead cellulose tissue soon after sowing and near maturity; damaged plants dry up completely and are easily pulled out; later-stage damage produces white, empty ears. Heavier under unirrigated conditions and where undecomposed FYM is applied.",
+        "cultural_control": "Apply only well-rotten farm yard manure; avoid late sowing; deep summer ploughing (3 ploughings at 10-day intervals); dismantle termite mounds and kill the queen; destroy crop residues that harbour termites; crude oil emulsion in termitaria.",
+        "biological_control": "Apply neem cake @ 80 kg/acre.",
+        "chemical_control": "Thiamethoxam 30% FS or Chlorpyrifos 20% EC (seed treatment + soil application)",
+        "dosage": "Thiamethoxam 30% FS @ 1.32 kg per 40 kg seed; or Chlorpyrifos 20% EC @ 3-4 ml/kg seed plus 0.8-1.2 L/acre as soil application"
+      },
+      {
+        "name": "Wheat aphid",
+        "scientific_name": "Sitobion avenae (F.), S. miscanthi Takahashi",
+        "category": "insect pest",
+        "symptoms": "Nymphs and adults suck sap particularly from ears, appearing in large numbers during cold, cloudy weather; damage is more severe on heavily manured, well-irrigated, succulent crops which harbour the pest longer.",
+        "cultural_control": "Regular field monitoring; plant tall barrier crops such as mustard, maize, sorghum or millet around the field.",
+        "biological_control": "Conserve natural enemies: parasitoids Aphidius spp., Aphelinus spp.; predators syrphid fly, lacewing, minute pirate bug, damsel bug, ladybird beetle, praying mantis, predatory thrips, rove beetle.",
+        "chemical_control": "Quinalphos 25% EC or Thiamethoxam 25% WG",
+        "dosage": "Quinalphos 25% EC @ 400 ml in 200-400 L water/acre; or Thiamethoxam 25% WG @ 20 g in 200 L water/acre"
+      },
+      {
+        "name": "American pod borer / Gram pod borer",
+        "scientific_name": "Helicoverpa armigera Hubner",
+        "category": "insect pest",
+        "symptoms": "Young larvae feed on leaves initially, then attack earheads, hollowing internal tissues while thrusting the head inside and leaving the body outside; fed leaves, awns and earheads are visible signs.",
+        "cultural_control": "Growing intercrops (cowpea, onion, maize, coriander, urdbean); guard crop of sorghum/maize around wheat; crop rotation with non-host crops; bird perches to encourage predatory birds.",
+        "biological_control": "Pheromone traps @ 4-5/acre; inundative release of Trichogramma pretiosum @ 0.4 lakh/acre; conserve parasitoids Tricogramma chilonis, Tetrastichus spp., Chelonus spp., Telenomus spp., Campoletis chloridae, Carcelia spp.; predators spider, dragonfly, coccinellids, lacewing, syrphid flies.",
+        "chemical_control": "Quinalphos 25% EC",
+        "dosage": "Quinalphos 25% EC @ 640 ml in 200-400 L water/acre"
+      },
+      {
+        "name": "Brown mite",
+        "scientific_name": "Petrobia latens Mull.",
+        "category": "mite pest",
+        "symptoms": "Mites suck sap by inserting stylets into leaves; affected leaves become whitish and, under severe conditions, reddish-brown and bronzy; leaves wither and dry.",
+        "cultural_control": "Use the tolerant variety C-306.",
+        "biological_control": "Neem oil (2%) or NSKE (5%); conserve predators Oligota spp., green lacewings, predatory mites (Amblyseius alstoniae, Phytoseiulus persimilis), predatory coccinellid Stethorus punctillum.",
+        "chemical_control": "Quinalphos 25% EC",
+        "dosage": "Quinalphos 25% EC @ 640 ml in 200-400 L water/acre"
+      },
+      {
+        "name": "Pink stem borer / leaf-eating caterpillar",
+        "scientific_name": "Sesamia inferens Walker",
+        "category": "insect pest",
+        "symptoms": "Larvae bore into and feed within the stem/leaves; associated with dead-heart type damage in cereal stems.",
+        "cultural_control": "Erect bird perches @ 10/acre for predatory birds; other measures same as for aphids.",
+        "biological_control": "Conserve natural enemies (as for common vegetative-stage pests).",
+        "chemical_control": "Dichlorvos 76% EC",
+        "dosage": "Dichlorvos 76% EC @ 112.8-150.4 ml in 200-400 L water/acre"
+      },
+      {
+        "name": "Shoot fly",
+        "scientific_name": "Atherigona naqvii Steyskal and A. oryzae Mall",
+        "category": "insect pest",
+        "symptoms": "Maggots bore into the shoot of young plants a week after germination to about one month, causing the central shoot to dry up ('dead heart'); infestation can reach 60%; later attack may cause side tillers to form and also be attacked.",
+        "cultural_control": "Regular field monitoring; barrier crops like mustard around field; tall border crops (maize, sorghum, millet); fish meal traps for monitoring.",
+        "biological_control": "Not specifically listed beyond common biological practices (conserve natural enemies).",
+        "chemical_control": "Cypermethrin 10% EC or Phorate 10% CG",
+        "dosage": "Cypermethrin 10% EC @ 220 ml in 200-320 L water/acre; or Phorate 10% CG @ 7500 g/acre"
+      },
+      {
+        "name": "Army worm / Cutworm",
+        "scientific_name": "Mythimna separata Walker",
+        "category": "insect pest",
+        "symptoms": "Primary symptom is defoliation; larvae chew leaves from the edge to the midrib or attack cereal heads; heavy infestations can sever the neck just below the head; feeds during dawn/dusk, avoiding sunlight.",
+        "cultural_control": "Regular field monitoring; barrier crops like mustard around the field.",
+        "biological_control": "Pheromone traps @ 4-5/acre (ETL 8-10 moths/day/trap); bird perches @ 10/acre; parasitoids/predators same as for Helicoverpa armigera.",
+        "chemical_control": "Carbaryl 50% WP; Trichlorfon 5% GR/DUST/50% EC; Dichlorvos 76% EC",
+        "dosage": "Carbaryl 50% WP @ 800 g in 200 L water/acre; or Trichlorfon 5% GR @ 300 g/acre or Trichlorfon 5% DUST @ 300 g/acre or Trichlorfon 50% EC @ 300 ml/acre; or Dichlorvos 76% EC @ 112.8-150.4 ml in 200-400 L water/acre"
+      },
+      {
+        "name": "Wheat thrips",
+        "scientific_name": "Anaphothrips favicinctus, Haplothrips tritici (Kurdjumov)",
+        "category": "insect pest (regional significance)",
+        "symptoms": "Infests the flag-leaf sheath and stem, and can attack leaves, stems and heads; heavy nymph/adult feeding gives affected tissue a silvery coloration.",
+        "cultural_control": "Follow common cultural and biological control practices (no pest-specific chemical listed).",
+        "biological_control": "Common biological practices (conserve natural enemies).",
+        "chemical_control": "Not separately specified in the document beyond common practices",
+        "dosage": "Not applicable - document refers to common practices only for this regional pest"
+      }
+    ],
+    "diseases": [
+      {
+        "name": "Powdery mildew",
+        "scientific_name": "Blumeria graminis (DC.) Speer",
+        "category": "fungal disease",
+        "symptoms": "White, powdery patches form on the upper surface of leaves, sheath, stem and floral parts; powdery growth later becomes blackish lesions causing drying of leaves and other parts. Favoured by high humidity and 20-21 degC.",
+        "cultural_control": "Present varieties largely lack adequate resistance; general sanitation of infected debris.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Triadimefon 25% WP",
+        "dosage": "Triadimefon 25% WP @ 200 g in 300 L water/acre"
+      },
+      {
+        "name": "Loose smut",
+        "scientific_name": "Ustilago tritici (Pers.) E. Rostr.",
+        "category": "fungal disease",
+        "symptoms": "Seed-borne; infection occurs during flowering via wind-borne spores and remains dormant in the seed; infected heads emerge earlier than normal and appear as a mass of olive-black spores covered by a thin grey membrane which ruptures to a powdery head.",
+        "cultural_control": "Soak seed in cold water then expose to hot sun 8am-12noon during summer to kill dormant fungus without fungicide; use resistant/tolerant varieties; uproot plants in the standing crop showing yellowing boot-leaf tips before ear emergence; use disease-free seed fields.",
+        "biological_control": "Pseudomonas fluorescens 1.75% WP as seed treatment and foliar spray; neem cake @ 80 kg/acre.",
+        "chemical_control": "Benomyl 50% WP; Carbendazim 50% WP; Carboxin 75% WP; Tebuconazole 2% DS; Carboxin 37.5%+Thiram 37.5% DS (all seed treatments)",
+        "dosage": "Benomyl 50% WP @ 2 g/kg seed; or Carbendazim 50% WP @ 2 g/kg seed; or Carboxin 75% WP @ 2-2.5 g/kg seed; or Tebuconazole 2% DS @ 0.2 kg/10 kg seed; or Carboxin 37.5% + Thiram 37.5% DS @ 3.0 g/kg seed"
+      },
+      {
+        "name": "Brown rust (leaf rust)",
+        "scientific_name": "Puccinia recondita f. sp. tritici Eriks. & Henn",
+        "category": "fungal disease",
+        "symptoms": "Circular to slightly elliptical pustules mostly on upper leaf blades (occasionally sheaths, glumes, awns) containing orange to orange-brown urediospores; up to 30% yield loss under severe infection at 20-25 degC with free moisture.",
+        "cultural_control": "Mixed cropping and crop rotation; avoid excess nitrogen.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Propiconazole 25% EC; Tebuconazole 25% EC; Mancozeb 75% WP; Zineb 75% WP; Thiophanate Methyl 70% WP",
+        "dosage": "Propiconazole 25% EC @ 200 ml in 200 L water/acre; or Tebuconazole 25% EC @ 200 ml in 200 L water/acre; or Thiophanate Methyl 70% WP @ 286 g in 300-400 L water/acre; or Zineb 75% WP @ 6-8 kg in 300-400 L water/acre; or Mancozeb 75% WP @ 6-8 kg in 300 L water/acre"
+      },
+      {
+        "name": "Stripe rust / Yellow rust",
+        "scientific_name": "Puccinia striiformis var. striiformis Westend",
+        "category": "fungal disease",
+        "symptoms": "Bright yellow to orange-yellow pustules arranged in linear stripes on leaves at early crop stage; teliospores also arranged in long dull-black stripes; can occur on sheaths, necks and glumes. Favoured by 10-20 degC with high humidity.",
+        "cultural_control": "Mixed cropping and crop rotation; avoid excess nitrogen (same as leaf/stem rust group).",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Propiconazole 25% EC; Tebuconazole 25% EC; Mancozeb 75% WP; Zineb 75% WP",
+        "dosage": "Propiconazole 25% EC @ 200 ml in 200 L water/acre; or Tebuconazole 25% EC @ 200 ml in 200 L water/acre; or Mancozeb 75% WP @ 6-8 kg in 300 L water/acre; or Zineb 75% WP @ 6-8 kg in 300-400 L water/acre"
+      },
+      {
+        "name": "Black (stem) rust",
+        "scientific_name": "Puccinia graminis tritici Pers",
+        "category": "fungal disease",
+        "symptoms": "Dark reddish-brown pustules on stem, leaf sheaths and leaf surfaces and spikes; pustules usually separate but coalesce under heavy infection; 'flecks' precede pustule formation and tissue feels rough before rupture. Favoured by moisture and temperature above 20 degC.",
+        "cultural_control": "Mixed cropping and crop rotation; avoid excess nitrogen.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Propiconazole 25% EC; Tebuconazole 25% EC; Mancozeb 75% WP; Zineb 75% WP",
+        "dosage": "Propiconazole 25% EC @ 200 ml in 200 L water/acre; or Tebuconazole 25% EC @ 200 ml in 200 L water/acre; or Mancozeb 75% WP @ 6-8 kg in 300 L water/acre"
+      },
+      {
+        "name": "Karnal bunt",
+        "scientific_name": "Tilletia indica Mitra",
+        "category": "fungal disease",
+        "symptoms": "Field symptoms are hard to distinguish because incidence of infected kernels per head is low and glume spreading is less extensive than common bunt; symptoms are most readily detected on seed after harvest.",
+        "cultural_control": "Effective land leveling and drainage (low-lying areas are more prone); decrease seed rate; increase row spacing; delay sowing; avoid irrigation during awn emergence/end of flowering; balanced N and K to avoid lodging; plastic mulching/solarization; burn stubble; crop rotation with non-host crops.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Propiconazole 25% EC; Bitertanol 25% WP; Thiram 75% WS",
+        "dosage": "Propiconazole 25% EC @ 200 ml in 300 L water/acre; or Bitertanol 25% WP @ 896 g in 300 L water/acre; or Thiram 75% WS @ 10-12 g in 400 ml water/acre"
+      },
+      {
+        "name": "Flag smut",
+        "scientific_name": "Urocystis agropyri (G. Preuss) J. Schroet.",
+        "category": "fungal disease",
+        "symptoms": "Symptoms seen on stem, culm and leaves from late seedling stage to maturity; seedling infection causes twisting and drooping of leaves followed by withering; grey to greyish-black sori with black powdery spore mass form on leaf blade and sheath. Smut spores remain viable over 10 years in soil.",
+        "cultural_control": "Use disease-free seed; crop rotation; avoid infected fields.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Carboxin 75% WP; Tebuconazole 2% DS; Thiram 75% WS",
+        "dosage": "Carboxin 75% WP @ 2-2.5 g/kg seed; or Tebuconazole 2% DS @ 0.2 kg/10 kg seed; or Thiram 75% WS @ 10-12 g in 400 ml water/acre"
+      },
+      {
+        "name": "Hill bunt / Stinking smut",
+        "scientific_name": "Tilletia tritici (syn. T. caries) and T. laevis (syn. T. foetida)",
+        "category": "fungal disease",
+        "symptoms": "Fungus attacks 8-10 day-old seedlings, grows systemically along the shoot tip; at flowering, hyphae concentrate in the inflorescence transforming the ovary into a dark-green smut sorus with chlamydospore masses; diseased plants mature earlier with all spikelets affected.",
+        "cultural_control": "Use disease-free seed (pathogen survives in seed as primary inoculum source).",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Carboxin 75% WP; Triadimefon 25% WP",
+        "dosage": "Carboxin 75% WP @ 2-2.5 g/kg seed; Triadimefon 25% WP @ 200 g in 300 L water/acre"
+      },
+      {
+        "name": "Leaf blight",
+        "scientific_name": "Complex of Alternaria triticina, Bipolaris sorokiniana and Alternaria alternata",
+        "category": "fungal disease",
+        "symptoms": "Reddish-brown oval spots with a bright yellow margin appear on young seedlings; in severe cases several spots coalesce causing drying of leaves. Favoured by ~25 degC and high relative humidity.",
+        "cultural_control": "Use certified/resistant seed, timely sowing and crop rotation; plant tall barrier crop for airborne spread.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Zineb 75% WP; Thiophanate Methyl 70% WP; Mancozeb 75% WP",
+        "dosage": "Zineb 75% WP @ 6-8 kg in 300-400 L water/acre; or Thiophanate Methyl 70% WP @ 286 g in 200 L water/acre; or Mancozeb 75% WP @ 6-8 kg in 300 L water/acre"
+      },
+      {
+        "name": "Foot rot",
+        "scientific_name": "Pythium graminicolum Subraman and P. arrhenomanes Drechsler",
+        "category": "fungal disease",
+        "symptoms": "Mainly affects seedlings and roots; rootlets turn brown; seedlings become pale green with stunted growth; pathogen produces sporangia, zoospores and oospores. Favoured by wet weather and high rainfall.",
+        "cultural_control": "Soil-borne; manage via drainage and non-host rotation (general foot rot cultural management).",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No pest-specific fungicide separately listed for foot rot in the crop-stage IPM table",
+        "dosage": "Not applicable - not separately tabulated in the document"
+      },
+      {
+        "name": "Head scab / Fusarium head blight (and leaf blotch/snow mold phase)",
+        "scientific_name": "Fusarium graminearum Schwabe (Gibberella zeae)",
+        "category": "fungal disease",
+        "symptoms": "Leaf blotch: oval to elliptical greyish-green mottled lesions with bleached centres that split/shred. Head scab: tan/light brown lesions on one or more spikelets, dark brown discoloration at the base, orange fungal mass on glumes; grain becomes shriveled, chalky white, sometimes pink-discoloured. Favoured by cool, moist weather.",
+        "cultural_control": "Use disease-free seed; crop rotation; residue management to reduce soil-borne inoculum.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Managed under the loose smut/hill bunt/flag smut chemical schedule where applicable (Carboxin, Tebuconazole, Thiram) - no head-scab-specific fungicide separately dosed",
+        "dosage": "Not separately tabulated in the document"
+      },
+      {
+        "name": "Helminthosporium leaf blotch (Spot blotch)",
+        "scientific_name": "Cochliobolus sativus (Helminthosporium sativum), syn. Bipolaris sorokiniana",
+        "category": "fungal disease",
+        "symptoms": "Elongated to oval, dark-brown lesions; centres turn light brown to tan surrounded by an irregular dark-brown ring; primary infections on lower leaves begin as chlorotic flecks that enlarge, coalesce and can kill leaves/sheaths prematurely in severe cases. More prevalent in humid, high-rainfall areas.",
+        "cultural_control": "Managed as part of the leaf blight complex: certified/resistant seed, timely sowing, crop rotation.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Zineb 75% WP; Thiophanate Methyl 70% WP; Mancozeb 75% WP (leaf blight complex schedule)",
+        "dosage": "Zineb 75% WP @ 6-8 kg in 300-400 L water/acre; or Mancozeb 75% WP @ 6-8 kg in 300 L water/acre"
+      }
+    ],
+    "general_safety_precautions": "Section XV (Basic Precautions in Pesticides Usage) covers: purchase only required quantities from approved-label, sealed containers with invoice; store away from house premises, food/feed, children and livestock, away from sunlight/rain, and never store weedicides with other pesticides; never transport with food; wear gloves, face mask and head covering while preparing spray solution with clean water, never mixing granules with water or smelling/tasting concentrate; use correct, non-leaky equipment with proper nozzles (never unclog by mouth); do not apply on hot/windy days or just before/after rain; avoid tank-mixing different pesticides; wash equipment after use; dispose of leftover solution away from water sources and crush/bury used containers, never reusing them. Section XIV separately tabulates pesticide toxicity classification (Insecticide Rules 1971 / WHO hazard class), poisoning symptoms and first-aid/antidote guidance (e.g., atropine sulphate for organophosphate poisoning).",
+    "waiting_period_notes": "No explicit numeric pre-harvest waiting-period/PHI table is given for individual pesticides. Section XII (Safety Measures) instead addresses pre-harvest handling (timely harvest to avoid shattering/sprouting/weathering) and post-harvest grain storage safety (keeping grain dry below 12.5% moisture, cool below 10 degC, insect-free); it recommends grain deterioration control via aeration, heat treatment, fumigation and other IPM-based storage pest management rather than specifying pesticide waiting days."
+  },
+  "Tomato": {
+    "source_url": "https://niphm.gov.in/IPMPackages/Tomato.pdf",
+    "source_title": "AESA Based IPM Package for Tomato - Directorate of Plant Protection Quarantine and Storage / National Institute of Plant Health Management (NIPHM), Government of India",
+    "pests": [
+      {
+        "name": "Serpentine leaf miner",
+        "scientific_name": "Liriomyza trifolii (Burgess)",
+        "category": "insect pest",
+        "symptoms": "Apodous maggots mine between the epidermal leaf layers producing serpentine (snake-like) mines; leaves dry and drop in severe cases.",
+        "cultural_control": "Avoid excess nitrogen use; ecological engineering with beans as intercrop reduces attack; yellow sticky traps/cards @ 10/acre.",
+        "biological_control": "Conserve parasitoids Tetrastichus ovularum, Gronotoma micromorpha, Diglyphus sp., Opius phaseoli, Chrysocharis pentheus, Neochrysocharis formosa; predators lacewings, lady beetles, spiders, fire ants.",
+        "chemical_control": "Not separately dosed as chemical control in the crop-stage IPM table (cultural/biological control emphasized); general systemic insecticides used against sucking pests may suppress it",
+        "dosage": "Not separately tabulated in the document for this pest"
+      },
+      {
+        "name": "Gram pod borer",
+        "scientific_name": "Helicoverpa armigera (Hubner)",
+        "category": "insect pest",
+        "symptoms": "Young larvae feed on leaves then attack fruits, hollowing internal tissue with the head thrust inside; produces bored fruits with round holes and fed leaves/shoots/buds.",
+        "cultural_control": "Ecological engineering with intercrops (cowpea, onion, maize, coriander, urdbean); guard crop of sorghum/maize; repellent plant Ocimum/Basil; marigold as ovipositional trap crop; bird perches @ 20/acre; pheromone traps @ 4-5/acre; light trap @ 1/acre.",
+        "biological_control": "Inundative release of Trichogramma pretiosum @ 40,000/acre 4-5 times from flower initiation; conserve Tetrastichus spp., Telenomus spp., Campoletis chlorideae; spray azadirachtin or HaNPV 0.43%/2% AS with jaggery; Bacillus thuringiensis var. galleriae; entomopathogenic nematodes (Steinernema feltiae).",
+        "chemical_control": "Indoxacarb 14.5% SC; Flubendiamide 20% WG; Chlorantraniliprole 18.5% SC; Lambda-cyhalothrin 4.9% CS",
+        "dosage": "Indoxacarb 14.5% SC @ 160-200 ml in 120-240 L water/acre; or Flubendiamide 20% WG @ 40 g in 150-200 L water/acre; or Chlorantraniliprole 18.5% SC @ 60 ml in 200 L water/acre; or Lambda-cyhalothrin 4.9% CS @ 120 ml in 200 L water/acre"
+      },
+      {
+        "name": "Tobacco caterpillar",
+        "scientific_name": "Spodoptera litura Fabricius",
+        "category": "insect pest",
+        "symptoms": "Gregarious larvae skeletonize leaves and can defoliate the crop; feeds on foliage and fruiting parts causing significant loss when populations are high.",
+        "cultural_control": "Field sanitation; pheromone traps @ 4-5/acre; light trap @ 1/acre; castor as ovipositional trap crop; bird perches @ 20/acre.",
+        "biological_control": "Release Trichogramma pretiosum @ 20,000/acre/week x4; spray NSKE 5% or azadirachtin against eggs/first instar; conserve Trichogramma chilonis, Chelonus blackburni, Campoletis chlorideae; entomopathogenic nematodes (Steinernema feltiae) @ 2,50,000 infective juveniles/sq. m.",
+        "chemical_control": "Trichlorfon 5% GR/DUST; Indoxacarb 14.5% SC; Flubendiamide 20% WG; Chlorantraniliprole 18.5% SC",
+        "dosage": "Trichlorfon 5% GR or DUST @ 300 g/acre; or Indoxacarb 14.5% SC @ 160-200 ml in 120-240 L water/acre; or Flubendiamide 20% WG @ 40 g in 150-200 L water/acre; or Chlorantraniliprole 18.5% SC @ 60 ml in 200 L water/acre"
+      },
+      {
+        "name": "Whitefly",
+        "scientific_name": "Bemisia tabaci (Gennadius)",
+        "category": "insect pest",
+        "symptoms": "Causes chlorotic spotting, yellowing, downward curling and drying of leaves; the principal vector transmitting Tomato Leaf Curl Virus.",
+        "cultural_control": "Field sanitation and roguing of affected plants; barrier crops (maize/sorghum); peppermint as a repellent plant; yellow sticky traps/cards @ 10/acre.",
+        "biological_control": "Conserve parasitoids Encarsia sp., Eretmocerus spp.; predators Dicyphus hesperus, lacewings, ladybirds, big-eyed bugs; spray NSKE 5% or azadirachtin 5% W/W neem extract concentrate @ 80 g in 160 L water/acre.",
+        "chemical_control": "Dimethoate 30% EC; Imidacloprid 17.8% SL; Thiamethoxam 25% WG; Spiromesifen 22.9% SC",
+        "dosage": "Dimethoate 30% EC @ 396 ml in 200-400 L water/acre; or Imidacloprid 17.8% SL @ 60-70 ml in 200 L water/acre; or Thiamethoxam 25% WG @ 80 g in 200 L water/acre; or Spiromesifen 22.9% SC @ 250 ml in 200 L water/acre"
+      },
+      {
+        "name": "Spider mites",
+        "scientific_name": "Tetranychus spp.",
+        "category": "mite pest",
+        "symptoms": "Affected leaves become reddish-brown and bronzy; severe infestation shows silken webbing on leaves; leaves wither and dry, and flower/fruit formation is affected.",
+        "cultural_control": "Field sanitation and roguing; tall border crops such as maize, sorghum.",
+        "biological_control": "Conserve predatory mites (Phytoseiulus spp., Amblyseius spp.), staphylinids (Oligota spp.), lady beetles, lacewings, predatory thrips, anthocorid bugs (Orius spp.), mirid bugs, hover flies.",
+        "chemical_control": "Fenzaquin 10% EC; Spiromesifen 22.9% SC",
+        "dosage": "Fenzaquin 10% EC @ 500 ml in 200 L water/acre; or Spiromesifen 22.9% SC @ 250 ml in 200 L water/acre"
+      },
+      {
+        "name": "Root-knot nematode",
+        "scientific_name": "Meloidogyne spp.",
+        "category": "nematode",
+        "symptoms": "Infects plant roots causing galling; leads to stunted growth and reduced vigour of nursery/field plants.",
+        "cultural_control": "Crop rotation with cereal crops; ecological engineering with marigold/mustard as intercrops; raise nursery in nematode-free or solarized beds.",
+        "biological_control": "Not separately listed beyond cultural rotation and solarization.",
+        "chemical_control": "Dazomet technical (nursery soil fumigant)",
+        "dosage": "Dazomet technical @ 12-16 g/acre (nursery application)"
+      },
+      {
+        "name": "Aphids (regional pest)",
+        "scientific_name": "Myzus persicae, Aphis gossypii, Aphis fabae, Aphis craccivora",
+        "category": "insect pest",
+        "symptoms": "Sap-sucking causing leaf curling and vigour loss; honeydew promotes sooty mould; can transmit viral diseases (regional significance pest).",
+        "cultural_control": "Install yellow sticky traps @ 4-5/acre; judicious use of nitrogenous fertilizers.",
+        "biological_control": "Release first-instar green lacewing (Chrysoperla carnea) @ 4000/acre; conserve ladybird beetles (Coccinella septempunctata, Menochilus sexmaculata) and parasitoid Aphidius colemani; spray azadirachtin 5% W/W neem extract @ 80 g in 160 L water/acre.",
+        "chemical_control": "Dimethoate 30% EC",
+        "dosage": "Dimethoate 30% EC @ 264 ml in 200-400 L water/acre"
+      }
+    ],
+    "diseases": [
+      {
+        "name": "Damping off",
+        "scientific_name": "Pythium aphanidermatum (Edson) Fitzp.",
+        "category": "fungal disease",
+        "symptoms": "Pre-emergence phase kills seed/seedling before soil emergence with complete rotting; post-emergence phase infects the collar at ground level causing soft, water-soaked tissue and seedling collapse/toppling.",
+        "cultural_control": "Avoid excessive watering and poorly drained nursery areas; use raised beds (15 cm) or pro-trays.",
+        "biological_control": "Seed treatment with Trichoderma viride 1% WP @ 9 g/kg seed.",
+        "chemical_control": "Captan 75% WS (seed treatment); Captan 75% WP (soil drench)",
+        "dosage": "Seed treatment with Captan 75% WS @ 20-30 g/kg seed; soil drench with Captan 75% WP @ 1000 g in 400 L water/acre"
+      },
+      {
+        "name": "Septoria leaf spot",
+        "scientific_name": "Septoria lycopersici (implied fungal pathogen)",
+        "category": "fungal disease",
+        "symptoms": "Small, round to irregular spots with grey centre and dark margin, starting on lower leaves and progressing upward; spots coalesce causing blighting and complete defoliation; stems/flowers occasionally attacked, fruit rarely.",
+        "cultural_control": "Removal and destruction of affected plant parts.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Mancozeb 75% WP",
+        "dosage": "Mancozeb 75% WP @ 600-800 g in 300 L water/acre"
+      },
+      {
+        "name": "Bacterial stem and fruit canker",
+        "scientific_name": "Clavibacter michiganensis subsp. michiganensis (Smith) Davis et al.",
+        "category": "bacterial disease",
+        "symptoms": "White blister-like leaf-margin spots turning brown with age; light-coloured stem/petiole streaks develop cracks and cankers with slimy bacterial ooze in humid weather; small water-soaked, white-haloed fruit spots become raised, tan and rough; vascular discolouration visible in split stems.",
+        "cultural_control": "Same as seed/seedling stage measures: disease-free seed beds, sanitation, avoiding overhead contamination.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Streptomycin sulfate 9% + Tetracycline hydrochloride 1% SP (streptocycline)",
+        "dosage": "Spray streptocycline 40-100 ppm after appearance of first true leaves; two sprays - one before transplanting (seed beds) and one after transplanting (main field)"
+      },
+      {
+        "name": "Early blight",
+        "scientific_name": "Alternaria solani (Ell. & Mart.), A. alternata, A. alternata f.sp. lycopersici",
+        "category": "fungal disease",
+        "symptoms": "Small black lesions on older foliage enlarge with concentric 'bull's-eye' rings; surrounding tissue yellows and, under high heat/humidity, much foliage is killed; also infects fruit via calyx/stem attachment with large concentric-ringed lesions.",
+        "cultural_control": "Use resistant/tolerant cultivars; change nursery bed location each season; remove weeds/volunteer tomato plants; avoid planting overlapping crops nearby.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Azoxystrobin 23% SC; Mancozeb 75% WG; Copper oxychloride 50% WP; Captan 75% WP",
+        "dosage": "Azoxystrobin 23% SC @ 200 ml in 200 L water/acre; or Mancozeb 75% WG @ 400 g in 200 L water/acre; or Copper oxychloride 50% WP @ 1000 g in 300-400 L water/acre; or Captan 75% WP @ 666.8 g in 400 L water/acre"
+      },
+      {
+        "name": "Bacterial leaf spot",
+        "scientific_name": "Xanthomonas campestris pv. vesicatoria (Doidge) Dye",
+        "category": "bacterial disease",
+        "symptoms": "Small brown water-soaked circular leaf spots with a yellow halo; older-plant leaflet infection mostly on older leaves causing defoliation; green fruit develops small water-soaked spots that raise, enlarge and become scabby; ripe fruit not susceptible.",
+        "cultural_control": "Same as seed/seedling stage measures; avoid solanaceous weed hosts (Solanum nigrum).",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Streptomycin sulfate 9% + Tetracycline hydrochloride 1% SP (streptocycline)",
+        "dosage": "Spray streptocycline 40-100 ppm solution; two sprays timed as for bacterial canker"
+      },
+      {
+        "name": "Bacterial wilt",
+        "scientific_name": "Ralstonia solanacearum (Smith) Yabuuchi et al.",
+        "category": "bacterial disease",
+        "symptoms": "Rapid, complete wilting of normally grown plants; lower leaves may drop before wilting; cut infected stems immersed in water show a white bacterial ooze streak from the cut end.",
+        "cultural_control": "Crop rotation (cowpea-maize-cabbage, okra-cowpea-maize, finger millet-brinjal etc.); rotate with paddy; use pathogen-free seedlings; restrict irrigation water flow from affected to healthy fields.",
+        "biological_control": "Neem cake @ 100 kg/acre.",
+        "chemical_control": "No specific bactericide listed; managed through resistant rotation and sanitation",
+        "dosage": "Not applicable - cultural/biological management only per the document"
+      },
+      {
+        "name": "Leaf curl (Tomato leaf curl virus)",
+        "scientific_name": "Tomato leaf curl virus (ToLCV), transmitted by whitefly",
+        "category": "viral disease",
+        "symptoms": "Severe stunting with downward rolling and crinkling of leaves; newly emerging leaves show slight yellowing then curling; older leaves become leathery and brittle; internodes shorten and plants become pale, bushy and stunted.",
+        "cultural_control": "Raise nursery under insect-proof net to exclude whitefly vector; use seed from disease-free plants; rogue infected nursery plants; staking to keep fruit off ground; avoid using infected seedlings for transplanting.",
+        "biological_control": "Conserve parasitoids Encarsia sp., Eretmocerus spp.; predators as for whitefly management.",
+        "chemical_control": "Imidacloprid 17.8% SL (root-dip vector control)",
+        "dosage": "Before transplanting, dip seedling roots for 15 minutes in Imidacloprid 17.8% SL @ 60-70 ml in 200 L water/acre"
+      },
+      {
+        "name": "Mosaic (Tomato Mosaic Virus)",
+        "scientific_name": "Tomato Mosaic Virus",
+        "category": "viral disease",
+        "symptoms": "Light and dark green mottling on leaves, sometimes with wilting of young leaves on sunny days at first infection; leaflets distorted, puckered and smaller than normal, sometimes with 'fern leaf' symptoms; plants appear stunted, pale green and spindly.",
+        "cultural_control": "Use seed from disease-free healthy plants, rinsed and shade-dried; remove and destroy infected nursery plants; avoid using infected seedlings; rotate away from other solanaceous crops (potato, chilli, capsicum, brinjal, tobacco).",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No chemical control - the virus spreads via contact/tools/hands, so sanitation is the primary measure",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Tomato spotted wilt disease",
+        "scientific_name": "Peanut Bud Necrosis Virus (PBNV) / TSWV group, transmitted by thrips",
+        "category": "viral disease",
+        "symptoms": "Stunting, chlorotic/necrotic ring spots on leaves, vein thickening and bronzing of young leaves, die-back of growing tips; ripe fruit shows pale red/yellow areas with concentric circular marking and seed discoloration.",
+        "cultural_control": "Managed primarily by controlling thrips vectors (Frankliniella schultzii, Scirtothrips dorsalis) and removing alternate weed/crop hosts.",
+        "biological_control": "Not specified in the document beyond general thrips natural-enemy conservation.",
+        "chemical_control": "No disease-specific chemical listed; vector (thrips) management is the primary control",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Fusarium wilt",
+        "scientific_name": "Fusarium oxysporum f. sp. lycopersici (Sacc.) W.C. Snyder and H.N. Hans.",
+        "category": "fungal disease",
+        "symptoms": "First symptom is clearing of veinlets and leaf chlorosis; younger leaves die in succession and the whole plant may wilt and die within days; petioles droop; later, vascular browning occurs and plants become stunted and die.",
+        "cultural_control": "Not separately listed beyond general rotation practices.",
+        "biological_control": "Seed treatment with Trichoderma viride 1% WP @ 9 g/kg seed; root-zone application of 2.5 kg T. viride 1% WP mixed in 150 kg compost/FYM applied after sowing/transplanting.",
+        "chemical_control": "No specific fungicide listed; biological seed/soil treatment is the primary control",
+        "dosage": "Not applicable - see biological_control dosage for Trichoderma viride"
+      },
+      {
+        "name": "Buck eye rot / fruit rot (regional)",
+        "scientific_name": "Phytophthora nicotianae var. parasitica (Dastur) Waterhouse",
+        "category": "fungal disease",
+        "symptoms": "Fruit rot affecting fruits in contact with or near the soil; part of the regional-significance disease list managed with staking and drainage.",
+        "cultural_control": "Use resistant varieties; staking and removal of fruits/leaves touching the ground (up to 30 cm); good soil drainage; periodic clipping of lower leaves and mulching.",
+        "biological_control": "Seed treatment with Trichoderma spp.",
+        "chemical_control": "Mancozeb 75% WP; Propineb 70% WP",
+        "dosage": "Mancozeb 75% WP @ 600-800 g in 300 L water/acre; or Propineb 70% WP @ 120 g in 40 L water/acre"
+      }
+    ],
+    "general_safety_precautions": "The document notes (Section XII, at time of harvest) that the 'waiting period for all the pesticides, if any, should be observed without fail' when picking fruit, alongside careful harvesting practice (twisting rather than pulling fruit, harvesting only when vines/fruit are dry). A separate Safety Parameters section (XIV) and Basic Precautions section (XV) cover pesticide toxicity classification, poisoning symptoms/first aid, and standard purchase/storage/handling/application/disposal precautions (buy only required quantity in sealed labelled containers; store away from food, children and livestock; wear gloves/mask when mixing; avoid tank-mixing; do not spray in high wind or just before/after rain; dispose of containers by crushing and burying away from water sources).",
+    "waiting_period_notes": "The document explicitly instructs that 'waiting period for all the pesticides, if any, should be observed without fail' before harvest, but does not provide a specific numeric PHI table per pesticide active ingredient for tomato; growers are directed to the product label/CIBRC recommendation for the exact waiting period of each pesticide used."
+  },
+  "Onion": {
+    "source_url": "https://niphm.gov.in/IPMPackages/Onion.pdf",
+    "source_title": "AESA Based IPM Package for Onion - Directorate of Plant Protection Quarantine and Storage / National Institute of Plant Health Management (NIPHM), Government of India",
+    "pests": [
+      {
+        "name": "Onion thrips",
+        "scientific_name": "Thrips tabaci Lindeman",
+        "category": "insect pest",
+        "symptoms": "Adults and larvae feed within the leaf mesophyll with a punch-and-suck motion, removing chlorophyll and leaving white-to-silvery patches/streaks; heavy feeding gives leaves a silvery cast that can wither, with tiny black excrement 'tar' spots visible.",
+        "cultural_control": "Use resistant/tolerant varieties; field sanitation; avoid successive planting of garlic/preferred hosts (cabbage, cotton, tomato, cucumber, melons, pumpkin, strawberry); plant upwind of already-infested crop; adjust transplanting dates; reflective silver plastic/aluminium-painted mulch; sprinkler irrigation reduces thrips versus drip/surface irrigation; barrier rows of maize/wheat.",
+        "biological_control": "Conserve parasitoid Ceranisus menes; predators syrphid flies, minute pirate bug (Orius tantilus, Blaptosthethus sp., Buchananiella whitei), praying mantis, predatory thrips (Aeolothrips fasciatum), damsel bug, lacewings, coccinellids (Cheilomenes sexmaculata), spiders.",
+        "chemical_control": "Dimethoate 30% EC; Oxydemeton methyl 25% EC; Quinalphos 25% EC; Lambda-cyhalothrin 5% EC",
+        "dosage": "Dimethoate 30% EC @ 264 ml in 200-400 L water/acre; or Oxydemeton methyl 25% EC @ 480 ml in 200-400 L water/acre; or Quinalphos 25% EC @ 480 ml in 200-400 L water/acre; or Lambda-cyhalothrin 5% EC @ 120 ml in 120-160 L water/acre (add spreader/sticker 0.05-1.0%; direct spray to leaf bases)"
+      },
+      {
+        "name": "Onion maggot",
+        "scientific_name": "Delia antiqua Meigen",
+        "category": "insect pest",
+        "symptoms": "Legless maggots enter at the plant base; damaged seedlings first wilt, become flaccid and die, sometimes before maggots are fully grown; second-generation maggots feeding on developing bulbs cause distorted growth with rotting tissue; third-generation feeding on late bulbs renders them unmarketable.",
+        "cultural_control": "Avoid close spacing; follow crop rotation; field sanitation.",
+        "biological_control": "Conserve predators such as ground beetles, rove beetles and spiders by providing grassy refuge strips.",
+        "chemical_control": "Not separately dosed in the document; managed primarily through cultural and biological control",
+        "dosage": "Not applicable - no chemical dosage tabulated in the document for this pest"
+      },
+      {
+        "name": "Bulb mite",
+        "scientific_name": "Rhizoglyphus robini Claparede",
+        "category": "mite pest",
+        "symptoms": "Infested bulbs may rot and fail to sprout, or produce off-colour, stunted, distorted growth; mites rapidly turn injured bulbs into rotten pulp; infestation generally indicates the bulb was already injured (by other pests, mechanical damage or improper storage).",
+        "cultural_control": "Avoid planting onion after cole crops (e.g., cauliflower, which can harbour high bulb mite populations); avoid successive onion/garlic crops; flood irrigation reduces soil mite levels.",
+        "biological_control": "Conserve predators: anthocorid bugs (Orius spp.), mirid bugs, syrphid/hover flies, green lacewings (Mallada basalis, Chrysoperla zastrowi sillemi), predatory mites (Amblyseius spp., Phytoseiulus persimilis), predatory coccinellid (Stethorus punctillum), staphylinid beetle (Oligota spp.), predatory cecidomyiid fly and gall midge, spiders.",
+        "chemical_control": "Not separately dosed in the document; managed through cultural and biological control",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Eriophyid mite",
+        "scientific_name": "Aceria tulipae (Keifer)",
+        "category": "mite pest",
+        "symptoms": "Adults and immatures feed on young leaves and between bulb scale layers, causing stunting, twisting, curling and discoloration of foliage and scarification/drying of bulb tissue; feeding damage is also linked to transmission of viruses.",
+        "cultural_control": "Flood irrigation reduces mite level in the soil; avoid successive onion/garlic crops.",
+        "biological_control": "Conserve the same predator complex as for bulb mite (anthocorid bugs, mirid bugs, syrphid flies, green lacewings, predatory mites, coccinellids, staphylinid beetle, predatory gall midge, spiders).",
+        "chemical_control": "Not separately dosed in the document",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Red spider mite",
+        "scientific_name": "Tetranychus cinnabarinus (Boisduval)",
+        "category": "mite pest",
+        "symptoms": "Adults/nymphs feed mainly on leaf undersides, causing stippled dots (feeding punctures) on the upper leaf surface, visible silk webbing, and leaves that eventually bleach, discolour and may fall off.",
+        "cultural_control": "A thorough water spray washes mites off the plant.",
+        "biological_control": "Conserve and augment natural enemies: anthocorid bugs, mirid bugs, syrphid/hover flies, green lacewings, predatory mites, coccinellids, staphylinid beetle, predatory gall midge, spiders.",
+        "chemical_control": "Not separately dosed in the document; cultural/biological control emphasized",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Gram pod borer / Tobacco caterpillar (regional)",
+        "scientific_name": "Helicoverpa armigera (Hubner); Spodoptera litura (Fabricius)",
+        "category": "insect pest",
+        "symptoms": "Polyphagous lepidopteran larvae feeding on foliage and reproductive parts; regional-significance pests of onion/garlic in Punjab and other states.",
+        "cultural_control": "Field sanitation; ecological engineering with intercrops (cowpea, maize, coriander, urdbean); guard crop of sorghum/maize; repellent Ocimum/Basil and marigold as trap crop; bird perches @ 20/acre; pheromone traps @ 4-5/acre; light trap @ 1/acre.",
+        "biological_control": "Inundative release of Trichogramma pretiosum @ 40,000/acre 4-5 times from flower initiation; conserve Tetrastichus spp., Telenomus spp., Campoletis chlorideae; predators Chrysoperla zastrowi sillemi, coccinellids, king crow, mynah, spiders, reduviid bug, Geocoris sp.; entomopathogenic nematodes (Steinernema feltiae) @ 20-120 crore infective juveniles/acre.",
+        "chemical_control": "Not separately dosed in the crop-stage table for onion (biological/cultural emphasis)",
+        "dosage": "Not applicable - not separately tabulated for onion in the document"
+      }
+    ],
+    "diseases": [
+      {
+        "name": "Damping off",
+        "scientific_name": "Pythium spp., Rhizoctonia solani, Fusarium oxysporum, Sclerotium rolfsii, S. cepivorum, Colletotrichum sp.",
+        "category": "fungal disease",
+        "symptoms": "Pre-emergence damping off causes seed/seedling rot before emergence; post-emergence damping off attacks the collar region at the soil surface, rotting the collar and collapsing seedlings; causes about 60-75% damage in kharif/rainy season under high soil moisture and humidity.",
+        "cultural_control": "Soil solarization of nursery beds with clear polythene for 30 days before sowing; avoid continuous nursery use on the same plot; avoid excess soil moisture; follow crop rotation; proper drainage/leveling; sow clean healthy seed on raised beds; avoid overcrowding; use well-decomposed FYM.",
+        "biological_control": "Not specifically listed beyond general Trichoderma/Pseudomonas fluorescens seed and soil treatment recommended across pre-sowing stage.",
+        "chemical_control": "No pest-specific fungicide dosage listed for onion damping off in the crop-stage table",
+        "dosage": "Not applicable - relies on cultural control per the document"
+      },
+      {
+        "name": "Purple blotch",
+        "scientific_name": "Alternaria porri (Ellis)",
+        "category": "fungal disease",
+        "symptoms": "Small, sunken, whitish flecks with purple-coloured centres on leaves and flower stalks; lesions may girdle leaves/stalks causing drooping, and infected plants fail to develop bulbs. Favoured by hot, humid climate (21-30 degC, 80-90% RH).",
+        "cultural_control": "Use healthy seed; crop rotation 2-3 years with non-host crops; proper drainage; recommended N and P doses; hot-water seed soaking (50 degC for 20 minutes); use resistant varieties.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Difenoconazole 25% EC; Kitazin 48% EC",
+        "dosage": "Difenoconazole 25% EC @ 40 ml in 200 L water/acre; or Kitazin 48% EC @ 80 ml in 80 L water/acre"
+      },
+      {
+        "name": "Stemphylium leaf blight",
+        "scientific_name": "Stemphylium vesicarium [(Wallr.) E.G. Simmons]",
+        "category": "fungal disease",
+        "symptoms": "Infects radical leaves of transplanted seedlings at the 3-4 leaf stage (late March/early April); small yellowish-to-orange flecks/streaks develop into elongated spindle-shaped spots with pinkish margins; severe on inflorescence stalks of seed crops. Favoured by warm (18-25 degC), humid conditions with long leaf wetness (16+ hours).",
+        "cultural_control": "Field sanitation - collect and burn crop residues; long rotation with non-host crops; proper field drainage and reduced plant density; hot-water seed soaking (50 degC, 20 min); plant resistant/moderately resistant varieties (Welsh onion lines).",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Mancozeb 75% WP; Zineb 75% WP",
+        "dosage": "Mancozeb 75% WP @ 600-800 g in 300 L water/acre; or Zineb 75% WP @ 600-800 g in 300-400 L water/acre"
+      },
+      {
+        "name": "Colletotrichum blight / Anthracnose / Twister disease",
+        "scientific_name": "Colletotrichum gloeosporioides [(Penz.) Penz. and Sacc]",
+        "category": "fungal disease",
+        "symptoms": "Water-soaked pale yellow spots initially on leaves spread lengthwise covering the whole blade; affected leaves shrivel and droop down (twisted/curled). Most severe in warm (25-30 degC), moist, organic-matter-rich soils; growth slows sharply below 15 degC.",
+        "cultural_control": "Field sanitation - destruction of infected plant debris; use resistant varieties.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No chemical control listed in the crop-stage table; cultural sanitation is the primary measure",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Onion yellow dwarf disease",
+        "scientific_name": "Onion yellow dwarf virus, transmitted by aphids",
+        "category": "viral disease",
+        "symptoms": "First symptoms are yellow streaks at the bases of the first true leaves of young onions; all subsequently developed leaves show yellow streaking to complete yellowing; leaves sometimes crinkled and flattened, and bulbs are undersized.",
+        "cultural_control": "Manage the aphid vector population; plant virus-free transplants; crop rotation of at least 3 years; remove and destroy diseased plants; rogueing and isolation from susceptible/volunteer crops; use blue sticky traps.",
+        "biological_control": "Conserve predators (coccinellids, lacewings, spiders, wasps) that control the aphid vector.",
+        "chemical_control": "No disease-specific chemical listed; vector (aphid) management is primary control",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Iris yellow spot disease",
+        "scientific_name": "Iris yellow spot virus, transmitted persistently by onion thrips",
+        "category": "viral disease",
+        "symptoms": "Cream-coloured, elliptical/diamond-shaped spots on leaves and on onion flower stalks (scapes); infected leaves and scapes can collapse at the spot site; disease severity correlates with thrips population and can devastate the whole crop.",
+        "cultural_control": "Plant healthy seedlings free of thrips and virus; rotate 3+ years between onion crops; eliminate alternate host plants, culls and weeds; use sprinkler irrigation to suppress thrips; avoid thin, patchy stands and crop stress.",
+        "biological_control": "As for onion yellow dwarf - conserve predators of the thrips vector (coccinellids, lacewings, spiders, wasps).",
+        "chemical_control": "No disease-specific chemical listed; managed via thrips vector control (see Onion thrips chemical control)",
+        "dosage": "Not applicable - see Onion thrips entry for vector chemical control"
+      },
+      {
+        "name": "Downy mildew (regional)",
+        "scientific_name": "Peronospora destructor (Berkeley) Caspary",
+        "category": "fungal disease",
+        "symptoms": "Leaves turn pale green; cottony white mycelial growth develops on leaves which gradually turn pale yellow to dark brown and dry up. Favoured by warm, humid climate.",
+        "cultural_control": "Select healthy bulbs for seed production; 3-4 year rotation with non-host crop; dispose of infected debris/culled bulb refuse properly; avoid late planting, poor drainage, high fertilizer doses and frequent irrigation; use resistant varieties; expose seed-crop bulbs to sun for 12 days to destroy fungus.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Zineb 75% WP",
+        "dosage": "Zineb 75% WP @ 600-800 g in 300-400 L water/acre"
+      },
+      {
+        "name": "Fusarium basal rot (regional)",
+        "scientific_name": "Fusarium oxysporum f. sp. cepae Schlecht",
+        "category": "fungal disease",
+        "symptoms": "Initial yellowing of leaves and stunted growth, drying from tip downward; roots turn pink and rot in early stages; in advanced stages the bulb decays from the lower end and the whole plant dies. Favoured by moist soil and ~27 degC.",
+        "cultural_control": "4-5 year rotation with non-host crop; mixed cropping with tobacco/sorghum reduces inoculum; soil solarization (25-gauge polythene, 30 days summer); proper drainage; deep summer ploughing; avoid injury during cultural operations; flood soil in off-season; use resistant varieties.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No fungicide separately dosed; cultural/soil-management is the primary control",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "White rot / Sclerotial rot (regional)",
+        "scientific_name": "Sclerotium cepivorum Berk.",
+        "category": "fungal disease",
+        "symptoms": "Initial yellowing and dieback of leaf tips; scales, stem plate and roots are destroyed; bulbs become soft and water-soaked; white fluffy/cottony mycelial growth with abundant mustard-grain-like black sclerotia develops on infected bulbs. Most severe in cool, dry soils.",
+        "cultural_control": "Use disease-free areas; rotate with cereal crops; hot-water bulb treatment at 49 degC; soil solarization at 35 degC for 18 hours or 45 degC for 6 hours (reduces disease incidence 50-70%).",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No fungicide separately dosed for white rot",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Pink root rot (regional)",
+        "scientific_name": "Phoma (Pyrenochaeta) terrestris / Fusarium solani",
+        "category": "fungal disease",
+        "symptoms": "Reduced bulb size; roots turn pink or maroon when infected; in severe cases roots die and plants become weakened/stunted, especially under heat/drought stress or poor soil. Optimum disease development at 24-28 degC.",
+        "cultural_control": "Rotate with cereal and green-manure crops; soil solarization (25-gauge polythene, 30 days summer); use resistant varieties (Welsh onion lines); late planting reduces incidence; long rotation with non-host crops.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No fungicide separately dosed for pink root rot",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Black mould / Green mould (post-harvest)",
+        "scientific_name": "Aspergillus niger van Tiegham (black mould); A. fumigatus / A. alliaceus (green mould)",
+        "category": "fungal disease",
+        "symptoms": "Infection usually enters through neck tissue as foliage dies at maturity; bulbs discolour black (or green) around the neck with shriveling of scales; masses of powdery spores form streaks along veins between outer dry scales, sometimes advancing into fleshy inner scales. Favoured above 30 degC in field or 24 degC in storage with 6+ hours of free surface moisture.",
+        "cultural_control": "Field-dry onions for two days after harvest then shade-dry for 10-15 days before storage; store seed/bulb only after proper drying; maintain proper storage aeration; avoid bruising during harvest/storage/transport; store at 1-15 degC.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No fungicide listed; entirely a post-harvest handling/storage disease per the document",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Bacterial brown rot / Soft rot / Slippery skin",
+        "scientific_name": "Pseudomonas aeruginosa (Schroter) Migula / Pseudomonas allicola Starr and Burk; soft rot: Erwinia carotovora pv. carotovora",
+        "category": "bacterial disease",
+        "symptoms": "Field symptoms show one or two wilted, pale-yellow, dieback leaves in the leaf cluster centre while other leaves stay green; bulb neck tissue softens; internal scales become watery ('cooked'); squeezing the base makes rotted inner tissue slide out through the neck ('slippery skin'). Favoured by moisture and 5-41 degC, heavy irrigation and persistent dew.",
+        "cultural_control": "Grow under optimum tilth, fertilizer, drainage and weed-free conditions with crop rotation; proper curing and rapid drying after harvest; discard affected bulbs before storage; artificial curing needed during rainy season.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No chemical control listed; cultural/curing practices are the primary measure",
+        "dosage": "Not applicable"
+      }
+    ],
+    "general_safety_precautions": "Section XIII (Basic Precautions in Pesticides Usage) mirrors the standard NIPHM guidance: purchase only required quantities in sealed, approved-label containers with invoice; store away from house premises, food/feed, children/livestock, sunlight/rain, and never store weedicides with other pesticides; never transport pesticides with food; wear gloves, face mask and head covering while preparing spray solution with clean water; use correct, leak-free equipment with proper nozzles (never unclog with mouth); do not spray in hot/windy conditions or just before/after rain; avoid tank-mixing different pesticides; wash equipment after use; dispose of leftover solution and containers away from water sources, crushing and burying containers rather than reusing them. Section XII covers pesticide toxicity classification and poisoning first aid.",
+    "waiting_period_notes": "No explicit numeric pre-harvest waiting-period/PHI table is given for individual pesticides on onion. Section X (Safety Measures) instead addresses harvest handling (avoid damaging the protective outer bulb layers) and post-harvest curing (dry bulbs in a dark, dry place at 30-45 degC and 60-75% RH for 1-4 days until necks brown, then store at 35-45 degF/70-75% RH)."
+  },
+  "Mango": {
+    "source_url": "https://niphm.gov.in/IPMPackages/Mango.pdf",
+    "source_title": "AESA Based IPM Package for Mango - Directorate of Plant Protection Quarantine and Storage / National Institute of Plant Health Management (NIPHM), Government of India",
+    "pests": [
+      {
+        "name": "Mango hopper",
+        "scientific_name": "Idioscopus clypealis, I. nitidulus, I. niveosparsus, Amritodus atkinsoni",
+        "category": "insect pest",
+        "symptoms": "Wedge-shaped nymphs and adults puncture and suck sap from tender parts, reducing plant vigour and destroying the inflorescence, causing fruit drop; heavy sap draining causes curling/drying of infested tissue; honeydew excretion promotes sooty mould.",
+        "cultural_control": "Prune dense orchards in December; orchard/field sanitation and rogueing; keep nursery clean of weeds/grasses; remove alternate hosts (hibiscus, custard apple, guava); avoid dense planting, maintain open canopy by pruning overcrowded branches after the rainy season; avoid excess nitrogen; smoke orchards by burning crop residue/cow dung cake in the evening.",
+        "biological_control": "Apply Metarhizium anisopliae @ 1x10^8 cfu/ml or Beauveria bassiana @ 10^8 cfu/ml on tree trunk once in the off-season and twice at 7-day intervals during flowering; parasitoids Polynema spp., Gonatocerus sp., Tetrastichus sp.; predators Mallada boninensis, Plexippus paykullii.",
+        "chemical_control": "Buprofezin 25% SC; Imidacloprid 17.8% SL; Lambda-cyhalothrin 5% EC; Dimethoate 30% EC",
+        "dosage": "Buprofezin 25% SC @ 1.25 ml/L water, 5-15 L per tree; or Imidacloprid 17.8% SL @ 3 ml/L, 10 L/tree; or Lambda-cyhalothrin 5% EC @ 0.5-1.0 ml/L water; or Dimethoate 30% EC @ 990-1320 ml in 600-800 L water/acre"
+      },
+      {
+        "name": "Mango mealybug",
+        "scientific_name": "Drosicha mangiferae Green",
+        "category": "insect pest",
+        "symptoms": "Adult bugs, covered with whitish waxy powder, colonize the bark of the trunk, young shoots and panicles; nymphs ascend and settle on inflorescence causing flower drop and reduced fruit set; honeydew excretion promotes sooty mould development.",
+        "cultural_control": "Flood the orchard with water in October to kill eggs; plough the orchard in November; rake soil around the tree trunk to expose eggs to natural enemies/sun and remove weeds; fasten alkathene sheet (400 gauge) or grease band (25 cm wide) with mud plastering around the trunk 30 cm above ground in mid-December; destroy infested fallen leaves with scales in July-August.",
+        "biological_control": "Release 10-15 grubs per tree of the coccinellid predator Cryptolaemus montrouzieri.",
+        "chemical_control": "Dimethoate 30% EC; Monocrotophos 36% SL (avoid at fruiting stage)",
+        "dosage": "Dimethoate 30% EC @ 990-1320 ml in 600-800 L water/acre; or Monocrotophos 36% SL @ 600-800 ml in 200-800 L water/acre (do not use Monocrotophos at fruiting stage)"
+      },
+      {
+        "name": "Fruit fly",
+        "scientific_name": "Bactrocera dorsalis Hendel, B. correcta Bezzi, B. zonata Saunders",
+        "category": "insect pest",
+        "symptoms": "Females puncture the outer wall of mature fruit with the ovipositor and lay eggs in clusters in the mesocarp; hatching maggots feed on fruit pulp, and infested fruits start rotting from secondary infection.",
+        "cultural_control": "30-40 days before harvest, collect and dispose of infested/fallen fruits to prevent further multiplication; plough the orchard in November-December to expose pupae to sun's heat.",
+        "biological_control": "Use methyl eugenol pheromone trap @ 4/acre; parasitoids Fopius arisanus, Diachasmimorpha kraussi.",
+        "chemical_control": "Deltamethrin bait spray; methyl eugenol + malathion trap mixture",
+        "dosage": "Bait splash: 100 g jaggery in 1 L water + 1 ml deltamethrin, applied to the trunk once or twice at weekly intervals if infestation is heavy; Male annihilation trap: methyl eugenol 1 ml/L water + 1 ml malathion, 10 ml of mixture per trap at 25 locations/ha; also hot water fruit treatment at 48+-1 degC for 4-5 minutes"
+      },
+      {
+        "name": "Inflorescence midge",
+        "scientific_name": "Erosomyia indica Grover (and allied Cecidomyiidae)",
+        "category": "insect pest",
+        "symptoms": "Larvae tunnel the inflorescence axis and destroy it, causing bending and drying of the inflorescence; a second attack at fruit-set has maggots boring into tender fruits which yellow and drop; a third attack targets tender new leaves encircling the inflorescence, with the first (inflorescence) attack the most damaging.",
+        "cultural_control": "Deep ploughing of the orchard in October-November to expose pupae/diapausing larvae to sun's heat, killing them.",
+        "biological_control": "Parasitoids Tetrastichus sp., Platygaster sp., Systasis dasyneurae, Aprostocetus spp.",
+        "chemical_control": "Not separately dosed in the crop-stage table beyond cultural ploughing control",
+        "dosage": "Not applicable - the document lists only cultural control (deep ploughing) for this pest"
+      },
+      {
+        "name": "Stem borer",
+        "scientific_name": "Batocera rufomaculata DeGeer",
+        "category": "insect pest",
+        "symptoms": "Grubs tunnel irregularly in the sapwood of trunk or branches, feeding on vascular tissue and interrupting nutrient/water transport; causes drying of terminal shoots in early stages, frass extrusion and sap oozing from holes, and wilting of branches or the entire tree.",
+        "cultural_control": "Clean hole and pour kerosene/petrol/crude oil or formalin into the borer hole, then plug the tunnel entrance with cotton wool and seal with mud paste; use light trap @ 1/acre.",
+        "biological_control": "Not specifically listed for stem borer beyond common biological practices.",
+        "chemical_control": "Monocrotophos 36% SL",
+        "dosage": "Monocrotophos 36% SL @ 600-800 ml in 200-800 L water/acre"
+      },
+      {
+        "name": "Bark eating caterpillar",
+        "scientific_name": "Indarbela quadrinotata Walker",
+        "category": "insect pest",
+        "symptoms": "Caterpillars bore into the trunk or branch junctions and remain hidden in tunnels by day, emerging at night to feed on bark; construct galleries with webbing of wood frass and faecal pellets hanging outside the tunnel; heavy infestation retards tree growth and fruit yield.",
+        "cultural_control": "Keep the orchard clean and healthy; cut and remove dried branches which harbour the pest.",
+        "biological_control": "Not specifically listed beyond common cultural/mechanical/biological practices.",
+        "chemical_control": "Not separately dosed in the crop-stage table for this pest",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Stone weevil",
+        "scientific_name": "Sternochetus mangiferae Fabricius",
+        "category": "insect pest",
+        "symptoms": "Larvae develop inside the mango stone/seed, damaging the kernel; associated with fallen and infested fruit.",
+        "cultural_control": "Collect and destroy infested/fallen fruits weekly until harvest; plough the orchard after harvest to expose hibernating adults; destroy all left-over seeds in the orchard and at processing units.",
+        "biological_control": "Natural enemies recorded include the mite Rhizoglyphus sp., ants (Camponotus sp., Monomorium sp., Oecophylla smaragdina) and the fungus Beauveria bassiana (pathogenic on the weevil).",
+        "chemical_control": "Not separately dosed in the crop-stage table for this pest",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Shoot gall psylla",
+        "scientific_name": "Apsylla cistellata Buckton",
+        "category": "insect pest",
+        "symptoms": "Nymphs induce gall formation on shoots; galls with nymphs are the visible sign of infestation, affecting shoot vigour.",
+        "cultural_control": "Collect and destroy galls containing nymphs.",
+        "biological_control": "Conserve predators: black ladybird beetle, purplish pirate bug, brown lacewing, tiny parasitic wasp.",
+        "chemical_control": "Not separately dosed in the crop-stage table for this pest",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Shoot borer",
+        "scientific_name": "Chlumetia transversa Walker",
+        "category": "insect pest",
+        "symptoms": "Larvae bore into tender shoots; attacked shoots die back and need clipping; associated with drying of terminal growth.",
+        "cultural_control": "Clip and destroy attacked shoots; clean the hole and pour kerosene/petrol/crude oil or formalin into the stem-borer hole and plug with cotton wool/mud; use light trap @ 1/acre.",
+        "biological_control": "Not specifically listed beyond common biological practices.",
+        "chemical_control": "Monocrotophos 36% SL",
+        "dosage": "Monocrotophos 36% SL @ 600-800 ml in 200-800 L water/acre"
+      },
+      {
+        "name": "Scale insects (regional)",
+        "scientific_name": "Chloropulvinaria polygonata Cockerell, Aspidiotus destructor Signoret",
+        "category": "insect pest",
+        "symptoms": "Sap-sucking insects colonizing branches and twigs; heavy infestation weakens plant parts and is often associated with ant attendance.",
+        "cultural_control": "Prune heavily infested plant parts (branches/twigs), preferably in summer, and destroy them in a pit until natural enemies escape, then burn remaining debris; remove attendant ants to allow natural enemies to work.",
+        "biological_control": "Removal of attendant ants permits natural enemy activity (predators/parasitoids not separately named for this pest).",
+        "chemical_control": "Malathion 50% EC",
+        "dosage": "Malathion 50% EC @ 900-1200 ml in 600-800 L water/acre"
+      }
+    ],
+    "diseases": [
+      {
+        "name": "Powdery mildew",
+        "scientific_name": "Oidium mangiferae Berthet",
+        "category": "fungal disease",
+        "symptoms": "White superficial powdery fungal growth on leaves, panicle stalks, flowers and young fruits; affected flowers/fruits drop prematurely, reducing crop load or preventing fruit set; young leaves show purplish-brown coalesced patches. Favoured by rain/mist with cooler nights during flowering.",
+        "cultural_control": "Avoid spraying at full bloom; prune diseased leaves and malformed panicles harbouring the pathogen to reduce primary inoculum.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Azoxystrobin 23% SC; Carbendazim 46.27% SC; Hexaconazole 5% EC; Sulphur 80% WP",
+        "dosage": "Azoxystrobin 23% SC @ 100 ml (0.1%) per 100 L water depending on tree canopy size; or Carbendazim 46.27% SC @ 0.1% (100 ml/100 L); or Hexaconazole 5% EC @ 0.1% (100 ml/100 L); or Sulphur 80% WP @ 1.25 kg in 300-400 L water/acre"
+      },
+      {
+        "name": "Anthracnose",
+        "scientific_name": "Colletotrichum gloeosporioides Stoneman, Spaull and Schrenk",
+        "category": "fungal disease",
+        "symptoms": "Causes leaf spot, blossom blight, withertip, twig blight and fruit rot; tender shoots/foliage die back; black spots develop on panicles and fruits, severe cases destroying the entire inflorescence; young infected fruit develop black spots, shrivel and drop; fruit infected at maturity carries the fungus into storage. Favoured by high humidity, frequent rain and 24-32 degC.",
+        "cultural_control": "Collect and burn diseased leaves, twigs, gall-midge-infected leaves and fruits; cover fruits on the tree with paper bags 15 days before harvest.",
+        "biological_control": "Not specified in the document (post-harvest botanical/bio-inoculant dip treatments are mentioned generally for post-harvest disease control).",
+        "chemical_control": "Azoxystrobin 23% SC; Copper oxychloride 50% WG",
+        "dosage": "Azoxystrobin 23% SC @ 100 ml (0.1%) per 100 L water depending on tree canopy; or Copper oxychloride 50% WG @ 0.24% (240 g/100 L water) as required"
+      },
+      {
+        "name": "Die back",
+        "scientific_name": "Botryodiplodia theobromae Pat. (Lasiodiplodia theobromae)",
+        "category": "fungal disease",
+        "symptoms": "Twigs dry back from the top downward, particularly in older trees, followed by leaf drying giving a 'fire scorch' appearance; internal wood browning is seen when split open; cracks appear on branches with gum exudation before dying; graft unions of nursery plants can die when affected. Most conspicuous October-November, favoured by high humidity/moisture.",
+        "cultural_control": "Select disease-free scion wood for propagation; take care to prevent introduction of disease in new orchards; prune infected portions with 3 inches of healthy wood removed below the infection site, followed by spraying/pasting with copper oxychloride or cow-dung paste on cut ends.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Copper oxychloride paste (on pruning cuts)",
+        "dosage": "Paste cut ends with copper oxychloride (or cow dung) after pruning infected wood; no foliar spray dose separately specified for die back"
+      },
+      {
+        "name": "Sooty mould",
+        "scientific_name": "Meliola mangiferae Earle (Capnodium mangiferae)",
+        "category": "fungal disease",
+        "symptoms": "Recognized by a black velvety fungal coating on leaf/twig surfaces, growing on honeydew excreted by mealybug, scale insects and hoppers; in severe cases the whole tree appears black. Favoured by high humidity and moist conditions.",
+        "cultural_control": "Prune affected branches and promptly destroy them; control of the underlying honeydew-producing insects (mealybug, scale, hopper) is essential to prevent recurrence.",
+        "biological_control": "Not specified in the document (indirect control via biocontrol of the insect vectors).",
+        "chemical_control": "No fungicide specifically listed; managed by controlling the causal honeydew-secreting insects",
+        "dosage": "Not applicable - control the insect vectors (see Mango hopper, Mango mealybug, Scale insects entries)"
+      },
+      {
+        "name": "Mango malformation complex",
+        "scientific_name": "Fusarium mangiferae Wollenweber & Reinking (associated with mite Aceria mangiferae)",
+        "category": "fungal disease",
+        "symptoms": "Vegetative malformation: young seedlings develop abnormal, swollen growths with very short internodes. Floral malformation: flower buds transform into vegetative buds with many small leaves/stems and reduced internodes, giving a 'witches' broom' appearance; flower buds seldom open and remain dull green.",
+        "cultural_control": "Prune and burn floral-malformed panicles/vegetative-malformed shoots to reduce incidence; application of NAA (200 ppm) in the first week of October (before bud differentiation), followed by de-blossoming in late December/January, reduces malformation incidence.",
+        "biological_control": "Not specified (mite vector Aceria mangiferae control would reduce wound-associated infection, per the disease description).",
+        "chemical_control": "No fungicide specifically dosed; managed via pruning and plant growth regulator (NAA) application",
+        "dosage": "NAA @ 200 ppm spray in first week of October, followed by de-blossoming in late December/January"
+      },
+      {
+        "name": "Gummosis",
+        "scientific_name": "Lasiodiplodia theobromae (Pat.) Griffon and Maubl. (syn. Botryodiplodia theobromae)",
+        "category": "fungal disease",
+        "symptoms": "Profuse oozing of gum on the surface of affected wood, trunk bark and larger (especially cracked) branches; in severe cases gum droplets trickle down the stem, bark turns dark brown with longitudinal cracks and rots completely, and the tree dries up from cracking/rotting/girdling. Favoured by warm weather.",
+        "cultural_control": "Remove or clean the diseased bark/portion and paste with cow dung paste.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No fungicide specifically listed; managed by removing diseased bark and pasting the wound",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Postharvest disease complex (Anthracnose, Stem end rot, Aspergillus/Black mould rot)",
+        "scientific_name": "Colletotrichum gloeosporioides (anthracnose); Lasiodiplodia theobromae (stem end rot); Aspergillus niger (black mould rot)",
+        "category": "fungal disease",
+        "symptoms": "Post-harvest fruit rot symptoms including black anthracnose spots, stem-end rotting and black mould discoloration, developing during storage, transit and marketing, especially in fruit infected at the mature stage in the field.",
+        "cultural_control": "Avoid harvesting immature fruit; cool fruit immediately after harvest and store in well-ventilated containers.",
+        "biological_control": "Fruits sprayed with a mixture of bio-inoculants; post-harvest botanical fungicide dip treatments can control storage diseases.",
+        "chemical_control": "Hot water treatment (physical control, commonly combined with fungicide/bio-inoculant dips)",
+        "dosage": "Hot water treatment at 52 degC for 4-5 minutes"
+      },
+      {
+        "name": "Bacterial canker (regional)",
+        "scientific_name": "Xanthomonas campestris pv. mangiferae-indicae",
+        "category": "bacterial disease",
+        "symptoms": "Water-soaked lesions on leaves, leaf stalks, stems, twigs, branches and fruits developing into typical cankers; on leaves, light-yellow angular raised lesions (1-4 mm) enlarge/coalesce into dark-brown necrotic cankerous patches; on fruit, water-soaked dark brown/black lesions grow into raised or flat cankerous spots (1-5 mm) that burst, releasing gummy, highly contagious bacterial ooze. Spring favours disease development.",
+        "cultural_control": "Regular orchard inspection, sanitation and seedling certification; use mango stones for rootstock only from healthy fruit; use wind-breaks to reduce wounding that facilitates infection.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No specific bactericide dosage listed; managed via sanitation and certified planting material",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Red rust (regional)",
+        "scientific_name": "Cephaleuros virescens Kunze (algal pathogen)",
+        "category": "algal disease",
+        "symptoms": "Rusty red, greenish-grey velvety circular spots mainly on leaves (also petioles and young twig bark) that turn reddish-brown and coalesce into larger irregular patches; reduces photosynthetic activity and causes defoliation, lowering plant vigour. More common in closely planted orchards; favoured by frequent rain and warm weather, poor nutrition/drainage.",
+        "cultural_control": "Maintain plant vigour with balanced nutrition to reduce severity.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "Copper oxychloride",
+        "dosage": "Spray copper oxychloride twice during July/August at 15-day intervals, timed with onset of rains"
+      },
+      {
+        "name": "Phoma blight (regional)",
+        "scientific_name": "Phoma glomerata (Cords) Woll. Hochapf",
+        "category": "fungal disease",
+        "symptoms": "Symptoms noticeable mainly on old leaves; angular, minute, irregular, yellow-to-light-brown lesions scattered over the leaf lamina enlarge and change colour from brown to cinnamon becoming irregular, with dark margins and dull-grey necrotic centres; severe infection causes coalescing patches (3.5-13 cm), complete withering and defoliation. Favoured by rainy season.",
+        "cultural_control": "Collect and burn affected branches; balanced nutrition provides resistance to phoma blight.",
+        "biological_control": "Not specified in the document.",
+        "chemical_control": "No fungicide specifically dosed in the crop-stage table for phoma blight",
+        "dosage": "Not applicable"
+      },
+      {
+        "name": "Root rot and Damping off (nursery)",
+        "scientific_name": "Rhizoctonia solani Kuhn",
+        "category": "fungal disease",
+        "symptoms": "Sudden dropping of leaves after seedling emergence; during prolonged rainy/humid weather, circular-to-irregular water-soaked patches occur at/below ground level, enlarging until they girdle the entire seedling base. Favoured by high humidity, high soil moisture, cloudiness and temperatures below 24 degC.",
+        "cultural_control": "Well-decomposed FYM coupled with Trichoderma viride/harzianum in nursery beds; raised nursery beds; nursery bed fumigation with 4% formalin.",
+        "biological_control": "Trichoderma viride/harzianum incorporated in nursery FYM.",
+        "chemical_control": "Chlorpyrifos 20% EC (used for planting-pit drench against soil pests/termites, supporting overall nursery pest/disease management)",
+        "dosage": "Drench planting pits with Chlorpyrifos 20% EC @ 5 ml/L water"
+      }
+    ],
+    "general_safety_precautions": "The mango package follows the standard NIPHM safety framework (as in the other AESA-based packages): purchase only required pesticide quantities in sealed, approved-label containers; store away from house premises, food/feed, children/livestock, sunlight/rain, keeping weedicides separate; never transport pesticides with food; wear gloves, face mask and head covering when preparing spray solution; use correct, leak-free spray equipment with proper nozzles; avoid spraying in high wind or just before/after rain; avoid tank-mixing different pesticides; wash equipment after use and dispose of containers by crushing/burying away from water sources.",
+    "waiting_period_notes": "No explicit numeric pre-harvest waiting-period/PHI table per pesticide is given for mango. Section XII (Safety Measures) instead covers harvesting precautions (use of clippers or careful twisting, avoiding wet-weather harvest and fruit contact with soil, harvesting in late morning to avoid oil-gland discolouration) and post-harvest handling (hot water treatment at 48 +-1 degC for fruit flies and 52 degC for post-harvest fungal disease control, cool storage) rather than per-chemical waiting days."
+  }
+}
