@@ -199,7 +199,10 @@
     "fertilityScore": "ഫലഭൂയിഷ്ഠത സ്കോർ",
     "rainfall": "മഴ",
     "noDevicesPrefix": "ഇതുവരെ ഉപകരണങ്ങളൊന്നും ബന്ധിപ്പിച്ചിട്ടില്ല. ESP32 ഫീൽഡ് നോഡ് ബന്ധിപ്പിക്കുക അല്ലെങ്കിൽ",
-    "noDevicesSuffix": "ഉപയോഗിക്കുക."
+    "noDevicesSuffix": "ഉപയോഗിക്കുക.",
+    "waitingForFirstReading": "ഉപകരണം ബന്ധിപ്പിച്ചു — ആദ്യ സെൻസർ റീഡിംഗിനായി കാത്തിരിക്കുന്നു...",
+    "deviceOnline": "ഓൺലൈൻ",
+    "deviceStale": "സമീപകാല ഡാറ്റ ഇല്ല"
   },
   "soilHealth": {
     "excellent": "മികച്ചത്",

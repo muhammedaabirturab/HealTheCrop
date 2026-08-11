@@ -1,6 +1,8 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+from app.schemas._datetime_utils import as_utc
 
 
 class ManualPredictionRequest(BaseModel):
@@ -60,6 +62,8 @@ class PredictionResponse(BaseModel):
     season_used: str
     explanation: RecommendationExplanation
     created_at: datetime | None = None
+
+    _tag_created_at_utc = field_validator("created_at", mode="before")(as_utc)
 
 
 class ModelInfoResponse(BaseModel):

@@ -1,6 +1,8 @@
 from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+
+from app.schemas._datetime_utils import as_utc
 
 
 class SensorReadingIn(BaseModel):
@@ -30,6 +32,8 @@ class SensorReadingOut(BaseModel):
 
     model_config = {"from_attributes": True}
 
+    _tag_recorded_at_utc = field_validator("recorded_at", mode="before")(as_utc)
+
 
 class DeviceOut(BaseModel):
     id: int
@@ -40,3 +44,5 @@ class DeviceOut(BaseModel):
     last_seen: datetime | None
 
     model_config = {"from_attributes": True}
+
+    _tag_last_seen_utc = field_validator("last_seen", mode="before")(as_utc)

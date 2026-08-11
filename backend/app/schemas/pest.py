@@ -1,6 +1,8 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, field_validator
+
+from app.schemas._datetime_utils import as_utc
 
 
 class ImageQualityInfo(BaseModel):
@@ -54,3 +56,5 @@ class PestDetectionResponse(BaseModel):
     is_uncertain: bool = False
     uncertainty_note: str | None = None
     created_at: datetime | None = None
+
+    _tag_created_at_utc = field_validator("created_at", mode="before")(as_utc)

@@ -199,7 +199,10 @@
     "fertilityScore": "Fertility Score",
     "rainfall": "Rainfall",
     "noDevicesPrefix": "No devices connected yet. Connect an ESP32 field node or use",
-    "noDevicesSuffix": "instead."
+    "noDevicesSuffix": "instead.",
+    "waitingForFirstReading": "Device connected — waiting for its first sensor reading to arrive...",
+    "deviceOnline": "Online",
+    "deviceStale": "No recent data"
   },
   "soilHealth": {
     "excellent": "Excellent",

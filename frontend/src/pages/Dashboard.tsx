@@ -1,10 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import { AlertTriangle } from 'lucide-react'
 import { api } from '../lib/api'
 import { getErrorMessage } from '../lib/errors'
 import SoilIndicator, { type SoilStatus } from '../components/SoilIndicator'
+
+// How often the dashboard re-polls the selected device's latest reading and
+// history. Comfortably faster than the firmware's own 5s upload interval so
+// a fresh reading never waits more than a few seconds to appear on screen.
+const POLL_INTERVAL_MS = 4000
+// A device is shown as "stale" once its last reading is older than this —
+// generous enough to tolerate one or two missed upload cycles without
+// flapping between online/offline on every poll.
+const STALE_THRESHOLD_MS = 20000
 
 interface Device {
   id: number
@@ -45,6 +54,8 @@ export default function Dashboard() {
   const [storageStatus, setStorageStatus] = useState<string>('--')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [readingMissing, setReadingMissing] = useState(false)
+  const [now, setNow] = useState(() => Date.now())
 
   useEffect(() => {
     setLoading(true)
@@ -62,10 +73,14 @@ export default function Dashboard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    if (!selectedDevice) return
-    api.get(`/sensors/devices/${selectedDevice}/latest`).then(async (res) => {
+  // isPolling suppresses the error banner on background refreshes — a single
+  // dropped poll shouldn't flash a scary red error over data that's still
+  // perfectly readable; only the initial load surfaces a hard error.
+  const fetchLatest = useCallback((deviceUid: string, isPolling: boolean) => {
+    api.get(`/sensors/devices/${deviceUid}/latest`).then(async (res) => {
       setLatest(res.data)
+      setReadingMissing(false)
+      if (!isPolling) setError('')
       const health = await api.post('/reports/soil-health', {
         nitrogen: res.data.nitrogen, phosphorus: res.data.phosphorus, potassium: res.data.potassium,
         ph: res.data.ph, moisture: res.data.moisture,
@@ -73,15 +88,47 @@ export default function Dashboard() {
       setIndicators(health.data.indicators)
       setFertilityScore(health.data.fertility_score)
     }).catch((err) => {
-      setLatest(null)
-      setError(getErrorMessage(err, t))
+      if (err?.response?.status === 404) {
+        // Device is registered but hasn't sent a reading yet — not an error,
+        // just an empty state the UI should explain clearly.
+        setLatest(null)
+        setReadingMissing(true)
+        if (!isPolling) setError('')
+        return
+      }
+      if (!isPolling) {
+        setLatest(null)
+        setError(getErrorMessage(err, t))
+      }
+      // A polling request that fails for any other reason (e.g. a momentary
+      // network blip) just keeps showing the last-known reading and retries
+      // on the next interval tick.
     })
 
-    api.get(`/sensors/devices/${selectedDevice}/history?limit=30`).then((res) => {
+    api.get(`/sensors/devices/${deviceUid}/history?limit=30`).then((res) => {
       setHistory([...res.data].reverse())
-    }).catch(() => setHistory([]))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedDevice])
+    }).catch(() => {
+      if (!isPolling) setHistory([])
+    })
+  }, [t])
+
+  useEffect(() => {
+    if (!selectedDevice) return
+    fetchLatest(selectedDevice, false)
+
+    const interval = setInterval(() => fetchLatest(selectedDevice, true), POLL_INTERVAL_MS)
+    return () => clearInterval(interval)
+  }, [selectedDevice, fetchLatest])
+
+  // Drives the stale/online badge and re-evaluates it every second so a
+  // device that stops sending flips to "stale" on its own, without needing
+  // a new reading to arrive first.
+  useEffect(() => {
+    const tick = setInterval(() => setNow(Date.now()), 1000)
+    return () => clearInterval(tick)
+  }, [])
+
+  const isStale = latest ? now - new Date(latest.recorded_at).getTime() > STALE_THRESHOLD_MS : false
 
   const chartData = history.map((r) => ({
     time: new Date(r.recorded_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -93,15 +140,23 @@ export default function Dashboard() {
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h1 className="text-2xl font-bold text-forest-dark">{t('dashboard.title')}</h1>
         {devices.length > 0 && (
-          <select
-            value={selectedDevice ?? ''}
-            onChange={(e) => setSelectedDevice(e.target.value)}
-            className="border border-forest/30 rounded-lg px-3 py-2"
-          >
-            {devices.map((d) => (
-              <option key={d.device_uid} value={d.device_uid}>{d.name} ({d.device_uid})</option>
-            ))}
-          </select>
+          <div className="flex items-center gap-3">
+            {latest && !readingMissing && (
+              <span className={`flex items-center gap-1.5 text-xs font-semibold ${isStale ? 'text-amber-700' : 'text-forest'}`}>
+                <span className={`inline-block w-2 h-2 rounded-full ${isStale ? 'bg-amber-500' : 'bg-forest animate-pulse'}`} />
+                {isStale ? t('dashboard.deviceStale') : t('dashboard.deviceOnline')}
+              </span>
+            )}
+            <select
+              value={selectedDevice ?? ''}
+              onChange={(e) => setSelectedDevice(e.target.value)}
+              className="border border-forest/30 rounded-lg px-3 py-2"
+            >
+              {devices.map((d) => (
+                <option key={d.device_uid} value={d.device_uid}>{d.name} ({d.device_uid})</option>
+              ))}
+            </select>
+          </div>
         )}
       </div>
 
@@ -121,6 +176,13 @@ export default function Dashboard() {
           {t('dashboard.noDevicesPrefix')}{' '}
           <a href="/manual-input" className="text-forest font-semibold underline">{t('nav.manualInput')}</a>{' '}
           {t('dashboard.noDevicesSuffix')}
+        </div>
+      )}
+
+      {!loading && readingMissing && (
+        <div className="card p-6 text-center text-earth-dark flex items-center justify-center gap-2">
+          <span className="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          {t('dashboard.waitingForFirstReading')}
         </div>
       )}
 

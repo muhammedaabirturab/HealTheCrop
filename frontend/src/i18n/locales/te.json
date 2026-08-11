@@ -199,7 +199,10 @@
     "fertilityScore": "సారవంత స్కోరు",
     "rainfall": "వర్షపాతం",
     "noDevicesPrefix": "ఇంకా పరికరాలు కనెక్ట్ కాలేదు. ESP32 ఫీల్డ్ నోడ్‌ను కనెక్ట్ చేయండి లేదా",
-    "noDevicesSuffix": "ఉపయోగించండి."
+    "noDevicesSuffix": "ఉపయోగించండి.",
+    "waitingForFirstReading": "పరికరం కనెక్ట్ అయ్యింది — మొదటి సెన్సార్ రీడింగ్ కోసం వేచి ఉంది...",
+    "deviceOnline": "ఆన్‌లైన్",
+    "deviceStale": "ఇటీవలి డేటా లేదు"
   },
   "soilHealth": {
     "excellent": "అద్భుతం",

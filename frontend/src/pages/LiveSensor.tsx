@@ -7,7 +7,6 @@ import type { RecommendationExplanation } from '../lib/explanation'
 import CropCard, { type CropCardData } from '../components/CropCard'
 import LocationPicker from '../components/LocationPicker'
 
-const SENSOR_TAG = '<<SENSOR>>'
 const SERIAL_BAUD_RATE = 115200
 
 interface LiveReading {
@@ -67,9 +66,10 @@ export default function LiveSensor() {
   }, [])
 
   const parseLine = useCallback((line: string) => {
-    const tagIndex = line.indexOf(SENSOR_TAG)
-    if (tagIndex === -1) return
-    const jsonStart = line.indexOf('{', tagIndex)
+    // The firmware prints one bare JSON object per line (no tag/prefix), so
+    // just look for the start of an object and try to parse from there —
+    // tolerant of any stray whitespace/CR around it.
+    const jsonStart = line.indexOf('{')
     if (jsonStart === -1) return
     try {
       const parsed = JSON.parse(line.slice(jsonStart)) as Partial<LiveReading>
@@ -79,7 +79,7 @@ export default function LiveSensor() {
       }
     } catch {
       // A line can arrive mid-write (e.g. right as the board resets) — the
-      // next 30s reading will parse cleanly, so just drop this one.
+      // next reading will parse cleanly, so just drop this one.
     }
   }, [])
 

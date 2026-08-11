@@ -33,7 +33,7 @@
 // ---------------------------------------------------------------------------
 // Timing
 // ---------------------------------------------------------------------------
-#define SENSOR_READ_INTERVAL_MS 30000UL     // Read + upload every 30 seconds
+#define SENSOR_READ_INTERVAL_MS 5000UL      // Read + upload every 5 seconds
 #define WIFI_RECONNECT_INTERVAL_MS 5000UL   // Retry Wi-Fi every 5 seconds while disconnected
 #define WIFI_CONNECT_TIMEOUT_MS 15000UL     // Give up on a connection attempt after 15 seconds
 #define HTTP_TIMEOUT_MS 8000UL

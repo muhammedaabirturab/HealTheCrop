@@ -1,33 +1,29 @@
 /*
  * HealTheCrop — ESP32 Field Node Firmware
  * ----------------------------------------
- * Reads soil moisture (FC-28), temperature/humidity (DHT11), soil pH
- * (Analog pH Sensor Module V1.1), and optionally NPK (RS485 Modbus sensor),
- * then POSTs a JSON reading to the HealTheCrop backend every
- * SENSOR_READ_INTERVAL_MS. Handles Wi-Fi drops with automatic reconnect and
- * degrades gracefully (sends null for any sensor that fails to read) instead
- * of crashing or blocking the whole upload.
+ * Reads soil moisture (FC-28), temperature/humidity (DHT11), and soil pH
+ * (Analog pH Sensor Module V1.1), then on every read:
+ *   1. Always prints one bare JSON object over USB serial, so the website's
+ *      Live Sensor (USB) page can read it directly via the Web Serial API —
+ *      this never depends on Wi-Fi.
+ *   2. Additionally POSTs the exact same JSON string to the HealTheCrop
+ *      backend over Wi-Fi (if connected), so the Dashboard's live sensor
+ *      panel updates automatically without a USB cable.
+ * Wi-Fi being down or slow to connect never blocks or delays the first USB
+ * serial reading. A failed sensor read sends JSON null for that field
+ * instead of crashing or sending garbage.
  *
  * Board:   ESP32-WROOM-32 DevKit
- * Libraries required (install via Arduino Library Manager):
- *   - DHT sensor library (Adafruit)
- *   - Adafruit Unified Sensor
- *   - ArduinoJson (>= 6.x)
- *   - ModbusMaster (only if NPK_SENSOR_ATTACHED is true)
+ * Library required (install via Arduino Library Manager):
+ *   - DHT sensor library (Adafruit) + its Adafruit Unified Sensor dependency
+ * No ArduinoJson dependency — JSON is hand-built as a String so the serial
+ * output and the uploaded reading can never drift apart from each other.
  */
 
 #include <WiFi.h>
 #include <HTTPClient.h>
-#include <ArduinoJson.h>
 #include <DHT.h>
 #include "config.h"
-
-#if NPK_SENSOR_ATTACHED
-#include <ModbusMaster.h>
-#include <HardwareSerial.h>
-HardwareSerial NpkSerial(2);
-ModbusMaster npkNode;
-#endif
 
 DHT dht(PIN_DHT11, DHT11);
 
@@ -36,7 +32,7 @@ unsigned long lastWifiAttemptMillis = 0;
 bool wifiWasConnected = false;
 
 // ----------------------------------------------------------------------------
-// Wi-Fi connection management with non-blocking auto-reconnect
+// Wi-Fi connection management with retrying auto-reconnect
 // ----------------------------------------------------------------------------
 void connectToWiFi() {
   Serial.printf("[WiFi] Connecting to \"%s\"...\n", WIFI_SSID);
@@ -46,17 +42,15 @@ void connectToWiFi() {
   unsigned long start = millis();
   while (WiFi.status() != WL_CONNECTED && millis() - start < WIFI_CONNECT_TIMEOUT_MS) {
     delay(250);
-    Serial.print(".");
     digitalWrite(PIN_STATUS_LED, !digitalRead(PIN_STATUS_LED));
   }
-  Serial.println();
 
   if (WiFi.status() == WL_CONNECTED) {
     Serial.printf("[WiFi] Connected. IP address: %s\n", WiFi.localIP().toString().c_str());
     digitalWrite(PIN_STATUS_LED, HIGH);
     wifiWasConnected = true;
   } else {
-    Serial.println("[WiFi] Connection attempt timed out; will retry.");
+    Serial.println("[WiFi] Connection attempt timed out; will retry in the background.");
     digitalWrite(PIN_STATUS_LED, LOW);
   }
 }
@@ -79,101 +73,83 @@ void ensureWiFiConnected() {
 }
 
 // ----------------------------------------------------------------------------
-// Sensor reads — each returns NAN on failure so a bad sensor never blocks
-// the others or crashes the upload.
+// Sensor reads — each returns -1 on failure so a bad sensor never blocks
+// the others or crashes the reading.
 // ----------------------------------------------------------------------------
-float readSoilMoisturePercent() {
+float readSoilMoisture() {
   int raw = analogRead(PIN_SOIL_MOISTURE);
-  if (raw <= 0) return NAN;
-  float percent = 100.0f * (float)(SOIL_ADC_DRY - raw) / (float)(SOIL_ADC_DRY - SOIL_ADC_WET);
-  if (percent < 0) percent = 0;
-  if (percent > 100) percent = 100;
-  return percent;
+  if (raw <= 0) {
+    return -1;
+  }
+  float moisture = 100.0 * (SOIL_ADC_DRY - raw) / (SOIL_ADC_DRY - SOIL_ADC_WET);
+  return constrain(moisture, 0.0, 100.0);
 }
 
-float readSoilPH() {
+float readPH() {
   int raw = analogRead(PIN_PH_SENSOR);
-  if (raw <= 0) return NAN;
+  if (raw <= 0) {
+    return -1;
+  }
   float voltage = (raw / ADC_RESOLUTION) * ADC_VREF;
-  // Two-point linear calibration between pH 4.0 and pH 7.0 buffer readings
   float slope = (7.0 - 4.0) / (PH_VOLTAGE_7 - PH_VOLTAGE_4);
   float ph = 7.0 + slope * (voltage - PH_VOLTAGE_7);
-  if (ph < 0 || ph > 14) return NAN;
+  if (ph < 0 || ph > 14) {
+    return -1;
+  }
   return ph;
 }
 
-bool readDHT(float &temperature, float &humidity) {
-  temperature = dht.readTemperature();
-  humidity = dht.readHumidity();
-  if (isnan(temperature) || isnan(humidity)) {
-    Serial.println("[DHT11] Read failed — check wiring/pull-up resistor.");
-    return false;
-  }
-  return true;
-}
-
-#if NPK_SENSOR_ATTACHED
-bool readNPK(float &n, float &p, float &k) {
-  uint8_t result = npkNode.readHoldingRegisters(0x00, 3);
-  if (result != npkNode.ku8MBSuccess) {
-    Serial.printf("[NPK] Modbus read failed (code %d)\n", result);
-    return false;
-  }
-  n = npkNode.getResponseBuffer(0);
-  p = npkNode.getResponseBuffer(1);
-  k = npkNode.getResponseBuffer(2);
-  return true;
-}
-#endif
-
 // ----------------------------------------------------------------------------
-// Build and send the JSON payload to the backend
+// Build the reading as a JSON string once, so the USB serial line and the
+// Wi-Fi upload body are always byte-for-byte identical — no separate code
+// paths that could silently drift apart from each other.
+//
+// Field names match backend/app/schemas/sensor.py's SensorReadingIn exactly:
+// device_uid, temperature, humidity, moisture, ph, nitrogen, phosphorus,
+// potassium, rainfall.
 // ----------------------------------------------------------------------------
-void addOrNull(JsonDocument &doc, const char *key, float value) {
-  if (isnan(value)) {
-    doc[key] = nullptr;
-  } else {
-    doc[key] = value;
-  }
+String buildReadingJson() {
+  float temperature = dht.readTemperature();
+  float humidity = dht.readHumidity();
+  bool temperatureValid = !isnan(temperature);
+  bool humidityValid = !isnan(humidity);
+
+  float moisture = readSoilMoisture();
+  float ph = readPH();
+
+  String json = "{";
+
+  json += "\"device_uid\":\"";
+  json += DEVICE_UID;
+  json += "\"";
+
+  json += ",\"temperature\":";
+  json += temperatureValid ? String(temperature, 2) : String("null");
+
+  json += ",\"humidity\":";
+  json += humidityValid ? String(humidity, 2) : String("null");
+
+  json += ",\"moisture\":";
+  json += (moisture >= 0) ? String(moisture, 2) : String("null");
+
+  json += ",\"ph\":";
+  json += (ph >= 0) ? String(ph, 2) : String("null");
+
+  // NPK is not currently connected on this field node.
+  json += ",\"nitrogen\":null,\"phosphorus\":null,\"potassium\":null";
+
+  // Rainfall is sourced from the weather API server-side, not a field sensor.
+  json += ",\"rainfall\":null";
+
+  json += "}";
+  return json;
 }
 
 void sendReading() {
-  float moisture = readSoilMoisturePercent();
-  float ph = readSoilPH();
-  float temperature = NAN, humidity = NAN;
-  bool dhtOk = readDHT(temperature, humidity);
-  if (!dhtOk) {
-    temperature = NAN;
-    humidity = NAN;
-  }
+  String payload = buildReadingJson();
 
-  float nitrogen = NAN, phosphorus = NAN, potassium = NAN;
-#if NPK_SENSOR_ATTACHED
-  readNPK(nitrogen, phosphorus, potassium);
-#endif
-
-  StaticJsonDocument<512> doc;
-  doc["device_uid"] = DEVICE_UID;
-  addOrNull(doc, "moisture", moisture);
-  addOrNull(doc, "ph", ph);
-  addOrNull(doc, "temperature", temperature);
-  addOrNull(doc, "humidity", humidity);
-  addOrNull(doc, "nitrogen", nitrogen);
-  addOrNull(doc, "phosphorus", phosphorus);
-  addOrNull(doc, "potassium", potassium);
-  doc["rainfall"] = nullptr; // rainfall is sourced from the weather API server-side, not a field sensor
-
-  String payload;
-  serializeJson(doc, payload);
-
-  // Unconditional, unambiguous tag so anything reading the raw USB serial
-  // stream (e.g. the website's Web Serial "Connect via USB" feature) can
-  // reliably find the JSON reading on its own line, regardless of Wi-Fi
-  // status or any other debug text this firmware prints around it.
-  Serial.print("<<SENSOR>>");
-  Serial.println(payload);
-
-  Serial.print("[Upload] Payload: ");
+  // Always printed, regardless of Wi-Fi status — this is what the website's
+  // Live Sensor (USB) page reads directly over the serial port.
   Serial.println(payload);
 
   if (WiFi.status() != WL_CONNECTED) {
@@ -202,18 +178,18 @@ void sendReading() {
 void setup() {
   Serial.begin(115200);
   delay(500);
-  Serial.println("\n=== HealTheCrop ESP32 Field Node booting ===");
 
   pinMode(PIN_STATUS_LED, OUTPUT);
   digitalWrite(PIN_STATUS_LED, LOW);
 
   analogReadResolution(12); // 0-4095, matches ADC_RESOLUTION in config.h
   dht.begin();
+  delay(1500); // DHT11 needs a moment after power-up before its first read is reliable
 
-#if NPK_SENSOR_ATTACHED
-  NpkSerial.begin(4800, SERIAL_8N1, PIN_NPK_RX, PIN_NPK_TX);
-  npkNode.begin(1, NpkSerial); // slave ID 1 — adjust to match your NPK sensor
-#endif
+  // Send the first reading over USB serial before touching Wi-Fi at all, so
+  // the Live Sensor (USB) page never has to wait on a network connection
+  // attempt (which can take up to WIFI_CONNECT_TIMEOUT_MS) for its first line.
+  sendReading();
 
   connectToWiFi();
 }

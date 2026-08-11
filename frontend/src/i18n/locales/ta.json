@@ -199,7 +199,10 @@
     "fertilityScore": "வளத்தன்மை மதிப்பெண்",
     "rainfall": "மழைப்பொழிவு",
     "noDevicesPrefix": "இதுவரை சாதனங்கள் இணைக்கப்படவில்லை. ESP32 ஃபீல்டு நோடை இணைக்கவும் அல்லது",
-    "noDevicesSuffix": "ஐப் பயன்படுத்தவும்."
+    "noDevicesSuffix": "ஐப் பயன்படுத்தவும்.",
+    "waitingForFirstReading": "சாதனம் இணைக்கப்பட்டது — முதல் சென்சார் அளவீடு வருவதற்காக காத்திருக்கிறது...",
+    "deviceOnline": "ஆன்லைன்",
+    "deviceStale": "சமீபத்திய தரவு இல்லை"
   },
   "soilHealth": {
     "excellent": "மிகச் சிறந்த",

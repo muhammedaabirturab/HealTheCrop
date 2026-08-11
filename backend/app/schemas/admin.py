@@ -1,8 +1,9 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, EmailStr
+from pydantic import BaseModel, ConfigDict, EmailStr, field_validator
 
 from app.models.user import UserRole
+from app.schemas._datetime_utils import as_utc
 
 
 class AdminStats(BaseModel):
@@ -30,6 +31,8 @@ class AdminUserOut(BaseModel):
 
     model_config = {"from_attributes": True}
 
+    _tag_created_at_utc = field_validator("created_at", mode="before")(as_utc)
+
 
 class UserStatusUpdate(BaseModel):
     is_active: bool
@@ -46,6 +49,8 @@ class LoginHistoryOut(BaseModel):
 
     model_config = {"from_attributes": True}
 
+    _tag_created_at_utc = field_validator("created_at", mode="before")(as_utc)
+
 
 class AdminPredictionOut(BaseModel):
     id: int
@@ -56,6 +61,8 @@ class AdminPredictionOut(BaseModel):
     season: str | None
     source: str
     created_at: datetime
+
+    _tag_created_at_utc = field_validator("created_at", mode="before")(as_utc)
 
 
 class AdminPestScanOut(BaseModel):
@@ -69,6 +76,8 @@ class AdminPestScanOut(BaseModel):
     top_confidence: float | None
     detections: list
     created_at: datetime
+
+    _tag_created_at_utc = field_validator("created_at", mode="before")(as_utc)
 
 
 class AdminSensorReadingOut(BaseModel):
@@ -84,3 +93,5 @@ class AdminSensorReadingOut(BaseModel):
     ph: float | None
     rainfall: float | None
     recorded_at: datetime
+
+    _tag_recorded_at_utc = field_validator("recorded_at", mode="before")(as_utc)

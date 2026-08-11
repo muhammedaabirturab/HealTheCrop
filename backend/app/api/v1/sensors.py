@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -10,6 +11,8 @@ from app.models.sensor_reading import SensorReading
 from app.models.user import User
 from app.schemas.sensor import DeviceOut, SensorReadingIn, SensorReadingOut
 
+logger = logging.getLogger(__name__)
+
 router = APIRouter(prefix="/sensors", tags=["Sensors"])
 
 
@@ -20,8 +23,11 @@ def ingest_reading(payload: SensorReadingIn, db: Session = Depends(get_db)):
     via their unique device_uid, matching how field hardware works in practice).
     Auto-registers unseen devices so plug-and-play hardware "just works".
     """
+    logger.info("[sensors.ingest] Received payload from device_uid=%s: %s", payload.device_uid, payload.model_dump())
+
     device = db.query(Device).filter(Device.device_uid == payload.device_uid).first()
     if not device:
+        logger.info("[sensors.ingest] Unseen device_uid=%s — auto-registering.", payload.device_uid)
         device = Device(device_uid=payload.device_uid, status="online")
         db.add(device)
         db.flush()
@@ -43,6 +49,11 @@ def ingest_reading(payload: SensorReadingIn, db: Session = Depends(get_db)):
     db.add(reading)
     db.commit()
     db.refresh(reading)
+
+    logger.info(
+        "[sensors.ingest] Stored reading id=%s for device_id=%s (device_uid=%s) at %s",
+        reading.id, device.id, payload.device_uid, reading.recorded_at,
+    )
     return reading
 
 

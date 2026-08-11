@@ -199,7 +199,10 @@
     "fertilityScore": "उर्वरता स्कोर",
     "rainfall": "वर्षा",
     "noDevicesPrefix": "अभी तक कोई उपकरण कनेक्ट नहीं है। ESP32 फील्ड नोड कनेक्ट करें या",
-    "noDevicesSuffix": "का उपयोग करें।"
+    "noDevicesSuffix": "का उपयोग करें।",
+    "waitingForFirstReading": "डिवाइस कनेक्ट हो गया है — पहली सेंसर रीडिंग आने की प्रतीक्षा है...",
+    "deviceOnline": "ऑनलाइन",
+    "deviceStale": "हाल की कोई जानकारी नहीं"
   },
   "soilHealth": {
     "excellent": "उत्कृष्ट",

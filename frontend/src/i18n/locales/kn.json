@@ -199,7 +199,10 @@
     "fertilityScore": "ಫಲವತ್ತತೆ ಅಂಕ",
     "rainfall": "ಮಳೆ",
     "noDevicesPrefix": "ಇನ್ನೂ ಯಾವುದೇ ಸಾಧನಗಳು ಸಂಪರ್ಕಗೊಂಡಿಲ್ಲ. ESP32 ಫೀಲ್ಡ್ ನೋಡ್ ಸಂಪರ್ಕಿಸಿ ಅಥವಾ",
-    "noDevicesSuffix": "ಬಳಸಿ."
+    "noDevicesSuffix": "ಬಳಸಿ.",
+    "waitingForFirstReading": "ಸಾಧನ ಸಂಪರ್ಕಗೊಂಡಿದೆ — ಮೊದಲ ಸೆನ್ಸರ್ ರೀಡಿಂಗ್ ಬರುವುದನ್ನು ಕಾಯಲಾಗುತ್ತಿದೆ...",
+    "deviceOnline": "ಆನ್‌ಲೈನ್",
+    "deviceStale": "ಇತ್ತೀಚಿನ ಡೇಟಾ ಇಲ್ಲ"
   },
   "soilHealth": {
     "excellent": "ಅತ್ಯುತ್ತಮ",

@@ -1,4 +1,5 @@
 import logging
+import sys
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -13,7 +14,14 @@ from app.core.storage import storage_service
 
 logger = logging.getLogger(__name__)
 
-logging.basicConfig(level=logging.INFO)
+# uvicorn (especially under --reload) configures the root logger with its own
+# handlers before this module even imports, which makes a plain basicConfig()
+# call a silent no-op — app-level logger.info() calls (e.g. sensors.ingest
+# logging incoming ESP32 payloads) would never actually reach the console.
+# force=True replaces whatever's already there; stream=sys.stdout matches
+# where uvicorn's own access/error logs go, so everything interleaves in one
+# place instead of app logs silently going to a different stream.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout, force=True)
 settings = get_settings()
 
 
