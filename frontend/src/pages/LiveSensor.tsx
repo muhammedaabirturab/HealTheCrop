@@ -4,21 +4,11 @@ import { Usb, Plug, PlugZap, Loader2 } from 'lucide-react'
 import { api } from '../lib/api'
 import { getErrorMessage } from '../lib/errors'
 import type { RecommendationExplanation } from '../lib/explanation'
+import { connectESP32, disconnectESP32, isWebSerialSupported, type ESP32SensorData } from '../lib/esp32Serial'
 import CropCard, { type CropCardData } from '../components/CropCard'
 import LocationPicker from '../components/LocationPicker'
 
-const SERIAL_BAUD_RATE = 115200
-
-interface LiveReading {
-  device_uid: string
-  moisture: number | null
-  ph: number | null
-  temperature: number | null
-  humidity: number | null
-  nitrogen: number | null
-  phosphorus: number | null
-  potassium: number | null
-}
+type LiveReading = ESP32SensorData
 
 interface ModelInfo {
   accuracy: number | null
@@ -38,13 +28,9 @@ interface PredictionResult {
 
 type ConnectionStatus = 'unsupported' | 'disconnected' | 'connecting' | 'connected'
 
-function isSerialSupported(): boolean {
-  return typeof navigator !== 'undefined' && 'serial' in navigator
-}
-
 export default function LiveSensor() {
   const { t } = useTranslation()
-  const [status, setStatus] = useState<ConnectionStatus>(isSerialSupported() ? 'disconnected' : 'unsupported')
+  const [status, setStatus] = useState<ConnectionStatus>(isWebSerialSupported() ? 'disconnected' : 'unsupported')
   const [connectError, setConnectError] = useState('')
   const [reading, setReading] = useState<LiveReading | null>(null)
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null)
@@ -56,138 +42,73 @@ export default function LiveSensor() {
   const [predictError, setPredictError] = useState('')
   const [modelInfo, setModelInfo] = useState<ModelInfo | null>(null)
 
-  const portRef = useRef<SerialPort | null>(null)
-  const readerRef = useRef<ReadableStreamDefaultReader<string> | null>(null)
-  const keepReadingRef = useRef(false)
   const connectingRef = useRef(false)
 
   useEffect(() => {
     api.get('/predictions/model-info').then((res) => setModelInfo(res.data)).catch(() => setModelInfo(null))
   }, [])
 
-  const parseLine = useCallback((line: string) => {
-    // The firmware prints one bare JSON object per line (no tag/prefix), so
-    // just look for the start of an object and try to parse from there —
-    // tolerant of any stray whitespace/CR around it.
-    const jsonStart = line.indexOf('{')
-    if (jsonStart === -1) return
-    try {
-      const parsed = JSON.parse(line.slice(jsonStart)) as Partial<LiveReading>
-      if (parsed && typeof parsed === 'object' && parsed.device_uid) {
-        setReading(parsed as LiveReading)
-        setLastUpdated(new Date())
-      }
-    } catch {
-      // A line can arrive mid-write (e.g. right as the board resets) — the
-      // next reading will parse cleanly, so just drop this one.
-    }
+  const handleReading = useCallback((data: LiveReading) => {
+    setReading(data)
+    setLastUpdated(new Date())
   }, [])
 
-  const readLoop = useCallback(async (port: SerialPort) => {
-    const textDecoder = new TextDecoderStream()
-    const readableStreamClosed = port.readable!.pipeTo(textDecoder.writable as WritableStream<Uint8Array>)
-    const reader = textDecoder.readable.getReader()
-    readerRef.current = reader
-    let buffer = ''
-    try {
-      while (keepReadingRef.current) {
-        const { value, done } = await reader.read()
-        if (done) break
-        if (value) {
-          buffer += value
-          const lines = buffer.split('\n')
-          buffer = lines.pop() ?? ''
-          for (const line of lines) parseLine(line)
-        }
-      }
-    } catch {
-      if (keepReadingRef.current) setConnectError(t('liveSensor.errorLostConnection'))
-    } finally {
-      reader.releaseLock()
-      await readableStreamClosed.catch(() => {})
-    }
-  }, [parseLine, t])
-
   const disconnect = useCallback(async () => {
-    keepReadingRef.current = false
-    try {
-      await readerRef.current?.cancel()
-    } catch {
-      // already closed/cancelled — nothing to do
-    }
-    try {
-      await portRef.current?.close()
-    } catch {
-      // already closed — nothing to do
-    }
-    portRef.current = null
-    readerRef.current = null
+    await disconnectESP32()
     setStatus('disconnected')
   }, [])
 
-  const connectToPort = useCallback(async (port: SerialPort) => {
-    if (connectingRef.current || portRef.current) return
+  const attemptConnect = useCallback(async (targetPort?: SerialPort) => {
+    if (connectingRef.current) return
     connectingRef.current = true
     setStatus('connecting')
     setConnectError('')
     try {
-      await port.open({ baudRate: SERIAL_BAUD_RATE })
-      portRef.current = port
-      keepReadingRef.current = true
-      setStatus('connected')
-      readLoop(port).finally(() => {
-        if (keepReadingRef.current) {
-          // The board dropped the line unexpectedly (unplugged, reset, etc).
-          keepReadingRef.current = false
-          portRef.current = null
-          readerRef.current = null
+      await connectESP32(
+        handleReading,
+        () => {
+          // The board dropped the connection unexpectedly (unplugged, reset, etc).
+          setConnectError(t('liveSensor.errorLostConnection'))
           setStatus('disconnected')
-        }
-      })
+        },
+        targetPort,
+      )
+      setStatus('connected')
     } catch {
       setConnectError(t('liveSensor.errorConnectFailed'))
       setStatus('disconnected')
     } finally {
       connectingRef.current = false
     }
-  }, [readLoop, t])
+  }, [handleReading, t])
 
-  const handleConnectClick = async () => {
-    if (!isSerialSupported()) return
-    try {
-      const port = await navigator.serial.requestPort()
-      await connectToPort(port)
-    } catch {
-      // User dismissed the browser's device picker — not an error to surface.
-    }
+  const handleConnectClick = () => {
+    if (!isWebSerialSupported()) return
+    attemptConnect()
   }
 
   // Auto-detect: reconnect to a previously authorized port on load, and react
   // live to the board being plugged in or unplugged while this page is open.
   useEffect(() => {
-    if (!isSerialSupported()) return
+    if (!isWebSerialSupported()) return
 
     navigator.serial.getPorts().then((ports) => {
-      if (ports.length > 0) connectToPort(ports[0])
+      if (ports.length > 0) attemptConnect(ports[0])
     })
 
     const handleConnect = () => {
       navigator.serial.getPorts().then((ports) => {
-        if (ports.length > 0) connectToPort(ports[0])
+        if (ports.length > 0) attemptConnect(ports[0])
       })
     }
-    const handleDisconnect = () => {
-      if (portRef.current) disconnect()
-    }
+    const handleDisconnect = () => disconnect()
 
     navigator.serial.addEventListener('connect', handleConnect)
     navigator.serial.addEventListener('disconnect', handleDisconnect)
     return () => {
       navigator.serial.removeEventListener('connect', handleConnect)
       navigator.serial.removeEventListener('disconnect', handleDisconnect)
-      keepReadingRef.current = false
-      readerRef.current?.cancel().catch(() => {})
-      portRef.current?.close().catch(() => {})
+      disconnectESP32()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
