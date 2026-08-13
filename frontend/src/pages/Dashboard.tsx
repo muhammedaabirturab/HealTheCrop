@@ -394,7 +394,11 @@ export default function Dashboard() {
         </div>
         <div className="card p-4">
           <p className="font-semibold text-earth-dark">{t('dashboard.connectedDevices')}</p>
-          <p className="text-forest-dark font-bold">{devices.length}</p>
+          {/* This must reflect the live USB connection, not devices.length —
+              that's a count of everything ever registered in the database,
+              which stays 1 forever once a device has connected once even if
+              nothing is plugged in right now. */}
+          <p className="text-forest-dark font-bold">{liveConnected ? 1 : 0}</p>
         </div>
         <div className="card p-4">
           <p className="font-semibold text-earth-dark">{t('dashboard.lastUpdated')}</p>
