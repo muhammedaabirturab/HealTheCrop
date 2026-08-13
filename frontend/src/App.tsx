@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -8,7 +8,6 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import ManualInput from './pages/ManualInput'
-import LiveSensor from './pages/LiveSensor'
 import PestScan from './pages/PestScan'
 import AdminDashboard from './pages/AdminDashboard'
 
@@ -25,7 +24,8 @@ export default function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/manual-input" element={<ManualInput />} />
-            <Route path="/live-sensor" element={<LiveSensor />} />
+            {/* USB Live Sensor is now part of the Dashboard itself, not a separate page. */}
+            <Route path="/live-sensor" element={<Navigate to="/dashboard" replace />} />
             <Route path="/pest-scan" element={<PestScan />} />
           </Route>
 

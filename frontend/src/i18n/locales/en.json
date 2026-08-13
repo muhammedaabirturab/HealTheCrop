@@ -92,7 +92,6 @@
   "nav": {
     "dashboard": "Dashboard",
     "manualInput": "Manual Input",
-    "liveSensor": "Live Sensor (USB)",
     "cropRecommendation": "Crop Recommendation",
     "scanCrop": "Scan Crop",
     "reports": "Reports",

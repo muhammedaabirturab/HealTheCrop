@@ -51,4 +51,15 @@
 #define ADC_VREF 3.3
 #define ADC_RESOLUTION 4095.0
 
+// ---------------------------------------------------------------------------
+// Disconnected-sensor detection — a floating (unplugged) analog pin swings
+// noisily between rapid consecutive reads, unlike a real sensor's stable
+// signal. ADC_SAMPLE_COUNT readings are taken ADC_SAMPLE_DELAY_MS apart; if
+// their spread exceeds ADC_NOISE_THRESHOLD counts (out of 4095), the sensor
+// is reported as disconnected (null) instead of a plausible-looking value.
+// ---------------------------------------------------------------------------
+#define ADC_SAMPLE_COUNT 8
+#define ADC_SAMPLE_DELAY_MS 5
+#define ADC_NOISE_THRESHOLD 150
+
 #endif // HEALTHECROP_CONFIG_H

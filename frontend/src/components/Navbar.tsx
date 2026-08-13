@@ -26,7 +26,6 @@ export default function Navbar() {
               <>
                 <Link to="/dashboard" className="hover:text-forest">{t('nav.dashboard')}</Link>
                 <Link to="/manual-input" className="hover:text-forest">{t('nav.manualInput')}</Link>
-                <Link to="/live-sensor" className="hover:text-forest">{t('nav.liveSensor')}</Link>
                 <Link to="/pest-scan" className="hover:text-forest">{t('nav.scanCrop')}</Link>
               </>
             )}

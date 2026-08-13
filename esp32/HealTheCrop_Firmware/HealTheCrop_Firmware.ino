@@ -76,9 +76,36 @@ void ensureWiFiConnected() {
 // Sensor reads — each returns -1 on failure so a bad sensor never blocks
 // the others or crashes the reading.
 // ----------------------------------------------------------------------------
+
+// A disconnected/floating analog pin doesn't read 0 — it picks up EMI and
+// capacitive noise, swinging wildly between rapid consecutive samples. A
+// physically connected sensor's signal barely moves over a few milliseconds.
+// Sampling multiple times and checking that spread is the standard way to
+// tell "real but noisy" from "not actually connected" apart — a plain
+// `raw <= 0` check (the old behavior) essentially never catches this, which
+// is why a disconnected sensor could show plausible-looking, ever-changing
+// values instead of being reported as missing.
+int readStableAnalog(int pin) {
+  int minRaw = 4095;
+  int maxRaw = 0;
+  long sum = 0;
+  for (int i = 0; i < ADC_SAMPLE_COUNT; i++) {
+    int raw = analogRead(pin);
+    minRaw = min(minRaw, raw);
+    maxRaw = max(maxRaw, raw);
+    sum += raw;
+    delay(ADC_SAMPLE_DELAY_MS);
+  }
+  if (maxRaw - minRaw > ADC_NOISE_THRESHOLD) {
+    return -1;
+  }
+  int average = sum / ADC_SAMPLE_COUNT;
+  return average > 0 ? average : -1;
+}
+
 float readSoilMoisture() {
-  int raw = analogRead(PIN_SOIL_MOISTURE);
-  if (raw <= 0) {
+  int raw = readStableAnalog(PIN_SOIL_MOISTURE);
+  if (raw < 0) {
     return -1;
   }
   float moisture = 100.0 * (SOIL_ADC_DRY - raw) / (SOIL_ADC_DRY - SOIL_ADC_WET);
@@ -86,8 +113,8 @@ float readSoilMoisture() {
 }
 
 float readPH() {
-  int raw = analogRead(PIN_PH_SENSOR);
-  if (raw <= 0) {
+  int raw = readStableAnalog(PIN_PH_SENSOR);
+  if (raw < 0) {
     return -1;
   }
   float voltage = (raw / ADC_RESOLUTION) * ADC_VREF;
