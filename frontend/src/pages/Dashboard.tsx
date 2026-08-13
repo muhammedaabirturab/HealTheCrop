@@ -67,7 +67,6 @@ export default function Dashboard() {
   const [history, setHistory] = useState<SensorReading[]>([])
   const [indicators, setIndicators] = useState<Record<string, SoilHealthIndicator>>({})
   const [fertilityScore, setFertilityScore] = useState<number | null>(null)
-  const [storageStatus, setStorageStatus] = useState<string>('--')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -94,10 +93,6 @@ export default function Dashboard() {
       })
       .catch((err) => setError(getErrorMessage(err, t)))
       .finally(() => setLoading(false))
-
-    api.get(import.meta.env.VITE_API_BASE_URL?.replace('/api/v1', '') + '/health' || 'http://localhost:8000/health')
-      .then((res) => setStorageStatus(res.data.storage_backend))
-      .catch(() => setStorageStatus('unknown'))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -197,20 +192,7 @@ export default function Dashboard() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col gap-8">
-      <div className="flex items-center justify-between flex-wrap gap-3">
-        <h1 className="text-2xl font-bold text-forest-dark">{t('dashboard.title')}</h1>
-        {devices.length > 0 && (
-          <select
-            value={selectedDevice ?? ''}
-            onChange={(e) => setSelectedDevice(e.target.value)}
-            className="border border-forest/30 rounded-lg px-3 py-2"
-          >
-            {devices.map((d) => (
-              <option key={d.device_uid} value={d.device_uid}>{d.name} ({d.device_uid})</option>
-            ))}
-          </select>
-        )}
-      </div>
+      <h1 className="text-2xl font-bold text-forest-dark">{t('dashboard.title')}</h1>
 
       {error && (
         <div className="card p-4 flex items-center gap-2 text-sm font-semibold text-red-700 bg-red-50 border border-red-200">
@@ -387,11 +369,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-        <div className="card p-4">
-          <p className="font-semibold text-earth-dark">{t('dashboard.storageStatus')}</p>
-          <p className="text-forest-dark font-bold">{storageStatus}</p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
         <div className="card p-4">
           <p className="font-semibold text-earth-dark">{t('dashboard.connectedDevices')}</p>
           {/* This must reflect the live USB connection, not devices.length —
