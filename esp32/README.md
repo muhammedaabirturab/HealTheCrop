@@ -1,7 +1,12 @@
 # HealTheCrop ESP32 Firmware
 
 Firmware for the ESP32-WROOM-32 field node that reads soil/environmental sensors and
-uploads readings to the HealTheCrop backend over Wi-Fi.
+prints readings over USB serial. This is a USB-only device — there is no Wi-Fi,
+Bluetooth, or any other network transport in this firmware. The website's Dashboard
+reads the sensor data directly from the serial port (via the Chrome/Edge Web Serial
+API) over the same USB cable used to power and program the board, and is itself the
+one that talks to the backend over HTTP — sensor data never leaves this board except
+over USB.
 
 ## Hardware
 
@@ -41,26 +46,31 @@ See [`docs/hardware_wiring.md`](../docs/hardware_wiring.md) for the full circuit
 3. Install libraries via Library Manager:
    - `DHT sensor library` (Adafruit)
    - `Adafruit Unified Sensor`
-   - `ArduinoJson` (v6+)
    - `ModbusMaster` (only if `NPK_SENSOR_ATTACHED` is `true` in `config.h`)
 4. Open `HealTheCrop_Firmware/HealTheCrop_Firmware.ino`.
-5. Copy `config.h.example` to `config.h` (this filename is gitignored since it holds your
-   real Wi-Fi password — never commit it) and edit `config.h`:
-   - `WIFI_SSID` / `WIFI_PASSWORD` — your network credentials.
-   - `API_BASE_URL` — your backend's LAN IP, e.g. `http://192.168.1.42:8000/api/v1/sensors/ingest`.
+5. Copy `config.h.example` to `config.h` and edit it:
    - `DEVICE_UID` — a unique name if running multiple nodes.
    - Calibrate `SOIL_ADC_DRY` / `SOIL_ADC_WET` and `PH_VOLTAGE_4` / `PH_VOLTAGE_7` against your
      specific sensors (see calibration notes in the file).
 6. Select **Board: ESP32 Dev Module**, the correct COM port, then Upload.
-7. Open the Serial Monitor at 115200 baud to confirm Wi-Fi connects and readings upload
-   successfully (`HTTP status 201`).
+7. Open the Serial Monitor at 115200 baud to confirm one JSON reading line prints every
+   `SENSOR_READ_INTERVAL_MS`.
+8. On the website, connect via USB from the Dashboard page ("Connect ESP32 via USB")
+   using the same USB cable — the browser reads the serial output directly.
 
 ## Behavior
 
-- **Auto-reconnect**: if Wi-Fi drops, the firmware retries every 5 seconds without blocking
-  sensor reads, and resumes uploads automatically once reconnected.
+- **USB-only**: no Wi-Fi or Bluetooth code exists in this firmware at all — it never
+  attempts a network connection of any kind.
 - **Graceful sensor failure**: if any individual sensor fails to read (e.g. DHT11 timing
-  glitch), that field is sent as `null` rather than aborting the whole upload — the backend
-  and ML pipeline both tolerate missing fields.
-- **Auto-registration**: the backend's `/sensors/ingest` endpoint auto-creates a `Device`
-  record on first contact from a new `device_uid` — no manual pairing step required.
+  glitch, or an analog sensor reporting as disconnected), that field is sent as `null`
+  rather than aborting the whole reading — the backend and ML pipeline both tolerate
+  missing fields.
+- **Disconnected-sensor detection**: a floating (unplugged) analog pin swings noisily
+  between rapid consecutive reads, unlike a real sensor's stable signal — the firmware
+  samples several times and checks that spread before trusting a reading (see
+  `ADC_SAMPLE_COUNT`/`ADC_NOISE_THRESHOLD` in `config.h`), so an unplugged sensor is
+  reported as missing instead of showing a plausible-looking fake value.
+- **Auto-registration**: the backend's `/sensors/ingest` endpoint (called by the browser,
+  not this board) auto-creates a `Device` record on first contact from a new
+  `device_uid` — no manual pairing step required.

@@ -7,7 +7,7 @@ flowchart TB
         S2[DHT11 Temp/Humidity]
         S3[Analog pH Sensor]
         S4["NPK Sensor (optional, RS485)"]
-        ESP32["ESP32-WROOM-32\n(Wi-Fi, auto-reconnect)"]
+        ESP32["ESP32-WROOM-32\n(USB serial only —\nno Wi-Fi/Bluetooth)"]
         S1 --> ESP32
         S2 --> ESP32
         S3 --> ESP32
@@ -39,7 +39,7 @@ flowchart TB
     end
 
     Farmer((Farmer)) --> UI
-    ESP32 -->|HTTPS POST JSON| API
+    ESP32 -->|USB serial JSON\nWeb Serial API| UI
     UI -->|REST + JWT| API
     Storage --> MinIO
 ```
@@ -47,7 +47,9 @@ flowchart TB
 ## Component responsibilities
 
 - **ESP32 firmware** reads sensors on a fixed interval, tolerates individual sensor failures
-  (sends `null` for that field rather than aborting), and retries Wi-Fi without blocking.
+  (sends `null` for that field rather than aborting), and communicates exclusively over USB
+  serial — no Wi-Fi or Bluetooth. The browser reads the serial output directly (Web Serial
+  API) and is the one that POSTs it to the backend.
 - **Backend API** is organized into modules mirroring the spec's required separation:
   `auth`, `sensors`, `predictions` (ML), `pest` (CV), `reports` (fertility), `localization`,
   plus core `storage`/`database`/`security` concerns.

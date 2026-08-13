@@ -48,13 +48,14 @@ uvicorn app.main:app --reload --host 0.0.0.0
 
 The backend starts on `http://localhost:8000`. Swagger UI: `http://localhost:8000/docs`.
 
-**`--host 0.0.0.0` matters if you're using real ESP32 hardware** — without it, uvicorn
-defaults to binding only `127.0.0.1` (loopback), so the backend silently refuses any
-connection that isn't from the same machine, including your ESP32 field node on the
-WiFi network. With `0.0.0.0` it listens on all network interfaces, so devices on your
-LAN can reach it at your machine's LAN IP (find it with `ipconfig` on Windows or
-`ifconfig`/`ip addr` on macOS/Linux) — that's the IP to put in
-`esp32/HealTheCrop_Firmware/config.h`'s `API_BASE_URL`, not `localhost`.
+The ESP32 field node connects to this machine over **USB only** — it has no Wi-Fi or
+Bluetooth code and never talks to the backend directly. The browser reads sensor data
+from the serial port itself (via the Web Serial API on the Dashboard page) and is the
+one that POSTs it to the backend, so `--host 0.0.0.0` isn't required for ESP32
+reachability the way it would be for a Wi-Fi-connected device; it's included above
+mainly so the backend is reachable from other devices on your LAN if you need that
+for other reasons (e.g. testing from a phone).
+
 SQLite is used by default (`healthecrop.db`, auto-created). MinIO is optional in
 development — if it isn't running, uploads transparently fall back to local disk under
 `backend/storage/local/`.
